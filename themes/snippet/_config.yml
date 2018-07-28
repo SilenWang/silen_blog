@@ -29,7 +29,7 @@ rss: /atom.xml
 
 ## Carousel
 carousel:
-  img: img/head-img.jpg
+  img: #img/head-img.jpg
 
 # 各个小工具的设置
 
@@ -103,7 +103,7 @@ links:
 
 ## 网站宣传语
 branding:
-    'For further future.'
+    'Silen''s Blog'
 
 ## 设置banner背景图片
 banner:
