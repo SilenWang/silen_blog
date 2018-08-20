@@ -103,11 +103,11 @@ links:
 
 ## 网站宣传语
 branding:
-    'Silen''s Blog'
+    Silen's Blog
 
 ## 设置banner背景图片
 banner:
-    img: img/banner.jpg
+    img: http://7xluqf.com1.z0.glb.clouddn.com/banner.jpg
 
 ## 首页列表底部面板
 homePanel: true

@@ -41,7 +41,7 @@ services:
 
 ```ini
 [server]
-DOMAIN           = http://1XXX.XXX.XXX.1XXX
+DOMAIN           = http://XXX.XXX.XXX.XXX
 HTTP_PORT        = 3000
 ROOT_URL         = http://localhost:10080/
 DISABLE_SSH      = false
