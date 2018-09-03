@@ -69,7 +69,7 @@ yum -y install R
 
 ```shell
 mkdir /usr/share/doc/R-3.5.0/html
-yum install -y openssl-devel libcurl-devel
+yum install -y openssl-devel libcurl-devel libxml2-devel gsl-devel
 ```
 
 之后进入R开始安装`sscClust`(安装R本来就会自动安装一大堆依赖, 安装这个包的时候会有更多依赖...)
@@ -79,6 +79,12 @@ options(repos="https://mirrors.shu.edu.cn/CRAN/")
 options(BioC_mirror="http://mirrors.ustc.edu.cn/bioc/")
 source("http://bioconductor.org/biocLite.R")
 install.packages("devtools")
-bioClite(c('SingleCellExperiment', 'scran', 'SC3', 'zinbwave', 'BiocParallel'))
+biocLite(c('SingleCellExperiment', 'scran', 'SC3', 'zinbwave', 'BiocParallel'))
 devtools::install_github("Japrin/sscClust")
+```
+
+# 如果网络没有特别问题, `sscClust`应该是能够顺利安装的, 最后将docker容器的更改保存下来
+
+```shell
+
 ```
