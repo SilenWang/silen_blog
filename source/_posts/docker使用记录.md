@@ -83,8 +83,8 @@ biocLite(c('SingleCellExperiment', 'scran', 'SC3', 'zinbwave', 'BiocParallel'))
 devtools::install_github("Japrin/sscClust")
 ```
 
-# 如果网络没有特别问题, `sscClust`应该是能够顺利安装的, 最后将docker容器的更改保存下来
+# 如果网络没有特别问题, `sscClust`应该是能够顺利安装的, 最后将docker容器的更改保存为一个镜像(image), 保存完成后会显示一串sha256值, 使用`docker images`可看到已经保存下来的镜像
 
 ```shell
-
+docker commit CONTAINER_ID r/sscclust
 ```
