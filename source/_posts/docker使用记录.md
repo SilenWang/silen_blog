@@ -52,22 +52,24 @@ docker exec -it CONTAINER_ID /bin/bash
 登陆后安装vim, 对环境变量作基本设置, 然后开始安装R
 
 ```shell
-yum install epel-release
+yum -y install epel-release
 # 更改镜像源
 yum install wget
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
 mv /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel.repo.bak
 wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
-yum makecache
-yum install R
+# 不同的镜像源包版本会不一样, 删除已有缓存防止报错
+yum clean all
+yum -y makecache
+yum -y install R
 ```
 
 补充R包安装需要的一些系统软件包
 
 ```shell
 mkdir /usr/share/doc/R-3.5.0/html
-yum install openssl-devel libcurl-devel
+yum install -y openssl-devel libcurl-devel
 ```
 
 之后进入R开始安装`sscClust`(安装R本来就会自动安装一大堆依赖, 安装这个包的时候会有更多依赖...)
