@@ -13,12 +13,14 @@ categories: Script
 
 
 ## 代码来源
+
 脚本代码主要改写自统计之都文章:
 [R绘制中国地图，并展示流行病学数据](http://cos.name/2014/08/r-maps-for-china/)
 
 
 ## 代码本体(已包含备注)
-```R
+
+```r
 ####loading packages 载入需要的程序包####
 library(maptools) #用于读取并操作地图数据
 library(ggplot2) #用于绘制地图

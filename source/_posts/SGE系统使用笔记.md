@@ -13,7 +13,7 @@ tags:
 
 脚本写完后, 并不在投递时进行参数指定, 而是写到被投递的脚本中, 然后直接`qsub shell.sh`
 
-```shell
+```bash
 #！/bin/bash
 #$ -S /bin/bash          //表明此脚本为bash
 #$ -V                    //传递当前命令的所有环境变量
@@ -27,7 +27,7 @@ shell script
 
 投递含有上述内容本质上等价于:
 
-```shell
+```bash
 qsub -S -V -cwd \
     -N WorkName \
     -o WorkName.log \

@@ -13,7 +13,7 @@ tags: ['docker']
 
 环境系统使用manjaro, 毕竟这个我最熟悉. 并且archwiki能为许多奇怪的问题提供帮助, 安装docker的话很简单:
 
-```shell
+```bash
 sudo pacman -S docker
 # 为了让普通用户使用docker, 需要添加相应用户组并把要使用的用户加入组中
 sudo groupadd docker
@@ -37,13 +37,13 @@ systemctl enable docker
 
 准备在镜像内安装R并安装`sscClust`包, 公司的服务器是CentOS6, 所以使用拉取相应镜像:
 
-```shell
+```bash
 docker pull centos:6
 ```
 
 但是在进行了上述拉取之后, 一直不能正常的运行镜像, 根据[这里](https://forums.docker.com/t/docker-run-it-has-started-failing-with-status-139/18309)的描述, 似乎这是官方镜像有问题, 所以改为拉取了`centos:7`, 确实在更换版本后正常启动.
 
-```shell
+```bash
 docker run -dti IMAGE_ID /bin/bash
 # 登陆入dcoker进行操作, 注意, 登陆后是root, 操作小心...
 docker exec -it CONTAINER_ID /bin/bash
@@ -51,7 +51,7 @@ docker exec -it CONTAINER_ID /bin/bash
 
 登陆后安装vim, 对环境变量作基本设置, 然后开始安装R
 
-```shell
+```bash
 yum -y install epel-release
 # 更改镜像源
 yum install wget
@@ -67,14 +67,14 @@ yum -y install R
 
 补充R包安装需要的一些系统软件包
 
-```shell
+```bash
 mkdir /usr/share/doc/R-3.5.0/html
 yum install -y openssl-devel libcurl-devel libxml2-devel gsl-devel
 ```
 
 之后进入R开始安装`sscClust`(安装R本来就会自动安装一大堆依赖, 安装这个包的时候会有更多依赖...)
 
-```R
+```r
 options(repos="https://mirrors.shu.edu.cn/CRAN/")
 options(BioC_mirror="http://mirrors.ustc.edu.cn/bioc/")
 source("http://bioconductor.org/biocLite.R")
@@ -85,6 +85,6 @@ devtools::install_github("Japrin/sscClust")
 
 如果网络没有特别问题, `sscClust`应该是能够顺利安装的, 最后将docker容器的更改保存为一个镜像(image), 保存完成后会显示一串sha256值, 使用`docker images`可看到已经保存下来的镜像
 
-```shell
+```bash
 docker commit CONTAINER_ID r/sscclust
 ```

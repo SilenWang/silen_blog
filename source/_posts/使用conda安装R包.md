@@ -16,7 +16,7 @@ tags: ['R', 'conda', 'jupyter']
 - conda有两个...emmm我也不知道能不能说是发行版? 一个是ancoda, 另一个是minicoda, 可以理解是完整安装和最小安装的区别, ancoda自带一套异常完整的python环境, 连jupyter都打包好了, 而miniconda除了最基本的pyton, 好像没太多别的东西了, 因为我主要是用来装r的, 所以选择了[miniconda](https://conda.io/miniconda.html)
 - 下载到的linux安装文件是一个异常大的shell脚本, 直接运行即可开始安装
 - 安装完之后即可调用conda命令安装想要的东西, 比如我就可以开始安装r了
-```shell
+```bash
 conda install r
 ```
 
@@ -40,12 +40,12 @@ show_channel_urls: true
 R放在集群上, 调试起来多少有些不便, 毕竟我习惯了Rstudio或者jupyter notebook的那种编写边测试的方式. 正好conda也能装jupyter, 就搜索了一下远程访问的配置方式.
 
 - 首先肯定使用conda安装jupyter了
-```shell
+```bash
 conda install jupyter
 ```
 
 - 完成后对jupyter进行配置
-```shell
+```bash
 # 生成配置文件
 jupyter notebook --generate-config
 # 设定密码, 根据提示输入两次即可
