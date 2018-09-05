@@ -123,7 +123,7 @@ excerptLength: 120
 toc: true
 
 ## 代码高亮配置
-highlightTheme:
+highlightTheme: normal
 
 ## bootstrap配置
 bootstrap:
