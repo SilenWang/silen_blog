@@ -45,7 +45,7 @@ highlight:
   tab_replace:
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
-  theme: 'atom-dark'
+  theme: 'xonokai'
   line_number: true    # default false
 
 # Home page setting
