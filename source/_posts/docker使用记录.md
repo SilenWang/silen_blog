@@ -68,14 +68,13 @@ yum -y install R
 补充R包安装需要的一些系统软件包
 
 ```bash
-mkdir /usr/share/doc/R-3.5.0/html
 yum install -y openssl-devel libcurl-devel libxml2-devel gsl-devel
 ```
 
 之后进入R开始安装`sscClust`(安装R本来就会自动安装一大堆依赖, 安装这个包的时候会有更多依赖...)
 
 ```r
-options(repos="https://mirrors.shu.edu.cn/CRAN/")
+options("repos" = c(CRAN="https://mirrors.ustc.edu.cn/CRAN/"))
 options(BioC_mirror="http://mirrors.ustc.edu.cn/bioc/")
 source("http://bioconductor.org/biocLite.R")
 install.packages("devtools")
