@@ -107,7 +107,7 @@ branding:
 
 ## 设置banner背景图片
 banner:
-    img: http://7xluqf.com1.z0.glb.clouddn.com/banner.jpg
+    img: https://raw.githubusercontent.com/SilenWang/silen_blog/master/pics/banner.jpg
 
 ## 首页列表底部面板
 homePanel: true
