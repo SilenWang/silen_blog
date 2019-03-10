@@ -68,7 +68,21 @@ rule samtools_flt:
         "samtools sort {path}/{input} > {output}".format(path=path)
 ```
 
-即将python中的字符串格式化和snakamake的字符串格式化混用. 这种写法snakemake是没法正确处理的, 一个字符串要么只能使用内置的格式化方式, 要么只能用python原有的格式化方式, 上面那种写法, 会按照python原有的方式去处理, 即根据`format()`内给的信息去填充字符串, 没有指定的`input`和`output`会作留空处理.
+即将python中的字符串格式化和snakamake的字符串格式化混用. ~~这种写法snakemake是没法正确处理的, 一个字符串要么只能使用内置的格式化方式, 要么只能用python原有的格式化方式, 上面那种写法, 会按照python原有的方式去处理, 即根据`format()`内给的信息去填充字符串, 没有指定的`input`和`output`会作留空处理.~~ snakemake是可以处理这种情况的, 但是写法上要进行变更:
+
+```python
+path="path/to/input"
+
+rule samtools_flt:
+    input: 
+        "test.bam"
+    output:
+        "test.flt.bam"
+    shell:
+        "samtools sort {path}/{{input}} > {{output}}".format(path=path)
+```
+
+用python比较多的话, 一定了解`"{{}}"`代表不对字符串内的`{}`进行转义, 而当作一般符号. 结合snakemake的执行逻辑, 可知snakemake会自行处理一次纯字符串的输入, 而这一切发生在python部分执行完之后.
 
 ### snakemake的流程执行逻辑
 
@@ -109,7 +123,9 @@ rule samtools_sort:
 
 由于snakefile内是可以直接写python代码的, 所以对于用惯了python的人, 可以比较轻松的使用生成式之类的东西快速生成批量处理时需要的信息. 而对于没有太多python基础的人, snakemake也准备了一些内建的函数来快速实现类似的功能. 比如:
 
-- 
+- expand: 
+    + 用来生成字符串列表的函数, 相当于组合了列表生成试和格式化字符串, 默认情况下会将多个替换变量两两组合, 但也可以设置为类似`zip()`的模式, 即依次组对, 可以满足不同情况下的需要
+    + `samples = expand("{sample_id}.{fq}.fasta", sample_id=['sam1', 'sam2'], fq=['fq1', 'fq2'])`
 
 ### 多样品/多文件的批量处理
 
@@ -136,7 +152,10 @@ rule complex_conversion:
 
 ## snakemake & 容器
 
-除了conda, snakamake还支持使用容器来进行依赖部署. 只不过这个容器并非最火热的docker, 而是XXXX. 我也是用了snakemake才知道原来docker只是容器计数中的一种实现, 只是它特别的广为人知. snakemake支持的XXXX与docker相比的特点是:
+除了conda, snakamake还支持使用容器来进行依赖部署. 只不过这个容器并非最火热的docker, 而是singularity. 我也是用了snakemake才知道原来docker只是容器计数中的一种实现, 只是它特别的广为人知. snakemake支持的singularity与docker相比的特点是:
+
+- 不需要root权限
+- 更低的资源占用
 
 该项目从3.0版本开始从c++迁移到了go, 我虽然克服了网络压力装上了, 但应该是由于发行版的问题不能正常使用, 所以暂时没有实际的使用经验.
 
