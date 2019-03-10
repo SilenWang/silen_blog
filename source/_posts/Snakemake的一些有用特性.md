@@ -1,13 +1,12 @@
 ---
 title: Snakemake的一些有用特性
-categories: Script / Bioinfomatic
+categories: Script
 date: 2019-03-06 23:41:40
 tags: ['python', 'snakemake']
 ---
 
 在使用snakemake一段时间后, 发现其中确实有很多实用的特性来方便平常的分析, 做个记录整理
 
-<!-- 摘要部分 -->
 <!-- more -->
 
 ## 资源限制
