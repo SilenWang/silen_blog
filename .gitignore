@@ -69,3 +69,6 @@ typings/
 # next.js build output
 .next
 >>>>>>> e87a83ae4abf304d2ade7b686946bfaf553f2cfb
+
+# theme
+themes/yelee

@@ -82,7 +82,7 @@ rule samtools_flt:
         "samtools sort {path}/{{input}} > {{output}}".format(path=path)
 ```
 
-用python比较多的话, 一定了解`"{{}}"`代表不对字符串内的`{}`进行转义, 而当作一般符号. 结合snakemake的执行逻辑, 可知snakemake会自行处理一次纯字符串的输入, 而这一切发生在python部分执行完之后.
+用python比较多的话, 一定了解`"\{\{\}\}"`代表不对字符串内的`{}`进行转义, 而当作一般符号. 结合snakemake的执行逻辑, 可知snakemake会自行处理一次纯字符串的输入, 而这一切发生在python部分执行完之后.
 
 ### snakemake的流程执行逻辑
 
