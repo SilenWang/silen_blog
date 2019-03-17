@@ -24,4 +24,4 @@ git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 
 `bash-it -h`可查看所有可使用的命令, `bash-it show plugins`可以查看所有可用的插件, 目前我只用了`base`和`git`, 其他的日后再慢慢了解好了
 
-![display](https://raw.githubusercontent.com/SilenWang/silen_blog/master/pics/bash_it.png)
+![display](https://raw.githubusercontent.com/SilenWang/Gallary/master/bash_it.png)

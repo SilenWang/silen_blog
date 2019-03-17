@@ -31,4 +31,4 @@ hexo创建的博客有个默认的主题, 不过一般我们不会去用它就�
 
 在很多情况下, 都可能会涉及到在多个地方编辑博客内容的问题. 这个就很简单了....直接git整个项目就可以了, 唯一需要注意的是, 如果使用git安装主题, theme下每个文件夹本来就是一个git项目, 我个人觉得在建立整个项目的git时在`.gitignore`中设置主题文件夹内所有文件被忽略, 然后主题的`_config.yml`另外备份一下比价好
 
-![new_blog](https://raw.githubusercontent.com/SilenWang/silen_blog/master/pics/new_blog.png)
+![new_blog](https://raw.githubusercontent.com/SilenWang/Gallary/master/new_blog.png)
