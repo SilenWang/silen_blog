@@ -85,6 +85,8 @@ summary(model)$coefficients
 
 - 解决分类不均衡的方案有两类: [oversampling the minority class](https://www.marcoaltini.com/blog/dealing-with-imbalanced-data-undersampling-oversampling-and-proper-cross-validation)以及fixing the model by altering the [hyperplane (SVM)]() or [changing priors (Bayes)]()
 
+- 根据文章的描述, 对少数项目的`oversampling`和多数项的`undersampling`可以一定程度上提高检测结果准确性, 但是在测试用的数据中没有好到可以使用.
+
 
 ```r
 library(pscl)
@@ -93,5 +95,6 @@ pR2(model)
 
 ### 其它材料
 
-[逻辑回归算法](https://blog.mythsman.com/2016/01/28/1/)
-[机器学习中的交叉验证思想](https://blog.mythsman.com/2016/02/02/1/)
+- [逻辑回归算法](https://blog.mythsman.com/2016/01/28/1/)
+- [机器学习中的交叉验证思想](https://blog.mythsman.com/2016/02/02/1/)
+- [Dealing with unbalanced data in machine learning](https://www.r-bloggers.com/dealing-with-unbalanced-data-in-machine-learning/)
