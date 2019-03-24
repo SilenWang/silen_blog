@@ -16,7 +16,9 @@ tags: "R"
 ## 模型构建
 本次我使用的逻辑回归因变量是二分类的, 所以使用基本包的`glm()`函数就够了, 具体模型构建使用:
 
+
 - `family=binomial(link='logit')`指定调用二分类逻辑回归模型
+
 
 ```r
 model <- glm(y ~ x1 + x2, family=binomial(link='logit'), data=fit_data)
@@ -71,20 +73,21 @@ summary(model)$coefficients
 
 ### [Logistic Regression](http://r-statistics.co/Logistic-Regression-With-R.html)
 
-- 二分类变量的均一性: 逻辑回归中因变量的两个分类均衡的话, 分类结果会比较理想. 因此进行回归前应先查勘一下两个分类的情况: `table(your_data$val)`. 如果不均衡的话, 理论上应该对例数更大的一个分类进行抽样, 样本量以另一个分类的例数作参考.
 
+- 二分类变量的均一性: 逻辑回归中因变量的两个分类均衡的话, 分类结果会比较理想. 因此进行回归前应先查勘一下两个分类的情况: `table(your_data$val)`. 如果不均衡的话, 理论上应该对例数更大的一个分类进行抽样, 样本量以另一个分类的例数作参考.
 - 多重共线性检测: 逻辑回归和线性回归一样需要例行检测一下共线性的问题, 博客中似乎推荐`VIF<4`
+
 
 ### [How to perform a Logistic Regression in R](https://www.r-bloggers.com/how-to-perform-a-logistic-regression-in-r/)
 
 - $R^2$获取: 逻辑回归不能计算$R^2$, 文章说可以计算*McFadden $R^2$ index*替代. 关于这个指标的更多信息: [R squared in logistic regression](http://thestatsgeek.com/2014/02/08/r-squared-in-logistic-regression/)
 
+
 ### [Logistic regression on biased data](https://datascience.stackexchange.com/questions/12234/logistic-regression-on-biased-data)
 
+
 - 不均衡分类中评价指标的选择: 在分类不均衡时, `accuracy`并不是一个好的评价指标, 推荐使用`F1-score`
-
 - 解决分类不均衡的方案有两类: [oversampling the minority class](https://www.marcoaltini.com/blog/dealing-with-imbalanced-data-undersampling-oversampling-and-proper-cross-validation)以及fixing the model by altering the [hyperplane (SVM)]() or [changing priors (Bayes)]()
-
 - 根据文章的描述, 对少数项目的`oversampling`和多数项的`undersampling`可以一定程度上提高检测结果准确性, 但是在测试用的数据中没有好到可以使用.
 
 
@@ -94,6 +97,7 @@ pR2(model)
 ```
 
 ### 其它材料
+
 
 - [逻辑回归算法](https://blog.mythsman.com/2016/01/28/1/)
 - [机器学习中的交叉验证思想](https://blog.mythsman.com/2016/02/02/1/)
