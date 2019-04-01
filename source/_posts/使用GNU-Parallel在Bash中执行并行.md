@@ -7,7 +7,7 @@ tags: ["bash", "并行计算"]
 
 之前已经在R和Python中都使用过并行了, 我是最近才知道原来Bash下面也有简单好用的并行程序: *GNU Parallel*[^1]. 这是一个Perl实现的程序, 可以方便的将Bash中各种命令并行执行.
 
-[^1]: https://doi.org/10.5281/zenodo.1146014
+[^1]: [GNU Parallel on Zeondo](https://doi.org/10.5281/zenodo.1146014)
 
 <!-- 摘要部分 -->
 <!-- more -->
