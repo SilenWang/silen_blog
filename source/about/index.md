@@ -69,7 +69,7 @@ date: 2019-03-11 00:03:29
     - base
     - 并行化: Parallel
     - 绘图: ggplot2, ggpubr, ggthemes
-    - 单细胞数据分析: Seruat3
+    - 单细胞数据分析: Seurat3
 
 
 - 流程构建/部署:
