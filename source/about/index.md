@@ -51,10 +51,12 @@ date: 2019-03-11 00:03:29
 
 ## 掌握技能
 
+
 - 脚本/编程语言/工具
     + 熟练: Python, R, Bash
     + 入门: 正则表达式, Graphviz
     + 上手中: Julia, Go
+
 
 - 主力开发语言中有使用经验的模块
   - Python
@@ -91,6 +93,7 @@ date: 2019-03-11 00:03:29
     - BED文件操作: bedtools
     - 变异注释: ANNOVAR/Snpeff
     - UMI处理相关: UMI-tools/fgbio
+    
     
 - 静态博客/文档撰写
   - hexo
