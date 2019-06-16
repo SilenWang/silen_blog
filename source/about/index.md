@@ -32,7 +32,6 @@ date: 2019-03-11 00:03:29
     3. 二代测序分析用更具开发(Python / R / Julia / Shell)细胞样品测序数据拆分及质量控制
     4. 原始测序数据(fastq)比对, 及质量控制
     5. UMI数据 / Molecular Barcode数据处理
-
   - 分析流程相关
     1. 对现有生物信息分析流程Debug
     2. 编写新的分析模块并整合进流程框架
@@ -41,7 +40,6 @@ date: 2019-03-11 00:03:29
     5. 分析用软件性能测试及分析结果比较
     6. 流程文档的编写与维护
     7. 单细胞测序分析流程的搭建及测试
-
   - 算法及工具开发:
     1. UMI去重算法比较及复现
     2. 质控图形绘制工具开发
@@ -54,8 +52,8 @@ date: 2019-03-11 00:03:29
 
 - 脚本/编程语言/工具
     + 熟练: Python, R, Bash
-    + 入门: 正则表达式, Graphviz
-    + 上手中: Julia, Go
+    + 入门: 正则表达式, Graphviz, Go
+    + 上手中: Julia, LaTex
 
 
 - 主力开发语言中有使用经验的模块
@@ -91,7 +89,7 @@ date: 2019-03-11 00:03:29
     - DNA结构变异/融合基因检测: CREAST/lumpy-sv/Smoove/SViCT/SvABA/Manta/Delly/GeneFuse/Factera/sv-tools
     - BAM/VCF文件操作: Picard/Samtools/Bcftools/Sambamba/Pysam/Biogo
     - BED文件操作: bedtools
-    - 变异注释: ANNOVAR/Snpeff
+    - 变异注释: ANNOVAR/snpEff
     - UMI处理相关: UMI-tools/fgbio
     
     
@@ -99,3 +97,8 @@ date: 2019-03-11 00:03:29
   - hexo
   - mkdocs
   - gitbook
+
+
+## 个人项目
+
+- [FUEX](https://github.com/SilenWang/FUEX): Fusion extracter for SV detection tools
