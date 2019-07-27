@@ -6,6 +6,4 @@ node_modules/
 public/
 .deploy*/
 
-# theme
-themes/yelee
 themes/material-x
