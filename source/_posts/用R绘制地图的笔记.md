@@ -1,7 +1,7 @@
 ---
 title: 用R绘制地图的笔记
 date: 2018-07-29 00:38:09
-tags: [R]
+tags: [r]
 categories: Script
 ---
 

@@ -2,7 +2,7 @@
 title: Git使用笔记
 categories: Others
 date: 2018-09-28 12:34:12
-tags: ['Git']
+tags: ['git']
 ---
 
 很早之前就看过Git的教程, 一直没实际使用过, 现在用起来, 感觉自己有那么点像程序员了呢~

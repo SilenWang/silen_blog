@@ -2,7 +2,7 @@
 title: 换新主题&Hexo框架搭建博客记录
 categories: Others
 date: 2019-03-12 00:20:02
-tags: "Hexo"
+tags: "hexo"
 ---
 
 昨天因为markdown文章里面用了无法解析的符号, 导致我以为hexo挂了, 遂折腾换了新的主题...顺便又回顾了一下搭建过程

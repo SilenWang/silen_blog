@@ -2,7 +2,7 @@
 title: Bash小技巧两则
 categories: Script
 date: 2019-06-05 21:17:03
-tags: ["Linux", "Bash"]
+tags: ["linux", "bash"]
 ---
 
 使用Bash串联各个程序的过程中总是能发现一些神奇好用的技巧, 这里记录两个.

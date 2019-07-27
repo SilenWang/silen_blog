@@ -2,7 +2,7 @@
 title: 使用Caddy设置https
 categories: Others
 date: 2019-05-07 21:59:51
-tags: ["Caddy", "https"]
+tags: ["caddy", "https"]
 ---
 
 之前自建了一个gogs, 但是并没有弄https, 直接用的http, 上次自己试了一下发现截密码太容易了...所以思考了一下...还是弄个域名然后上了https...

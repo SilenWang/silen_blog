@@ -1,7 +1,7 @@
 ---
 title: Gogs部署
 date: 2018-09-21 18:32:00
-tags: [Gogs, VPS]
+tags: [gogs, vps]
 categories: Others
 ---
 
