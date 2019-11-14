@@ -7,7 +7,7 @@ links:
     items:
     - name: BlingArida # 博客名
       avatar: https://avatars2.githubusercontent.com/u/46019374?s=460&v=4 # 头像链接
-      url: https://github.com/BlingArida # 博客链接
+      url: https://blingarida.github.io # 博客链接
       backgroundColor: '#FF007F' # 卡片背景颜色
       textColor: '#fff'  # 卡片文字颜色
       tags:     # 标签
