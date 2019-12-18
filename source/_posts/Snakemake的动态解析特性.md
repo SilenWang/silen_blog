@@ -1,7 +1,7 @@
 ---
 title: Snakemake的动态解析特性
 categories: Script
-date: 2019-11-17 23:52:31
+date: 2019-11-24 23:00:31
 tags: ['Python', 'snakemake']
 ---
 
@@ -69,6 +69,73 @@ rule cat:
 
 官方文档的例子基本也是这个原理, 只不过其`checkpoint`生成了目录结果, 以方便重解析生成的动态文件.
 
-明天有空的话写一个实际的拆分后比对的例子再更新上来.
+最后再补充一个bwa的例子:
 
-以上~
+```python
+from os import path
+from glob import glob
+
+wildcard_constraints:
+    sample=r"[A-Z,a-z,0-9,-]+"
+
+
+rule all:
+    input:
+        "{sample}.srt.bam".format(sample="NL180614-2")
+
+checkpoint split:
+    input:
+        fq1="{sample}_S12_L001_R1_001.fastq.gz",
+        fq2="{sample}_S12_L001_R2_001.fastq.gz",
+    output:
+        directory("{sample}_tmp")
+    shell:
+        '''
+        mkdir -p {output}/R1
+        mkdir -p {output}/R2
+        zcat {input.fq1} | split -l 1000000 /dev/stdin {output}/R1/split.
+        zcat {input.fq2} | split -l 1000000 /dev/stdin {output}/R2/split.
+        '''
+
+
+rule bwa:
+    input:
+        r1="{sample}_tmp/R1/split.{split}",
+        r2="{sample}_tmp/R2/split.{split}",
+    output:
+        "{sample}_tmp/split.{split}.srt.bam"
+    shell:
+        '''
+        bwa mem -t 4 -M \\
+            -R "@RG\\tID:{wildcards.sample}\\tPL:Illumina\\tPU:{wildcards.sample}\\tSM:{wildcards.sample}" \\
+            /home/silen/git/Bio_Test/hg38-bwa/hg38.fa \\
+            {input.r1} \\
+            {input.r2} \\
+        | samtools view -Sb -@ 4  \\
+        | samtools sort -@ 4  \\
+        > {output}
+        '''
+
+
+def get_split_files(wildcards):
+    split_dir = checkpoints.split.get(**wildcards).output[0]
+    split_files_r1 = glob(f"{split_dir}/R1/split.*")
+    split_tag = [s.split(".")[-1] for s in split_files_r1]
+    split_bams = [path.join(split_dir,f"split.{tag}.srt.bam") for tag in split_tag]
+    return split_bams
+
+
+rule cat:
+    input:
+        get_split_files
+    output:
+        "{sample}.srt.bam"
+    shell:
+        '''
+        samtools merge -f {output} {input}
+        '''
+```
+
+目前已经在自己的一些项目中使用过这个特性了, 实际使用的感受是, 看上去很简单通用, 但是实际上碰到不同的问题还要结合软件情况不同考虑...
+
+比如上面这个bwa的例子就尚有一个问题要解决: 这里生成的目录其实是临时目录, 我希望能在使用后删去, 但是现在`temp`和`directory`两个关键字是冲突的, 而临时文件夹中的文件是动态的, 没有办法直接指定, 因此暂时没法利用snakemake自有的特性自动删除.
