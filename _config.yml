@@ -79,9 +79,8 @@ theme: material-x
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  - type: git
-    repo: git@github.com:silenwang/silenwang.github.io.git
-    branch: master
-  - type: git
-    repo: git@gitee.com:silenwang/silenwang.git
-    branch: master
+  type: git
+  repo:
+    git@github.com:silenwang/silenwang.github.io.git
+    git@gitee.com:silenwang/silenwang.git
+  branch: master
