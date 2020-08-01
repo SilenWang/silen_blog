@@ -2,10 +2,10 @@
 title: Pandas操作笔记
 categories: Script
 date: 2018-08-29 12:16:24
-tags: ['python', 'pandas']
+tags: ['Python', 'Pandas']
 ---
 
-最近用pandas比较多, 把常用的东西摘抄一下备查
+最近用Pandas比较多, 把常用的东西摘抄一下备查
 
 <!-- more -->
 

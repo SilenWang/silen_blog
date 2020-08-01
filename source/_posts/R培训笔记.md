@@ -1,7 +1,7 @@
 ---
 title: R培训笔记
 date: 2018-07-29 00:35:55
-tags: ['r']
+tags: ['R']
 categories: Script
 ---
 
