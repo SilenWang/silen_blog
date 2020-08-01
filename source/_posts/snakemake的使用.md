@@ -2,7 +2,7 @@
 title: snakemake的使用
 categories: Bioinfomatic
 date: 2018-10-30 12:40:03
-tags: ['python', 'snakemake']
+tags: ['Python', 'snakemake']
 ---
 
 写流程是生物信息分析中经常需要涉及的工作, 一个成熟完善的好工具可以使工作的效率大大提高.

@@ -2,7 +2,7 @@
 title: Python命令行解析
 categories: Script
 date: 2018-10-22 12:12:50
-tags: ['python', 'argparse', '参数解析']
+tags: ['Python', 'argparse', '参数解析']
 ---
 
 一直都在用`argparse`写命令行解析, 但是直到前段时间才发现原来它可以用来写子命令

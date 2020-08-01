@@ -1,6 +1,6 @@
 ---
 title: barrier-synergy的一个开源复刻
-categories: Script / Bioinfomatic / Others / Daily
+categories: Others
 date: 2020-02-23 22:45:41
 tags:
 ---

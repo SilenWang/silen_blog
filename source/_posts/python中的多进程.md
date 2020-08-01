@@ -2,7 +2,7 @@
 title: python中的多进程
 categories: Script
 date: 2019-02-12 23:45:59
-tags: ["python", "多进程", "并行计算"]
+tags: ["Python", "多进程", "并行计算"]
 ---
 
 R中可以方便的使用多进程, Python中也有类似的东西.
