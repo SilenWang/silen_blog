@@ -32,8 +32,8 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  # background: https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg
-  background: https://i0.hdslb.com/bfs/album/a3ac63512142706c657e8bcedb8ffdaf4d713315.png
+  background: https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg
+  # background: https://i0.hdslb.com/bfs/album/a3ac63512142706c657e8bcedb8ffdaf4d713315.png
   logo:
   title: SilenHub
   subtitle: ''
@@ -76,6 +76,14 @@ pages:
     layout_scheme: traditional # simple: 简单布局, traditional: 传统布局,  sites: 网站卡片布局
 
 color_scheme:
+  # 通用颜色
+  common:
+    # 主题色
+    theme: '#1BC3FB'
+    # 链接色
+    link: '#2196f3'
+    # 按钮色
+    button: '#1BC3FB'
   light:
     site_inner: '#444'
 
