@@ -1,0 +1,91 @@
+navbar:
+  visiable: auto # always, auto
+  logo: # choose [img] or [icon + title]
+    img:
+    icon:
+    title:
+  menu:
+    - name: 博客
+      icon: fas fa-rss
+      url: /
+    - name: 分类
+      icon: fas fa-folder-open
+      url: categories/
+    - name: 标签
+      icon: fas fa-tags
+      url: tags/
+    - name: 归档
+      icon: fas fa-archive
+      url: archives/
+    - name: 友链
+      icon: fas fa-link
+      url: friends/
+    - name: 关于
+      icon: fas fa-info-circle
+      url: about/
+  search: 输入关键词...   # Search bar placeholder
+
+cover:
+  height_scheme: full # full, half
+  layout_scheme: search # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
+  display:
+    home: true
+    archive: true
+    others: false # can be written in front-matter 'cover: true'
+  # background: https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg
+  background: https://i0.hdslb.com/bfs/album/a3ac63512142706c657e8bcedb8ffdaf4d713315.png
+  logo:
+  title: SilenHub
+  subtitle: ''
+  search: 输入关键词查找... # search bar placeholder
+  features:
+    - name: 博客归档
+      icon: fas fa-archive
+      img: #
+      url: /archives/
+    - name: 技能手册
+      icon: fas fa-book
+      img: #
+      url: /handbook/
+    - name: 主题源码
+      icon: fab fa-github
+      img: #
+      url: https://github.com/volantis-x/hexo-theme-volantis/
+
+sidebar:
+  widget_library:
+    blogger:
+      class: blogger
+      display: [desktop, mobile] # [desktop, mobile]
+      avatar: https://avatars.githubusercontent.com/u/12797055?s=460&u=7de48cdd15f6aadddefe92a0dfbcc70fc82bac05&v=4
+      shape: circle # circle, rectangle
+      url: /about/
+      title:
+      subtitle:
+      jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      social:
+        - icon: fas fa-envelope
+          url: mailto:qiumin14@163.com
+        - icon: fab fa-github
+          url: https://github.com/SilenWang/
+
+
+pages:
+  # 友链页面配置
+  friends:
+    layout_scheme: traditional # simple: 简单布局, traditional: 传统布局,  sites: 网站卡片布局
+
+color_scheme:
+  light:
+    site_inner: '#444'
+
+comments:
+  service:
+
+article:
+  body:
+    meta_library:
+      author:
+        avatar: https://avatars.githubusercontent.com/u/12797055?s=60&v=4
+        name: Silen Wang
+        url: /

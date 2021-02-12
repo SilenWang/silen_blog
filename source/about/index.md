@@ -1,8 +1,8 @@
 ---
-layout: page
-title: 关于我
-body: [article, grid, comments]
-sidebar: false
+layout: docs
+seo_title: 关于我
+bottom_meta: false
+sidebar:
 ---
 
 ## 个人简介
@@ -31,7 +31,7 @@ sidebar: false
   - 数据处理
     1. cfDNA/FFPE/白细胞样品测序数据处理
     2. 二代测序分析流程构建 / 测试
-    3. 二代测序分析用更具开发(Python / R / Julia / Shell)细胞样品测序数据拆分及质量控制
+    3. 二代测序分析用工具开发(Python / R / Julia / Shell)细胞样品测序数据拆分及质量控制
     4. 原始测序数据(fastq)比对, 及质量控制
     5. UMI数据 / Molecular Barcode数据处理
   - 分析流程相关
@@ -48,7 +48,16 @@ sidebar: false
     3. 基于机器学习的变异结果筛选工具的开发
     4. 已有分析工具的效能优化(并行化)
 
-- 2019.07-至今 杭州纽安津生物科技有限公司 生物信息工程师
+- 2019.07-2020.03 杭州纽安津生物科技有限公司 生物信息工程师
+  1. 基于NGS的cfDNA分析方案调研, 分析流程搭建
+  2. 新生抗原相关数据统计分析
+  3. 生物信息分析程序维护
+  4. 用药指导报告数据库维护
+- 2020.03-至今 杭州纽安津生物科技有限公司 生信主管
+  1. 基于NGS的HLA分型/定量模块开发
+  2. 基于flask的生信分析工具后端开发
+  3. 新生抗原筛选模块开发
+  4. 生信分析主流程维护与升级
 
 
 ## 掌握技能
@@ -63,12 +72,14 @@ sidebar: false
 - 主力开发语言中有使用经验的模块
   - Python
     - 并行化: Multiprocess, Ray(上手中)
-    - 二代测序常用文件处理: Pysam
-    - 常用格式处理/常用数据库爬取: Biopython
-    - 数据处理/统计计算: Pandas
+    - 二代测序常用文件处理: Pysam, PyVCF, CyVCF, Biopython
+    - 爬虫: scapy, Selenium
+    - 数据处理/统计计算: Pandas, numpy, math
     - 绘图: Plotly
-    - 机器学习: skitlearn(上手中)
+    - ~机器学习: skitlearn(上手中)~
     - 图像处理: pillow
+    - web框架: flask
+    - 办公自动化: docxtpl
   - R
     - base
     - 并行化: Parallel
@@ -77,26 +88,32 @@ sidebar: false
 
 
 - 流程构建/部署:
-    - Linux系统安装/配置管理(Redhet系列, Debian系列, Arch系列)
+    - Linux系统安装/配置管理(Redhat系列, Debian系列, Arch系列)
     - Snakemake: 能熟练编写Snakefile, 能够使用Snakemake进行流程构建和管理, 有一定Snakemake的实际运用经验, 可以根据个人工作经验实现一些Snakemake暂时未实现的功能
     - ~~WDL~~: 由于WDL没有Python解释器, 暂时放弃了
-    - Docker: 有实际的容器部署经验, 能够通过docker-compose文件快速启动和部署应用. 能够通过撰写dockfile或直接进入容器内进行流程部署.
-    - Conda: 有较充足的实际使用经验, 能够使用conda快速部署分析用软件及流程.
+    - Docker/Singularity: 有实际的容器部署经验, 能够通过docker-compose文件快速启动和部署应用. 能够通过撰写dockfile或直接进入容器内进行流程部署, 可使用Singularity将Docker镜像转换为Singularity镜像并使用.
+    - Conda/Mamba: 有较充足的实际使用经验, 能够使用conda快速部署分析用软件及流程.
     - Git: 有使用Git进行项目代码/文档管理的经验, 懂得基本的创建/推送/合并的方法
 
 
 - 掌握生物信息软件/模块(使用过及使用比较多的都有)
     - 二代测序数据拆分: bcl2fastq
-    - 数据质控: fastp/fastQC
-    - 序列比对: bwa/bowtie
-    - SNP/INDEL检测: Samtools/GATK(Mutect2)/Vardict
+    - 数据质控: fastp/fastQC/MultiQC
+    - 序列比对: bwa/bowtie/STAR/Salmon/kallisto
+    - SNP/INDEL检测: Samtools/GATK(Mutect2)/Vardict/Vacscan/Strelka
     - DNA结构变异/融合基因检测: CREAST/lumpy-sv/Smoove/SViCT/SvABA/Manta/Delly/GeneFuse/Factera/sv-tools
     - BAM/VCF文件操作: Picard/Samtools/Bcftools/Sambamba/Pysam/Biogo
     - BED文件操作: bedtools
-    - 变异注释: ANNOVAR/snpEff
+    - 变异注释: ANNOVAR/snpEff/VEP
     - UMI处理相关: UMI-tools/fgbio
+    - 测序数据遗传一致性排查: plink/NGSCheckMate/sa
+
+
+- 其他工作经历
+  - 专利稿撰写经历
+  - 软著撰写经历
     
-    
+
 - 静态博客/文档撰写
   - hexo
   - mkdocs
