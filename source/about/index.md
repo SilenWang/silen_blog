@@ -74,14 +74,16 @@ sidebar:
   - Python
     - 并行化: Multiprocess, Ray(上手中)
     - 二代测序常用文件处理: Pysam, PyVCF, CyVCF, Biopython
-    - 爬虫: scrapy, Selenium
+    - 爬虫: 
+      + scrapy: 有数个小型爬虫项目经验, 能使用scrapy完成静态页面, 未加密动态页面的爬取和数据
+      + 能使用splash, selenium配合scrapy完成动态页面数据的爬取
     - 数据处理/统计计算: Pandas, numpy, math
     - 绘图: Plotly
     - 数据交互展示: Dash
     - ~机器学习: skitlearn(上手中)~
     - 图像处理: pillow
     - web相关: flask / FastAPI
-    - 办公自动化: docxtpl
+    - 办公自动化: docxtpl, openpyxl
   - R
     - base
     - 并行化: Parallel
@@ -90,26 +92,29 @@ sidebar:
 
 
 - 流程构建/部署:
-    - Linux系统安装/配置管理(Redhat系列, Debian系列, Arch系列)
+    - Linux系统安装/配置管理: Redhat系发行版操作/维护, Debian系发行版安装/配置/维护, Arch系发行版安装/配置/维护
+    - HPC集群管理系统: 有SUN Grid Eengine使用, 维护经验
     - Snakemake: 能熟练编写Snakefile, 能够使用Snakemake进行流程构建和管理, 有一定Snakemake的实际运用经验, 可以根据个人工作经验实现一些Snakemake暂时未实现的功能
     - ~~WDL~~: 由于WDL没有Python解释器, 暂时放弃了
-    - Docker/Singularity: 有实际的容器部署经验, 能够通过docker-compose文件快速启动和部署应用. 能够通过撰写dockfile或直接进入容器内进行流程部署, 可使用Singularity将Docker镜像转换为Singularity镜像并使用.
+    - Docker/Singularity: 有实际的容器部署经验, 能够通过docker-compose文件快速启动和部署应用. 能够通过撰写dockfile或直接进入容器内进行流程部署(展示项目中有示例), 可使用Singularity将Docker镜像转换为Singularity镜像并使用.
     - Conda/Mamba: 有较充足的实际使用经验, 能够使用conda快速部署分析用软件及流程.
-    - Git: 有使用Git进行项目代码/文档管理的经验, 懂得基本的创建/推送/合并的方法
-
+    - Git: 有使用Git进行项目代码/文档管理的经验, 懂得基本的创建/推送/合并的方法, 使用过钩子特性运行一些自动化任务操作
 
 - 掌握生物信息软件/模块(使用过及使用比较多的都有)
     - 二代测序数据拆分: bcl2fastq
     - 数据质控: fastp/fastQC/MultiQC
-    - 序列比对: bwa/bowtie/STAR/Salmon/kallisto
-    - 序列处理: seqtk
+    - 序列比对: bwa/bowtie/STAR
+    - 表达量计算/分析: DESeq/DEXseq/Salmon/kallisto/htseq/Hisat
+    - 序列处理: seqtk/seqkit
     - SNP/INDEL检测: Samtools/GATK(Mutect2)/Vardict/Vacscan/Strelka
     - DNA结构变异/融合基因检测: CREAST/lumpy-sv/Smoove/SViCT/SvABA/Manta/Delly/GeneFuse/Factera/sv-tools
+    - CNV检测: CNVkit/PyLOH
     - BAM/VCF文件操作: Picard/Samtools/Bcftools/Sambamba/Pysam/Biogo
     - BED文件操作: bedtools
     - 变异注释: ANNOVAR/snpEff/VEP
     - UMI处理相关: UMI-tools/fgbio
-    - 测序数据遗传一致性排查: plink/NGSCheckMate/sa
+    - 克隆性: PyClone/SciClone/FastClone
+    - 测序数据遗传一致性排查: plink/NGSCheckMate
 
 
 - 其他工作经历
