@@ -61,14 +61,13 @@ sidebar:
   4. 生信分析主流程维护与升级
 
 
-## 掌握技能
+## 工作相关技能
 
 - 脚本/编程语言/工具
     + 熟练: Python, R, Bash
-    + 入门: 正则表达式, Graphviz, Go
+    + 入门: 正则表达式, Graphviz, Mermaid, Go
     + 上手中: kivy
     + 已弃坑: Julia, LaTex
-
 
 - 主力开发语言中有使用经验的模块
   - Python
@@ -89,7 +88,6 @@ sidebar:
     - 并行化: Parallel
     - 绘图: ggplot2, ggpubr, ggthemes
     - 单细胞数据分析: Seurat3
-
 
 - 流程构建/部署:
     - Linux系统安装/配置管理: Redhat系发行版操作/维护, Debian系发行版安装/配置/维护, Arch系发行版安装/配置/维护
@@ -115,13 +113,12 @@ sidebar:
     - UMI处理相关: UMI-tools/fgbio
     - 克隆性: PyClone/SciClone/FastClone
     - 测序数据遗传一致性排查: plink/NGSCheckMate
-
+    - 质谱鉴定: pFind/maxquant
 
 - 其他工作经历
   - 专利稿撰写经历
   - 软著撰写经历
     
-
 - 静态博客/文档撰写
   - hexo
   - mkdocs
