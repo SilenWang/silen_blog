@@ -50,8 +50,10 @@ proxy-groups:
 
 
 rules:
-  - IP-CIDR,192.168.0.111/16,NPS_SOCKS
+  - IP-CIDR,192.168.0.111/32,NPS_SOCKS
 ```
+
+- tips: 另外, ip规则如果匹配单个地址, 写法为`XXX.XXX.XXX.XXX/32`, 如果匹配整个网段, 则为`XXX.XXX.XXX.0/16`, 当然如果写了个具体地址配上`/16`, 整个网段都会被代理
 
 4. 重启`Clash`服务即可访问
 
