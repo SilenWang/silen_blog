@@ -1,0 +1,9 @@
+- group: 手癌症求生小分队
+  description:
+  items:
+    - title: 延期小公举 # 博客名
+      avatar: https://avatars2.githubusercontent.com/u/46019374?s=460&v=4 # 头像链接
+      url: https://blingarida.github.io # 博客链接
+    - title: 背锅女司机 # 博客名
+      avatar: https://avatars3.githubusercontent.com/u/49156666?s=400&v=4 # 头像链接
+      url: https://github.com/EclipseZhao # 博客链接

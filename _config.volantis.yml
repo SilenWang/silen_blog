@@ -36,7 +36,7 @@ cover:
   # background: https://i0.hdslb.com/bfs/album/a3ac63512142706c657e8bcedb8ffdaf4d713315.png
   logo:
   title: SilenHub
-  subtitle: ''
+  subtitle: '吃饭, 睡觉, 打游戏!'
   search: 输入关键词查找... # search bar placeholder
   features:
     - name: 博客归档
@@ -73,7 +73,7 @@ sidebar:
 pages:
   # 友链页面配置
   friends:
-    layout_scheme: sites # simple: 简单布局, traditional: 传统布局,  sites: 网站卡片布局
+    layout_scheme: simple # simple: 简单布局, traditional: 传统布局,  sites: 网站卡片布局
 
 ############################### Color Scheme ############################### > start
 color_scheme:
