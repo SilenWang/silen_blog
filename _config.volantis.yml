@@ -172,14 +172,11 @@ color_scheme:
 comments:
   title: <i class='fas fa-comments'></i> 评论
   subtitle: 留下友善的评论吧~
-  service: beaudar
-  beaudar:
+  service: utterances
+  utterances:
     repo: SilenWang/silenwang.github.io
     issue-term: pathname
     issue-number:
-    branch: main
-    position: top
-    order: desc
     theme:
       light: github-light
       dark: github-dark
