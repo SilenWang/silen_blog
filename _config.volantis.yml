@@ -73,7 +73,7 @@ sidebar:
 pages:
   # 友链页面配置
   friends:
-    layout_scheme: traditional # simple: 简单布局, traditional: 传统布局,  sites: 网站卡片布局
+    layout_scheme: sites # simple: 简单布局, traditional: 传统布局,  sites: 网站卡片布局
 
 ############################### Color Scheme ############################### > start
 color_scheme:
@@ -169,8 +169,21 @@ color_scheme:
     brightness: 70%
 ############################### Color Scheme ############################### > end
 
-comments:
-  service:
+comments: false
+#   title: <i class='fas fa-comments'></i> 评论
+#   subtitle: 留下友善的评论吧~
+#   service: beaudar
+#   beaudar:
+#     repo: SilenWang/silenwang.github.io
+#     issue-term: pathname
+#     issue-number:
+#     branch: main
+#     position: top
+#     order: desc
+#     theme:
+#       light: github-light
+#       dark: github-dark
+#     label: ✨💬✨
 
 article:
   body:
@@ -192,4 +205,4 @@ analytics:
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
   layout: [social, license, analytics, info, copyright]
-  copyright: '[Copyright © 2016-2022 Silen Wang](/)'
+  copyright: 'Copyright © 2016-2023 Silen Wang'
