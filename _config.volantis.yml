@@ -169,21 +169,21 @@ color_scheme:
     brightness: 70%
 ############################### Color Scheme ############################### > end
 
-comments: false
-#   title: <i class='fas fa-comments'></i> 评论
-#   subtitle: 留下友善的评论吧~
-#   service: beaudar
-#   beaudar:
-#     repo: SilenWang/silenwang.github.io
-#     issue-term: pathname
-#     issue-number:
-#     branch: main
-#     position: top
-#     order: desc
-#     theme:
-#       light: github-light
-#       dark: github-dark
-#     label: ✨💬✨
+comments:
+  title: <i class='fas fa-comments'></i> 评论
+  subtitle: 留下友善的评论吧~
+  service: beaudar
+  beaudar:
+    repo: SilenWang/silenwang.github.io
+    issue-term: pathname
+    issue-number:
+    branch: main
+    position: top
+    order: desc
+    theme:
+      light: github-light
+      dark: github-dark
+    label: ✨💬✨
 
 article:
   body:

@@ -575,10 +575,10 @@
   "resolved" "https://registry.npm.taobao.org/hexo-theme-landscape/download/hexo-theme-landscape-0.0.3.tgz"
   "version" "0.0.3"
 
-"hexo-theme-volantis@^4.3.1":
-  "integrity" "sha512-caZd9fTiK62ZdskgdD5zenbg8E208kwKYQx8aYgV3moj3cUO02HMyxTuRY0WPcph/q+2MKa+k7xzT6C+pxI4IQ=="
-  "resolved" "https://registry.npmmirror.com/hexo-theme-volantis/-/hexo-theme-volantis-4.3.1.tgz"
-  "version" "4.3.1"
+"hexo-theme-volantis@^5.0.0":
+  "integrity" "sha512-pnB5MnSRkQ8eQYnyDOZPJBEPFcF84HzrqgwDXSHp0Kygg1tryD6cbJrriBBuvQkzGaXC5pWeQcnk5cnE6Rpbfw=="
+  "resolved" "https://registry.npmmirror.com/hexo-theme-volantis/-/hexo-theme-volantis-5.7.7.tgz"
+  "version" "5.7.7"
 
 "hexo-util@^2.0.0", "hexo-util@^2.1.0", "hexo-util@^2.4.0", "hexo-util@latest":
   "integrity" "sha1-9cAJmgoXGLOtJwYeXk0fuet/K0E="
