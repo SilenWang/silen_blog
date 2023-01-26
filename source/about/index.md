@@ -7,10 +7,14 @@ sidebar:
 
 ## 个人简介
 - 自称: Silen Wang / Sylens Wong / 汪兴伦, 是一颗过得不是很开心的卤蛋!
-- 兴趣: 打游戏, 打游戏, 还是TMD 打、游、戏! 动漫也看, 但是最近感兴趣番的越来越少了... 比起看番剧现在更喜欢看番剧吐槽-_-...
-- 学习/工作路线: 公卫 -> 分子流病 -> 生信 -> 新生抗原 -> 杂七杂八  emmmm... 越来越杂乱了(下头的词云可见一斑)...
+- 兴趣: 打游戏, 打游戏, 还是TMD 打、游、戏!动漫也看, 但是最近感兴趣番的越来越少了... 比起看番剧现在更喜欢看番剧吐槽...
+- 学习/工作路线: 公卫 -> 分子流病 -> 生信 -> 新生抗原 -> 杂七杂八  emmmm... 越来越{% ruby 丰富|杂乱 %}了(下头的词云可见一斑)...
 
 ![摘要词云](https://raw.githubusercontent.com/silenwang/Gallary/master/2022/04/upgit_abs_20220405_1649148797.png)
+
+- GitHub:
+
+{% ghcard SilenWang %} 
 
 ## 教育经历
 2009.09-2014.06 广东药学院(现广东药科大学) 公共卫生学院 预防医学 本科
@@ -131,10 +135,6 @@ sidebar:
 
 - 工作后实际可展示的东西真不是很多... 毕竟写东西是迫于生计, 打游戏才是终极目的hhhhhhh
 
-{% githubrepo 'SilenWang/FUEX' %}
-
-{% githubrepo 'SilenWang/Risk_Region' %}
-
-{% githubrepo 'SilenWang/CSSN_Spider' %}
-
-{% githubrepo 'SilenWang/dgidb-docker' %}
+|{% ghcard 'SilenWang/FUEX' %}|{% ghcard 'SilenWang/Risk_Region' %}|
+| -- | -- |
+|{% ghcard 'SilenWang/CSSN_Spider' %}|{% ghcard 'SilenWang/dgidb-docker' %}|
