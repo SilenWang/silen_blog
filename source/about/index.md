@@ -7,9 +7,10 @@ sidebar:
 
 ## 个人简介
 - 自称: Silen Wang / Sylens Wong / 汪兴伦, 是一颗过得不是很开心的卤蛋!
-- 学习/工作路线: 公卫 -> 分子流病 -> 生信 -> 新生抗原 -> 杂七杂八  emmmm... 越来越杂乱了...
 - 兴趣: 打游戏, 打游戏, 还是TMD 打、游、戏! 动漫也看, 但是最近感兴趣番的越来越少了... 比起看番剧现在更喜欢看番剧吐槽-_-...
+- 学习/工作路线: 公卫 -> 分子流病 -> 生信 -> 新生抗原 -> 杂七杂八  emmmm... 越来越杂乱了(下头的词云可见一斑)...
 
+![摘要词云](https://raw.githubusercontent.com/silenwang/Gallary/master/2022/04/upgit_abs_20220405_1649148797.png)
 
 ## 教育经历
 2009.09-2014.06 广东药学院(现广东药科大学) 公共卫生学院 预防医学 本科
@@ -49,12 +50,12 @@ sidebar:
     3. 基于机器学习的变异结果筛选工具的开发
     4. 已有分析工具的效能优化(并行化)
 
-- 2019.07-2020.03 杭州某生物技术公司 生物信息工程师
+- 2019.07-2020.03 杭州某生物科技公司 生物信息工程师
   1. 基于NGS的cfDNA分析方案调研, 分析流程搭建
   2. 新生抗原相关数据统计分析
   3. 生物信息分析程序维护
   4. 用药指导报告数据库维护
-- 2020.03-至今 杭州某生物技术公司 生信主管
+- 2020.03-至今 杭州某生物科技公司 生信主管
   1. 基于NGS的HLA分型/定量模块开发
   2. 基于flask的生信分析工具后端开发
   3. 新生抗原筛选模块开发
@@ -67,7 +68,7 @@ sidebar:
     + 熟练: Python, R, Bash
     + 入门: 正则表达式, Graphviz, Mermaid, Go
     + 上手中: kivy
-    + 已弃坑: Julia, LaTex
+    + ~~已弃坑: Julia, LaTex~~
 
 - 主力开发语言中有使用经验的模块
   - Python
@@ -79,12 +80,13 @@ sidebar:
     - 数据处理/统计计算: Pandas, numpy, math
     - 绘图: Plotly
     - 数据交互展示: Dash
-    - ~机器学习: skitlearn(上手中)~
+    - ~~机器学习: skitlearn(上手中)~~
     - 图像处理: pillow
     - web相关: flask / FastAPI
     - 办公自动化: docxtpl, openpyxl
   - R
     - base
+    - 数据处理: dplyr
     - 并行化: Parallel
     - 绘图: ggplot2, ggpubr, ggthemes
     - 单细胞数据分析: Seurat3
@@ -93,8 +95,8 @@ sidebar:
     - Linux系统安装/配置管理: Redhat系发行版操作/维护, Debian系发行版安装/配置/维护, Arch系发行版安装/配置/维护
     - HPC集群管理系统: 有SUN Grid Eengine使用, 维护经验
     - Snakemake: 能熟练编写Snakefile, 能够使用Snakemake进行流程构建和管理, 有一定Snakemake的实际运用经验, 可以根据个人工作经验实现一些Snakemake暂时未实现的功能
-    - ~~WDL~~: 由于WDL没有Python解释器, 暂时放弃了
-    - Docker/Singularity: 有实际的容器部署经验, 能够通过docker-compose文件快速启动和部署应用. 能够通过撰写dockfile或直接进入容器内进行流程部署(展示项目中有示例), 可使用Singularity将Docker镜像转换为Singularity镜像并使用.
+    - ~~WDL: 由于WDL没有Python解释器, 暂时放弃了~~
+    - Docker/Singularity: 有实际的容器部署经验, 能够通过docker-compose文件快速启动和部署应用. 能够通过撰写dockfile或直接进入容器内进行流程部署(展示项目中有[示例](https://github.com/SilenWang/dgidb-docker)), 可使用Singularity将Docker镜像转换为Singularity镜像并使用.
     - Conda/Mamba: 有较充足的实际使用经验, 能够使用conda快速部署分析用软件及流程.
     - Git: 有使用Git进行项目代码/文档管理的经验, 懂得基本的创建/推送/合并的方法, 使用过钩子特性运行一些自动化任务操作
 
@@ -127,7 +129,12 @@ sidebar:
 
 ## 可展示项目
 
-- [FUEX](https://github.com/SilenWang/FUEX): 融合基因解析软件, 从结构变异软件给的结果中解析出融合形式正确的结果
-- [Risk Region](https://github.com/SilenWang/Risk_Region): 帮同学改写的(后续todo已鸽)
-- [CSSN_Spider](https://github.com/SilenWang/CSSN_Spider): 帮同学做的简单爬虫, 爬了网站上所有的标准文档信息
-- [DGIdb-Docker](https://github.com/SilenWang/dgidb-docker): DGIdb的docker构建文件
+- 工作后实际可展示的东西真不是很多... 毕竟写东西是迫于生计, 打游戏才是终极目的hhhhhhh
+
+{% githubrepo 'SilenWang/FUEX' %}
+
+{% githubrepo 'SilenWang/Risk_Region' %}
+
+{% githubrepo 'SilenWang/CSSN_Spider' %}
+
+{% githubrepo 'SilenWang/dgidb-docker' %}
