@@ -113,14 +113,14 @@ sidebar:
 
 ## 工作相关技能
 
-### 使用语言
+### 常用语言与工具
 
-- 熟练: Python, R, Bash
-- 入门: 正则表达式, Graphviz, Mermaid, Go, jinjia
-- 上手中: kivy
-- ~~已弃坑: Julia, LaTex~~
 
-### 常用模块/包
+<img alt="python" src="https://img.shields.io/badge/-Python-356f9e?style=flat-square&logo=Python&logoColor=white" />|<img alt="Pandas" src="https://img.shields.io/badge/-Pandas-e70488?style=flat-square&logo=pandas&logoColor=white" />|<img alt="plotly" src="https://img.shields.io/badge/-Plotly-457ad2?style=flat-square&logo=plotly&logoColor=white" />|<img alt="flask" src="https://img.shields.io/badge/-Flask-444444?style=flat-square&logo=flask&logoColor=white" />|<img alt="FastAPI" src="https://img.shields.io/badge/-FastAPI-059487?style=flat-square&logo=fastapi&logoColor=white" />|<img alt="Jupyter" src="https://img.shields.io/badge/-Jupyter-f37524?style=flat-square&logo=Jupyter&logoColor=white" />|<img alt="R" src="https://img.shields.io/badge/-R-276DC3?style=flat-square&logo=R&logoColor=white">|<img alt="Bash" src="https://img.shields.io/badge/-Bash-444444?style=flat-square&logo=gnubash&logoColor=white" />
+-- | -- | -- | -- | -- | -- | -- | --
+<img alt="Go" src="https://img.shields.io/badge/-Go-007896?style=flat-square&logo=Go&logoColor=white" />|<img alt="Docker" src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white" />|<img alt="Conda" src="https://img.shields.io/badge/-Anaconda-35bfa4?style=flat-square&logo=anaconda&logoColor=white" />|<img alt="SQLite" src="https://img.shields.io/badge/-SQLite-044a64?style=flat-square&logo=sqlite&logoColor=white" />|<img alt="Neo4j" src="https://img.shields.io/badge/-Neo4j-018bff?style=flat-square&logo=neo4j&logoColor=white" />|<img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-023430?style=flat-square&logo=mongodb&logoColor=white" />|<img alt="Manjaro" src="https://img.shields.io/badge/-Manjaro-35bfa4?style=flat-square&logo=manjaro&logoColor=white" />|<img alt="git" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" />
+
+### 编程能力
 
 {% tabs lang %}
 
@@ -135,7 +135,7 @@ sidebar:
 - 数据交互展示: Dash
 - ~~机器学习: skitlearn(上手中)~~
 - 图像处理: pillow
-- web相关: flask / FastAPI
+- WebUI/API搭建: flask / FastAPI
 - 办公自动化: docxtpl, openpyxl, python-docx
 
 <!-- endtab -->
@@ -149,9 +149,7 @@ sidebar:
 
 <!-- endtab -->
 
-{% endtabs %}
-
-### 流程构建/部署
+<!-- tab 流程搭建 -->
 
 - Linux系统安装/配置管理: Redhat系发行版操作/维护, Debian系发行版安装/配置/维护, Arch系发行版安装/配置/维护
 - HPC集群管理系统: 有SUN Grid Eengine使用, 维护经验
@@ -160,6 +158,11 @@ sidebar:
 - Docker/Singularity: 有实际的容器部署经验, 能够通过docker-compose文件快速启动和部署应用. 能够通过撰写dockfile或直接进入容器内进行流程部署(展示项目中有[示例](https://github.com/SilenWang/dgidb-docker)), 可使用Singularity将Docker镜像转换为Singularity镜像并使用.
 - Conda/Mamba: 有较充足的实际使用经验, 能够使用conda快速部署分析用软件及流程.
 - Git: 有使用Git进行项目代码/文档管理的经验, 懂得基本的创建/推送/合并的方法, 使用过钩子特性运行一些自动化任务操作
+
+<!-- endtab -->
+
+{% endtabs %}
+
 
 ### 掌握生物信息软件/模块
 
