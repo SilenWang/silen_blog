@@ -3,7 +3,7 @@ title: 钉钉Linux版本次的更新喜忧参半
 tags:
   - Linux
   - 钉钉
-categories: Script / Bioinfomatic / Others / Daily
+categories: Daily
 date: 2023-02-03 17:27:49
 ---
 
