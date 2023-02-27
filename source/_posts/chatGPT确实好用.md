@@ -223,6 +223,8 @@ if __name__ == '__main__':
 请注意，`request.args.get` 方法返回的是字符串类型。如果您需要获取其他类型的参数值（例如整数或布尔值），则需要进行适当的转换。
 
 #### You:
+
+```python
 import requests
 from flask import Flask, request, send_from_directory
 
@@ -241,7 +243,7 @@ def serve_docs(filename):
 # 运行应用程序
 if __name__ == '__main__':
     app.run()
-
+```
 
 #### ChatGPT:
 这段代码的作用是创建一个 Flask 应用程序，并使用 `send_from_directory` 方法从 `static/docs` 目录中返回指定的文件，以响应客户端的请求。这个应用程序监听根路由 `'/'`，并使用 `filename` 参数来指定要返回的文件名。
