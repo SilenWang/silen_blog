@@ -109,7 +109,7 @@ deploy:
     repo:
       git@github.com:SilenWang/silenwang.github.io.git
     branch: master
-  - type: git
-    repo:
-      git@gitee.com:silenwang/silenwang.git
-    branch: master
+  # - type: git
+  #   repo:
+  #     git@gitee.com:silenwang/silenwang.git
+  #   branch: master

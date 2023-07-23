@@ -1,10 +1,8 @@
 ---
 title: 白嫖codespace用来写hexo博客
-tags:
-  - github
-  - codespace
+tags: ['github', 'codespace']
 categories: Daily
-date: 2023-07-23 07:29:23
+date: 2023-07-23 17:10:23
 ---
 
 <!-- 摘要部分 -->
