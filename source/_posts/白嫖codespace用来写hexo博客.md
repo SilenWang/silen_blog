@@ -3,7 +3,7 @@ title: 白嫖codespace用来写hexo博客
 tags:
   - github
   - codespace
-categories: Script / Bioinfomatic / Others / Daily
+categories: Daily
 date: 2023-07-23 07:29:23
 ---
 
