@@ -1,7 +1,7 @@
 ---
-title: 共同观影应用MetaStream
+title: chromebook折腾报告
 categories: Script / Bioinfomatic / Others / Daily
-date: 2023-02-02 16:24:12
+date: 2023-07-23 17:07:12
 tags:
 ---
 
