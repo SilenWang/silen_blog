@@ -1,9 +1,10 @@
 ---
 title: 使用singularity构建一个基于chatglm.cpp项目的ChatGLM2服务
-categories: Script
+tags: ['sinularity', 'container']
+categories: Bioinfomatic
 date: 2023-08-16 07:08:46
-tags: ['sinularity']
 ---
+
 
 其实很早之前就知道singularity这个东西了，作为有别于docker，专门为HPC开发的容器，一直都想试试。奈何就像Illumina以外的其他NGS技术一样，singularity虽然没有挂，但是至今都没有什么声量，而且在k8s这种容器集群管理方案被绝大多数云厂商采纳后，singularity要竞争似乎更难了... 当然这跟我现在没什么关系... 咱目前离上云感觉至少还有三五年的距离，因此在本地集群启用这个感觉完全合乎情理。
 
