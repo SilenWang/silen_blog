@@ -51,7 +51,7 @@ singularity exec \
 
 启动后界面如下:
 
-[ui](https://raw.githubusercontent.com/SilenWang/Gallary/master/2023/07/upgit_20230727_1690390228.png)
+![ui](https://raw.githubusercontent.com/SilenWang/Gallary/master/2023/07/upgit_20230727_1690390228.png)
 
 ## 4. 注意
 

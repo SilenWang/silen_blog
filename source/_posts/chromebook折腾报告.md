@@ -5,10 +5,6 @@ categories: Daily
 date: 2023-08-16 11:11:11
 ---
 
-<!-- 摘要部分 -->
-<!-- more -->
-
-
 去年的时候，我突然看躺在床上的杂牌笔记本电脑特别不爽。好歹也是当年1999买回来的（对毕业半年的我来说是非常大件的消费），后续还因为键盘和触控板问题修了两次花了又快又1000块。这么贵重的东西，不给他安排点活，着时对不起自己的血汗钱。于是我又捣鼓起了几年前关注过，但是当时特别不能用的fydeos。这一捣鼓，我才发现，这几年不仅是deepin发展的很快（快到都有钱和时间把做好的框架和UI又推了重来），fydeos也进化了很多，不仅有了android，还有了linux子系统，日常使用突然就变得不再遥远了，于是！我，斥、重、金————————海鲜市场捡垃圾买了个[lenovo chromebook duet](https://www.lenovo.com/us/en/p/laptops/lenovo/lenovo-edu-chromebooks/lenovo-chromebook-duet-10/zziczctct1x?orgRef=https%253A%252F%252Fwww.google.com%252F)..
 
 <!-- 摘要部分 -->
