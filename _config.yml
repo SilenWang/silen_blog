@@ -107,7 +107,7 @@ theme: volantis
 deploy:
   - type: git
     repo:
-      git@github.com:SilenWang/silenwang.github.io.git
+      https://github.com/SilenWang/silenwang.github.io.git
     branch: master
   # - type: git
   #   repo:
