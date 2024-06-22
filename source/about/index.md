@@ -10,8 +10,8 @@ sidebar:
 关于我页面重整啦! 现在用了Tab将内容折叠起来... 免得太常浪费版面~
 
 ## 个人简介
-- 自称: Silen Wang / Sylens Wong / 汪兴伦, 是一颗过得不是很开心的{% ruby 卤蛋|光头 %}!
-- 兴趣: 打游戏, 打游戏, 还是TMD 打! 游! 戏! 动漫也看, ~~但是最近感兴趣番的越来越少了...~~, 2022年看的比原来多一点了, 比起看番剧现在更喜欢看番剧吐槽...
+- 自称: Silen Wang / Sylens Wong / 汪兴伦, 是一颗逐渐开心起来的{% ruby 卤蛋|光头 %}!
+- 兴趣: 打游戏, 打游戏, 还是TMD 打! 游! 戏! 动漫也看, ~~但是最近感兴趣番的越来越少了...~~, 2024年重新开始追番！[迷宫饭](https://www.bilibili.com/bangumi/media/md21174614)真是太好看了！都给我去看！
 - 学习/工作路线: 公卫 -> 分子流病 -> 生信 -> 新生抗原 -> 各种各样
   + emmmm... 越来越{% ruby 博学|杂乱 %}了
   + 下头的词云说明了一切...
@@ -92,14 +92,14 @@ sidebar:
 
 <!-- endtab -->
 
-<!-- tab 2019.07-至今 -->
+<!-- tab 2019.07-2024.04 -->
 
 - 2019.07-2020.03 杭州某生物科技公司 生物信息工程师
   1. 基于NGS的cfDNA分析方案调研, 分析流程搭建
   2. 新生抗原相关数据统计分析
   3. 生物信息分析程序维护
   4. 用药指导报告数据库维护
-- 2020.03-至今 杭州某生物科技公司 生信主管
+- 2020.03-2024.04 杭州某生物科技公司 生信主管
   1. 基于NGS的HLA分型/定量模块开发
   2. 基于flask的生信分析工具后端开发
   3. 新生抗原筛选模块开发
@@ -107,6 +107,16 @@ sidebar:
   5. 按要求进行材料撰写与修订
 
 <!-- endtab -->
+
+<!-- tab 2024.05-至今 -->
+
+- 2024.05-至今 杭州某医学科技公司 高级生物信息分析工程师
+  1. 开发WES/RNA-Seq/单细胞分析流程
+  2. 生物信息分析方案调研与执行
+  3. 生物信息数据库运维
+
+<!-- endtab -->
+
 
 {% endtabs %}
 
@@ -126,14 +136,13 @@ sidebar:
 
 <!-- tab Python -->
 - 并行化: Multiprocess, Ray(上手中)
-- 二代测序常用文件处理: Pysam, PyVCF, CyVCF, Biopython
+- 二代测序常用文件处理: Pysam, PyVCF, CyVCF, Biopython, Scanpy
 - 爬虫: 
   + scrapy: 有数个小型爬虫项目经验, 能使用scrapy完成静态页面, 未加密动态页面的爬取和数据
   + 能使用splash, selenium配合scrapy完成动态页面数据的爬取
-- 数据处理/统计计算: Pandas, numpy, math
+- 数据处理/统计计算: Pandas, numpy, math, scipy, statsmodels
 - 绘图: Plotly
 - 数据交互展示: Dash
-- ~~机器学习: skitlearn(上手中)~~
 - 图像处理: pillow
 - WebUI/API搭建: flask / FastAPI
 - 办公自动化: docxtpl, openpyxl, python-docx
@@ -145,7 +154,7 @@ sidebar:
 - 数据处理: base, dplyr
 - 并行化: Parallel
 - 绘图: ggplot2, ggpubr, ggthemes
-- 单细胞数据分析: Seurat3
+- 单细胞数据分析: Seurat3, Monocle3
 
 <!-- endtab -->
 
@@ -153,11 +162,12 @@ sidebar:
 
 - Linux系统安装/配置管理: Redhat系发行版操作/维护, Debian系发行版安装/配置/维护, Arch系发行版安装/配置/维护
 - HPC集群管理系统: 有SUN Grid Eengine使用, 维护经验
-- Snakemake: 能熟练编写Snakefile, 能够使用Snakemake进行流程构建和管理, 有一定Snakemake的实际运用经验, 可以根据个人工作经验实现一些Snakemake暂时未实现的功能
+- Snakemake: 能熟练编写Snakefile, 熟练Snakemake进行流程构建和管理, 有丰富的Snakemake的实际运用经验
 - ~~WDL: 由于WDL没有Python解释器, 暂时放弃了~~
-- Docker/Singularity: 有实际的容器部署经验, 能够通过docker-compose文件快速启动和部署应用. 能够通过撰写dockfile或直接进入容器内进行流程部署(展示项目中有[示例](https://github.com/SilenWang/dgidb-docker)), 可使用Singularity将Docker镜像转换为Singularity镜像并使用.
-- Conda/Mamba: 有较充足的实际使用经验, 能够使用conda快速部署分析用软件及流程.
+- 容器技术: 有丰富的容器使用和部署经验，能编写Dockerfile和Def文件构建Docker容器或Sif容器([示例](https://github.com/SilenWang/dgidb-docker)).
+- Conda/Mamba/Pixi: 有较充足的实际使用经验, 能够使用conda快速部署分析用软件及流程.
 - Git: 有使用Git进行项目代码/文档管理的经验, 懂得基本的创建/推送/合并的方法, 使用过钩子特性运行一些自动化任务操作
+- DevOps: 了解DevOps的基本概念，能使用Azure DevOps平台完成代码管理、以及自动化测试和部署工作
 
 <!-- endtab -->
 
@@ -176,7 +186,7 @@ sidebar:
 - BED文件操作: bedtools
 - 数据质控: fastp/fastQC/MultiQC
 - 序列比对: bwa/bowtie/STAR
-- 表达量计算/分析: DESeq/DEXseq/Salmon/kallisto/htseq/Hisat
+- 表达量计算/分析: DESeq2/DEXseq/Salmon/kallisto/htseq/Hisat2
 - 序列处理: seqtk/seqkit
 - BAM/VCF文件操作: Picard/Samtools/Bcftools/Sambamba/Pysam/Biogo
 - UMI处理相关: UMI-tools/fgbio
@@ -229,5 +239,5 @@ sidebar:
 参与的文章一般仅负责生信相关部分
 
 1. Ye Feng et al., “[Multi-Epitope Vaccine Design Using an Immunoinformatic Approach for SARS-CoV-2](https://www.ncbi.nlm.nih.gov/pubmed/34208061)” Pathogens 10 (June 11, 2021) 737.
-2. [Zheling Chen et al., “[A Neoantigen-Based Peptide Vaccine for Patients With Advanced Pancreatic Cancer Refractory to Standard Treatment](https://pubmed.ncbi.nlm.nih.gov/34484187)” Front. Immunol. 12 (2021) 691605.
+2. Zheling Chen et al., “[A Neoantigen-Based Peptide Vaccine for Patients With Advanced Pancreatic Cancer Refractory to Standard Treatment](https://pubmed.ncbi.nlm.nih.gov/34484187)” Front. Immunol. 12 (2021) 691605.
 3. Jiawei Shou et al., “[Combination Treatment of Radiofrequency Ablation and Peptide Neoantigen Vaccination: Promising Modality for Future Cancer Immunotherapy](https://pubmed.ncbi.nlm.nih.gov/36248865)” Front. Immunol. 13 (September 29, 2022) 1000681.

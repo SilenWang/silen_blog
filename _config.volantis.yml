@@ -202,4 +202,4 @@ analytics:
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
   layout: [social, license, analytics, info, copyright]
-  copyright: 'Copyright © 2016-2023 Silen Wang'
+  copyright: 'Copyright © 2016-2024 Silen Wang'
