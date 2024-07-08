@@ -1,0 +1,16 @@
+[project]
+name = "silen_blog"
+version = "0.1.0"
+description = "source cod for silen's blog"
+authors = ["Silen Wang <qiumin14@163.com>"]
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tasks]
+install = {cmd = 'pixi install -a'}
+build_blog = {cmd = "npm install -g yarn hexo-cli && yarn install", cwd = ".", env = {PATH = "$pwd/.pixi/envs/default/bin:$PATH" }}
+deploy = {cmd = 'echo "Deploy done"', depends-on = ["install", "build_blog"] }
+
+[dependencies]
+nodejs = "18.*"
+python = "2.*"
