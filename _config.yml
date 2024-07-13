@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: SilenHub
+title: SylensHub
 favicon: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico
 avatar: https://avatars1.githubusercontent.com/u/12797055?s=40&v=4
 subtitle: ''
-description: 'Blog from Silen Wang'
+description: 'Blog from Sylens Wong'
 keywords:
-author: Silen Wang
+author: Sylens Wong
 language: zh-CN
 timezone: ''
 
