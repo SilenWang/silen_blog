@@ -1,16 +1,28 @@
 [project]
 name = "silen_blog"
-version = "0.1.0"
+version = "0.1.1"
 description = "source cod for silen's blog"
 authors = ["Silen Wang <qiumin14@163.com>"]
 channels = ["conda-forge"]
-platforms = ["linux-64"]
+platforms = ["linux-64", "linux-aarch64"]
 
 [tasks]
 install = {cmd = 'pixi install -a'}
-build_blog = {cmd = "npm install -g yarn hexo-cli && yarn install", cwd = ".", env = {PATH = "$pwd/.pixi/envs/default/bin:$PATH" }}
 deploy = {cmd = 'echo "Deploy done"', depends-on = ["install", "build_blog"] }
+
+[target.linux-64.tasks]
+build_blog = {cmd = "npm install -g yarn hexo-cli && yarn install", cwd = ".", env = {PATH = "$PWD/.pixi/envs/default/bin:$PATH" }}
+
+[target.linux-aarch64.tasks]
+build_blog = {cmd = "npm install -g hexo-cli && npm install --python=$PWD/.pixi/envs/default/bin/python2 && sed -i '34s/distro\\[1\\]/distro/' $PWD/.pixi/envs/default/lib/node_modules/hexo-cli/dist/console/version.js", cwd = "."}
+
+
+[target.linux-aarch64.dependencies]
+make = "*"
+gcc = "*"
+gxx = "*"
 
 [dependencies]
 nodejs = "18.*"
 python = "2.*"
+jieba = "*"
