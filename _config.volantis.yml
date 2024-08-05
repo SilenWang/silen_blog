@@ -43,10 +43,6 @@ cover:
       icon: fas fa-archive
       img: #
       url: /archives/
-    - name: 技能手册
-      icon: fas fa-book
-      img: #
-      url: /handbook/
     - name: 主题源码
       icon: fab fa-github
       img: #
@@ -196,6 +192,8 @@ plugins:
     enable: true
 
 analytics:
+  # busuanzi: /libs/busuanzi/js/busuanzi.pure.mini.js
+  # busuanzi: https://gcore.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
   busuanzi: https://npm.elemecdn.com/penndu@1.0.0/bsz.js
 #   leancloud: # 请使用自己的 id & key 以防止数据丢失
 #     app_id: 1AHzGaS0YK78EJ9GeLGiS7mA-gzGzoHsz #u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI
@@ -206,4 +204,4 @@ analytics:
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
   layout: [social, license, analytics, info, copyright]
-  copyright: 'Copyright © 2016-Now Sylen Wong'
+  copyright: 'Copyright © 2016-Now Sylens Wong'
