@@ -1,0 +1,207 @@
+navbar:
+  visiable: auto # always, auto
+  logo: # choose [img] or [icon + title]
+    img:
+    icon:
+    title:
+  menu:
+    - name: Blog
+      icon: fas fa-rss
+      url: /
+    - name: Categories
+      icon: fas fa-folder-open
+      url: categories/
+    - name: Tags
+      icon: fas fa-tags
+      url: tags/
+    - name: Archive
+      icon: fas fa-archive
+      url: archives/
+    - name: Friends
+      icon: fas fa-link
+      url: friends/
+    - name: About
+      icon: fas fa-info-circle
+      url: about/
+  search: Please input keywords ...   # Search bar placeholder
+
+cover:
+  height_scheme: full # full, half
+  layout_scheme: search # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
+  display:
+    home: true
+    archive: true
+    others: false # can be written in front-matter 'cover: true'
+  background: https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg
+  # background: https://i0.hdslb.com/bfs/album/a3ac63512142706c657e8bcedb8ffdaf4d713315.png
+  logo:
+  title: SilenHub
+  subtitle: '吃饭, 睡觉, 打游戏!'
+  search: Please input keywords ... # search bar placeholder
+  features:
+    - name: Archive
+      icon: fas fa-archive
+      img: #
+      url: /archives/
+    - name: Theme source code
+      icon: fab fa-github
+      img: #
+      url: https://github.com/volantis-x/hexo-theme-volantis/
+
+sidebar:
+  widget_library:
+    blogger:
+      class: blogger
+      display: [desktop, mobile] # [desktop, mobile]
+      avatar: https://avatars.githubusercontent.com/u/12797055?s=460&u=7de48cdd15f6aadddefe92a0dfbcc70fc82bac05&v=4
+      shape: circle # circle, rectangle
+      url: /about/
+      title:
+      subtitle:
+      jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      social:
+        - icon: fas fa-envelope
+          url: mailto:qiumin14@163.com
+        - icon: fab fa-github
+          url: https://github.com/SilenWang/
+
+
+pages:
+  # 友链页面配置
+  friends:
+    layout_scheme: simple # simple: 简单布局, traditional: 传统布局,  sites: 网站卡片布局
+
+############################### Color Scheme ############################### > start
+color_scheme:
+  # ------------
+  # 通用颜色
+  common:
+    # 主题色
+    theme: '#1BC3FB'
+    # 链接色
+    link: '#2196f3'
+    # 按钮色
+    button: '#1BC3FB'
+    # 鼠标放到交互元素上时的色
+    hover: '#ff5722'
+    # 主题色块内部的文字颜色
+    inner: '#fff'
+    # 选中区域文字的背景颜色
+    selection: 'alpha(#2196f3, 0.2)'
+  # ------------
+  # 亮色主题（默认）
+  light:
+    # 网站背景色
+    site_bg: '#f4f4f4'
+    # 网站背景上的文字
+    site_inner: '#444'
+    # 网站页脚文字
+    site_footer: '#666'
+
+    # 卡片背景色
+    card: '#fff'
+    # 卡片上的普通文字
+    text: '#444'
+
+    # 区块和代码块背景色
+    block: '#f6f6f6'
+    # 代码块高亮时的背景色
+    codeblock: '#FFF7EA'
+    # 行内代码颜色
+    inlinecode: '#c74f00'
+
+    # 文章部分
+    h1: '#3a3a3a'
+    h2: '#3a3a3a'
+    h3: '#333'
+    h4: '#444'
+    h5: '#555'
+    h6: '#666'
+    p: '#444'
+
+    # 列表文字
+    list: '#666'
+    # 列表 hover 时的文字
+    list_hl: 'mix($color-theme, #000, 80)'
+    # 辅助性文字
+    meta: '#888'
+  # ------------
+  # 暗色主题
+  dark:
+    # 网站背景色
+    site_bg: '#222'
+    # 网站背景上的文字
+    site_inner: '#eee'
+    # 网站页脚文字
+    site_footer: '#aaa'
+    # 卡片背景色
+    card: '#333'
+    # 卡片上的普通文字
+    text: '#eee'
+
+    # 区块和代码块背景色
+    block: '#3a3a3a'
+    # 代码块高亮时的背景色
+    codeblock: '#343a3c'
+    # 行内代码颜色
+    inlinecode: '#D56D28'
+
+    # 文章部分
+    h1: '#eee'
+    h2: '#eee'
+    h3: '#ddd'
+    h4: '#ddd'
+    h5: '#ddd'
+    h6: '#ddd'
+    p: '#bbb'
+
+    # 列表文字
+    list: '#aaa'
+    # 列表 hover 时的文字
+    list_hl: 'mix($color-theme, #fff, 80)'
+    # 辅助性文字
+    meta: '#888'
+    # 夜间图片亮度
+    brightness: 70%
+############################### Color Scheme ############################### > end
+
+comments:
+  title: <i class='fas fa-comments'></i> 评论
+  subtitle: 留下友善的评论吧~
+  service: utterances
+  utterances:
+    repo: SilenWang/silenwang.github.io
+    issue-term: pathname
+    issue-number:
+    theme:
+      light: github-light
+      dark: github-dark
+    label: ✨💬✨
+
+article:
+  body:
+    meta_library:
+      author:
+        avatar: https://avatars.githubusercontent.com/u/12797055?s=60&v=4
+        name: Sylen Wong
+        url: /
+
+
+plugins:
+  busuanzi: 
+    enable: true
+
+analytics:
+  # busuanzi: /libs/busuanzi/js/busuanzi.pure.mini.js
+  # busuanzi: https://gcore.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
+  busuanzi: https://npm.elemecdn.com/penndu@1.0.0/bsz.js
+#   leancloud: # 请使用自己的 id & key 以防止数据丢失
+#     app_id: 1AHzGaS0YK78EJ9GeLGiS7mA-gzGzoHsz #u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI
+#     app_key: SUIANMoyA6DBqnztrnls7s7K #jfHtEKVE24j0IVCGHbvuFClp
+#     # custom_api_server: # 国际版一般不需要写，除非自定义了 API Server
+
+
+site_footer:
+  # layout of footer: [aplayer, social, license, info, copyright]
+  layout: [social, license, analytics, info, copyright]
+  copyright: 'Copyright © 2016-Now Sylens Wong'

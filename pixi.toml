@@ -1,21 +1,28 @@
 [project]
 name = "silen_blog"
-version = "0.1.1"
-description = "source cod for silen's blog"
+version = "2.0"
+description = "source cod for silen's blog now with multi-language support"
 authors = ["Silen Wang <qiumin14@163.com>"]
 channels = ["conda-forge"]
 platforms = ["linux-64", "linux-aarch64"]
 
-[tasks]
-install = {cmd = 'pixi install -a'}
-deploy = {cmd = 'echo "Deploy done"', depends-on = ["install", "build_blog"] }
-
 [target.linux-64.tasks]
-build_blog = {cmd = "npm install -g yarn hexo-cli && yarn install", cwd = ".", env = {PATH = "$PWD/.pixi/envs/default/bin:$PATH" }}
+deploy_cn = {cmd = "yarn hexo-cli && yarn install", cwd = "blog_cn", env = {PATH = "$PWD/.pixi/envs/default/bin:$PATH" }}
+deploy_en = {cmd = "yarn hexo-cli && yarn install", cwd = "blog_en", env = {PATH = "$PWD/.pixi/envs/default/bin:$PATH" }}
 
 [target.linux-aarch64.tasks]
-build_blog = {cmd = "npm install -g hexo-cli && npm install --python=$PWD/.pixi/envs/default/bin/python2 && sed -i '34s/distro\\[1\\]/distro/' $PWD/.pixi/envs/default/lib/node_modules/hexo-cli/dist/console/version.js", cwd = "."}
+deploy_cn = {cmd = "npm install --python=$PWD/../.pixi/envs/default/bin/python2", cwd = "blog_cn", depends-on = ['install_hexo']}
+deploy_en = {cmd = "npm install --python=$PWD/../.pixi/envs/default/bin/python2", cwd = "blog_en", depends-on = ['install_hexo']}
 
+[tasks]
+install = {cmd = 'pixi install -a'}
+install_hexo = "npm install -g hexo-cli && sed -i '34s/distro\\[1\\]/distro/' $PWD/.pixi/envs/default/lib/node_modules/hexo-cli/dist/console/version.js"
+deploy = {cmd = 'echo "Deploy done"', depends-on = ["install", "deploy_cn", "deploy_en"] }
+
+build_cn = {cmd = 'hexo clean && hexo g', cwd = "blog_cn", depends-on = ['deploy']}
+build_en = {cmd = 'hexo clean && hexo g', cwd = "blog_en", depends-on = ['deploy']}
+build = {cmd = 'mkdir blog_cn/public/en && mv blog_en/public/* blog_cn/public/en', depends-on = ["build_cn", "build_en"]}
+publish = {cmd = 'hexo d', depends-on = ['build']}
 
 [target.linux-aarch64.dependencies]
 make = "*"

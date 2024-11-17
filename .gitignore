@@ -2,9 +2,10 @@
 Thumbs.db
 db.json
 *.log
-node_modules/
-public/
-.deploy*/
-themes/# pixi environments
+**/node_modules/
+**/public/
+**/.deploy*/
+**/themes/
+# pixi environments
 .pixi
 *.egg-info
