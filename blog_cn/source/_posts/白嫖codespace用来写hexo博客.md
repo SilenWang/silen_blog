@@ -27,7 +27,7 @@ Github codespace本来是云时代，github推出的一项纯云开发服务，�
 
 ### 1. 图片问题
 
-原来写博客用过[picgo]()和[upgit](https://github.com/pluveto/upgit)两个工具进行图片上传和自动链接获取，目前实测下来，原本最方便的vscode-picgo插件并不能使用，即使安装`xclip`后，也识别不到剪贴板里的图像内容，大概是因为它是在云端容器中，而有图像的剪贴板，是我本地的吧... `upgit`倒是有办法使用，将软件下载到chromeos下的linux容器中，做好配置就可以了。 
+原来写博客用过[picgo](https://picgo.github.io/PicGo-Doc/zh/guide/)和[upgit](https://github.com/pluveto/upgit)两个工具进行图片上传和自动链接获取，目前实测下来，原本最方便的vscode-picgo插件并不能使用，即使安装`xclip`后，也识别不到剪贴板里的图像内容，大概是因为它是在云端容器中，而有图像的剪贴板，是我本地的吧... `upgit`倒是有办法使用，将软件下载到chromeos下的linux容器中，做好配置就可以了。 
 
 ### 2. 网络
 

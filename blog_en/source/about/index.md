@@ -1,6 +1,6 @@
 ---
 layout: docs
-seo_title: 关于我
+seo_title: About Me
 bottom_meta: false
 sidebar:
 ---
