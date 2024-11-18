@@ -35,8 +35,8 @@ cover:
   background: https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg
   # background: https://i0.hdslb.com/bfs/album/a3ac63512142706c657e8bcedb8ffdaf4d713315.png
   logo:
-  title: SilenHub
-  subtitle: '吃饭, 睡觉, 打游戏!'
+  title: SylensHub
+  subtitle: 'Eating, sleeping, and gaming!'
   search: Please input keywords ... # search bar placeholder
   features:
     - name: Archive
@@ -166,8 +166,8 @@ color_scheme:
 ############################### Color Scheme ############################### > end
 
 comments:
-  title: <i class='fas fa-comments'></i> 评论
-  subtitle: 留下友善的评论吧~
+  title: <i class='fas fa-comments'></i> Comments
+  subtitle: Please leave your comments here
   service: utterances
   utterances:
     repo: SilenWang/silenwang.github.io
@@ -183,7 +183,7 @@ article:
     meta_library:
       author:
         avatar: https://avatars.githubusercontent.com/u/12797055?s=60&v=4
-        name: Sylen Wong
+        name: Sylens Wong
         url: /
 
 
