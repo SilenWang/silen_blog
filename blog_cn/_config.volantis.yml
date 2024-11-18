@@ -1,5 +1,5 @@
 navbar:
-  visiable: auto # always, auto
+  visiable: always # always, auto
   logo: # choose [img] or [icon + title]
     img:
     icon:
@@ -23,6 +23,9 @@ navbar:
     - name: 关于
       icon: fas fa-info-circle
       url: about/
+    - name: 语言
+      icon: fa fa-language
+      url: en/
   search: 输入关键词...   # Search bar placeholder
 
 cover:
@@ -183,7 +186,7 @@ article:
     meta_library:
       author:
         avatar: https://avatars.githubusercontent.com/u/12797055?s=60&v=4
-        name: Sylen Wong
+        name: Sylens Wong
         url: /
 
 

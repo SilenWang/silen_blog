@@ -1,5 +1,5 @@
 navbar:
-  visiable: auto # always, auto
+  visiable: always # always, auto
   logo: # choose [img] or [icon + title]
     img:
     icon:
@@ -23,6 +23,9 @@ navbar:
     - name: About
       icon: fas fa-info-circle
       url: about/
+    - name: Language
+      icon: fa fa-language
+      url: ../
   search: Please input keywords ...   # Search bar placeholder
 
 cover:

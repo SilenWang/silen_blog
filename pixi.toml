@@ -19,9 +19,10 @@ install = {cmd = 'pixi install -a'}
 install_hexo = "npm install -g hexo-cli && sed -i '34s/distro\\[1\\]/distro/' $PWD/.pixi/envs/default/lib/node_modules/hexo-cli/dist/console/version.js"
 deploy = {cmd = 'echo "Deploy done"', depends-on = ["install", "deploy_cn", "deploy_en"], outputs = ["blog_cn/node_modules", "blog_en/node_modules"]}
 
-build_cn = {cmd = 'hexo clean && hexo g', cwd = "blog_cn", depends-on = ['deploy'], inputs = ['blog_cn/source/_posts/*.md'] }
-build_en = {cmd = 'hexo clean && hexo g', cwd = "blog_en", depends-on = ['deploy'], inputs = ['blog_en/source/_posts/*.md'] }
-build = {cmd = 'mkdir blog_cn/public/en && cp -r blog_en/public/* blog_cn/public/en',  depends-on = ["build_cn", "build_en"]}
+build_cn = {cmd = 'hexo clean && hexo g', cwd = "blog_cn", inputs = ['blog_cn/source/_posts/*.md', "blog_cn/node_modules"] }
+build_en = {cmd = 'hexo clean && hexo g', cwd = "blog_en", inputs = ['blog_en/source/_posts/*.md', "blog_en/node_modules"] }
+build = {cmd = 'mkdir -p blog_cn/public/en && cp -r blog_en/public/* blog_cn/public/en',  depends-on = ["build_cn", "build_en"]}
+demo = {cmd = 'hexo s', cwd = "blog_cn"}
 publish = {cmd = 'hexo d', cwd = "blog_cn"}
 
 [target.linux-aarch64.dependencies]
