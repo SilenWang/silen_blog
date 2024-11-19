@@ -1,5 +1,5 @@
 ---
-title: 新工具解决老问题----使用pixi进行生物信息环境配置
+title: New Tools Solve Old Problems - Using Pixi for Bioinformatics Environment Configuration
 categories: Bioinfomatic
 date: 2024-06-22 01:26:08
 tags: ['pixi', 'conda']
