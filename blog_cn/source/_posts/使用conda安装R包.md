@@ -22,9 +22,8 @@ tags: ['R', 'conda', 'jupyter']
 conda install r
 ```
 
-
 - 调用conda安装的东西全部都由conda统一放置在conda的安装目录下, 里面的文件夹分布好像跟根目录的不是特别一样
-- 在最初完成conda安装时, 如果不作特别制定, conda会改写原本的`~/.bash`文件, 在里面把conda的bin目录添加到`PATH`变量中, 但是优先级在系统默认的目录(`/bin`)之后, 因为我是要用conda的覆盖系统默认配置, 所以手动把这一行加到了`~/.bash_profile`中并把conda的bin牡蛎调到了系统默认的前面
+- 在最初完成conda安装时, 如果不作特别制定, conda会改写原本的`~/.bash`文件, 在里面把conda的bin目录添加到`PATH`变量中, 但是优先级在系统默认的目录(`/bin`)之后, 因为我是要用conda的覆盖系统默认配置, 所以手动把这一行加到了`~/.bash_profile`中并把conda的bin目录调到了系统默认的前面
 - conda在国内也是有镜像源的, 编辑`~/.condarc`(没有可以直接创建), 加入下列内容即可使用中科大的镜像(清华的看人说有问题, 就没用了). 当然这只是个示例, `pkg`下还有其他的源, 需要的可以都添加上
 
 
@@ -34,7 +33,6 @@ channels:
   - defaults
 show_channel_urls: true
 ```
-
 
 - 之后进入R, 在里面再安装相关包就好. 这时安装的R包不会放在`~/R`下, 也是全部在conda的目录下面, 具体可参考安装时的输出.
 - 由于R包都是要编译的, 我又是用的minicoda, 所以难免会有依赖不满足. 不满足的包可以使用`conda install`安装, 另外也可以上anconda的网站先所有有哪些版本, 再对应执行命令安装即可
@@ -46,9 +44,7 @@ show_channel_urls: true
 
 R放在集群上, 调试起来多少有些不便, 毕竟我习惯了Rstudio或者jupyter notebook的那种编写边测试的方式. 正好conda也能装jupyter, 就搜索了一下远程访问的配置方式.
 
-
 - 首先肯定使用conda安装jupyter了
-
 
 ```sh
 conda install jupyter
@@ -67,13 +63,11 @@ jupyter notebook password
 - 使用编辑器打开生成的配置文件(普通用户的话是, 具体看生成文件后的提示`~/.jupyter/jupyter_notebook_config.py`)
 - 找到下面几项, 取消注释后更改相应数值, 其中密码见生成时提示的那个json文件, 里面会有一段长长的字符串, 全部复制贴过来就好
 
-
 ```txt
 c.NotebookApp.ip='*'
 c.NotebookApp.password = u'your_key_str'
 c.NotebookApp.open_browser = False # 代表启动notebook服务时不打开浏览器并访问
-c.NotebookApp.port =8888 # 这个可以不指定, 会自动分配一个端口
+c.NotebookApp.port = 8888 # 这个可以不指定, 会自动分配一个端口
 ```
-
 
 - 然后就可以在能连接到集群ip的电脑上打开浏览器以`0.0.0.0:8888`的方式访问了, 输入密码即可使用
