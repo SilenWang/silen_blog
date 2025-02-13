@@ -6,15 +6,15 @@ authors = ["Sylens Wong <qiumin14@163.com>"]
 channels = ["conda-forge"]
 platforms = ["linux-64", "linux-aarch64"]
 
-[target.linux-64.tasks]
+[feature.blog.target.linux-64.tasks]
 deploy_cn = {cmd = "yarn hexo-cli && yarn install", cwd = "blog_cn", env = {PATH = "$PWD/.pixi/envs/default/bin:$PATH" }}
 deploy_en = {cmd = "yarn hexo-cli && yarn install", cwd = "blog_en", env = {PATH = "$PWD/.pixi/envs/default/bin:$PATH" }}
 
-[target.linux-aarch64.tasks]
+[feature.blog.target.linux-aarch64.tasks]
 deploy_cn = {cmd = "npm install --python=$PWD/../.pixi/envs/default/bin/python2", cwd = "blog_cn", depends-on = ['install_hexo']}
 deploy_en = {cmd = "npm install --python=$PWD/../.pixi/envs/default/bin/python2", cwd = "blog_en", depends-on = ['install_hexo']}
 
-[tasks]
+[feature.blog.tasks]
 install = {cmd = 'pixi install -a'}
 install_hexo = "npm install -g hexo-cli && sed -i '34s/distro\\[1\\]/distro/' $PWD/.pixi/envs/default/lib/node_modules/hexo-cli/dist/console/version.js"
 deploy = {cmd = 'echo "Deploy done"', depends-on = ["install", "deploy_cn", "deploy_en"], outputs = ["blog_cn/node_modules", "blog_en/node_modules"]}
@@ -25,12 +25,22 @@ build = {cmd = 'mkdir -p blog_cn/public/en && cp -r blog_en/public/* blog_cn/pub
 demo = {cmd = 'hexo s', cwd = "blog_cn"}
 publish = {cmd = 'hexo d', cwd = "blog_cn"}
 
-[target.linux-aarch64.dependencies]
+[environments]
+aider = ['aider']
+blog = ['blog']
+
+[feature.blog.target.linux-aarch64.dependencies]
 make = "*"
 gcc = "*"
 gxx = "*"
 
-[dependencies]
+[feature.aider.dependencies]
+python = "3.12.*"
+
+[feature.aider.pypi-dependencies]
+aider-chat = "*"
+
+[feature.blog.dependencies]
 nodejs = "18.*"
 python = "2.*"
 jieba = "*"
