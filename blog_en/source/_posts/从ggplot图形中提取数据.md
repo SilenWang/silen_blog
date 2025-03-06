@@ -5,22 +5,22 @@ date: 2020-01-05 17:56:20
 tags: ['R', 'ggplot']
 ---
 
-Today, I encountered a plotting issue and learned a new small trick. I'll record it here.
+Today I encountered a plotting problem and learned a new small trick, so I'll record it here.
 
 <!-- Summary -->
 <!-- more -->
 
-ggplot provides many commonly used plotting functions, which are quite convenient, and the plots can be drawn in various groupings. However, sometimes I have some special requirements that ggplot cannot meet, so I need to perform some operations manually.
+ggplot provides many commonly used plotting functions that are very convenient, and the plots can be drawn with various groupings. However, sometimes I have some special requirements that ggplot cannot satisfy, so I need to perform some operations manually.
 
-For example, today I need to draw a grouped boxplot, where each group has its own outliers. These outliers will crowd one side of the plot, making it difficult to view, so they need to be removed. Although `geom_boxplot` has parameters for outlier handling, unfortunately, these parameters do not remove the outlier points from the data but simply hide them on the plot. As a result, the crowded plots remain crowded and fail to achieve the desired effect.
+For example, today I needed to draw a grouped boxplot where each group has its own outliers. These outliers would make the plot crowded on one side, making it difficult to observe, so they need to be removed. Although `geom_boxplot` has parameters for outlier handling, unfortunately these parameters don't actually remove the outlier points from the data - they just don't display them on the plot. This means the plot remains crowded in the same way, failing to achieve the desired effect.
 
-The most common solution I found online is to use the `$out` content inside the built-in `boxplot` function to extract outlier values and remove them. Unfortunately, this method cannot provide grouped outlier results; it gives overall outliers instead. If you need to remove outliers by group, you still have to manually split the dataset and process each one individually.
+The most common solution I found online is to use the `$out` content from the built-in `boxplot` function to extract outlier values and remove them. Unfortunately, this method doesn't seem to provide grouped outlier results - it gives overall outliers instead. If you need to remove outliers by group, you would have to manually split the dataset and process each group individually.
 
 Is there a lazier way?
 
-I found out one myself...
+I actually discovered one...
 
-The actual plotting data inside the ggplot object can be extracted:
+Just like built-in functions, ggplot's plots can extract the actual plotting data:
 
 ```r
 plot <- ggplot(data=data,mapping=aes(x=data$label, y=data[,tag])) +
@@ -28,9 +28,9 @@ plot <- ggplot(data=data,mapping=aes(x=data$label, y=data[,tag])) +
 plot_data <- layer_data(plot)
 ```
 
-The `layer_data` function is one way to extract the data; and `build_plot(plot)$data` has the same function.
+The `layer_data` function is one way to extract the data (using `build_plot(plot)$data` has the same effect).
 
-`plot_data` stores all the data used by ggplot for plotting. The part we need is stored in `outliers`, and it is arranged in the order shown on the plot. Therefore, as long as we manually specify the factor levels for grouping during the initial plotting, we can obtain the outliers for specific groups from the plot.
+`plot_data` stores all the data that ggplot uses for plotting. The part we need is stored in the `outliers` column, and it's arranged in the same order as shown on the plot. Therefore, as long as we manually specify the factor levels for grouping during the initial plotting, we can get the outliers for specific groups directly from the plot.
 
 Then, utilizing ggplot's automatic handling of `NA` values, we can replace the outlier values in the corresponding column with `NA`, creating a dataset without outliers. Then, we can redraw the plot to solve the problem!
 

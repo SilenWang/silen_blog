@@ -6,7 +6,7 @@ tags: ['openfyde', 'fydeos', 'chromeos']
 ---
 
 
-Compile the OpenFyde Image for Fydetab Duo by synthesizing official instructions and forum articles, aiming to compile the latest R120 version image.
+Compile the OpenFyde Image for Fydetab Duo by synthesizing official instructions and forum articles, aiming to compile the latest R120 version image. The goal is to compile the latest R120 version image.
 
 <!-- 摘要部分 -->
 <!-- more -->
@@ -23,7 +23,7 @@ Fyde OS originally provided a domestic accelerated mirror, but it seems to be un
     + You can also set `export DEPOT_TOOLS_UPDATE=0` to avoid tool updates. If the network is stable, this setting is optional.
 
 ## Api Key Preparation
-- Since I am still using a Google account under Fydeos, I applied for a Google API key instead of Fydeos's. Follow the steps in the [official documentation](https://www.chromium.org/developers/how-tos/api-keys/)
+- Since I am still using a Google account under Fydeos, I applied for a Google API key instead of Fydeos's. The steps are described in the [official documentation](https://www.chromium.org/developers/how-tos/api-keys/)
 - General steps:
     + Join the chromium-dev development group
     + Login to `https://cloud.google.com/console`
@@ -50,7 +50,7 @@ Fyde OS originally provided a domestic accelerated mirror, but it seems to be un
     git config --global user.name "sylens"
     git config --global user.email "silenseek14@gmail.com"
     ```
-- Clone the source code: The R126 version of `openFyde/manifest.git` is not released，so only R120 can be compiled. `repo sync -j8` requires downloading a large amount of source code, with chromium being the largest at nearly 40G. If the download fails due to network issues, running it again will restart the download. Ensure your VPN has sufficient bandwidth.
+- Clone the source code: The R126 version of `openFyde/manifest.git` is not updated, so only R120 can be compiled. `repo sync -j8` requires downloading a large amount of source code, with chromium being the largest at nearly 40G. If the download fails due to network issues, running it again will restart the download. Ensure your VPN has sufficient bandwidth.
     ```bash
     repo init -u https://chromium.googlesource.com/chromiumos/manifest.git --repo-url https://chromium.googlesource.com/external/repo.git -b release-R120-15662.B
 
@@ -67,13 +67,13 @@ Fyde OS originally provided a domestic accelerated mirror, but it seems to be un
 
 ## Starting the Compilation
 
-- Since the current version of archero is unusable, modifications are needed to avoid errors.
+- Since the current version of archero cannot be used, modifications are needed to avoid errors.
 - After entering chroot, you will be in `/mnt/host/source/src/scripts` by default. The files that need modification are:
     + `/mnt/host/source/src/overlays/overlay-fydetab_duo-openfyde/metadata/layout.conf`: Delete `archero`、`tablet`、`ai-dev` in the first line
     + `/mnt/host/source/openfyde/overlays/overlay-fydetab_duo-openfyde/profiles/base/parent`: Delete the second line's`archero:base`
 - Note: All compilation commands are executed within chroot.
 - Run `setup_board --board=fydetab_duo-openfyde`
-    + It appears that the setup is not fully completed, but the target directory has been generated.
+    + It appears that the setup work is not fully completed, but the target directory has been generated.
 - Install `capnproto`: `sudo emerge capnproto`
 - Modify `/mnt/host/source/chromite/lib/dlc_allowlist.py`: Change line 14 to `DLC_FACTORY_INSTALL = (r"termina-dlc", r"sample-dlc",)`, i.e., add `r"termina-dlc"`
 - Run `cros build-packages --jobs=4 '--board=fydetab_duo-openfyde' --no-withautotest --autosetgov --no-use-any-chrome`

@@ -5,16 +5,16 @@ date: 2019-10-05 16:58:54
 tags: ['docker', 'dockerfile']
 ---
 
-From past experiences... I have gained many skills as a byproduct... Today, this is also the case. My original intention was to use the source code provided by NetEase to compile an improved version of VirtualBox, but in the end, I learned several Docker-related skills...
+From past experiences... I have gained many skills as a byproduct... Today, this is also the case. My original intention was to use the source code provided by NetEase to compile an improved version of VirtualBox, but in the end... I learned several Docker-related skills...
 
 <!-- more -->
 
-The construction of images is basic to Docker. Although it is possible to manually build images after creating the base image each time, or directly pull them from platforms like Docker Hub, the former is time-consuming and lacks repeatability, while the latter has certain network requirements and limited customizability. Therefore, it is still essential to master the use of Dockerfile, which serves as the blueprint for building images.In fact, this thing is quite simple.
+The construction of images is basic to Docker. Although it is possible to manually build images after creating the base image each time, or directly pull them from platforms like Docker Hub, the former is time-consuming and lacks repeatability, while the latter has certain network requirements and limited customizability. Therefore, it is still essential to master the use of Dockerfile, which serves as the blueprint for building images. In fact... this thing is quite simple.
 
 The keywords I might use most frequently in a Dockerfile are:
 
 - `FROM`: Specifies the base image for building. Before starting the build, it will pull the specified image as the base.
-- `COPY`: Copies files from the external (host) to the image's internal path. The first parameter is the external path, and the second parameter is the internal path. The usage is similar to `cp`, but I haven't tried using wildcards.
+- `COPY`: Copies files from the external (host) to the image's internal path. The first parameter is the external path, and the second parameter is the internal path. The usage is similar to `cp`, but I haven't tried using wildcards (not sure if they work).
 - `ADD`: Similar to `COPY`, but `ADD` can fetch files from the network, which is very useful when deploying containers elsewhere.
 - `RUN`: Commands that need to be executed.
 - `WORKDIR`: The directory where the built image will start when it runs.

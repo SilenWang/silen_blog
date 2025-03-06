@@ -5,7 +5,7 @@ date: 2022-02-22 22:22:22
 tags: ['DingTalk']
 ---
 
-Although DingTalk is somewhat of a tool that exploits people, it's still necessary for work. It's already better to have one less annoyance choice (speaking of which, Tencent).
+Although DingTalk is somewhat of a tool that exploits people, it's still necessary for work. It's already better to have one less annoyance choice (speaking of which, Tencent). After all, being exploited is bad enough, but being both exploited and annoyed... being able to eliminate one annoyance is already an improvement.
 
 <!-- more -->
 
