@@ -2,7 +2,7 @@
 title: MultiQC Simple Usage
 categories: Bioinformatics
 date: 2019-07-27 21:02:16
-tags:
+tags: ['qc', 'multiqc']
 ---
 
 MultiQC is a tool for NGS data quality control. Unlike many other tools, it does not directly obtain and calculate metrics; instead, it reads results files from various common quality control tools and provides comprehensive reporting.

@@ -2,7 +2,7 @@
 title: Lumpy's Algorithm Interpretation
 categories: Bioinformatics
 date: 2019-03-31 22:10:20
-tags: 'Structural Variants'
+tags: ['Structural Variants']
 mathjax: true
 ---
 

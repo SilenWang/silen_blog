@@ -2,7 +2,7 @@
 title: Linux发行版的易用性越来越高了
 categories: Others
 date: 2019-04-06 17:03:42
-tags: "linux"
+tags: ["linux"]
 ---
 
 Recently, while helping my senior sister with sequence alignment, I discovered that the software I used to use frequently, MEGA X (10), now has a Linux GUI version. This made me feel that the world is indeed changing.

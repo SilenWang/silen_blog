@@ -2,7 +2,7 @@
 title: Graphviz Usage
 categories: Others
 date: 2019-04-25 21:31:53
-tags: 'graphviz'
+tags: ['graphviz']
 ---
 
 When developing software, whether for presentation or to organize thoughts, using flowcharts is often necessary. Instead of using a drawing board or Word, which can be time-consuming when the diagram becomes complex and needs frequent updates, a tool like Markdown that allows you to focus on content rather than form is very important.
