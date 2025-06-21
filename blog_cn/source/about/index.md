@@ -216,7 +216,7 @@ sidebar:
 - 图像处理: pillow
 - WebUI/API搭建: flask / gradio / nicegui / FastAPI
 - 办公自动化: docxtpl, openpyxl, python-docx
-- 单细胞数据分析: scanpy, 
+- 单细胞数据分析: Scanpy, Cellrank
 
 <!-- endtab -->
 
