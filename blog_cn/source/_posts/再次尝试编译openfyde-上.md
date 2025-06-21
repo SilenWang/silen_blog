@@ -2,7 +2,7 @@
 title: 再次尝试编译openfyde（上）
 categories: Script
 date: 2025-06-15 10:50:34
-tags: ['openfyde']
+tags: ['openfyde', 'fydeos']
 ---
 
 今年年初的时候，就尝试编译openfyde，想着学习下编译和修改openfyde系统，也利用一下我多余的一台工程机。然而半年都过去了... 上次编译出镜像的问题都还没解决...
