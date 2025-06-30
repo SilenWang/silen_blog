@@ -35,8 +35,7 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg
-  # background: https://i0.hdslb.com/bfs/album/a3ac63512142706c657e8bcedb8ffdaf4d713315.png
+  background: https://raw.githubusercontent.com/SilenWang/Gallary/master/2025/07/upgit_20250701_1751304562.png
   logo:
   title: SylensHub
   subtitle: 'Eating, sleeping, and gaming!'
@@ -97,7 +96,7 @@ color_scheme:
     # 网站背景色
     site_bg: '#f4f4f4'
     # 网站背景上的文字
-    site_inner: '#444'
+    site_inner: '#383838'
     # 网站页脚文字
     site_footer: '#666'
 
