@@ -169,6 +169,7 @@ sidebar:
 {% endgallery %}
 
 {% gallery left %}
+<img src="https://custom-icon-badges.demolab.com/badge/-Scrapy-15B8A6?style=flat-square&&logoColor=white&logo=scrapy" />
 <img src="https://custom-icon-badges.demolab.com/badge/-Shiny-007BC2?style=flat-square&logo=shinywhite&logoColor=white" />
 <img src="https://img.shields.io/badge/-Github-1F2328?style=flat-square&logo=github&logoColor=white" />
 <img src="https://img.shields.io/badge/-Github_Actions-55D263?style=flat-square&logo=githubactions&logoColor=white" />
