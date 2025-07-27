@@ -2,7 +2,7 @@
 title: 破解了一个apk
 categories: Daily
 date: 2020-02-02 21:51:39
-tags: ["Apktools", "crack"]
+tags: ["APK破解", "反编译", "Android逆向", "Apktools", "enjarify", "jd-gui", "adb", "uber-apk-signer"]
 ---
 
 果然, 从小到大, 我最大的动力来源就是玩游戏耍帅... 今天本来是想打猎了但是回不去广州, 只好玩3ds上的4G, 然而这毕竟5年前的老游戏了, 那时怪猎在中文圈可能也不火... 基本找不到任何想要的中文资料(Ping's Dex因为系统原因用着不太方便), 所以为了好好打游戏...我把黑手伸向了一个需要看广告才能好好用的app....

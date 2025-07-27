@@ -2,7 +2,7 @@
 title: Snakemake的一些有用特性
 categories: Script
 date: 2019-03-06 23:41:40
-tags: ['Python', 'snakemake']
+tags: ['Python', 'snakemake', '工作流管理', '资源控制', '任务分组', 'workflow', 'resource management', 'task grouping']
 ---
 
 在使用snakemake一段时间后, 发现其中确实有很多实用的特性来方便平常的分析, 做个记录整理

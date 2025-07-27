@@ -2,7 +2,7 @@
 title: python中的itertools
 categories: Script
 date: 2019-02-13 00:37:27
-tags: ["Python", "itertools"]
+tags: ["Python", "迭代器", "生成器", "itertools", "groupby", "tee", "chain"]
 ---
 
 原来写脚本的时候很多实用的功能都没有用过, 这次学习了一点点, 做个记录

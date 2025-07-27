@@ -2,7 +2,7 @@
 title: Graphviz配合draw.io使用
 categories: Script
 date: 2021-10-20 01:48:35
-tags: ['graphviz', 'drawio']
+tags: ['流程图', '图表工具', 'graphviz', 'drawio']
 ---
 
 自从会了Graphviz后, 经常会用它来做流程图或者简单的示意图, 大部分使用它都是比较好用的, 因为流程图比较小, 同时也只用来示意, 并不用于展示. 但是当流程图较复杂, 同时有美化和展示的需要, 就会比较麻烦了.

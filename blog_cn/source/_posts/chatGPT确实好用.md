@@ -2,8 +2,10 @@
 title: chatGPT确实好用
 tags:
   - chatGPT
-  - python
-  - flask
+  - 编程辅助
+  - Flask
+  - Python
+  - 静态网站
 categories: Script
 date: 2023-02-23 18:24:06
 toc: False

@@ -2,7 +2,7 @@
 title: 在Jupyter中注册新的Python或R内核
 categories: Script
 date: 2023-01-17 12:53:40
-tags: ['jupyter']
+tags: ['Jupyter', 'Python', 'R', 'conda', '内核注册', '技术教程']
 ---
 
 进行测试时经常要新建一个conda环境, 然后将环境装上jupyter内核后用notebook进行测试. 每次注册新内核都要重查, 所以还是做个记录好了...

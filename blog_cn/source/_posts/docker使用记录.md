@@ -2,7 +2,7 @@
 title: docker使用记录
 categories: Others
 date: 2018-09-02 20:15:02
-tags: ['docker']
+tags: ['docker', '容器技术', 'R语言', '镜像配置', 'sscClust', 'CentOS']
 ---
 
 为了充分利用二手不出去的烂设备...我决定自己搭服务器积累经验...考虑到搭建的东西的移植性, 使用docker放在容器内执行, 这样以后方面迁移与使用.

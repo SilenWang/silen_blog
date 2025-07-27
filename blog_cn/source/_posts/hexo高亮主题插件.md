@@ -2,7 +2,7 @@
 title: hexo代码高亮插件
 categories: Others
 date: 2018-09-05 21:53:50
-tags: ['hexo', 'syntax']
+tags: ['hexo', '代码高亮']
 ---
 
 感觉hexo默认的主题不是太好看, 想找个亮色的, 所以找了个插件来试用.

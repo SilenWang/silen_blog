@@ -2,7 +2,7 @@
 title: '夭寿啦!腾讯官方做新的LinuxQQ了?'
 categories: Others
 date: 2023-01-15 17:22:50
-tags: ['qq', 'linux']
+tags: ['腾讯', 'QQ', 'Linux', 'Electron', 'Tencent']
 ---
 
 曾几何时, 阻碍我日常使用Linux发行版的最大问题之一就是没有QQ, 当时还是大三, QQ还是学习生活的必备软件, 虽然已经有了智能手机这个东西, 但是当时在手机和Linux电脑间进行文件传输多有不便, 加之当时还没有WPS Linux版... 所以我最终还是用回了Windows. 

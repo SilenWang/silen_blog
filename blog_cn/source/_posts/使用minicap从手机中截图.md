@@ -2,7 +2,7 @@
 title: 使用minicap从手机中截图
 categories: Others
 date: 2018-08-28 12:05:17
-tags: ['android', 'adb', 'minicap']
+tags: ['安卓', '截图', 'minicap', 'adb', 'android']
 ---
 
 练习手机自动操作不可避免要涉及到截取手机当前的图像, 手机adb自带的截图实在太慢, 所以安装minicap取代之.

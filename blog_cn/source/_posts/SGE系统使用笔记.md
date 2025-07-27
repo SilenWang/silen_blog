@@ -2,7 +2,7 @@
 title: SGE系统使用笔记
 categories: Bioinfomatic
 date: 2018-08-30 09:36:38
-tags: ['sge']
+tags: ['SGE', '网格引擎', 'qsub', 'qlogin', '集群计算', 'sge']
 ---
 
 在新公司使用SGE的方式有点不太一样, 做个笔记

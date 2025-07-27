@@ -2,7 +2,13 @@
 title: MultiQC简单使用
 categories: Bioinfomatic
 date: 2019-07-27 21:02:16
-tags:
+tags: 
+- NGS
+- 质控工具
+- 生物信息学
+- 数据分析
+- MultiQC
+- fastqc
 ---
 
 MultiQC是一个NGS数据的质控工具, 不过跟很多其他工具不同的一点是, 它本身并直接进行数据获取和指标计算, 而是读入各种常见质控工具的结果文件然后做综合展示.

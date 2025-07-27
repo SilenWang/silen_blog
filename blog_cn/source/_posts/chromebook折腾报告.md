@@ -1,6 +1,6 @@
 ---
 title: chromebook折腾报告
-tags: ['chromeos', 'chromebook']
+tags: ['chromebook', '二合一设备', '安卓应用兼容性', 'chromeos', 'fydeos', 'arm']
 categories: Daily
 date: 2023-08-16 11:11:11
 ---

@@ -2,7 +2,7 @@
 title: 使用AI的能与不能----两次失败的尝试
 categories: Script
 date: 2025-07-15 00:44:45
-tags: ['AI', 'aider', 'openfyde', 'theia']
+tags: ['AI辅助开发', '技术尝试', 'Theia', 'FydeOS', '内核', 'aider', 'openfyde']
 ---
 
 相比俩年前在前司，现在的我用AI更加频繁了。如果说之前限制我使用AI的是工具本身的便捷性，现在的限制似乎已经不在AI，而是我自己的知识和技术了。

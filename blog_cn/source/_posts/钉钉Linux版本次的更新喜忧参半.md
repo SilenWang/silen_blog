@@ -1,8 +1,11 @@
 ---
 title: 钉钉Linux版本次的更新喜忧参半
 tags:
-  - Linux
   - 钉钉
+  - Linux
+  - 中文输入
+  - 界面缩放
+  - 会议功能
 categories: Daily
 date: 2023-02-03 17:27:49
 ---

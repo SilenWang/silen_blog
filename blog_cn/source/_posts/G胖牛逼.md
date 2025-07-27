@@ -2,7 +2,7 @@
 title: G胖牛逼!!!!!!!!!!!!!!!
 categories: Others
 date: 2018-09-07 20:12:02
-tags: ['steam', 'linux']
+tags: ['游戏', 'Linux', 'Steam', 'Wine', 'Proton', '仙剑4']
 ---
 
 这TM一定是历史性的一刻!

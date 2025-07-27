@@ -1,7 +1,14 @@
 ---
 title: 新年的Flag倒了
 tags:
-  - 日常
+  - 生活
+  - 新年
+  - 期望
+  - 沮丧
+  - Daily
+  - New Year
+  - Expectation
+  - Frustration
 categories: Daily
 date: 2023-02-02 16:25:13
 ---

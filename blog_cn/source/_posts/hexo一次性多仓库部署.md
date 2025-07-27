@@ -2,7 +2,7 @@
 title: 水一发:hexo一次性多仓库部署
 categories: Others
 date: 2020-08-02 01:19:38
-tags: ['hexo', 'gitee']
+tags: ['hexo', '博客部署', 'gitee', 'github', 'git代理']
 ---
 
 最近github的访问越来越不行了, 有时候想查自己博客里的博文都费劲...所以在国内的git托管服务商gitee也托管了一份, 但是问题就来了...如何一次更新多地部署呢?

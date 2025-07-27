@@ -2,7 +2,7 @@
 title: 编写R中的对象
 categories: Bioinfomatic
 date: 2025-04-13 15:57:55
-tags: ['rlang', 'object']
+tags: ['R语言', '面向对象', 'R6', 'S3', 'S4', 'rlang', 'object-oriented']
 ---
 
 面向对象是编程时一种常用的范式，在我的实际工作中，使用面向对象主要是为了通过继承特性减少重复代码，和将常用数据封装到对象内，避免过多、重复、嵌套的传递参数。

@@ -2,7 +2,7 @@
 title: Github Actions的基本使用
 categories: Script
 date: 2025-04-13 16:40:47
-tags: ['github', 'github actions']
+tags: ['持续集成', '自动化', '工作流', 'github actions', 'ci', 'cd', 'automation', 'workflow']
 ---
 
 在现代软件开发中，持续集成（CI）和持续部署（CD）是提高开发效率和质量的关键实践。[GitHub Actions](https://github.com/features/actions) 作为 GitHub 提供的强大自动化工具，能够帮助开发者轻松实现 CI/CD 以及更广阔的自动化工作流程。

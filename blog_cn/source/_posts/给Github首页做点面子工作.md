@@ -2,7 +2,7 @@
 title: 给Github首页做点面子工作
 categories: Script
 date: 2023-01-27 22:15:30
-tags: ['Github']
+tags: ['Github', '个人主页', '美化', 'Github Stats', 'Shields.io', 'README']
 ---
 
 给博客升级了, 那也要给Github首页也做点面子工程...

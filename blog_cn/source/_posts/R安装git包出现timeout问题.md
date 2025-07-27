@@ -2,7 +2,7 @@
 title: R安装github上的包出现timeout问题解决
 categories: Script
 date: 2018-09-05 08:57:17
-tags: ['R']
+tags: ['R', 'github', '包安装', 'timeout', 'curl', '手动安装']
 ---
 
 R安装github上面的包有时会出现连接不到github的问题, 记录一下解决方案

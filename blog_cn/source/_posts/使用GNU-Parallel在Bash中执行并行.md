@@ -2,7 +2,7 @@
 title: 使用GNU Parallel在Bash中执行并行
 categories: Script
 date: 2019-03-31 23:07:26
-tags: ["bash", "并行计算"]
+tags: ["bash", "并行计算", "GNU Parallel", "命令行工具", "性能优化"]
 ---
 
 之前已经在R和Python中都使用过并行了, 我是最近才知道原来Bash下面也有简单好用的并行程序: *GNU Parallel*[^1]. 这是一个Perl实现的程序, 可以方便的将Bash中各种命令并行执行.

@@ -2,7 +2,7 @@
 title: clash_nps自建内网穿透用vpn
 categories: Script
 date: 2023-01-08 22:03:20
-tags: ['nps', 'clash']
+tags: ['内网穿透', 'VPN', 'socks5代理', '远程办公', '流量代理', 'nps', 'clash', 'socks5']
 ---
 
 自疫情开始, 我就多少有一点远程办公的需求, 今天终于组合处了一个相对方便, 近似内网vpn使用体验的方案.

@@ -2,7 +2,7 @@
 title: Flask使用记录
 categories: Script
 date: 2020-08-09 01:25:45
-tags: ['Flask', 'Python']
+tags: ['Flask', 'Python', 'Web开发', '后端', 'API']
 ---
 
 因项目需要, 最近终于是实际看了下Flask怎么用, 照例来个记录.

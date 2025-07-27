@@ -2,7 +2,7 @@
 title: 编写Dockerfile构建docker镜像
 categories: Script
 date: 2019-10-05 16:58:54
-tags: ['docker', 'dockerfile']
+tags: ['Docker', 'Dockerfile', '容器化', '镜像构建', 'R语言']
 ---
 
 从过去的经验来看...我有很多的技能都属于副产物...今天这个也是, 我的本意在于使用网易提供的NemuBox源代码编译出一个网易改进过的Virtualbox, 结果...我学了几样跟docker有关的技能...

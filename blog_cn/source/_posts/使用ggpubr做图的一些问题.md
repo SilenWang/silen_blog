@@ -2,7 +2,7 @@
 title: R绘图问题记录
 categories: Script
 date: 2022-03-13 03:12:07
-tags: ['R', 'ggplot', 'ggpubr', 'survminer']
+tags: ['R语言', '数据可视化', 'ggpubr', 'survminer', 'ggplot2', '显著性检验', '生存分析']
 ---
 
 前段时间帮同事做图, 又解锁了一些新的问题和解决方式, 涉及ggpubr, 生存分析包, 做个记录.

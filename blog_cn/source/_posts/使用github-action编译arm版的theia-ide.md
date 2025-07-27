@@ -2,7 +2,7 @@
 title: 使用github_action编译arm版的theia_ide
 categories: Script
 date: 2025-06-16 23:20:58
-tags: ['github', 'theia']
+tags: ['ARM', 'FydeOS', 'ChromeOS', 'GitHub Actions', 'Codespaces', 'theia-ide']
 ---
 
 自从第一次接触chromeos/fydeos开始，我就一直在尝试各种不同的 vscode(-like) 编辑器，最近因为看到华为的CodeArt，知道了它的上游项目theia，又开始了折腾。

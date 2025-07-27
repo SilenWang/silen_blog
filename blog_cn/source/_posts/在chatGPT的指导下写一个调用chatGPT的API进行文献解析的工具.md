@@ -1,8 +1,13 @@
 ---
 title: 在chatGPT的指导下写一个调用chatGPT的API进行文献解析的工具
 tags:
-  - chatGPT
-  - AI
+  - ChatGPT
+  - API开发
+  - 文献解析
+  - 独立开发
+  - Python
+  - Gradio
+  - HuggingFace
 categories: Script
 date: 2023-03-27 01:26:48
 ---

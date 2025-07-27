@@ -2,7 +2,7 @@
 title: Snakemake的动态解析特性
 categories: Script
 date: 2019-11-24 23:00:31
-tags: ['Python', 'snakemake']
+tags: ['Python', '工作流管理', '生物信息学', '并行计算', 'snakemake', 'checkpoint', 'DAG']
 ---
 
 特么我终于成功使用这个特性了...我真是太南了...

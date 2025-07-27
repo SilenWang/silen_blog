@@ -2,7 +2,7 @@
 title: R小技巧收集
 categories: Script
 date: 2018-09-07 12:01:44
-tags: ['R']
+tags: ['R语言', '数据框', '数据结构', '数据操作', 'R', 'dataframe', 'data structure', 'data manipulation']
 ---
 
 用R总是会碰到各种问题, 收集一下

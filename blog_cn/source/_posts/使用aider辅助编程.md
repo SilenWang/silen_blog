@@ -2,7 +2,7 @@
 title: 使用aider辅助编程工作
 categories: Script
 date: 2025-04-25 00:42:46
-tags: ['AI', 'aider']
+tags: ['AI编程', '命令行工具', '自动化', '批量处理', 'aider', 'AI-assisted programming', 'command-line tool', 'automation']
 ---
 
 今年的deepseek着实让LLM又火了一把，虽然在chatGPT之后，copilot和cursor就一直在到处打广告，但是我其实一直没试过... 于是在今年，我... 试了试[Cline](https://cline.bot/)，确实好用，但是也符合我的固有印象，没有那么方便，尤其是，我更需要一个能直接在命令行使用并能够快速迁入脚本的选项，以批量完成一些简单的编码初始化业务，于是我找到了[aider](https://aider.chat/)...

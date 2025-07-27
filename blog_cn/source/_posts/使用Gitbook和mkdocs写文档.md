@@ -2,7 +2,7 @@
 title: '使用gitbook和mkdocs写文档'
 categories: Others
 date: 2019-07-07 22:13:31
-tags: ['文档', 'gitbook', 'mkdocs']
+tags: ['文档工具', '技术写作', 'gitbook', 'mkdocs', 'markdown']
 ---
 
 我的博客是使用hexo生成的, 这是一款基于Node.js的静态博客框架, 他可以帮助像我一样对前端一无所知的人快速搭建一个看上去有模有样的博客, 而我只需要会用markdown写博文就行. 同样, 在开发过程中总会有写技术文档的需要, 因此也就有了gitbook和mkdocs这样的工具.

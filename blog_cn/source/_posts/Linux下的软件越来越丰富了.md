@@ -2,7 +2,7 @@
 title: Linux发行版的易用性越来越高了
 categories: Others
 date: 2019-04-06 17:03:42
-tags: "linux"
+tags: ["Linux", "Ubuntu", "Deepin", "Manjaro", "中文支持", "软件生态", "跨平台", "Windows对比", "MEGA", "WPS", "R语言", "Ugene", "Steam"]
 ---
 
 前些天帮师姐弄了一下序列比对, 才发现原来经常用的MEGA出到了X(10), 并且现在有了Linux的GUI版本. 不由得小感叹了一下: 世界真是在慢慢变化的.

@@ -2,7 +2,7 @@
 title: 在Linux系统中添加自定义服务
 categories: Others
 date: 2019-10-05 16:00:31
-tags: ['systemd']
+tags: ['Linux', 'systemd', '服务管理', '自定义服务', 'systemd', 'service', 'Linux']
 ---
 
 使用Linux系统的时候经常会需要设置一些开机自启动的东西, 对于使用systemd的发行版, 自行编写服务文件并启用是个非常不错的选择.

@@ -2,7 +2,7 @@
 title: 使用pytest进行测试网络API测试
 categories: Script
 date: 2025-06-09 00:25:03
-tags: ['python', 'pytest']
+tags: ['测试', 'API测试', 'pytest', 'python', '自动化测试']
 ---
 
 这半年有相当一部分工作是维护公司的网站，由于是半路接手的代码，难保维护的时候不带来新的bug，因此根据领导的要求，学习了如何进行自动测试。

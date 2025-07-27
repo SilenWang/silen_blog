@@ -2,7 +2,7 @@
 title: 使用playwright控制浏览器进行测试
 categories: Script
 date: 2025-06-09 00:44:33
-tags: ['python', 'pytest', 'playwright']
+tags: ['自动化测试', '浏览器测试', 'playwright', 'pytest', 'python']
 ---
 
 

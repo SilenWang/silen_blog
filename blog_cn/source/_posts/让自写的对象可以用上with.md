@@ -2,7 +2,7 @@
 title: 让自写的对象可以用上with
 categories: Script
 date: 2019-11-14 18:56:24
-tags: ['Python']
+tags: ['Python', '上下文管理器', 'with语句', '魔术方法', '__enter__', '__exit__']
 ---
 
 `with open`是python中特别方便的一种写法, 对于支持的函数来说, 有了`with`这个语句可以很方便的在操作完成时自动关闭对象. 对于自己编写的对象其实也可以实现`with`语法的支持.

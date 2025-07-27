@@ -2,7 +2,7 @@
 title: 使用box包管理R脚本的依赖
 categories: Bioinfomatic
 date: 2025-04-13 15:07:54
-tags: ['box', 'rlang']
+tags: ['R语言', '模块化开发', 'box包', '代码管理', 'rlang', 'box']
 ---
 
 在习惯了python后，使用R进行脚本开发会让人感到十分痛苦，老声长谈的错误回溯不明确问题暂且不谈，当要写的脚本稍微复杂点，需要分文件的时候，才发现R的导入机制也挺蛋疼的.... 还好有[box包](https://klmr.me/box/index.html)，可以用类似python的逻辑来进行模块化导入。

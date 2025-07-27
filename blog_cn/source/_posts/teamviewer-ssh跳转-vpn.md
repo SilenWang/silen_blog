@@ -2,7 +2,7 @@
 title: teamviewer+ssh跳转=vpn
 categories: Script
 date: 2018-12-23 23:00:13
-tags: ['ssh', 'teamviewer']
+tags: ['VPN', 'SSH跳转', 'TeamViewer', 'VirtualBox', 'Cygwin', 'Windows', 'Linux']
 ---
 
 <!-- 摘要部分 -->

@@ -2,7 +2,7 @@
 title: ssh默认不支持rsa了
 categories: Others
 date: 2021-10-11 21:06:49
-tags: ['ssh', 'openssh', 'manjaro']
+tags: ['ssh', 'openssh', 'manjaro', 'rsa加密', 'ssh配置', '密钥认证']
 ---
 
 今天升级manjaro后最基本的ssh登陆突然出问题了, 提示有几种:

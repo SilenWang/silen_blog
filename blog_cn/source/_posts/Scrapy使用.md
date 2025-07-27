@@ -2,7 +2,7 @@
 title: Scrapy基本使用
 categories: Script
 date: 2022-03-13 03:01:14
-tags: ['Scrapy', '爬虫']
+tags: ['爬虫', '框架', 'Python', '数据采集', 'Scrapy']
 ---
 
 之前曾经尝试过Scrapy爬用药网站的信息, 但是没有做记录, 这次又帮同学爬了点东西所以趁机记录一下.

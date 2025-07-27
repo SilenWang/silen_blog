@@ -2,7 +2,7 @@
 title: 使用conda安装R包及jupyter
 categories: Others
 date: 2018-08-28 22:37:57
-tags: ['R', 'conda', 'jupyter']
+tags: ['R语言', 'conda', 'jupyter', '包管理', '环境配置', '远程访问', 'R', 'jupyter notebook']
 ---
 
 由于工作需要, 得安装一篇文献中提及的一个包, 本两想着两条命令完事, 谁知道一大堆依赖要解决...然后linux下的R包都是要编译的, 这可是要了老命了...还好有conda这个东西...

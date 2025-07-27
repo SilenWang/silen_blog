@@ -2,7 +2,7 @@
 title: docker内进行conda测试
 categories: Script
 date: 2018-10-06 19:01:12
-tags: ['docker', 'conda']
+tags: ['docker', 'conda', 'R', 'sscClust', '容器', '软件安装', '依赖管理', '生物信息学']
 ---
 
 装软件的时候想了想, 用conda的移植性和可行性还是更好一些, 所以想用conda再尝试一下, 顺便可以看看snakemake怎么样...

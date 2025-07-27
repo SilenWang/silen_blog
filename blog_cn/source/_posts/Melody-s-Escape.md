@@ -2,7 +2,7 @@
 title: Melody's Escape
 date: 2016-06-05 17:06:41
 categories: ['Daily']
-tags: [音游,旋律逃脱,Melody's Escape,闲来打游戏,黑历史计划]
+tags: [音游,音乐游戏,节奏游戏,游戏体验,游戏推荐,独立游戏]
 
 ---
 不知这首歌的原出处是哪, 反正我是玩Melody's Escape听到的...  

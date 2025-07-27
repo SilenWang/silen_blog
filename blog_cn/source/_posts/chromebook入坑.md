@@ -2,7 +2,7 @@
 title: chromebook入坑记?
 categories: Others
 date: 2022-10-16 21:44:36
-tags: ['chromeos', 'chromebook', 'fydeos']
+tags: ['ChromeOS', 'FydeOS', '云办公', 'Linux', 'chromebook', '远程开发']
 ---
 
 我一直有关注国产Linux系统的状态(虽然除了上古版本的Linux Deepin没有一个长时间使用过), 所以在Fyde OS还叫Flint OS的时候我就关注过这个基于Chromium OS的特别发行版, 也因为这个了解了在国外份额莫名其妙高(在过去的我看来)的Chrome OS

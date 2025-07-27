@@ -2,7 +2,7 @@
 title: bash-it
 categories: Script
 date: 2018-10-29 21:17:23
-tags: ['bash', 'plugin']
+tags: ['命令行', 'bash', 'plugin']
 ---
 
 bash-it是受oh-my-zsh启发而创建的bash插件集合项目. 安装上bash-it不仅可以让bash界面变得更炫酷, 也可以让命令行变得更为好用

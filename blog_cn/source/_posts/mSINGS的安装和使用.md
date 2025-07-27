@@ -2,7 +2,7 @@
 title: mSINGS的安装和使用
 categories: Bioinfomatic
 date: 2020-09-06 16:46:00
-tags: ['mSINGS']
+tags: ['微卫星不稳定性', 'MSI', '生物信息学', 'mSINGS', 'Python', 'samtools']
 ---
 
 mSINGS是一个用来检测MSI的软件, 其优势似乎是可以用于tumor only的样品.

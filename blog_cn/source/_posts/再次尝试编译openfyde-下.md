@@ -2,7 +2,7 @@
 title: 再次尝试编译openfyde（下)
 categories: Script
 date: 2025-06-19 23:09:23
-tags: ['fydeos', 'openfyde']
+tags: ['硬件兼容', '编译', '镜像生成', 'Rockchip', 'fydeos', 'openfyde']
 ---
 
 换了主板和CPU后，一切都顺畅了... 也不知道是原来主板还是CPU的问题，编译几十分钟就会报错，然后再进行编译又不会在上次的地方报错。着还是我人生第一次真遇到硬件不兼容这种问题... 再次活久见。

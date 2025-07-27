@@ -2,7 +2,7 @@
 title: R中的逻辑回归
 categories: Others
 date: 2019-03-16 14:07:19
-tags: ["R"]
+tags: ["R语言", "逻辑回归", "机器学习", "统计分析", "logistic regression", "machine learning"]
 ---
 
 想不到4年之后, 又要弄回归了...这一次用的R而不是SPSS, 之前作的是统计分析, 这次...居然变成机器学习了...

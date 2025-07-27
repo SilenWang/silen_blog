@@ -2,7 +2,7 @@
 title: Python使用Sqlite3
 categories: Script
 date: 2018-08-26 23:54:24
-tags: ['Python', 'sqlite']
+tags: ['Python', '数据库', 'SQLite3', 'sqlite']
 ---
 
 为了以后操作使用Sqlite3做准备, 上周上班的时候特意试了一下用操作数据库的数据, 为了方便直接用了sqlite3, 没想到sqlite3并不是所有语句都支持, 并且sqlite自由的点命令是无法被python的sqlite模块调用的....

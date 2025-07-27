@@ -2,7 +2,7 @@
 title: Git钩子使用
 categories: Script
 date: 2019-08-17 19:33:27
-tags: ['git', 'githook']
+tags: ['Git钩子', '自动化部署', '博客管理', 'git', 'githook', 'post-commit']
 ---
 
 虽然我也用Git进行部分项目的代码管理, 但是其实很多Git的特性我都还不熟悉, 也没有用, 今天尝试了一下Githook的使用.

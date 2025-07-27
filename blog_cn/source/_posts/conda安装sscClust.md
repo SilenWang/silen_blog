@@ -2,7 +2,7 @@
 title: conda安装sscClust
 categories: Script
 date: 2018-10-09 08:19:01
-tags: ['conda']
+tags: ['conda', 'R', 'sscClust', 'Bioconductor', '安装问题']
 ---
 
 原来又撞到了bug....
