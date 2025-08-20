@@ -1,6 +1,6 @@
 ---
 title: Python中的一些魔术方法
-categories: Script
+categories: Coding
 date: 2019-11-25 23:34:06
 tags: ['Python', '魔术方法', '面向对象', '特殊方法']
 ---

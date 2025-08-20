@@ -1,6 +1,6 @@
 ---
 title: 给Github首页做点面子工作
-categories: Script
+categories: Others
 date: 2023-01-27 22:15:30
 tags: ['Github', '个人主页', '美化', 'Github Stats', 'Shields.io', 'README']
 ---

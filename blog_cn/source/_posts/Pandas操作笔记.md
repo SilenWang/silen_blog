@@ -1,6 +1,6 @@
 ---
 title: Pandas操作笔记
-categories: Script
+categories: Coding
 date: 2018-08-29 12:16:24
 tags: ['数据处理', 'Python', 'Pandas', '数据分析']
 ---

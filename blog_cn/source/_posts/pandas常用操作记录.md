@@ -1,6 +1,6 @@
 ---
 title: pandas常用操作记录
-categories: Script
+categories: Coding
 date: 2020-07-26 00:36:49
 tags: ['数据处理', '缺失值处理', 'Pandas', 'Python']
 ---

@@ -1,6 +1,6 @@
 ---
 title: 从ggplot的箱线图中提取离群值并进行去除
-categories: Script
+categories: Coding
 date: 2020-01-05 17:56:20
 tags: ['R语言', 'ggplot2', '数据可视化', '箱线图', '离群值处理', 'R', 'ggplot']
 ---

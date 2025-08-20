@@ -1,6 +1,6 @@
 ---
 title: 使用box包管理R脚本的依赖
-categories: Bioinfomatic
+categories: Coding
 date: 2025-04-13 15:07:54
 tags: ['R语言', '模块化开发', 'box包', '代码管理', 'rlang', 'box']
 ---

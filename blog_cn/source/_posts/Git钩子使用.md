@@ -1,6 +1,6 @@
 ---
 title: Git钩子使用
-categories: Script
+categories: Others
 date: 2019-08-17 19:33:27
 tags: ['Git钩子', '自动化部署', '博客管理', 'git', 'githook', 'post-commit']
 ---

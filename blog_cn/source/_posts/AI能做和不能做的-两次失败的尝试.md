@@ -1,6 +1,6 @@
 ---
 title: 使用AI的能与不能----两次失败的尝试
-categories: Script
+categories: Others
 date: 2025-07-15 00:44:45
 tags: ['AI辅助开发', '技术尝试', 'Theia', 'FydeOS', '内核', 'aider', 'openfyde']
 ---

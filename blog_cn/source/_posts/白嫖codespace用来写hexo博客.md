@@ -1,7 +1,7 @@
 ---
 title: 白嫖codespace用来写hexo博客
 tags: ['云端开发', 'Hexo', '博客写作', 'Github', 'Codespace']
-categories: Daily
+categories: Others
 date: 2023-07-23 17:10:23
 ---
 

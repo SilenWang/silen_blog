@@ -1,7 +1,7 @@
 ---
 title: Melody's Escape
 date: 2016-06-05 17:06:41
-categories: ['Daily']
+categories: ['Gaming']
 tags: [音游,音乐游戏,节奏游戏,游戏体验,游戏推荐,独立游戏]
 
 ---

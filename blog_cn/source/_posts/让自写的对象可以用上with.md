@@ -1,6 +1,6 @@
 ---
 title: 让自写的对象可以用上with
-categories: Script
+categories: Coding
 date: 2019-11-14 18:56:24
 tags: ['Python', '上下文管理器', 'with语句', '魔术方法', '__enter__', '__exit__']
 ---

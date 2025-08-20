@@ -1,7 +1,7 @@
 ---
 title: 用R绘制地图的笔记
 date: 2018-07-29 00:38:09
-categories: Script
+categories: Coding
 tags: [R语言, 地图绘制, 流行病学数据, 热图, ggplot2, shapefile]
 ---
 

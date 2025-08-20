@@ -1,6 +1,6 @@
 ---
 title: Bash小技巧两则
-categories: Script
+categories: Coding
 date: 2019-06-05 21:17:03
 tags: ["Linux", "Bash", "命令行", "输入输出重定向", "进程替换"]
 ---

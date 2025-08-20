@@ -1,6 +1,6 @@
 ---
 title: R小技巧收集
-categories: Script
+categories: Coding
 date: 2018-09-07 12:01:44
 tags: ['R语言', '数据框', '数据结构', '数据操作', 'R', 'dataframe', 'data structure', 'data manipulation']
 ---

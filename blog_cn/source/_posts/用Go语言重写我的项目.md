@@ -1,6 +1,6 @@
 ---
 title: 用Go语言重写我的项目
-categories: Script
+categories: Coding
 date: 2019-06-02 14:46:49
 tags: ["Go语言", "Python", "编程语言对比", "项目重构", "性能优化", "golang", "programming"]
 ---

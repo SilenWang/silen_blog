@@ -1,6 +1,6 @@
 ---
 title: 再次尝试编译openfyde（下)
-categories: Script
+categories: Others
 date: 2025-06-19 23:09:23
 tags: ['硬件兼容', '编译', '镜像生成', 'Rockchip', 'fydeos', 'openfyde']
 ---

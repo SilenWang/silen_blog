@@ -2,7 +2,7 @@
 title: R培训笔记
 date: 2018-07-29 00:35:55
 tags: ['R语言','数据分析','统计绘图','数据操作','培训笔记','R','data analysis','statistics']
-categories: Script
+categories: Coding
 ---
 
 研究生期间参加广东省疾控R培训的笔记, 这算是我真正意义上的编程入门课了

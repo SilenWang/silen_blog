@@ -1,6 +1,6 @@
 ---
 title: conda安装sscClust
-categories: Script
+categories: Others
 date: 2018-10-09 08:19:01
 tags: ['conda', 'R', 'sscClust', 'Bioconductor', '安装问题']
 ---

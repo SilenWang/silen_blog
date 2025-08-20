@@ -1,6 +1,6 @@
 ---
 title: R中parellel包的使用
-categories: Script
+categories: Coding
 date: 2019-01-01 02:04:56
 tags: ['R语言', '并行计算', 'ggplot', '数据可视化', 'R', 'parallel', 'performance']
 ---

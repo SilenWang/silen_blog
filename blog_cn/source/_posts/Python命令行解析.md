@@ -1,6 +1,6 @@
 ---
 title: Python命令行解析
-categories: Script
+categories: Coding
 date: 2018-10-22 12:12:50
 tags: ['命令行解析', 'Python', 'argparse', '子命令']
 ---

@@ -1,6 +1,6 @@
 ---
 title: python中的多进程
-categories: Script
+categories: Coding
 date: 2019-02-12 23:45:59
 tags: ["Python", "多进程", "并行计算", "multiprocessing", "Pool"]
 ---

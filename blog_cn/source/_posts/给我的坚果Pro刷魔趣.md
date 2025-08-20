@@ -1,6 +1,6 @@
 ---
 title: 给我的坚果Pro刷魔趣
-categories: Daily
+categories: Others
 date: 2021-02-12 20:56:03
 tags: ['手机', '刷机', '安卓', '魔趣', '坚果Pro', 'Mokee', 'android', 'custom ROM']
 ---

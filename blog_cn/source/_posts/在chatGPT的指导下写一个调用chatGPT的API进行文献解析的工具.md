@@ -8,7 +8,7 @@ tags:
   - Python
   - Gradio
   - HuggingFace
-categories: Script
+categories: Coding
 date: 2023-03-27 01:26:48
 ---
 

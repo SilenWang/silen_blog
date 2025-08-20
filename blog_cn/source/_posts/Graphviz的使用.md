@@ -1,6 +1,6 @@
 ---
 title: Graphviz的使用
-categories: 技术文档
+categories: Others
 date: 2019-04-25 21:31:53
 tags: ['流程图','Graphviz','可视化工具','软件开发']
 ---

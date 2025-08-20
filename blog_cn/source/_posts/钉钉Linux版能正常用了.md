@@ -1,6 +1,6 @@
 ---
 title: 钉钉Linux版能正常用了
-categories: Daily
+categories: Others
 date: 2022-02-22 22:22:22
 tags: ['钉钉', 'Linux', 'AUR', 'Arch Linux', '办公软件']
 ---

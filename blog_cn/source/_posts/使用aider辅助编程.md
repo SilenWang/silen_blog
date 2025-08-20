@@ -1,6 +1,6 @@
 ---
 title: 使用aider辅助编程工作
-categories: Script
+categories: Others
 date: 2025-04-25 00:42:46
 tags: ['AI编程', '命令行工具', '自动化', '批量处理', 'aider', 'AI-assisted programming', 'command-line tool', 'automation']
 ---

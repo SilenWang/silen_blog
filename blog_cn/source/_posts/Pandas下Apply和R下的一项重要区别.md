@@ -1,6 +1,6 @@
 ---
 title: Pandas下Apply和R下的一项重要区别
-categories: Script
+categories: Coding
 date: 2023-01-15 00:30:41
 tags: ['数据处理', '数据清洗', 'Pandas', 'R', 'Python']
 ---

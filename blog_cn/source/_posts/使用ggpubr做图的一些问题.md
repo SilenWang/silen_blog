@@ -1,6 +1,6 @@
 ---
 title: R绘图问题记录
-categories: Script
+categories: Coding
 date: 2022-03-13 03:12:07
 tags: ['R语言', '数据可视化', 'ggpubr', 'survminer', 'ggplot2', '显著性检验', '生存分析']
 ---

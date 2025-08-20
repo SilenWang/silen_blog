@@ -1,6 +1,6 @@
 ---
 title: 破解了一个apk
-categories: Daily
+categories: Gaming
 date: 2020-02-02 21:51:39
 tags: ["APK破解", "反编译", "Android逆向", "Apktools", "enjarify", "jd-gui", "adb", "uber-apk-signer"]
 ---

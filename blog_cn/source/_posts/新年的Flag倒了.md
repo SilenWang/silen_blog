@@ -9,7 +9,7 @@ tags:
   - New Year
   - Expectation
   - Frustration
-categories: Daily
+categories: Others
 date: 2023-02-02 16:25:13
 ---
 

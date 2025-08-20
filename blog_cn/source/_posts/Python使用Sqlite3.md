@@ -1,6 +1,6 @@
 ---
 title: Python使用Sqlite3
-categories: Script
+categories: Coding
 date: 2018-08-26 23:54:24
 tags: ['Python', '数据库', 'SQLite3', 'sqlite']
 ---

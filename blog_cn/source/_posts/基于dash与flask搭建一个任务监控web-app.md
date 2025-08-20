@@ -1,6 +1,6 @@
 ---
 title: 基于dash与flask搭建一个任务监控web-app
-categories: Bioinfomatic
+categories: Coding
 date: 2021-06-21 01:24:23
 tags: ['生物信息学', '任务监控', 'Web应用', 'python', 'flask', 'dash', 'mongoDB', 'snakemake', 'flasgger']
 ---

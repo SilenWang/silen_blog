@@ -1,6 +1,6 @@
 ---
 title: 使用pytest进行测试网络API测试
-categories: Script
+categories: Coding
 date: 2025-06-09 00:25:03
 tags: ['测试', 'API测试', 'pytest', 'python', '自动化测试']
 ---

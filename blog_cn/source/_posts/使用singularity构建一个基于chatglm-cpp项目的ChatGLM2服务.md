@@ -1,7 +1,7 @@
 ---
 title: 使用singularity构建一个基于chatglm.cpp项目的ChatGLM2服务
 tags: ['容器技术', 'singularity', 'ChatGLM2', 'chatglm.cpp', '容器构建', 'HPC']
-categories: Bioinfomatic
+categories: Coding
 date: 2023-08-16 07:08:46
 ---
 

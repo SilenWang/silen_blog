@@ -1,6 +1,6 @@
 ---
 title: clash_nps自建内网穿透用vpn
-categories: Script
+categories: Others
 date: 2023-01-08 22:03:20
 tags: ['内网穿透', 'VPN', 'socks5代理', '远程办公', '流量代理', 'nps', 'clash', 'socks5']
 ---

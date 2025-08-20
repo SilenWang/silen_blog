@@ -1,6 +1,6 @@
 ---
 title: 关于FydeTab Duo的碎碎念
-categories: Bioinfomatic
+categories: Others
 date: 2024-09-24 23:30:45
 tags: ['FydeOS', 'FydeTab Duo', 'Linux子系统', 'Chromebook', 'pixi']
 ---
