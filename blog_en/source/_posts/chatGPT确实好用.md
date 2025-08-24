@@ -4,7 +4,7 @@ tags:
   - chatGPT
   - python
   - flask
-categories: Script
+categories: Others
 date: 2023-02-23 18:24:06
 toc: False
 ---

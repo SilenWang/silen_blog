@@ -1,6 +1,6 @@
 ---
 title: R Small Tips Collection
-categories: Script
+categories: Coding
 date: 2018-09-07 12:01:44
 tags: ['R']
 ---

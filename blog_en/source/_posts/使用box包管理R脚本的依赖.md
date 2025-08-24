@@ -1,6 +1,6 @@
 ---
 title: Managing R Script Dependencies with the box Package
-categories: Bioinfomatic
+categories: Coding
 date: 2025-04-13 15:07:54
 tags: ['box', 'rlang']
 ---

@@ -1,6 +1,6 @@
 ---
 title: bash-it
-categories: Script
+categories: Others
 date: 2018-10-29 21:17:23
 tags: ['bash', 'plugin']
 ---

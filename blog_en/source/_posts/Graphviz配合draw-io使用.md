@@ -1,6 +1,6 @@
 ---
 title: Graphviz配合draw.io使用
-categories: Script
+categories: Others
 date: 2021-10-20 01:48:35
 tags: ['graphviz', 'drawio']
 ---

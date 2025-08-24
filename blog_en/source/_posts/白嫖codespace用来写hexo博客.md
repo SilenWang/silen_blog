@@ -1,7 +1,7 @@
 ---
 title: Using Codespace for Free to Write Hexo Blogs
 tags: ['github', 'codespace']
-categories: Daily
+categories: Coding
 date: 2023-07-23 17:10:23
 ---
 

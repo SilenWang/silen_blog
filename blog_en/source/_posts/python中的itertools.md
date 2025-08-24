@@ -1,6 +1,6 @@
 ---
 title: python中的itertools
-categories: Script
+categories: Coding
 date: 2019-02-13 00:37:27
 tags: ["Python", "itertools"]
 ---

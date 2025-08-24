@@ -1,6 +1,6 @@
 ---
 title: Trying to compile openfyde again (Part 2)
-categories: Script
+categories: Others
 date: 2025-06-19 23:09:23
 tags: ['fydeos', 'openfyde']
 ---

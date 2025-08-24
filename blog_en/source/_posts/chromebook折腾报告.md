@@ -1,7 +1,7 @@
 ---
 title: Chromebook Tinkering Report
 tags: ['chromeos', 'chromebook']
-categories: Daily
+categories: Others
 date: 2023-08-16 11:11:11
 ---
 

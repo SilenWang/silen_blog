@@ -1,6 +1,6 @@
 ---
 title: Python Command Line Parsing
-categories: Script
+categories: Coding
 date: 2018-10-22 12:12:50
 tags: ['Python', 'argparse', 'Argument Parsing']
 ---

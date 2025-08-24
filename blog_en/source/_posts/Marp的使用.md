@@ -1,6 +1,6 @@
 ---
 title: 'Using Marp'
-categories: Script
+categories: Others
 date: 2022-06-22 15:40:28
 tags: ['Marp', 'Python']
 ---

@@ -2,7 +2,7 @@
 title: New Year's Flag Fell Down
 tags:
   - Daily
-categories: Daily
+categories: Others
 date: 2023-02-02 16:25:13
 ---
 

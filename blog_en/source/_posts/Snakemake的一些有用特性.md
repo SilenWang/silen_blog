@@ -1,6 +1,6 @@
 ---
 title: Some Useful Features of Snakemake
-categories: Script
+categories: Coding
 date: 2019-03-06 23:41:40
 tags: ['Python', 'snakemake']
 ---

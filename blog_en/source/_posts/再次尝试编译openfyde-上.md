@@ -1,6 +1,6 @@
 ---
 title: Trying to Compile openfyde Again (Part 1)
-categories: Script
+categories: Others
 date: 2025-06-15 10:50:34
 tags: ['openfyde']
 ---

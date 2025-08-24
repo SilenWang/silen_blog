@@ -1,6 +1,6 @@
 ---
 title: Some Magic Methods in Python
-categories: Script
+categories: Coding
 date: 2019-11-25 23:34:06
 tags: ['Python']
 ---

@@ -1,7 +1,7 @@
 ---
 title: Deploying RStudio with Singularity and a Conda Environment
 tags: ['conda', 'rstudio', 'singularity']
-categories: Bioinfomatic
+categories: Coding
 date: 2023-07-26 16:13:50
 ---
 

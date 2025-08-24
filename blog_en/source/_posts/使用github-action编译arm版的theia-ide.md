@@ -1,6 +1,6 @@
 ---
 title: Compiling ARM version of Theia-IDE using GitHub Actions
-categories: Script
+categories: Others
 date: 2025-06-16 23:20:58
 tags: ['github', 'theia']
 

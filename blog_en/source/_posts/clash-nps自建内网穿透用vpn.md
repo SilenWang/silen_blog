@@ -1,6 +1,6 @@
 ---
 title: clash_nps self-built inner net penetration using VPN
-categories: Script
+categories: Others
 date: 2023-01-08 22:03:20
 tags: ['nps', 'clash']
 ---

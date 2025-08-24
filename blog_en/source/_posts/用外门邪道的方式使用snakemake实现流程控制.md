@@ -1,6 +1,6 @@
 ---
 title: Using Snakemake for Workflow Control in Unconventional Ways
-categories: Script
+categories: Coding
 date: 2018-11-17 12:47:57
 tags: ['snakemake']
 ---

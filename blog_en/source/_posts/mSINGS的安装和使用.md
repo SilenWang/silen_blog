@@ -1,6 +1,6 @@
 ---
 title: Installation and Usage of mSINGS
-categories: Bioinformatics
+categories: Bioinformatic
 date: 2020-09-06 16:46:00
 tags: ['mSINGS']
 ---

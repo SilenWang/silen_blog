@@ -1,6 +1,6 @@
 ---
 title: Registering New Python or R Kernels in Jupyter
-categories: Script
+categories: Others
 date: 2023-01-17 12:53:40
 tags: ['jupyter']
 ---

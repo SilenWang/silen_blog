@@ -1,6 +1,6 @@
 ---
 title: Flashing Mokee on My Nutro Pro
-categories: Daily
+categories: Others
 date: 2021-02-12 20:56:03
 tags: ['phone', 'Mokee', 'android']
 ---

@@ -1,6 +1,6 @@
 ---
 title: Writing Objects in R
-categories: Bioinfomatic
+categories: Coding
 date: 2025-04-13 15:57:55
 tags: ['rlang', 'object']
 ---

@@ -1,6 +1,6 @@
 ---
 title: Deploying Hexo Blog with Pixi on Fydetab Duo
-categories: Script
+categories: Others
 date: 2024-08-04 13:04:05
 tags: ['hexo', 'pixi', 'fydeos', 'fydetab duo']
 ---

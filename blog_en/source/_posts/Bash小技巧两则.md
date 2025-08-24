@@ -1,6 +1,6 @@
 ---
 title: Two Bash Tricks
-categories: Script
+categories: Coding
 date: 2019-06-05 21:17:03
 tags: ["linux", "bash"]
 ---

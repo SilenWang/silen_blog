@@ -1,6 +1,6 @@
 ---
 title: Building a Task Monitoring Web App with Dash and Flask
-categories: Bioinfomatic
+categories: Coding
 date: 2021-06-21 01:24:23
 tags: ['python', 'flask', 'dash', 'mongoDB', 'pymongo', 'flasgger']
 ---

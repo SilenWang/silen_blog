@@ -1,6 +1,6 @@
 ---
 title: What AI Can and Cannot Do - Two Failed Attempts
-categories: Script
+categories: Others
 date: 2025-07-15 00:44:45
 tags: ['AI', 'aider', 'openfyde', 'theia']
 ---

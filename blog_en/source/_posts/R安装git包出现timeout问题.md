@@ -1,6 +1,6 @@
 ---
 title: R Install GitHub Package Timeout Issue Solution
-categories: Script
+categories: Coding
 date: 2018-09-05 08:57:17
 tags: ['R']
 ---

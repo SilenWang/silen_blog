@@ -1,6 +1,6 @@
 ---
 title: Let Custom Objects Use the 'with' Statement
-categories: Script
+categories: Coding
 date: 2019-11-14 18:56:24
 tags: ['Python']
 ---

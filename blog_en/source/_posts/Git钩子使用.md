@@ -1,6 +1,6 @@
 ---
 title: Git Hooks Usage
-categories: Script
+categories: Others
 date: 2019-08-17 19:33:27
 tags: ['git', 'githook']
 ---

@@ -1,7 +1,7 @@
 ---
 title: Build a ChatGLM2 Service Based on the chatglm.cpp Project Using Singularity
 tags: ['sinularity', 'container']
-categories: Bioinformatics
+categories: Coding
 date: 2023-08-16 07:08:46
 ---
 

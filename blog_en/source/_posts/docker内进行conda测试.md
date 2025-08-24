@@ -1,6 +1,6 @@
 ---
 title: Testing Conda Inside Docker
-categories: Script
+categories: Coding
 date: 2018-10-06 19:01:12
 tags: ['docker', 'conda']
 ---

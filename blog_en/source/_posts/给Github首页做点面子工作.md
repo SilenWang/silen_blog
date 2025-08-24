@@ -1,6 +1,6 @@
 ---
 title: Sprucing Up My GitHub Profile
-categories: Script
+categories: Others
 date: 2023-01-27 22:15:30
 tags: ['GitHub']
 ---

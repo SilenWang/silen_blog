@@ -1,6 +1,6 @@
 ---
 title: Flask Usage Record
-categories: Script
+categories: Coding
 date: 2020-08-09 01:25:45
 tags: ['Flask', 'Python']
 ---

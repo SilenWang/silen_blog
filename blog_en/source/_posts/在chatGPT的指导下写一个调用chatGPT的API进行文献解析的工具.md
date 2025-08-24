@@ -3,7 +3,7 @@ title: In the Guidance of chatGPT, Write a Tool to Parse Literature Using chatGP
 tags:
   - chatGPT
   - AI
-categories: Script
+categories: Coding
 date: 2023-03-27 01:26:48
 ---
 

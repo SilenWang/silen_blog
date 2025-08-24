@@ -1,6 +1,6 @@
 ---
 title: Pandas Operation Notes
-categories: Script
+categories: Coding
 date: 2018-08-29 12:16:24
 tags: ['Python', 'Pandas']
 ---

@@ -1,6 +1,6 @@
 ---
 title: Multiprocessing in Python
-categories: Script
+categories: Coding
 date: 2019-02-12 23:45:59
 tags: ["Python", "Multiprocessing", "Parallel Computing"]
 ---

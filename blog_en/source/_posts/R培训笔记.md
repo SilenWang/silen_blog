@@ -2,7 +2,7 @@
 title: R Training Notes
 date: 2018-07-29 00:35:55
 tags: ['R']
-categories: Script
+categories: Coding
 ---
 
 Graduate training on R at the Guangdong Provincial CDC was my first serious programming course.

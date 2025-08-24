@@ -1,6 +1,6 @@
 ---
 title: A Key Difference Between Pandas in Python and R
-categories: Script
+categories: Coding
 date: 2023-01-15 00:30:41
 tags: ['Pandas', 'R', 'Python']
 ---

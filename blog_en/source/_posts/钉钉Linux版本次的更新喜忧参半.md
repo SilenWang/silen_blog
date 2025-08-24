@@ -3,7 +3,7 @@ title: The Update of DingTalk for Linux Is Mixed
 tags:
   - Linux
   - DingTalk
-categories: Daily
+categories: Others
 date: 2023-02-03 17:27:49
 ---
 

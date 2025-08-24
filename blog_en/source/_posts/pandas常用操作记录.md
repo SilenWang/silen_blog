@@ -1,6 +1,6 @@
 ---
 title: pandas Common Operations Record
-categories: Script
+categories: Coding
 date: 2020-07-26 00:36:49
 tags: ['Pandas', 'Python']
 ---

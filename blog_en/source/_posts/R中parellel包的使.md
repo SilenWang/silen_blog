@@ -1,6 +1,6 @@
 ---
 title: Using the parallel package in R
-categories: Script
+categories: Coding
 date: 2019-01-01 02:04:56
 tags: ['R', 'Parallel Computing']
 ---

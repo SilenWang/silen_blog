@@ -1,6 +1,6 @@
 ---
 title: Random Thoughts on FydeTab Duo
-categories: Daily
+categories: Others
 date: 2024-09-24 23:30:45
 tags: ['pixi', 'fydeos']
 ---

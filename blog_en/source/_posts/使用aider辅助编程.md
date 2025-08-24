@@ -1,6 +1,6 @@
 ---
 title: Using aider for programming assistance
-categories: Script
+categories: Coding
 date: 2025-04-25 00:42:46
 tags: ['AI', 'aider']
 ---

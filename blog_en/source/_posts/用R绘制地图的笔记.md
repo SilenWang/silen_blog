@@ -2,7 +2,7 @@
 title: Notes on Drawing Maps with R
 date: 2018-07-29 00:38:09
 tags: [R]
-categories: Script
+categories: Coding
 ---
 
 During my graduate studies, I had the need to display results using maps and used R to create them. I recorded the code from that time below.

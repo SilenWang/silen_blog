@@ -1,6 +1,6 @@
 ---
 title: conda Install sscClust
-categories: Script
+categories: Bioinfomatics
 date: 2018-10-09 08:19:01
 tags: ['conda']
 ---

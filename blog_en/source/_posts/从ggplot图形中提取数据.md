@@ -1,6 +1,6 @@
 ---
 title: Extracting Outliers from ggplot Boxplots and Removing Them
-categories: Script
+categories: Coding
 date: 2020-01-05 17:56:20
 tags: ['R', 'ggplot']
 ---

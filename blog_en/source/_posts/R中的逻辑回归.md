@@ -1,6 +1,6 @@
 ---
 title: Logistic Regression in R
-categories: Others
+categories: Statistic
 date: 2019-03-16 14:07:19
 tags: ["R"]
 ---
