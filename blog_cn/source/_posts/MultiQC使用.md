@@ -1,6 +1,6 @@
 ---
 title: MultiQC简单使用
-categories: Bioinfomatic
+categories: Bioinformatics
 date: 2019-07-27 21:02:16
 tags: 
 - NGS

@@ -1,6 +1,6 @@
 ---
 title: mSINGS的安装和使用
-categories: Bioinfomatic
+categories: Bioinformatics
 date: 2020-09-06 16:46:00
 tags: ['微卫星不稳定性', 'MSI', '生物信息学', 'mSINGS', 'Python', 'samtools']
 ---

@@ -6,7 +6,7 @@ tags:
   - monocle3
   - jupyter
   - xeus-r
-categories: Bioinfomatic
+categories: Bioinformatics
 date: 2024-06-23 01:47:03
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: SGE系统使用笔记
-categories: Bioinfomatic
+categories: Bioinformatics
 date: 2018-08-30 09:36:38
 tags: ['SGE', '网格引擎', 'qsub', 'qlogin', '集群计算', 'sge']
 ---

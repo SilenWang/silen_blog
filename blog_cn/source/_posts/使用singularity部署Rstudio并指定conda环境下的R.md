@@ -1,7 +1,7 @@
 ---
 title: 使用singularity部署Rstudio并指定conda环境下的R
 tags: ['容器技术', 'Rstudio部署', 'conda环境', 'singularity', 'rstudio-server', 'conda']
-categories: Bioinfomatic
+categories: Bioinformatics
 date: 2023-07-26 16:13:50
 ---
 

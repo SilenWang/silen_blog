@@ -1,6 +1,6 @@
 ---
 title: MultiQC Simple Usage
-categories: Bioinformatic
+categories: Bioinformatics
 date: 2019-07-27 21:02:16
 tags: ['qc', 'multiqc']
 ---

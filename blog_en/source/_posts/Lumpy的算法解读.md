@@ -1,6 +1,6 @@
 ---
 title: Lumpy's Algorithm Interpretation
-categories: Bioinformatic
+categories: Bioinformatics
 date: 2019-03-31 22:10:20
 tags: ['Structural Variants']
 mathjax: true

@@ -1,6 +1,6 @@
 ---
 title: SGE System Usage Notes
-categories: Bioinformatic
+categories: Bioinformatics
 date: 2018-08-30 09:36:38
 tags: ['sge']
 ---

@@ -1,6 +1,6 @@
 ---
 title: 新工具解决老问题----使用pixi进行生物信息环境配置
-categories: Bioinfomatic
+categories: Bioinformatics
 date: 2024-06-22 01:26:08
 tags: ['生物信息', '环境配置', 'pixi', 'conda', 'mamba', '依赖管理']
 ---

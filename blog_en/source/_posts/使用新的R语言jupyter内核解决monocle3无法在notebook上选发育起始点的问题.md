@@ -5,7 +5,7 @@ tags:
   - singlecell
   - jupyter
   - xeus
-categories: Bioinfomatic
+categories: Bioinformatics
 date: 2024-06-23 01:47:03
 ---
 
