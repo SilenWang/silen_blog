@@ -15,7 +15,7 @@ for file in `ls $DIR_A/*`; do
         echo "开始文稿校对"
         /home/sylens/.pixi/envs/pip/bin/aider --no-show-model-warnings --yes --no-auto-commits \
             --no-show-model-warnings --yes --no-auto-commits \
-            --message "我这里有一篇文稿的中英双语版本，请校对两者的内容是否一致，如果不一致，按照中文的描述来修正英文文稿中的描述，然后将修改保存到原文件中" \
-            $file ${DIR_B}/${filename}
+            --message "我这里有一篇文稿的中文版本，请根据中文版本，生成英文版本的文稿，英文版请存放到 ${DIR_B}/${filename} 中" \
+            $file
     fi
 done
