@@ -2,7 +2,7 @@
 title: {{ title }}
 date: {{ date }}
 tags:
-categories: Script / Bioinfomatic / Others / Daily
+categories: Bioinformatics / Coding / Gaming / Others / Script / Statistic
 ---
 
 <!-- 摘要部分 -->
