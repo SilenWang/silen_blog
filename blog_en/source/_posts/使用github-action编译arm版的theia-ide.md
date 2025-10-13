@@ -3,6 +3,7 @@ title: Compiling ARM version of Theia-IDE using GitHub Actions
 categories: Others
 date: 2025-06-16 23:20:58
 tags: ['github', 'theia']
+---
 
 Since my first encounter with ChromeOS/FydeOS, I've been trying various VSCode-like editors. Recently, after learning about Huawei's CodeArt and its upstream project Theia, I started tinkering again. 
 Unfortunately, my current device is an 8GB FydeOS, not the 16GB Manjaro or PixelBook 2017 I used before. The available memory in the Linux container is very limited - I can't even compile an ARM version of Theia-IDE browser edition... So... I had to "borrow" GitHub's resources again.
