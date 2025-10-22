@@ -2,7 +2,7 @@
   "name": "silen_blog",
   "build": {
     "dockerfile": "Dockerfile",
-    "context": ".."
+    "context": "."
   },
   // "postCreateCommand": "pixi run deploy || true",
   "remoteUser": "vscode"
