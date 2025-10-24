@@ -1,7 +1,7 @@
 {
   "name": "silen_blog",
   "image": "mcr.microsoft.com/vscode/devcontainers/base:bookworm",
-  "postCreateCommand": "curl -fsSL https://pixi.sh/install.sh | sh && cd /workspaces/silenblog/ && pixi run deploy",
+  "postCreateCommand": "curl -fsSL https://pixi.sh/install.sh | sh && source /home/vscode/.bashrc && cd /workspaces/silenblog/ && pixi run deploy",
   "customizations": {
     "vscode": {
       "settings": {
