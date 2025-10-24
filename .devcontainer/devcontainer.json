@@ -1,8 +1,6 @@
 {
-  "name": "silen_blog",
   "build": {
       "dockerfile": "./Dockerfile",
       "context": "."
-  },
-  "postCreateCommand": "pixi run deploy"
+  }
 }
