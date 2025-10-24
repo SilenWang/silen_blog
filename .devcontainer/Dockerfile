@@ -1,5 +1,5 @@
 # 使用 Pixi 官方基础镜像
-FROM mcr.microsoft.com/vscode/devcontainers/base-debian:bookworm
+FROM mcr.microsoft.com/vscode/devcontainers/base:bookworm
 
 # 安装常用工具
 RUN curl -fsSL https://pixi.sh/install.sh | sh
