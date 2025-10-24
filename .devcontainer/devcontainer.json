@@ -1,6 +1,5 @@
 {
-  "build": {
-      "dockerfile": "./Dockerfile",
-      "context": "."
-  }
+  "name": "silen_blog",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:bookworm",
+  "postCreateCommand": "curl -fsSL https://pixi.sh/install.sh | sh"
 }
