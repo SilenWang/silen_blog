@@ -10,3 +10,4 @@ db.json
 .pixi
 *.egg-info
 .aider*
+**/.yarn*
