@@ -1,5 +1,8 @@
-# 使用 ms 提供的镜像，使用其他镜像会有用户问题（无vscode）
-FROM mcr.microsoft.com/vscode/devcontainers/base:bookworm
+# 使用 ms 官方基础镜像，含有vscode用户，避免devpod启动时有问题
+FROM mcr.microsoft.com/devcontainers/base:bookworm
+
+# 为vscode安装pixi
+USER vscode
 
 # 安装常用工具
 RUN curl -fsSL https://pixi.sh/install.sh | sh
@@ -7,3 +10,5 @@ RUN curl -fsSL https://pixi.sh/install.sh | sh
 # 配置 git 用户信息
 RUN git config --global user.name "Sylens" \
   && git config --global user.email "qiumin14@163.com"
+
+ENV PATH="/home/vscode/.pixi/bin:${PATH}"
