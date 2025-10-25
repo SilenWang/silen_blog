@@ -1,20 +1,19 @@
 {
   "name": "silen_blog",
-  "image": "mcr.microsoft.com/vscode/devcontainers/base:bookworm",
-  "postCreateCommand": "curl -fsSL https://pixi.sh/install.sh | sh",
+  "build": { "dockerfile": "Dockerfile" },
+  "postCreateCommand": "pixi run deploy",
   "customizations": {
     "vscode": {
       "settings": {
         // 外观与主题
-        "workbench.colorTheme": "Solarized Dark",
-        "extensions": [
-          // 可以在此处指定需要自动安装的扩展ID
-          "naumovs.color-highlight",
-          "ms-ceintl.vscode-language-pack-zh-hans",
-          "tamasfe.even-better-toml",
-          "jjjermiah.pixi-vscode"
-        ]
-      }
+        "workbench.colorTheme": "Solarized Dark"
+      },
+      "extensions": [
+        // 可以在此处指定需要自动安装的扩展ID
+        "naumovs.color-highlight",
+        "ms-ceintl.vscode-language-pack-zh-hans",
+        "tamasfe.even-better-toml"
+      ]
     }
   }
 }
