@@ -42,6 +42,7 @@ aider-chat = "*"
 
 [feature.blog.dependencies]
 nodejs = "18.*"
+yarn = "*"
 python = "2.*"
 jieba = "*"
 git = ">=2.39.1,<3"
