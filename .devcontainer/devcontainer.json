@@ -2,6 +2,11 @@
   "name": "silen_blog",
   "build": { "dockerfile": "Dockerfile" },
   "postCreateCommand": "pixi run deploy",
+  "containerEnv": {
+    "AIDER_DARK_MODE": "${localEnv:AIDER_DARK_MODE}",
+    "AIDER_CODE_THEME": "${localEnv:AIDER_CODE_THEME}",
+    "DEEPSEEK_API_KEY": "${localEnv:DEEPSEEK_API_KEY}"
+  },
   "customizations": {
     "vscode": {
       "settings": {

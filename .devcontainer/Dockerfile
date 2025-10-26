@@ -8,7 +8,8 @@ USER vscode
 RUN curl -fsSL https://pixi.sh/install.sh | sh
 
 # 配置 git 用户信息
-RUN git config --global user.name "Sylens" \
-  && git config --global user.email "qiumin14@163.com"
+RUN git config --global user.name "Sylens" && \
+  git config --global user.email "qiumin14@163.com" && \
+  RUN echo 'alias aider="aider --no-check-update --no-show-model-warnings --yes --no-auto-commits --model deepseek/deepseek-reasoner"' >> ~/.bashrc
 
 ENV PATH="/home/vscode/.pixi/bin:${PATH}"
