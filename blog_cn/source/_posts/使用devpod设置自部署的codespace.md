@@ -124,6 +124,6 @@ ENV PATH="/home/vscode/.pixi/bin:${PATH}"
 
 ## 后记
 
-早在去年写 [ReviewGPT](https://github.com/SilenWang/ReviewGPT) 的时候（{% 在chatGPT的指导下写一个调用chatGPT的API进行文献解析的工具 ReviewGPT [在chatGPT的指导下写一个调用chatGPT的API进行文献解析的工具] %}），我就体会到，想法人人有，做出来最重要。
+早在去年写 [ReviewGPT](https://github.com/SilenWang/ReviewGPT) 的时候，我就体会到，想法人人有，做出来最重要。
 
 我本来是在改写ChromeOS下的终端App，希望为它加入端口转发，和在目标机器上自动安装 vscode web 并自动转发端口到本地的功能。然后做着做着，发现google 早就废弃 pNaCl 了（如此一来原生的 App 并不能访问本地端口了），于是想用 Golang 开发一个满足我要求的引用，继续做着做着，发现了 DevPod，除了它是基于容器的... 已经非常接近我的需求了... 害，那我还写啥呢... 先学 Devpod 怎么用吧...
