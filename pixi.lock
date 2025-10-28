@@ -335,7 +335,6 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/readline-8.2-h8c095d6_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/tk-8.6.13-noxft_hd72426e_102.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/yarn-4.10.3-hb645390_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zlib-1.3.1-hb9d3cd8_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.7-hb8e6e7a_2.conda
       linux-aarch64:
@@ -402,7 +401,6 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/xz-5.8.1-h2dbfc1b_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/xz-gpl-tools-5.8.1-h2dbfc1b_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/xz-tools-5.8.1-h86ecc28_2.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/yarn-4.10.3-hb645390_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/zlib-1.2.13-h68df207_6.conda
   default:
     channels:
@@ -3765,16 +3763,6 @@ packages:
   - multidict>=4.0
   - propcache>=0.2.1
   requires_python: '>=3.9'
-- conda: https://conda.anaconda.org/conda-forge/noarch/yarn-4.10.3-hb645390_0.conda
-  sha256: 49256fcdf50d6dc9551c277b98aecab49d6613bc70288462074a5b9247d23fde
-  md5: fcb5c30940458a84c7283e2af71db593
-  depends:
-  - __unix
-  - nodejs >=18.12.1
-  license: BSD-2-Clause
-  license_family: BSD
-  size: 980365
-  timestamp: 1758721334630
 - pypi: https://files.pythonhosted.org/packages/2e/54/647ade08bf0db230bfea292f893923872fd20be6ac6f53b2b936ba839d75/zipp-3.23.0-py3-none-any.whl
   name: zipp
   version: 3.23.0
