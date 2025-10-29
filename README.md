@@ -13,13 +13,21 @@ To fullfill the need for multi-language support, which is difficut for hexo, I r
 ├── blog_cn # Chinese blog
 ├── blog_en  # English blog
 ├── pixi.lock
-├── pixi.toml
+├── pixi.toml # pixi dep and task for deploy
+├── aider.sh # script use aider to translate zh posts to en ones
+├── .devcontainer # config files for using DevPod to build workspace
 └── README.md
 ```
 
 [pixi](http://pixi.sh/) was used to deploy needed nodejs dependency and run build/publish tasks
 
-## Deploy
+## Deploy & Develop
+
+### Using Pixi
 
 - Install [pixi](http://pixi.sh/)
 - fork this repo, enther the directory, and type `pixi run build`
+
+### DevPod
+
+This repo no has DevContainer config files, install [DevPod](https://devpod.sh/) Desktop or Cli, and then specify the path of this repo can start workspace for this repo
