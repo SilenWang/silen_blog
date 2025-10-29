@@ -102,7 +102,7 @@ milo_obj <- buildNhoodGraph(milo_obj)
 
 ## Milo Implementation in Python Environment
 
-Python has multiple Milo implementations. Besides [Mipopy](milopy) mentioned in the official [miloR project](https://github.com/MarioniLab/miloR), the [pertpy](https://github.com/scverse/pertpy) library also implements the Milo algorithm. Here's an example using pertpy:
+Python has multiple Milo implementations. Besides [Mipopy](https://github.com/emdann/milopy) mentioned in the official [miloR project](https://github.com/MarioniLab/miloR), the [pertpy](https://github.com/scverse/pertpy) library also implements the Milo algorithm. Here's an example using pertpy:
 
 ```python
 import numpy as np

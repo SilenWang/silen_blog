@@ -103,7 +103,7 @@ milo_obj <- buildNhoodGraph(milo_obj)
 
 ## Python环境下的Milo实现
 
-Python中有多个milo实现，除了官方[miloR项目](https://github.com/MarioniLab/miloR)中提到的[Mipopy](milopy)，[pertpy](https://github.com/scverse/pertpy)库也实现Milo的算法，以下是用pertpy完成计算的例子
+Python中有多个milo实现，除了官方[miloR项目](https://github.com/MarioniLab/miloR)中提到的[Mipopy](https://github.com/emdann/milopy)，[pertpy](https://github.com/scverse/pertpy)库也实现Milo的算法，以下是用pertpy完成计算的例子
 
 ```python
 import numpy as np

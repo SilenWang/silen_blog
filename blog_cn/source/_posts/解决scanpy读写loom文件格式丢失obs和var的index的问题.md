@@ -11,7 +11,7 @@ tags: ['scanpy', 'loom', 'adata']
 
 ## 问题描述
 
-根据实际的测试和[write_loom方法的文档](https://anndata.readthedocs.io/en/latest/generated/anndata.AnnData.write_loom.html)，中的描述，可以推测实际的读写，`write_loom` 写入时，实际上的不会写入obs和var两个表中的index部分，即使通过参数指定`write_obsm_varm=True`，写入时也只会按照固定的名称分别产生两个新列）（obs_names和var_names）。
+根据实际的测试和[write_loom方法的文档](https://anndata.readthedocs.io/en/latest/generated/anndata.AnnData.write_loom.html)，中的描述，可以推测实际的读写，`write_loom` 写入时，实际上的不会写入obs和var两个表中的index部分，即使通过参数指定`write_obsm_varm=True`，写入时也只会按照固定的名称分别产生两个新列（obs_names和var_names）。
 
 而根据[read_loom方法的文档](https://scanpy.readthedocs.io/en/stable/generated/scanpy.read_loom.html)，`read_loom`在读取的时候，实际上要在obs中找名为`CellID`的列，在var中找名为`Gene`的列来分别作为两张表的编号。
 
