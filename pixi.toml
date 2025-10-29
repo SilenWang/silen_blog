@@ -16,6 +16,21 @@ install_hexo = "npm install -g hexo-cli && sed -i '34s/distro\\[1\\]/distro/' $P
 deploy_cn = {cmd = "npm install --python=$PWD/../.pixi/envs/blog/bin/python2", cwd = "blog_cn", depends-on = ['install_hexo']}
 deploy_en = {cmd = "npm install --python=$PWD/../.pixi/envs/blog/bin/python2", cwd = "blog_en", depends-on = ['install_hexo']}
 
+[environments]
+aider = ['aider']
+blog = ['blog']
+
+[feature.blog.dependencies]
+nodejs = "18.*"
+python = "3.*"
+jieba = "*"
+git = ">=2.39.1,<3"
+
+[feature.blog.target.linux-aarch64.dependencies]
+make = "*"
+gcc = "*"
+gxx = "*"
+
 [feature.blog.tasks]
 install = {cmd = 'pixi install -a'}
 deploy = {cmd = 'echo "Deploy done"', depends-on = ["install", "deploy_cn", "deploy_en"], outputs = ["blog_cn/node_modules", "blog_en/node_modules"]}
@@ -25,15 +40,7 @@ build_en = {cmd = 'hexo clean && hexo g', cwd = "blog_en" }
 build = {cmd = 'mkdir -p blog_cn/public/en && cp -r blog_en/public/* blog_cn/public/en',  depends-on = ["build_cn", "build_en"]}
 demo = {cmd = 'hexo s', cwd = "blog_cn"}
 publish = {cmd = 'hexo d', cwd = "blog_cn"}
-
-[environments]
-aider = ['aider']
-blog = ['blog']
-
-[feature.blog.target.linux-aarch64.dependencies]
-make = "*"
-gcc = "*"
-gxx = "*"
+new = { cmd = 'hexo new {{title}}', args = ["title"], cwd = "blog_cn"}
 
 [feature.aider.dependencies]
 python = "3.12.*"
@@ -41,8 +48,6 @@ python = "3.12.*"
 [feature.aider.pypi-dependencies]
 aider-chat = "*"
 
-[feature.blog.dependencies]
-nodejs = "18.*"
-python = "3.*"
-jieba = "*"
-git = ">=2.39.1,<3"
+[feature.aider.tasks]
+trans = { cmd = 'bash aider.sh'}
+commit = { cmd = 'aider --commit'}
