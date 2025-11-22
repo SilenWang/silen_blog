@@ -35,11 +35,11 @@ gxx = "*"
 install = {cmd = 'pixi install -a'}
 fix_cn = {cmd = "git apply blog_cn.patch", depends-on = ['install_hexo']}
 fix_en = {cmd = "git apply blog_en.patch", depends-on = ['install_hexo']}
-deploy = {cmd = 'echo "Deploy done"', depends-on = ["install", "deploy_cn", "deploy_en"], outputs = ["blog_cn/node_modules", "blog_en/node_modules"]}
+deploy = {cmd = 'echo "Deploy done"', depends-on = ["install", "deploy_cn", "deploy_en", "fix_cn", "fix_en"], outputs = ["blog_cn/node_modules", "blog_en/node_modules"]}
 
 build_cn = {cmd = 'hexo clean && hexo g', cwd = "blog_cn" }
 build_en = {cmd = 'hexo clean && hexo g', cwd = "blog_en" }
-build = {cmd = 'mkdir -p blog_cn/public/en && cp -r blog_en/public/* blog_cn/public/en',  depends-on = ["build_cn", "build_en", "fix_cn", "fix_en"]}
+build = {cmd = 'mkdir -p blog_cn/public/en && cp -r blog_en/public/* blog_cn/public/en',  depends-on = ["build_cn", "build_en"]}
 demo = {cmd = 'hexo s', cwd = "blog_cn"}
 publish = {cmd = 'hexo d', cwd = "blog_cn"}
 new = { cmd = 'hexo new {{title}}', args = ["title"], cwd = "blog_cn"}
