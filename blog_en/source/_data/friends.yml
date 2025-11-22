@@ -1,16 +1,16 @@
-- group: 江南皮革厂群魔乱舞横跳求生小分队
-  description: 曾经具有革命友谊的小伙伴, 如今被生活毒打的天天友谊翻船~
+- group: Jiangnan Leather Factory's Chaotic Dance and Desperate Survival Squad
+  description: We used to be squadmates from the trenches. Now, life just beats the camaraderie out of us every day.
   items:
-    - title: 延期小公举 # 博客名
+    - title: Princess Procrastina # 博客名
       avatar: https://avatars2.githubusercontent.com/u/46019374?s=460&v=4 # 头像链接
       url: https://blingarida.github.io # 博客链接
-    - title: 挖坑狂少 # 博客名
+    - title: Lord Unfinisius # 博客名
       avatar: https://avatars3.githubusercontent.com/u/49156666?s=400&v=4 # 头像链接
       url: https://github.com/EclipseZhao # 博客链接
 
-- group: 公卫科研基地
+- group: Public Health Research Base
   description: El Psy Kongroo!
   items:
-    - title: 神秘平王子 # 博客名
+    - title: Prince Vague # 博客名
       avatar: https://avatars.githubusercontent.com/u/3502740?v=4 # 头像链接
       url: https://github.com/KaikePing # 博客链接
