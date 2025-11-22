@@ -21,6 +21,13 @@ To fullfill the need for multi-language support, which is difficut for hexo, I r
 
 [pixi](http://pixi.sh/) was used to deploy needed nodejs dependency and run build/publish tasks
 
+### Patch
+
+Add a patch file to fix some small issue of `hexo-theme-volantis`:
+- Invalid `app.js` path when `:root` has value
+- Unused code in the visitor statistics section at the bottom of the page
+- Incomplete English localization caused by Hexo framework itself.
+
 ## Deploy & Develop
 
 ### Using Pixi

@@ -1,0 +1,22 @@
+--- a/blog_cn/node_modules/hexo-theme-volantis/_config.yml
++++ b/blog_cn/node_modules/hexo-theme-volantis/_config.yml
+@@ -50,7 +50,7 @@ cdn:
+   # 以下配置可以覆盖 cdn.prefix,配置项的值可以为空，但是要使用CDN必须依据路径填写配置项的键
+   set:
+     js:
+-      #app: /js/app.js
++      app: /js/app.js
+     css:
+       #style: /css/style.css # (异步加载样式)
+ # 静态资源版本控制
+@@ -646,9 +646,7 @@ site_footer:
+   # site source
+   source: https://github.com/volantis-x/volantis-docs/
+   # analytics using leancloud
+-  analytics: >
+-    <span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
+-    <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
++  analytics: >
+   # site copyright
+   copyright: '[Copyright © since 2017 XXX](/)'
+   # You can add your own property here. (Support markdown, for example: br: '<br>')
