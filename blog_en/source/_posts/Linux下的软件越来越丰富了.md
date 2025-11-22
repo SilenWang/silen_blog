@@ -1,5 +1,5 @@
 ---
-title: Linux发行版的易用性越来越高了
+title: The usability of Linux distributions is getting higher and higher
 categories: Others
 date: 2019-04-06 17:03:42
 tags: ["linux"]

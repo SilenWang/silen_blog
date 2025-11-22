@@ -1,5 +1,5 @@
 ---
-title: Python使用Sqlite3
+title: Use Sqlite3 in Python 
 categories: Coding
 date: 2018-08-26 23:54:24
 tags: ['Python', 'sqlite']
@@ -9,7 +9,7 @@ To prepare for future operations using Sqlite3, I recently tried using it to ope
 
 <!-- more -->
 
-## Simple Usage:
+## Simple Usage
 
 ```python
 import sqlite3   # Import the module

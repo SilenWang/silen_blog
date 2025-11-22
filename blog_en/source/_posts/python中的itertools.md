@@ -1,5 +1,5 @@
 ---
-title: python中的itertools
+title: itertools in Python
 categories: Coding
 date: 2019-02-13 00:37:27
 tags: ["Python", "itertools"]

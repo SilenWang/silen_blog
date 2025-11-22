@@ -1,5 +1,5 @@
 ---
-title: chromebook入坑记?
+title: My Chromebook Journey
 categories: Others
 date: 2022-10-16 21:44:36
 tags: ['chromeos', 'chromebook', 'fydeos']
