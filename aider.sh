@@ -16,6 +16,7 @@ for file in `ls $DIR_A/*`; do
         cp $file ${DIR_B}/${filename}
         aider --no-show-model-warnings --yes --no-auto-commits \
             --no-show-model-warnings --yes --no-auto-commits \
+            --disable-playwright \
             --message "我这里有一篇文稿的中文版本，请根据中文版本，生成英文版本的文稿，并将翻译的内容存回 ${DIR_B}/${filename} 中" \
             ${DIR_B}/${filename}
     fi
