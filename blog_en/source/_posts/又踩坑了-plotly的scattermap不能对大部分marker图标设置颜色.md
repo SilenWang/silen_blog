@@ -1,5 +1,5 @@
 ---
-title: Another Pitfall: Plotly's Scattermap Cannot Set Colors for Most Marker Icons
+title: Another Pitfall, Plotly's Scattermap Cannot Set Colors for Most Marker Icons
 categories: Coding
 date: 2025-12-02 15:20:39
 tags: ['taipy', 'scattermap', 'Tampermonkey', 'script']
