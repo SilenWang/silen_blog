@@ -2,7 +2,7 @@
 title: Another Pitfall: Plotly's Scattermap Cannot Set Colors for Most Marker Icons
 categories: Coding
 date: 2025-12-02 15:20:39
-tags: ['taipy', 'scattermap']
+tags: ['taipy', 'scattermap', 'Tampermonkey', 'script']
 ---
 
 Ah, I didn't expect that after so many years, Plotly still hits its limits with just a little use. Previously it couldn't draw timeline charts, and this time I found that the customization of map markers is insufficient...
