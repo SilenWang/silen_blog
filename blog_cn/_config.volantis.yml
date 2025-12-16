@@ -24,7 +24,7 @@ navbar:
       icon: fas fa-info-circle
       url: about/
     - name: 语言
-      icon: fa fa-language
+      icon: fas fa-language
       url: en/
   search: 输入关键词...   # Search bar placeholder
 
