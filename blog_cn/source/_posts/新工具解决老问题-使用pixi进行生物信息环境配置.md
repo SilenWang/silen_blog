@@ -35,7 +35,7 @@ pixi使用`toml`格式的配置文件(得，又多了一种)，其格式有点�
 想使用`toml`来管理的话，安装好pixi后，使用`pixi init`就可以创建一个管理项目，并在当前目录生成一份配置文件了，刚生成的文件包含如下内容。
 
 ```toml
-[project]
+[workspace]
 name = "demo"
 version = "0.1.0"
 description = "Add a short description here"
@@ -64,7 +64,7 @@ spats-shape-seq = "*"
 在task块中设置好的任务可以通过`pixi run TASK_NAME`的方式来进行运行。当前官方虽然没有给在依赖处理完成后，直接运行特定任务的方式，但是可以通过下面的写法来通过任务执行`pixi install -a`命令以先处理依赖，从而达到在依赖处理完成后自动进行后续编译安装任务的目的：
 
 ```toml
-[project]
+[workspace]
 name = "demo"
 version = "0.1.0"
 description = "Add a short description here"
@@ -136,6 +136,79 @@ rlang = ["rlang"]
 
 pixi虽然使用来自conda的包，但是其环境激活和使用方式却采用了`poetry`和`pipenv`的方式，激活环境需要在目录下运行`pixi shell`，如果有多个环境，则加`-e`指定环境名。同时pixi也支持`pixi run`的方式来运行环境内的软件（对，`pixi run`既用来运行任务，也用来运行环境内命令）。
 
-## 给个栗子
+## 举个栗子
 
-施工中...
+下面的 `pixi.toml` 来自于一个真实的单细胞分析项目，该项目定义多个环境（`rplot`、`analy` 和 `label`），并在 `label` 环境中使用了 `Seurat`、`azimuth` 等 R 包。与前面提到的情形类似，即使显式声明了 `r-BiocManager`，依然会遇到 `GenomeInfoDbData`、`BSgenome.Hsapiens.UCSC.hg38` 等数据包缺失的问题。因此，我们在 `[feature.label.tasks]` 中同样配置了四个独立的安装任务，并通过 `r_dep` 任务将它们串联起来。
+
+```toml
+[workspace]
+authors = ["Sylens Wong <qium@aimingmed.com>"]
+channels = ["conda-forge", "bioconda", "dnachun"]
+name = "Single Cell"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[environments]
+rplot = ['kernel', 'rplot']
+analy = ['kernel', 'analy']
+label = ['kernel', 'label']
+
+[feature.kernel.dependencies]
+ipykernel = '*'
+r-irkernel = '*'
+jupyterlab = '*'
+
+[feature.rplot.dependencies]
+r-ggpubr = '*'
+r-ggforce = '*'
+r-ggh4x = '*'
+bioconductor-complexheatmap = '*'
+
+[feature.label.dependencies]
+r-base = '*'
+r-azimuth = '*'
+r-seurat = '5.2.*'
+r-SeuratObject  = '5.0.*'
+r-BiocManager = '*'
+r-SeuratDisk = {version = "*", channel = "dnachun"}
+
+[feature.label.tasks]
+GenomeInfoDbData = {cmd = 'Rscript -e "BiocManager::install(\"GenomeInfoDbData\")"'}
+BSgenome = {cmd = 'Rscript -e "BiocManager::install(\"BSgenome.Hsapiens.UCSC.hg38\")"'}
+EnsDb = {cmd = 'Rscript -e "BiocManager::install(\"EnsDb.Hsapiens.v86\")"'}
+JASPAR2020 = {cmd = 'Rscript -e "BiocManager::install(\"JASPAR2020\")"'}
+r_dep = {cmd = 'echo "bio dep for R done"', depends-on=['GenomeInfoDbData', 'BSgenome', 'EnsDb', 'JASPAR2020']}
+
+[feature.analy.dependencies]
+snakemake = '9.8.*'
+python = '3.11.*'
+jupyter = '*'
+scanpy = '*'
+gseapy = '*'
+gprofiler-official = '*'
+altair = '*'
+scipy = '*'
+pip = '*'
+pandas = '*'
+openpyxl = '*'
+leidenalg = '*'
+numpy = '*'
+loompy = '*'
+pixi-kernel = '*'
+vegafusion-python-embed = "*"
+vegafusion = "*"
+vl-convert-python = "*"
+pypairs = '*'
+harmonypy = '*'
+upsetplot = '*'
+
+[feature.analy.pypi-dependencies]
+singler = '*'
+celldex = '*'
+
+[tasks]
+install = {cmd = 'pixi install -a'}
+```
+
+在该配置中，执行 `pixi run r_dep` 即可自动完成上述四个数据包的安装，从而确保 `Seurat` 等包能够正常加载所需的基因组注释信息。这种模式可以方便地扩展到其他需要额外数据包的 Bioconductor 依赖场景。
+

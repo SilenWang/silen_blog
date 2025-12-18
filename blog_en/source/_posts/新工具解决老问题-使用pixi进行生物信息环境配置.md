@@ -36,7 +36,7 @@ If you want to manage with `toml`, after installing pixi, you can create a manag
 
 
 ```toml
-[project]
+[workspace]
 name = "demo"
 version = "0.1.0"
 description = "Add a short description here"
@@ -67,7 +67,7 @@ Tasks set up in the task block can be executed by running `pixi run TASK_NAME`. 
 
 
 ```toml
-[project]
+[workspace]
 name = "demo"
 version = "0.1.0"
 description = "Add a short description here"
@@ -139,3 +139,79 @@ Specify the environment names in `environments`, and then use blocks like `[feat
 ## Environment Usage
 
 Although pixi uses packages from conda, its environment activation and usage methods follow those of `poetry` and `pipenv`. To activate an environment, run `pixi shell` in the directory; if there are multiple environments, add `-e` to specify the environment name. At the same time, pixi also supports running software within the environment using `pixi run` (yes, `pixi run` is used both for running tasks and for running commands within the environment).
+
+## An Example
+
+The following `pixi.toml` comes from a real single‑cell analysis project. It defines several environments (`rplot`, `analy`, and `label`) and uses R packages such as `Seurat` and `azimuth` in the `label` environment. Similar to the situation mentioned earlier, even after explicitly declaring `r-BiocManager`, you may still encounter missing data packages such as `GenomeInfoDbData`, `BSgenome.Hsapiens.UCSC.hg38`, etc. Therefore, we have configured four separate installation tasks inside `[feature.label.tasks]` and linked them together via a `r_dep` task.
+
+```toml
+[workspace]
+authors = ["Sylens Wong <qium@aimingmed.com>"]
+channels = ["conda-forge", "bioconda", "dnachun"]
+name = "Single Cell"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[environments]
+rplot = ['kernel', 'rplot']
+analy = ['kernel', 'analy']
+label = ['kernel', 'label']
+
+[feature.kernel.dependencies]
+ipykernel = '*'
+r-irkernel = '*'
+jupyterlab = '*'
+
+[feature.rplot.dependencies]
+r-ggpubr = '*'
+r-ggforce = '*'
+r-ggh4x = '*'
+bioconductor-complexheatmap = '*'
+
+[feature.label.dependencies]
+r-base = '*'
+r-azimuth = '*'
+r-seurat = '5.2.*'
+r-SeuratObject  = '5.0.*'
+r-BiocManager = '*'
+r-SeuratDisk = {version = "*", channel = "dnachun"}
+
+[feature.label.tasks]
+GenomeInfoDbData = {cmd = 'Rscript -e "BiocManager::install(\"GenomeInfoDbData\")"'}
+BSgenome = {cmd = 'Rscript -e "BiocManager::install(\"BSgenome.Hsapiens.UCSC.hg38\")"'}
+EnsDb = {cmd = 'Rscript -e "BiocManager::install(\"EnsDb.Hsapiens.v86\")"'}
+JASPAR2020 = {cmd = 'Rscript -e "BiocManager::install(\"JASPAR2020\")"'}
+r_dep = {cmd = 'echo "bio dep for R done"', depends-on=['GenomeInfoDbData', 'BSgenome', 'EnsDb', 'JASPAR2020']}
+
+[feature.analy.dependencies]
+snakemake = '9.8.*'
+python = '3.11.*'
+jupyter = '*'
+scanpy = '*'
+gseapy = '*'
+gprofiler-official = '*'
+altair = '*'
+scipy = '*'
+pip = '*'
+pandas = '*'
+openpyxl = '*'
+leidenalg = '*'
+numpy = '*'
+loompy = '*'
+pixi-kernel = '*'
+vegafusion-python-embed = "*"
+vegafusion = "*"
+vl-convert-python = "*"
+pypairs = '*'
+harmonypy = '*'
+upsetplot = '*'
+
+[feature.analy.pypi-dependencies]
+singler = '*'
+celldex = '*'
+
+[tasks]
+install = {cmd = 'pixi install -a'}
+```
+
+In this configuration, executing `pixi run r_dep` will automatically install the four data packages mentioned above, thereby ensuring that packages like `Seurat` can load the required genome annotation information properly. This pattern can easily be extended to other Bioconductor dependency scenarios that need extra data packages.
