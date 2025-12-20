@@ -1,0 +1,39 @@
+name: DEPLOY
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      # 博客文稿更新了才触发
+      - 'blog_cn/source/**' 
+      - 'blog_en/source/**'
+  workflow_dispatch:
+
+env:
+  # 使用你自定义的 token
+  GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Setup Pixi
+        uses: prefix-dev/setup-pixi@v0.9.3
+        with:
+          pixi-version: v0.62.0
+
+      - name: Build Blog
+        run: |
+          pixi run deploy
+          pixi run build
+
+      - name: Deploy Blog
+        run: |
+          pixi run publish
