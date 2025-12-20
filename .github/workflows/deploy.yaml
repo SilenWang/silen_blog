@@ -17,6 +17,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [blog]
 
     steps:
       - name: Checkout repository
@@ -28,6 +31,7 @@ jobs:
         uses: prefix-dev/setup-pixi@v0.9.3
         with:
           pixi-version: v0.62.0
+          environments: ${{ matrix.environment }}
 
       - name: Build Blog
         run: |
