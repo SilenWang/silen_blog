@@ -142,7 +142,7 @@ pixi虽然使用来自conda的包，但是其环境激活和使用方式却采�
 
 ```toml
 [workspace]
-authors = ["Sylens Wong <qium@aimingmed.com>"]
+authors = ["Sylens Wong <silenseek14@gmail.com>"]
 channels = ["conda-forge", "bioconda", "dnachun"]
 name = "Single Cell"
 platforms = ["linux-64"]

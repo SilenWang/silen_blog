@@ -146,7 +146,7 @@ The following `pixi.toml` comes from a real single‑cell analysis project. It d
 
 ```toml
 [workspace]
-authors = ["Sylens Wong <qium@aimingmed.com>"]
+authors = ["Sylens Wong <silenseek14@gmail.com>"]
 channels = ["conda-forge", "bioconda", "dnachun"]
 name = "Single Cell"
 platforms = ["linux-64"]
