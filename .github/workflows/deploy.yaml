@@ -40,4 +40,6 @@ jobs:
 
       - name: Deploy Blog
         run: |
+          git config --global user.name "Sylens"
+          git config --global user.email "qiumin14@163.com"
           pixi run publish
