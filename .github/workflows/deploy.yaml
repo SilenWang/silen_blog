@@ -38,8 +38,10 @@ jobs:
           pixi run deploy
           pixi run build
 
-      - name: Deploy Blog
-        run: |
-          git config --global user.name "Sylens"
-          git config --global user.email "qiumin14@163.com"
-          pixi run publish
+      - name: Publish Blog
+        uses: heowc/action-hexo@main
+        env:
+          EMAIL: qiumin14@163.com
+          NAME: Sylens
+        with:
+          args: deploy
