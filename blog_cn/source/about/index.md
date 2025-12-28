@@ -12,9 +12,9 @@ sidebar:
 ## 个人简介
 - 自称: Silen Wang / Sylens Wong / 汪兴伦, 是一颗逐渐开心起来的{% ruby 卤蛋|光头 %}!
 - 兴趣: 打游戏, 打游戏, 还是TMD 打! 游! 戏! 动漫也看, ~~但是最近感兴趣番的越来越少了...~~, 2024年重新开始追番！[迷宫饭](https://www.bilibili.com/bangumi/media/md21174614)真是太好看了！都给我去看！
-- 学习/工作路线: 公卫 -> 分子流病 -> 生信 -> 新生抗原 -> 各种各样
+- 学习/工作路线: 公卫 -> 分子流病 -> 生信 -> 新生抗原 -> 类器官 -> 各种各样
   + emmmm... 越来越{% ruby 博学|杂乱 %}了
-  + 下头的词云说明了一切...
+  + 下头的词云已经代表不了我了，正在筹备更新中...
 
 ![摘要词云](https://raw.githubusercontent.com/silenwang/Gallary/master/2022/04/upgit_abs_20220405_1649148797.png)
 
@@ -51,7 +51,6 @@ sidebar:
 
 
 ## 工作履历
-
 
 {% tabs tab-job %}
 
@@ -115,11 +114,12 @@ sidebar:
 
 - 2024.05-至今 杭州某医学科技公司 高级生物信息分析工程师
   1. 开发WES/RNA-Seq/单细胞分析流程
-  2. 生物信息分析方案调研与执行
-  3. 生物信息数据库运维
-  4. 生物信息服务器、云服务器运维
-  5. 内部实验管理系统开发、运维、迁移、自动化测试
-  6. 微信小程序运维
+  2. 根据客户要求解读、制订并执行生物信息分析方案
+  3. 生物信息数据库构建、运维
+  4. 生物信息服务器运维
+  5. 网站、系统云服务器运维
+  6. 网站、内部实验管理系统开发、运维、迁移、自动化测试
+  7. 微信小程序运维
 
 <!-- endtab -->
 
@@ -140,37 +140,48 @@ sidebar:
 <img src="https://img.shields.io/badge/-Go-007896?style=flat-square&logo=Go&logoColor=white" />
 <img src="https://img.shields.io/badge/-HTML-F26524?style=flat-square&logo=html5&logoColor=white" />
 <img src="https://img.shields.io/badge/-CSS-633194?style=flat-square&logo=css&logoColor=white" />
+<img src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
 {% endgallery %}
 
-#### 数据库
+#### 数据科学/数据库
 
 {% gallery left %}
+<img src="https://img.shields.io/badge/-Pandas-FFCA00?style=flat-square&logo=pandas&logoColor=white" />
+<img src="https://custom-icon-badges.demolab.com/badge/-Dask-FC6E6B?style=flat-square&logo=dask&logoColor=white" />
+
 <img src="https://img.shields.io/badge/-SQLite-044a64?style=flat-square&logo=sqlite&logoColor=white" />
 <img src="https://img.shields.io/badge/-MySQL-F29221?style=flat-square&logo=mysql&logoColor=white" />
 <img src="https://img.shields.io/badge/-Neo4j-018bff?style=flat-square&logo=neo4j&logoColor=white" />
 <img src="https://img.shields.io/badge/-MongoDB-023430?style=flat-square&logo=mongodb&logoColor=white" />
 {% endgallery %}
 
-#### 工具
-
+#### Web
 {% gallery left %}
-<img src="https://custom-icon-badges.demolab.com/badge/-Pixi-ffe300?style=flat-square&logo=prefixdev&logoColor=white" />
-<img src="https://img.shields.io/badge/-Anaconda-35bfa4?style=flat-square&logo=anaconda&logoColor=white" />
-<img src="https://custom-icon-badges.demolab.com/badge/-VScode-24A4EB?style=flat-square&logo=vscodealt&logoColor=white" />
-<img src="https://img.shields.io/badge/-Pandas-FFCA00?style=flat-square&logo=pandas&logoColor=white" />
-<img src="https://custom-icon-badges.demolab.com/badge/-Dask-FC6E6B?style=flat-square&logo=dask&logoColor=white" />
-
-<img src="https://img.shields.io/badge/-Flask-444444?style=flat-square&logo=flask&logoColor=white" />
+<img src="https://img.shields.io/badge/-Taipy-FF371A?style=flat-square&logo=taipy&logoColor=white" />
 <img src="https://img.shields.io/badge/-FastAPI-059487?style=flat-square&logo=fastapi&logoColor=white" />
-<img src="https://img.shields.io/badge/-Jupyter-f37524?style=flat-square&logo=Jupyter&logoColor=white" />
-<img src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" />
-<img src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white" />
-<img src="https://img.shields.io/badge/-Rstudio-447099?style=flat-square&logo=rstudioide&logoColor=white" />
+<img src="https://img.shields.io/badge/-Flask-444444?style=flat-square&logo=flask&logoColor=white" />
+<img src="https://img.shields.io/badge/-Jinja-7E0C1B?style=flat-square&logo=jinja&logoColor=white" />
+<img src="https://custom-icon-badges.demolab.com/badge/-Shiny-007BC2?style=flat-square&logo=shinywhite&logoColor=white" />
+<img src="https://custom-icon-badges.demolab.com/badge/-Scrapy-15B8A6?style=flat-square&&logoColor=white&logo=scrapy" />
+<img src="https://img.shields.io/badge/-Vue-4FC08D?style=flat-square&logo=vue.js&logoColor=white" />
+<img src="https://img.shields.io/badge/-Node-5FA04E?style=flat-square&logo=Node.js&logoColor=white" />
 {% endgallery %}
 
+#### IDE / Dev
 {% gallery left %}
-<img src="https://custom-icon-badges.demolab.com/badge/-Scrapy-15B8A6?style=flat-square&&logoColor=white&logo=scrapy" />
-<img src="https://custom-icon-badges.demolab.com/badge/-Shiny-007BC2?style=flat-square&logo=shinywhite&logoColor=white" />
+<img src="https://custom-icon-badges.demolab.com/badge/-VScode-24A4EB?style=flat-square&logo=vscodealt&logoColor=white" />
+<img src="https://img.shields.io/badge/-Jupyter-f37524?style=flat-square&logo=Jupyter&logoColor=white" />
+<img src="https://img.shields.io/badge/-Rstudio-447099?style=flat-square&logo=rstudioide&logoColor=white" />
+
+<img src="https://custom-icon-badges.demolab.com/badge/-Pixi-ffe300?style=flat-square&logo=prefixdev&logoColor=white" />
+<img src="https://img.shields.io/badge/-CondaForge-000000?style=flat-square&logo=condaforge&logoColor=white" />
+<img src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" />
+<img src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white" />
+<img src="https://custom-icon-badges.demolab.com/badge/-Devpod-A640FF?style=flat-square&logo=devpod&logoColor=white" />
+{% endgallery %}
+
+#### DevOps
+{% gallery left %}
 <img src="https://img.shields.io/badge/-Github-1F2328?style=flat-square&logo=github&logoColor=white" />
 <img src="https://img.shields.io/badge/-Github_Actions-55D263?style=flat-square&logo=githubactions&logoColor=white" />
 <img src="https://custom-icon-badges.demolab.com/badge/-Azure-34B4E8?style=flat-square&logo=azurewhite&logoColor=white" />
@@ -206,18 +217,18 @@ sidebar:
 {% tabs lang %}
 
 <!-- tab Python -->
-- 并行化: Multiprocess, Ray(上手中)
+- 并行化: Multiprocess
 - 二代测序常用文件处理: Pysam, PyVCF, CyVCF, Biopython, Scanpy
 - 爬虫: 
   + scrapy: 有数个小型爬虫项目经验, 能使用scrapy完成静态页面, 未加密动态页面的爬取和数据
   + 能使用splash, selenium配合scrapy完成动态页面数据的爬取
 - 数据处理/统计计算: Pandas, numpy, math, scipy, statsmodels
+- 自动化测试: Pytest
 - 绘图: Plotly
 - 数据交互展示: Dash
 - 图像处理: pillow
-- WebUI/API搭建: flask / gradio / nicegui / FastAPI
+- WebUI/API搭建: FastAPI / Taipy / flask / gradio / nicegui
 - 办公自动化: docxtpl, openpyxl, python-docx
-- 单细胞数据分析: Scanpy, Cellrank
 
 <!-- endtab -->
 
@@ -226,7 +237,7 @@ sidebar:
 - 数据处理: base, dplyr
 - 并行化: Parallel
 - 绘图: ggplot2, ggpubr, ggthemes
-- 单细胞数据分析: Seurat3, Monocle3, CellChat
+- Web开发: Shiny, plumber
 
 <!-- endtab -->
 
@@ -235,11 +246,13 @@ sidebar:
 - Linux系统安装/配置管理: Redhat系发行版操作/维护, Debian系发行版安装/配置/维护, Arch系发行版安装/配置/维护
 - HPC集群管理系统: 有SUN Grid Eengine使用, 维护经验
 - Snakemake: 能熟练编写Snakefile, 熟练Snakemake进行流程构建和管理, 有丰富的Snakemake的实际运用经验
-- ~~WDL: 由于WDL没有Python解释器, 暂时放弃了~~
-- 容器技术: 有丰富的容器使用和部署经验，能编写Dockerfile和Def文件构建Docker容器或Sif容器([示例](https://github.com/SilenWang/dgidb-docker)).
-- Conda/Mamba/Pixi: 有较充足的实际使用经验, 能够使用conda快速部署分析用软件及流程.
+- Nextflow: 能理解nextflow配置文件的内容，有过将nextflow流程专为Snakemake流程的经验
+- 容器技术:
+  + 有容器化开发经验，能够配置符合Devcontainer规范的开发容器，进行本地或远程开发
+  + 有丰富的容器使用和部署经验，能使用主流的容器软件如Docker、Podman、Apptainer（原Singularity）能编写Dockerfile和Def文件构建Docker容器或Sif容器([示例](https://github.com/SilenWang/dgidb-docker))
+- Pixi/Conda/Mamba: 有较充足的实际使用经验, 能够使用conda快速部署分析用软件及流程
 - Git: 有使用Git进行项目代码/文档管理的经验, 懂得基本的创建/推送/合并的方法, 使用过钩子特性运行一些自动化任务操作
-- DevOps: 了解DevOps的基本概念，能使用Azure DevOps平台完成代码管理、以及自动化测试和部署工作
+- DevOps: 了解DevOps的基本概念，能使用Github actions / Azure Pipeline平台完成代码管理、以及自动化测试和部署工作
 
 <!-- endtab -->
 
@@ -256,40 +269,50 @@ sidebar:
 
 - 二代测序数据拆分: bcl2fastq
 - BED文件操作: bedtools
-- 数据质控: fastp/fastQC/MultiQC
-- 序列比对: bwa/bowtie/STAR
-- 表达量计算/分析: DESeq2/DEXseq/Salmon/kallisto/htseq/Hisat2
-- 序列处理: seqtk/seqkit
-- BAM/VCF文件操作: Picard/Samtools/Bcftools/Sambamba/Pysam/Biogo
-- UMI处理相关: UMI-tools/fgbio
+- 数据质控: fastp, fastQC, MultiQC
+- 序列比对: bwa, bowtie, STAR
+- 表达量计算/分析: DESeq2, DEXseq, Salmon, kallisto, htseq, Hisat2
+- 序列处理: seqtk, seqkit
+- BAM/VCF文件操作: Picard, Samtools, Bcftools, Sambamba, Pysam, Biogo
+- UMI处理相关: UMI-tools, fgbio
+
+<!-- endtab -->
+
+<!-- tab 单细胞分析 -->
+
+- 分析框架: cellranger, rhapsody, Scanpy, Seurat
+- 细胞组成差异: Milopy, miloR
+- 细胞注释: SingleR, celltypist, Azimuth
+- 拟时序: Monocle, scvelo, cellrank, pymonocle
+- 细胞通讯: Cellchat
 
 <!-- endtab -->
 
 <!-- tab 变异检测注释 -->
 
-- SNP/INDEL检测: Samtools/GATK(Mutect2)/Vardict/Vacscan/Strelka
-- DNA结构变异/融合基因检测: CREAST/lumpy-sv/Smoove/SViCT/SvABA/Manta/Delly/GeneFuse/Factera/sv-tools
-- CNV检测: CNVkit/PyLOH
-- 变异注释: ANNOVAR/snpEff/VEP
+- SNP/INDEL检测: Samtools, GATK(Mutect2), Vardict, Vacscan, Strelka
+- DNA结构变异/融合基因检测: CREAST, lumpy-sv, Smoove, SViCT, SvABA, Manta, Delly, GeneFuse, Factera, sv-tools
+- CNV检测: CNVkit, PyLOH
+- 变异注释: ANNOVAR, snpEff, VEP
 
 <!-- endtab -->
 
 <!-- tab 其他分析 -->
 
-- 克隆性: PyClone/SciClone/FastClone
-- 测序数据遗传一致性排查: plink/NGSCheckMate
-- 质谱鉴定: pFind/maxquant
+- 克隆性: PyClone, SciClone, FastClone
+- 测序数据遗传一致性排查: plink, NGSCheckMate
+- 质谱鉴定: pFind, maxquant
 
 <!-- endtab -->
 
 {% endtabs %}
 
 
-### 其他工作经历
+### 其他工作技能
 
-- 专利稿撰写经历
-- 软著撰写经历
-- 研究论文撰写经历
+- 专利交底撰写
+- 软著撰写
+- 研究论文撰写
 - 静态博客/文档撰写
   - hexo
   - mkdocs
@@ -297,8 +320,6 @@ sidebar:
 
 
 ## 可展示项目
-
-工作后实际可展示的东西真不是很多... 毕竟写东西是迫于生计, 打游戏才是终极目的hhhhhhh
 
 ### Github项目
 |||
