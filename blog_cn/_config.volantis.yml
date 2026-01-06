@@ -25,7 +25,7 @@ navbar:
       url: about/
     - name: 语言
       icon: fas fa-language
-      url: https://silenwang.github.io/en/
+      url: en/
   search: 输入关键词...   # Search bar placeholder
 
 cover:

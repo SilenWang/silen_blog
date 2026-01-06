@@ -25,7 +25,7 @@ navbar:
       url: about/
     - name: Language
       icon: fa fa-language
-      url: https://silenwang.github.io/
+      url: ../
   search: Please input keywords ...   # Search bar placeholder
 
 cover:

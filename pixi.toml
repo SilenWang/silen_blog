@@ -52,5 +52,4 @@ aider-chat = "*"
 
 [feature.aider.tasks]
 trans = { cmd = 'bash aider.sh'}
-aider = { cmd = 'aider {{file}}', args = ["file"]}
 commit = { cmd = 'aider --commit'}
