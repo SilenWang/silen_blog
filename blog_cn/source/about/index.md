@@ -227,7 +227,7 @@ sidebar:
 - 绘图: Plotly
 - 数据交互展示: Dash
 - 图像处理: pillow
-- WebUI/API搭建: FastAPI / Taipy / flask / gradio / nicegui
+- WebUI/API搭建: FastAPI, Taipy, flask, gradio, nicegui
 - 办公自动化: docxtpl, openpyxl, python-docx
 
 <!-- endtab -->

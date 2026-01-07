@@ -227,7 +227,7 @@ The About Me page has been rewrited! Now it uses tabs to collapse the content...
 - Plotting: Plotly, altair
 - Interactive data display: Dash
 - Image processing: pillow
-- WebUI/API development: FastAPI / Taipy / flask / gradio / nicegui
+- WebUI/API development: FastAPI, Taipy, flask, gradio, nicegui
 - Office automation: docxtpl, openpyxl, python‑docx
 
 <!-- endtab -->
