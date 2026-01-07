@@ -45,7 +45,7 @@ libcap = ">=2.76,<3"
 
 这个配置指定了项目依赖和系统要求，特别是针对ARM64架构（linux-aarch64）和glibc 2.39版本。`[system-requirements]`部分的版本指定，其实是Pixi的一种虚拟包指定机制，用于在计算依赖时，告诉依赖计算器当前系统的系统库版本（万物依赖libc）。而`channels`中指定了一个本地的路径，因为`podman`还有一个必要依赖`netavark`也没有Arm64版本，需要先行编译形成本地Conda包后，才能开始编译`podman`。
 
-## 编译挑解决方案
+## 编译解决方案
 
 两个软件的conda包构建代码分别在`https://github.com/conda-forge/netavark-feedstock`和`https://github.com/conda-forge/podman-feedstock`，克隆下来后依次编译。在编译`netavark`和`podman`时，都会有依赖问题，我们需要修改他们的`recipe/conda_build_config.yaml`文件，具体差异别见下，其实就是指定使用sysroot作为C标准库。
 
@@ -65,13 +65,13 @@ index d402d1d..7dbfd74 100644
 
 ## 运行失败的核心问题
 
-事情到这都还挺顺利的，然而如果运行`podman pull alpine`，会提示没有`newgidmap`程序和`newuidmap`。他们是用来做用户和组编号映射的。这难不倒常年借东墙补西墙的我，Linux虚拟机内复制一个出来就行。然而，在有这两个程序后，依然啊会看到下面的错误：
+事情到这都还挺顺利的，然而如果运行`podman pull alpine`，会提示没有`newgidmap`程序和`newuidmap`。他们是用来做用户和组编号映射的。这难不倒常年借东墙补西墙的我，Linux虚拟机内复制一个出来就行。然而，在有这两个程序后，依然会看到下面的错误：
 ```
 newuidmap: Could not set caps
 cannot set up namespace using "/usr/bin/newuidmap": should have setuid or have filecaps setuid
 ```
 
-到此位置，触发了本次无法克服的障碍，**FydeOS/Chromeos的从设计上，就不允许用户命名空间中的UID/GID映射**。
+到此位置，遇到了本次无法克服的障碍，**FydeOS/Chromeos的从设计上，就不允许用户命名空间中的UID/GID映射**。
 
 我尝试根据AI提示，通过`sudo chmod u+s`为`newuidmap`和`newgidmap`设置了setuid位，系统仍然拒绝执行。内核日志显示：
 ```
