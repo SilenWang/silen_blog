@@ -16,7 +16,7 @@ The About Me page has been rewrited! Now it uses tabs to collapse the content...
   + emmmm... becoming more and more eclectic
   + The word cloud below can't represent me anymore, updating soon...
 
-![Abstract Word Cloud](https://raw.githubusercontent.com/silenwang/Gallary/master/2022/04/upgit_abs_20220405_1649148797.png)
+![Abstract Word Cloud](https://raw.githubusercontent.com/SilenWang/Gallary/master/2026/01/upgit_20260110_1768039212.png)
 
 - GitHub:
 

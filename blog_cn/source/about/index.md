@@ -16,7 +16,7 @@ sidebar:
   + emmmm... 越来越{% ruby 博学|杂乱 %}了
   + 下头的词云已经代表不了我了，正在筹备更新中...
 
-![摘要词云](https://raw.githubusercontent.com/silenwang/Gallary/master/2022/04/upgit_abs_20220405_1649148797.png)
+![摘要词云](https://raw.githubusercontent.com/SilenWang/Gallary/master/2026/01/upgit_20260110_1768039212.png)
 
 - GitHub:
 
