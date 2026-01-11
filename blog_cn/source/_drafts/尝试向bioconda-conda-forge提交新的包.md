@@ -1,11 +1,11 @@
 ---
-title: 尝试向bioconda_conda_forge提交新的包
+title: 尝试向Bioconda/Conda‑Forge提交新的包
 categories: Bioinformatics
 date: 2026-01-11 17:15:43
-tags: []
+tags: ["conda-forge", "Bioconda", "singler-py", "biocutils", "biocframe", "summarizedexperiment", "singlecellexperiment", "包管理", "依赖解析", "grayskull", "conda-build"]
 ---
 
-再上次尝试了对conda-forge的包做小贡献之后，我想继续来点更进阶的：尝试将 [singler‑py](https://github.com/SingleR-inc/singler-py) 这个 Python 包发布到 conda 生态中，结果不做不知道，一做... 还有点麻烦...
+在上次尝试了对conda‑forge的包做小贡献之后，我想继续来点更进阶的：尝试将 [singler‑py](https://github.com/SingleR-inc/singler-py) 这个 Python 包发布到 conda 生态中。结果不做不知道，一做...还有点麻烦...
 
 <!-- more -->
 
@@ -15,7 +15,7 @@ tags: []
 
 - 原本打算直接提交到 **conda‑forge**，却在阅读贡献指南时发现：专门面向生物信息学的软件应当优先提交到 **Bioconda** 频道。
 - 之后阅读**Bioconda**的文档并尝试逐步尝试，发现 singler‑py 依赖的不少包都未进入任何 conda 频道，AI告诉我官方并不建议在同一个 PR 中提交多个新包，因此我只能从依赖树的最底层开始一个个来。
-- 逐级往下解析，发现BiocPy下的一系列包都是没有进入Conda生态的... 梳理起来，从最底层的 biocutils开始，然后基础的 `biocframe`，再到数据结构的`summarizedexperiment`，最后才能到实际上应用层的`singler‑py`
+- 逐级往下解析，发现BiocPy下的一系列包都是没有进入Conda生态的... 
 
 梳理依赖后，singler‑py 所需的构建工作实际上是一个层层递进的依赖树。从最底层的 **biocutils** 开始，向上构建 **biocframe**、**summarizedexperiment** 和 **singlecellexperiment**，最后才是 **singler‑py** 本身。就目前来说，已知的依赖树就有：
 
@@ -27,7 +27,7 @@ flowchart TD
    F --> G[singler‑py]
 ```
 
-从图中可以看出，完成 singler‑py 的 conda 发布需要至少 **4 个层级**的构建工作，假设审核周期为 2‑3 个工作日，整个链条将耗时约 2‑3 周。实际上应该会在过程中发现更多的依赖包... 估计只长不短...
+可以看出，完成 singler‑py 的 conda 发布需要至少 **4 个层级**的构建工作，假设审核周期为 2‑3 个工作日，整个链条将耗时约 3‑4 周。实际上应该会在过程中发现更多的依赖包...估计只长不短...
 
 ## conda-forge和Bioconda不同的recipe工作流
 
@@ -35,17 +35,17 @@ flowchart TD
 
 ### conda‑forge 与 Bioconda 简介
 
-[conda‑forge](https://conda-forge.org/) 是一个由社区主导的 conda 软件包仓库，它覆盖了绝大多数通用领域的开源软件。任何人都可以通过 GitHub 向它的 [staged‑recipes](https://github.com/conda-forge/staged-recipes) 仓库提交新的配方（recipe），经过自动化检查和维护者审核后，新包就会出现在 `conda‑forge` 频道中，供全球用户通过 `conda install -c conda-forge <package>` 安装。
+[conda‑forge](https://conda-forge.org/) 是一个由社区主导的 conda 软件包仓库，它覆盖了大量通用领域的开源软件。任何人都可以通过 GitHub 向它的 [staged‑recipes](https://github.com/conda-forge/staged-recipes) 仓库提交新的配方（recipe），经过自动化检查和维护者审核后，新包就会出现在 `conda‑forge` 频道中，供全球用户通过 `conda install -c conda-forge <package>` 安装。性质上应该跟AUR是类似的。
 
 [Bioconda](https://bioconda.github.io/) 则是一个专注于生物信息学软件的 conda 频道，是一个专门收录生物相关包的仓库，文档里也特别强调，如果一个包并不专门服务于生物相关的目的，那么它应该被提交到`conda‑forge` 频道。
 
-两者管理和生成 Recipe 的工具有重合，但是实际上两者的Recipe整理方式不太一样。`conda‑forge`准备了一个recipe 模板，提交recipe后，CI工作流会生成 feedstock 仓库，后续的维护工作在 feedstock 仓库上进行，所以是一包一库的形式。
+两者管理和生成 Recipe 的工具有重合，但是实际上两者的 Recipe 整理方式不太一样。`conda‑forge`准备了一个 Recipe 模板，提交 Recipe 后，CI工作流会生成 feedstock 仓库，后续的维护工作在 feedstock 仓库上进行，所以是一包一库的形式。
 
-Bioconda则是所有recipe集中在一个仓库，直接向这个集中仓库提交PR就好。差异应该来自于包的数目吧，毕竟生物信息应该是数据科学的分支，所以工具的数量应该远小于前者，愿意维护和贡献的人的数量... 估计更是远小于前者了... （有代码用就不错了... 标准化和打包别想太多）
+Bioconda 则是所有 Recipe 集中在一个仓库，直接向这个集中仓库提交 PR 就好。差异应该来自于包的数目吧，毕竟生物信息应该是数据科学的分支，所以工具的数量应该远小于前者，愿意维护和贡献的人的数量... 估计更是远小于前者了...（有代码用就不错了...标准化和打包别想太多）
 
 ### 工具准备
 
-本次我暂时是使用conda工具集，毕竟初上手，跟着官方文档走... 所有的工具pixi都可以获取，运行：
+本次我暂时是使用 conda 工具集，毕竟初上手，跟着官方文档走... 所有的工具pixi都可以获取，运行：
 
 ```bash
 pixi global install --environment conda -c conda-forge -c bioconda conda conda-build bioconda-utils greyskull grayskull 
@@ -112,10 +112,10 @@ conda‑forge 的方式是先提交 recipe，生成 feedstock 再维护feedstock
 
 ## 小发现
 
-检查包构建文件的语法时，发现 conda现在也引入并行了，原来下载各个平台的包配置文件是串行的，大陆这即使用了加速能等个好几分钟，更不说后面的依赖计算了，现在引入了并行机制，还是比原来强了点（虽然我还是会继续用Pixi）
+检查包构建文件的语法时，发现 conda 现在也引入并行了。原来下载各个平台的包配置文件是串行的，大陆这里即使用了加速也得等个好几分钟，更不用说后面的依赖计算了。现在引入了并行机制，还是比原来强了点（虽然我还是会继续用 Pixi）
 
 另外，印象中Pixi使用了更新的包构建工具，也许速度会比现在的conda生态更快，之后如果再提交别的，我一定试试。
 
 ## 后记
 
-还在天津工作的时候（7年前了都...），就想过自己编译conda包，这样就能解决没有Root权限安装生信软件的问题了。只不过当时的文档是一个字也看不懂... 更别提写了。现在有了高度自动化的工具，也有了 AI 答疑... 确实可以来做点贡献了。
+还在天津工作的时候（7年前了都...），就想过自己编译 conda 包，这样就能解决没有 root 权限安装生信软件的问题了。只不过当时的文档是一个字也看不懂... 更别提写了。现在有了高度自动化的工具，也有了 AI 答疑... 确实可以来做点贡献了。
