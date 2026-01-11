@@ -15,25 +15,47 @@ tags: []
 
 - 原本打算直接提交到 **conda‑forge**，却在阅读贡献指南时发现：专门面向生物信息学的软件应当优先提交到 **Bioconda** 频道。
 - 之后阅读**Bioconda**的文档并尝试逐步尝试，发现 singler‑py 依赖的不少包都未进入任何 conda 频道，AI告诉我官方并不建议在同一个 PR 中提交多个新包，因此我只能从依赖树的最底层开始一个个来。
-- 逐级往下解析，发现BiocPy下的一系列包都是没有进入Conda生态的... 梳理起来，从最底层的 biocutils开始，然后基础的 `biocframe`，再到数据结构的`summarizedexperiment`，最后才能到实际上应用层的`singler‑py`，如果每个提交都要2~3日审核... 实际上弄完至少是2个工作周吧...
+- 逐级往下解析，发现BiocPy下的一系列包都是没有进入Conda生态的... 梳理起来，从最底层的 biocutils开始，然后基础的 `biocframe`，再到数据结构的`summarizedexperiment`，最后才能到实际上应用层的`singler‑py`
 
-嘛，反正都是学习，就一步步来好了...
+梳理依赖后，singler‑py 所需的构建工作实际上是一个层层递进的依赖树。从最底层的 **biocutils** 开始，向上构建 **biocframe**、**summarizedexperiment** 和 **singlecellexperiment**，最后才是 **singler‑py** 本身。就目前来说，已知的依赖树就有：
 
-## 提交到 singler‑py 位置需要的各步骤依赖
+```mermaid
+flowchart TD
+   A[biocutils] --> B[biocframe]
+   B --> E[summarizedexperiment]
+   E --> F[singlecellexperiment]
+   F --> G[singler‑py]
+```
+
+从图中可以看出，完成 singler‑py 的 conda 发布需要至少 **4 个层级**的构建工作，假设审核周期为 2‑3 个工作日，整个链条将耗时约 2‑3 周。实际上应该会在过程中发现更多的依赖包... 估计只长不短...
 
 ## conda-forge和Bioconda不同的recipe工作流
 
+由于这个中实际上了解了两边的工作流，所以记录一下。
+
 ### conda‑forge 与 Bioconda 简介
 
-### conda‑forge 提交工作流
 [conda‑forge](https://conda-forge.org/) 是一个由社区主导的 conda 软件包仓库，它覆盖了绝大多数通用领域的开源软件。任何人都可以通过 GitHub 向它的 [staged‑recipes](https://github.com/conda-forge/staged-recipes) 仓库提交新的配方（recipe），经过自动化检查和维护者审核后，新包就会出现在 `conda‑forge` 频道中，供全球用户通过 `conda install -c conda-forge <package>` 安装。
 
-### Bioconda 提交工作流
-[Bioconda](https://bioconda.github.io/) 是一个专注于生物信息学软件的 conda 频道。它建立在 conda‑forge 的基础设施之上，所有从 Bioconda 安装的包都会自动依赖 conda‑forge 中的通用库（如 numpy、pandas 等）。Bioconda 的贡献流程与 conda‑forge 类似，但拥有自己独立的配方仓库 [bioconda‑recipes](https://github.com/bioconda/bioconda-recipes) 和一套专门为生物信息学软件设计的构建工具（`bioconda‑utils`）。
+[Bioconda](https://bioconda.github.io/) 则是一个专注于生物信息学软件的 conda 频道，是一个专门收录生物相关包的仓库，文档里也特别强调，如果一个包并不专门服务于生物相关的目的，那么它应该被提交到`conda‑forge` 频道。
 
-**重要原则**：如果一个软件的主要用途属于生物信息学范畴（例如单细胞分析、基因组组装、序列比对等），应当优先提交到 Bioconda；如果是通用工具（如文本处理、网络库、数学库等），则更适合提交到 conda‑forge。
+两者管理和生成 Recipe 的工具有重合，但是实际上两者的Recipe整理方式不太一样。`conda‑forge`准备了一个recipe 模板，提交recipe后，CI工作流会生成 feedstock 仓库，后续的维护工作在 feedstock 仓库上进行，所以是一包一库的形式。
 
-### 2. 向 conda‑forge 提交新包的简要步骤
+Bioconda则是所有recipe集中在一个仓库，直接向这个集中仓库提交PR就好。差异应该来自于包的数目吧，毕竟生物信息应该是数据科学的分支，所以工具的数量应该远小于前者，愿意维护和贡献的人的数量... 估计更是远小于前者了... （有代码用就不错了... 标准化和打包别想太多）
+
+### 工具准备
+
+本次我暂时是使用conda工具集，毕竟初上手，跟着官方文档走... 所有的工具pixi都可以获取，运行：
+
+```bash
+pixi global install --environment conda -c conda-forge -c bioconda conda conda-build bioconda-utils greyskull grayskull 
+```
+
+这里有个小彩蛋，greyskull和grayskull同时存在，其实都指向的是grayskull，bioconda的文档有一页提到的是greyskull，不知道是不是项目开始的时候出现了什么小错误...
+
+### 向 conda‑forge 提交新包的简要步骤
+
+conda‑forge 的方式是先提交 recipe，生成 feedstock 再维护feedstock
 
 1. **Fork 仓库**  
    访问 [conda‑forge/staged‑recipes](https://github.com/conda-forge/staged-recipes) 并点击 “Fork” 按钮，将仓库复制到自己的 GitHub 账号下。
@@ -46,13 +68,12 @@ tags: []
    git checkout -b add-<包名>
    ```
 
-3. **编写配方文件**  
-   在 `recipes/<包名>/` 目录下创建 `meta.yaml`（可参考其他现有配方）。该文件需要包含包的元信息（名称、版本、描述）、依赖列表、构建指令等。确保遵循 [conda‑forge 的文档规范](https://conda-forge.org/docs/maintainer/adding_pkgs.html)。
+3. **生成配方文件**  
+   像我提交的是pypi本来就有的包，所以直接`grayskull pypi --strict-conda-forge <包名>`就可以了
 
 4. **本地验证**  
    使用 `conda smithy` 工具在本地运行 lint 和构建测试（需先安装 `conda‑smithy`）：
    ```bash
-   conda install conda-smithy
    conda smithy recipe-lint recipes/<包名>/
    conda build recipes/<包名>/
    ```
@@ -73,21 +94,17 @@ tags: []
    git checkout -b add-<包名>
    ```
 
-3. **编写配方文件**  
-   在 `recipes/<包名>/` 目录下创建 `meta.yaml`。Bioconda 的配方格式与 conda‑forge 基本相同，但有一些针对生物信息学软件的额外字段（例如 `extra: bioc‑install`）。可以参考仓库中已有的生物信息包配方。
+3. **生成配方文件**  
+   直接`grayskull pypi <包名>`就行
 
 4. **使用 bioconda‑utils 验证**  
    Bioconda 提供了专门的工具链来测试配方：
    ```bash
-   # 安装 bioconda-utils（建议在独立 conda 环境中）
-   conda create -n bioconda-utils bioconda-utils
-   conda activate bioconda-utils
-
    # 运行 lint 检查
    bioconda-utils lint recipes/<包名>/
 
-   # 在本地 Docker 容器中执行构建测试（可选，但推荐）
-   bioconda-utils build --docker --packages <包名> .
+   # 构建测试
+   conda build recipes/<包名>/
    ```
 
 5. **提交 PR**  
