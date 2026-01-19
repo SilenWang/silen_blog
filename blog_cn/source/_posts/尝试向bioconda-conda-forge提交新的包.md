@@ -119,3 +119,15 @@ conda‑forge 的方式是先提交 recipe，生成 feedstock 再维护feedstock
 ## 后记
 
 还在天津工作的时候（7年前了都...），就想过自己编译 conda 包，这样就能解决没有 root 权限安装生信软件的问题了。只不过当时的文档是一个字也看不懂... 更别提写了。现在有了高度自动化的工具，也有了 AI 答疑... 确实可以来做点贡献了。
+
+## BiocUtils 0.3.3 的实际提交尝试
+
+应用前面所说的内容，我[尝试向 Bioconda 提交了 BiocUtils](https://github.com/bioconda/bioconda-recipes/pull/61831)
+
+过程中得到几个略囧的经验：
+
+- 文档中说的需要指定软件证书，并不是要把软件证书附加到 recipe 中，而是指定在原项目中的位置
+- bioconda 并不为老版本 python 提供包，所以不用针对 3.9 以下版本去做兼容
+- conda-build 自动解析出来的内容不一定准确，比如 BiocUtils 原 pypi 依赖指定了 python >= 3.9，但是解析出的 recipe 并没有解析到
+
+另外，bioconda 的包提交后，后续的新版本是可以根据源代码的更新自动解析的， 所以如果没有特别问题，不需要每次更新 recipe

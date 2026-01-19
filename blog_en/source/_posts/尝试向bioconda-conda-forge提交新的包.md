@@ -119,3 +119,15 @@ Additionally, I recall that Pixi uses newer package‑building tools, which migh
 ## Afterword
 
 Back when I was working in Tianjin (seven years ago already…), I thought about compiling conda packages myself to solve the problem of installing bioinformatics software without root privileges. However, the documentation at that time was completely incomprehensible to me… let alone writing it. Now, with highly automated tools and AI assistance… it’s finally possible to make some contributions.
+
+## Practical Submission Attempt for BiocUtils 0.3.3
+
+Applying the aforementioned content, I [attempted to submit BiocUtils to Bioconda](https://github.com/bioconda/bioconda-recipes/pull/61831).
+
+During the process, I gained a few somewhat awkward experiences:
+
+- The documentation stating the need to specify a software license does **not** mean attaching the license file to the recipe itself, but rather **specifying its location within the original project**.
+- Bioconda does **not** provide packages for older versions of Python, so there is no need to ensure compatibility for versions below 3.9.
+- The content automatically parsed by `conda-build` is not always accurate. For example, BiocUtils' original PyPI dependency specifies `python >= 3.9`, but this constraint was **not captured in the parsed recipe**.
+
+Additionally, once a package is submitted to Bioconda, subsequent new versions can be **automatically parsed based on updates to the source code**. Therefore, unless there are specific issues, there is no need to update the recipe for every new release.
