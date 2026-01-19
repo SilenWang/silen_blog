@@ -324,8 +324,8 @@ The About Me page has been rewrited! Now it uses tabs to collapse the content...
 ### Github Projects
 | | |
 | -- | -- |
-|{% ghcard 'SilenWang/FUEX' %}|{% ghcard 'SilenWang/Risk_Region' %}|
-|{% ghcard 'SilenWang/CSSN_Spider' %}|{% ghcard 'SilenWang/dgidb-docker' %}|
+|{% ghcard 'SilenWang/DevSSH' %}|{% ghcard 'SilenWang/RenderCV_Pod' %}|
+|{% ghcard 'SilenWang/qwen-image-API' %}|{% ghcard 'SilenWang/Risk_Region' %}|
 
 ### Published Articles
 
