@@ -1,5 +1,5 @@
 ---
-title: 使用_pixi_和_rattler_build_打包AI帮我写的程序
+title: 使用 pixi 和 rattler_build 打包AI帮我写的程序
 categories: Coding
 date: 2026-01-25 20:50:24
 tags: [pixi, rattler-build, conda-build, Go, devssh]
