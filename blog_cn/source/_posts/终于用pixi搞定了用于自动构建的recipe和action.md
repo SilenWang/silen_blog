@@ -63,10 +63,12 @@ args = [
 ]
 
 [tasks.build]
-cmd = "TARGET_PLATFORM={{ platform }} pixi build"
+cmd = "TARGET_PLATFORM={{ platform }} pixi build -t {{ platform }}"
 args = ["platform"]
 depends-on = [{ task = "bump", args = ["{{ platform }}"] }]
 ```
+
+这里有要注意的一点是，build任务中必须环境变量和参数都指定平台信息，`pixi build` 似乎并不读`TARGET_PLATFORM`这个环境变量，因此要`-t`来指定平台，如果不指定，实际上会使用当前平台作为默认值，导致跨平台构建失败。
 
 ### 6. prefix.dev 缺少查询 API，需用 pixi search 解析
 
@@ -79,15 +81,6 @@ version=$(pixi search -q --no‑progress -p linux‑64 -c https://prefix.dev/syl
 ### 7. bump‑recipe 的重复下载问题
 
 `rattler‑build bump‑recipe` 在更新 sha256 时会下载一次源码包，而随后的 `pixi build` 又会再次下载相同的包。这种重复下载在网速较慢或包较大时会显著增加构建时间。不过，这个目前确实无解，还好不影响功能实现。
-
-### 8. string 需要手动指定，variant 设置不明确
-
-在 build 部分，我需要手动指定 `string` 字段来产生不同的 hash 值，使得包不重名。目前如果我不设置，github action 编译不同平台的软件包会产生相同的 hash，导致无法上传到同一 channel。目前尚不清楚为何，我本地操作并无此问题。
-
-```yaml
-build:
-  string: h{{ hash }}_{{ platform }}
-```
 
 ## 完整实现
 
