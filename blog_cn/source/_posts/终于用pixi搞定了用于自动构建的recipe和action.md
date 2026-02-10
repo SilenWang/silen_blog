@@ -99,13 +99,13 @@ preview = ["pixi‑build"]
 rattler‑build = "*"
 
 [tasks.bump]
-cmd = "export TARGET_PLATFORM={{ platform }} && rattler‑build bump‑recipe"
+cmd = "TARGET_PLATFORM={{ platform }} && rattler‑build bump‑recipe"
 args = [    
     { arg = "platform", default = "linux‑64" },
 ]
 
 [tasks.build]
-cmd = "export TARGET_PLATFORM={{ platform }} && pixi build"
+cmd = "TARGET_PLATFORM={{ platform }} && pixi build -t {{ platform }}"
 args = ["platform"]
 depends‑on = [{ task = "bump", args = ["{{ platform }}"] }]
 

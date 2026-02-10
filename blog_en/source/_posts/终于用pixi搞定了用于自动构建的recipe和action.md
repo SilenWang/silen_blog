@@ -63,10 +63,12 @@ args = [
 ]
 
 [tasks.build]
-cmd = "TARGET_PLATFORM={{ platform }} pixi build"
+cmd = "TARGET_PLATFORM={{ platform }} pixi build -t {{ platform }}"
 args = ["platform"]
 depends-on = [{ task = "bump", args = ["{{ platform }}"] }]
 ```
+
+Note that we need to use `-t` to specify platform again, since `pixi build` seems not using `TARGET_PLATFORM`, or the cross platform build will fail.
 
 ### 6. prefix.dev lacks a query API; need to parse pixi search output
 
@@ -80,14 +82,6 @@ version=$(pixi search -q --no‑progress -p linux‑64 -c https://prefix.dev/syl
 
 `rattler‑build bump‑recipe` downloads the source package once when updating the sha256, and then `pixi build` downloads the same package again. This duplicate download can significantly increase build time when network speed is slow or the package is large. However, there's currently no solution for this, but at least it doesn't affect functionality.
 
-### 8. Need to manually specify string; variant settings are unclear
-
-In the build section, I need to manually specify the `string` field to generate different hash values, ensuring packages don't have the same name. Currently, if I don't set this, GitHub Action compiling software packages for different platforms produces the same hash, preventing upload to the same channel. It's unclear why this happens, as I don't have this issue locally.
-
-```yaml
-build:
-  string: h{{ hash }}_{{ platform }}
-```
 
 ## Complete Implementation
 
