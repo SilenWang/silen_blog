@@ -22,6 +22,6 @@ systemctl --user enable syncthing.service
 systemctl --user start syncthing.service
 ```
 
-启动后可像其他服务一样用`ststemctl`来查看服务运行状态.
+启动后可像其他服务一样用`systemctl`来查看服务运行状态.
 
 ![Syncthing](https://raw.githubusercontent.com/SilenWang/Gallary/master/Syncthing.png)

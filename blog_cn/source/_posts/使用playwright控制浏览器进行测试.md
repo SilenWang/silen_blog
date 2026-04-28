@@ -16,7 +16,7 @@ tags: ['自动化测试', '浏览器测试', 'playwright', 'pytest', 'python']
 
 
 ```bash
-# 安装 firfox和 chromium
+# 安装 firefox和 chromium
 playwright install --with-deps firefox chromium
 ```
 

@@ -5,7 +5,7 @@ date: 2018-09-02 20:15:02
 tags: ['docker', '容器技术', 'R语言', '镜像配置', 'sscClust', 'CentOS']
 ---
 
-为了充分利用二手不出去的烂设备...我决定自己搭服务器积累经验...考虑到搭建的东西的移植性, 使用docker放在容器内执行, 这样以后方面迁移与使用.
+为了充分利用二手不出去的烂设备...我决定自己搭服务器积累经验...考虑到搭建的东西的移植性, 使用docker放在容器内执行, 这样以后方便迁移与使用.
 
 <!-- more -->
 
@@ -25,7 +25,7 @@ systemctl start docker
 systemctl enable docker
 ```
 
-为加快镜像(images)拉取速度, 设施dockerhub的国内镜像源(registry mirror), 配置文件是`/etc/docker/daemon.json`, 配置完成后执行`sudo systemctl restart docker`:
+为加快镜像(images)拉取速度, 设置dockerhub的国内镜像源(registry mirror), 配置文件是`/etc/docker/daemon.json`, 配置完成后执行`sudo systemctl restart docker`:
 
 ```txt
 {
@@ -45,7 +45,7 @@ docker pull centos:6
 
 ```bash
 docker run -dti IMAGE_ID /bin/bash
-# 登陆入dcoker进行操作, 注意, 登陆后是root, 操作小心...
+# 登陆入docker进行操作, 注意, 登陆后是root, 操作小心...
 docker exec -it CONTAINER_ID /bin/bash
 ```
 

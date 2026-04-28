@@ -12,7 +12,7 @@ tags: ['github action', 'pixi']
 
 ## 为什么选择 Pixi？
 
-我最开始选择Pixi的时候，主要是出于因为它在使用 `conda` 的预编译资源基础上，具有比mamba更快的依赖计算速度，且能跟 `nodejs` 一样有依赖锁机制，适合进行快速的环境迁移部署，这些在软件经常变动的生物信息分析中都是非常需要的特性。
+我最开始选择Pixi的时候，主要是因为它在使用 `conda` 的预编译资源基础上，具有比mamba更快的依赖计算速度，且能跟 `nodejs` 一样有依赖锁机制，适合进行快速的环境迁移部署，这些在软件经常变动的生物信息分析中都是非常需要的特性。
 
 而在使用了一年多后，我不仅使用它管理生物信息分析的环境，也进一步用他来建立和管理开发环境，目前除了MySQL这种必须要系统常驻服务的没有办法处理外，Pixi完全可以安装所有我工作中需要用到的工具链。
 
@@ -20,7 +20,7 @@ tags: ['github action', 'pixi']
 
 唯一的美中不足，就是之前根据领导要求使用Github Action做自动化的时候有那么一点点不便，因为 `pixi` 毕竟还是涉及虚拟环境，安装和运行的时候都需要进行一些额外的环境变量操作才能使用。
 
-但是其实官方早就开发了`setup-pixi` [action](https://github.com/marketplace/actions/setup-pixi)，只是我一致不知道而已...
+但是其实官方早就开发了`setup-pixi` [action](https://github.com/marketplace/actions/setup-pixi)，只是我一直不知道而已...
 
 ## 在 GitHub Actions 中使用 `setup-pixi`
 

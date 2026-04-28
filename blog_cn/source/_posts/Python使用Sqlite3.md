@@ -5,7 +5,7 @@ date: 2018-08-26 23:54:24
 tags: ['Python', '数据库', 'SQLite3', 'sqlite']
 ---
 
-为了以后操作使用Sqlite3做准备, 上周上班的时候特意试了一下用操作数据库的数据, 为了方便直接用了sqlite3, 没想到sqlite3并不是所有语句都支持, 并且sqlite自由的点命令是无法被python的sqlite模块调用的....
+为了以后操作使用Sqlite3做准备, 上周上班的时候特意试了一下用操作数据库的数据, 为了方便直接用了sqlite3, 没想到sqlite3并不是所有语句都支持, 并且sqlite自带的点命令是无法被python的sqlite模块调用的....
 
 <!-- more -->
 
@@ -24,7 +24,7 @@ conn.close()   # 关闭连接
 - 使用中的注意事项
     * 只支持标准的SQL语句, 由于使用的是sqlite, 其不支持的SQL语法一概无法使用, 也不支持使用sqlite特有的点命令, 因为这些命令本质上是在shell内执行的, 不是SQL语句
     * 如果一定要使用点命令, 则需要使用os模块或其他可以调用shell的模块, 本质上是在执行shell命令
-    * 不是所有的操作都一定要指针对象完成, 有部分可以使用数据库对象, 这样可以少写两句, 具体见[菜鸟教程网站的介绍](http://www.runoob.com/sqlite/sqlite-python.html)
+    * 不是所有的操作都一定要通过指针对象完成, 有部分可以使用数据库对象, 这样可以少写两句, 具体见[菜鸟教程网站的介绍](http://www.runoob.com/sqlite/sqlite-python.html)
     * 注意一定要确认更改(`obj.commit() `), 否则数据库内的内容是不会变化的
     * 尝试使用了with的方式进行连接, 但是在with语句的范围外是不会自动断开连接的(`obj.close()`), 所以还是得老实写
 

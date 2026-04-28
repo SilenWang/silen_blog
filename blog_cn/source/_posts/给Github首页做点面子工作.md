@@ -9,7 +9,7 @@ tags: ['Github', '个人主页', '美化', 'Github Stats', 'Shields.io', 'README
 <!-- 摘要部分 -->
 <!-- more -->
 
-Github目前可以创建一个特殊的Repo, 该Repo和用户的名称一致, 比如我的就是`SilenWang/SilenWang`, 在该Repo下的`README.md`可以显示在用户的Gtihub首页上, 可以理解给了一个可以自定义的看板
+Github目前可以创建一个特殊的Repo, 该Repo和用户的名称一致, 比如我的就是`SilenWang/SilenWang`, 在该Repo下的`README.md`可以显示在用户的GitHub首页上, 可以理解给了一个可以自定义的看板
 
 目前我在上面放了一个Github的统计和我常用的工具图标
 

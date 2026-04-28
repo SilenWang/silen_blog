@@ -24,7 +24,7 @@ Host *
     HostKeyAlgorithms +ssh-rsa
 ```
 
-第一行说明对所有主机生效, 第二行是将`ssh-rsa`加会允许使用的范围, 第三行是指定所有主机使用的都是`ssh-rsa`算法的key.
+第一行说明对所有主机生效, 第二行是将`ssh-rsa`加回允许使用的范围, 第三行是指定所有主机使用的都是`ssh-rsa`算法的key.
 实测两行都得要写才行, 没有第二行提示没有`ssh-rsa`这么个类型, 没有第三行就提示`sign_and_send_pubkey: no mutual signature supported`.
 
 以上~

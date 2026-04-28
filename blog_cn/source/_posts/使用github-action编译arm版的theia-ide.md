@@ -6,7 +6,7 @@ tags: ['ARM', 'FydeOS', 'ChromeOS', 'GitHub Actions', 'Codespaces', 'theia-ide']
 ---
 
 自从第一次接触chromeos/fydeos开始，我就一直在尝试各种不同的 vscode(-like) 编辑器，最近因为看到华为的CodeArt，知道了它的上游项目theia，又开始了折腾。
-奈何我手上的设备已经是只有8G内存的 fydeos 不是之前的16G Manjaro，也不是PixelBook 2017。在Linux容器下的可用内存十分受限，连编译个arm版的 theiaide-ide browser版都不得行... 那... 只有又来白嫖Github了
+奈何我手上的设备已经是只有8G内存的 fydeos 不是之前的16G Manjaro，也不是PixelBook 2017。在Linux容器下的可用内存十分受限，连编译个arm版的 theia-ide browser版都不得行... 那... 只有又来白嫖Github了
 
 <!-- more -->
 

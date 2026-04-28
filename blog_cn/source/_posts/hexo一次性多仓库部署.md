@@ -19,7 +19,7 @@ tags: ['hexo', '博客部署', 'gitee', 'github', 'git代理']
 
 ![gitee_pages](https://raw.githubusercontent.com/SilenWang/Gallary/master/gitee_pages.jpg)
 
-然后就是设置通过ssh等度gitee了, 这个也跟github的一致就不展开.
+然后就是设置通过ssh登录gitee了, 这个也跟github的一致就不展开.
 
 最后就是设置项目的`_config.yaml`文件, 在部署的部分如下配置, 这样就能部署的时候一次性传两次了.
 

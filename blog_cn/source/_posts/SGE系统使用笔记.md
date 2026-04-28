@@ -14,7 +14,7 @@ tags: ['SGE', '网格引擎', 'qsub', 'qlogin', '集群计算', 'sge']
 脚本写完后, 并不在投递时进行参数指定, 而是写到被投递的脚本中, 然后直接`qsub shell.sh`
 
 ```bash
-#！/bin/bash
+#!/bin/bash
 #$ -S /bin/bash          //表明此脚本为bash
 #$ -V                    //传递当前命令的所有环境变量
 #$ -cwd                  //将当前路径设置为工作路径

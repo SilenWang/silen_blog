@@ -6,7 +6,7 @@ keywords: [git, git worktree, 多工作目录, 开发环境, 隔离]
 ---
 
 <!-- 摘要部分 -->
-git worktree 是 Git 提供的强大功能，允许在同一仓库中同时检出多个分支。这个功能和cherry-pick一样，我之前完全没听过，但是在变成Agent高度应用的今天，这个功能以后大概会变成跟commit一样的基础必学的功能。
+git worktree 是 Git 提供的强大功能，允许在同一仓库中同时检出多个分支。这个功能和cherry-pick一样，我之前完全没听过，但是在Agent高度应用的今天，这个功能以后大概会变成跟commit一样的基础必学的功能。
 
 <!-- more -->
 

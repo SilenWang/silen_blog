@@ -39,7 +39,7 @@ runs-on 指定了运行该 jobs 的环境，这里我们使用github准备的最
 
 ## 变量传递
 
-就如同我过去写的生物信息分析流程，不同的步骤之间，常常需要进行信息传递才能完成一项工作。yaml作为简单的配置文件，自然无法实现变量传递，因此我们需要以来github action框架中设置的一些环境变量来完成信息传递。
+就如同我过去写的生物信息分析流程，不同的步骤之间，常常需要进行信息传递才能完成一项工作。yaml作为简单的配置文件，自然无法实现变量传递，因此我们需要依赖github action框架中设置的一些环境变量来完成信息传递。
 
 
 ### 跨Steps信息传递
@@ -122,7 +122,7 @@ jobs:
         uses: ncipollo/release-action@v1.15.0
         with:
           draft: false
-          generateReleaseNotes: true  #自动生成发行说明。
+          generateReleaseNotes: true  # 自动生成发行说明。
           artifacts: '${{ github.workspace }}/release/*.zip'
           tag: ${{ steps.get_tag.outputs.tag }}
           name: Release ${{ steps.get_tag.outputs.tag }}

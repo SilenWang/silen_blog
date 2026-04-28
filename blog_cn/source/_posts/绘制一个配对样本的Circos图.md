@@ -46,7 +46,7 @@ organoid_cytoband[ ,1] <- paste0("organoid_", organoid_cytoband[, 1])
 cytoband <- rbind(tumor_cytoband, organoid_cytoband)
 ```
 
-这里实际上是产生了名为cytoband的数据框，这个数据框丽包含要绘制的两个基因组的基本信息。
+这里实际上是产生了名为cytoband的数据框，这个数据框里包含要绘制的两个基因组的基本信息。
 
 ## 处理突变数据
 
