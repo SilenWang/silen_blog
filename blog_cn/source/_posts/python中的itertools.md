@@ -31,7 +31,7 @@ grp_generator = groupby(iter_obj, lambda x: x[0])
 iterable_fork_1, iterable_fork_2 = tee(iterable, 2) # 2可以不写, 默认就是2
 ```
 
-- chain则是酱多个迭代对象的接过连起来, 我本次具体是用来展平嵌套结果:
+- chain则是将多个迭代对象的结果连起来, 我本次具体是用来展平嵌套结果:
 
 ```python
 flat_iter = chain.from_iterable(ori_iter)

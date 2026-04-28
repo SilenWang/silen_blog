@@ -31,10 +31,10 @@ tags: ['chromeos', 'terminal', 'libapp', '终端']
 2. 在已有的登录条目基础上，端口转发，点击转发后，跳出窗口设置要转发哪个端口
 3. 与ssh登录一样新跳出一个页面，但是不能操作，只提示转发的端口，和关闭窗口后挂载自动结束
 
-[实际修改的文件](https://github.com/SilenWang/libapps/tree/feat/add-port-forward-button)主要是terminal个nassh目录下的js文件，主要是加入转发的按钮，然后是参考sftp的功能实现，改一个能执行端口转发的函数出来
+[实际修改的文件](https://github.com/SilenWang/libapps/tree/feat/add-port-forward-button)主要是terminal和nassh目录下的js文件，主要是加入转发的按钮，然后是参考sftp的功能实现，改一个能执行端口转发的函数出来
 
 ## 将修改应用到镜像
-在chromeos的源代码中，libapp并不是包名，在检索项目后，发现这些内容的编译实际上在`crosh-extention.ebuild`中，找到这个ebuild的目录，使用git生成补丁，放到这个目录中
+在chromeos的源代码中，libapp并不是包名，在检索项目后，发现这些内容的编译实际上在`crosh-extension.ebuild`中，找到这个ebuild的目录，使用git生成补丁，放到这个目录中
 
 ```bash
 git diff COMMIT_HASH_1 COMMIT_HASH_2 > patchfile.patch

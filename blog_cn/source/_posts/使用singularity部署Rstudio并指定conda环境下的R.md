@@ -10,10 +10,10 @@ date: 2023-07-26 16:13:50
 <!-- more -->
 
 ## 前言
-Rstudio的运行是必须要靠Root权限来运行的, 不能像Jupyter那样conda或者mamba直装, 因此本次的部署使用了Singularity这种容器(也是我第一次实操使用). Sigularity与Docker或者Podmon在设计上有较大的不同, 主要为HPC环境下的应用而生, 权限管理有较大的不同. 不过这些都不太影响本次使用就是. Sigularity的安装在Rocky Linux下比较简单, 我记得是直接包管理器就能安装了, 因此不作记录
+Rstudio的运行是必须要靠Root权限来运行的, 不能像Jupyter那样conda或者mamba直装, 因此本次的部署使用了Singularity这种容器(也是我第一次实操使用). Singularity与Docker或者Podman在设计上有较大的不同, 主要为HPC环境下的应用而生, 权限管理有较大的不同. 不过这些都不太影响本次使用就是. Singularity的安装在Rocky Linux下比较简单, 我记得是直接包管理器就能安装了, 因此不作记录
 
 ## 1. 容器准备
-虽然与Docker是不同的容器技术, Sigularity却提供了完善的Docker镜像兼容支持, 构建好的Docker容器可以很方便的被转换到Sigularity使用的`sif`格式镜像. 本次部署参考的是[rstudio-server-conda](https://github.com/grst/rstudio-server-conda/blob/master/README.md)项目中的说明, 直接使用`singularity pull docker://rocker/rstudio:4.2`拉取docker镜像转换为`sif`镜像使用
+虽然与Docker是不同的容器技术, Singularity却提供了完善的Docker镜像兼容支持, 构建好的Docker容器可以很方便的被转换到Singularity使用的`sif`格式镜像. 本次部署参考的是[rstudio-server-conda](https://github.com/grst/rstudio-server-conda/blob/master/README.md)项目中的说明, 直接使用`singularity pull docker://rocker/rstudio:4.2`拉取docker镜像转换为`sif`镜像使用
 
 ## 2. 必要文件准备
 
@@ -33,7 +33,7 @@ echo "session-default-new-project-dir=/home/silen/Rstudio/Workspace" >> rsession
 
 ## 3. 指定参数启动容器
 
-使用如下命令启动服务即可, 运行的命令主要是将前面创建的目录和配置文件绑定到容器中供服务读取, 另外就是指定了ip与端口方便访问. 由于是担任使用, 就没有弄验证的东西了. 另外还参照[rstudio-server-conda](https://github.com/grst/rstudio-server-conda/blob/master/README.md)项目中的内容制定了使用的conda环境, 这样就不用在容器中重复安装R包了.
+使用如下命令启动服务即可, 运行的命令主要是将前面创建的目录和配置文件绑定到容器中供服务读取, 另外就是指定了ip与端口方便访问. 由于是单人使用, 就没有弄验证的东西了. 另外还参照[rstudio-server-conda](https://github.com/grst/rstudio-server-conda/blob/master/README.md)项目中的内容制定了使用的conda环境, 这样就不用在容器中重复安装R包了.
 
 ```bash
 singularity exec \
@@ -55,4 +55,4 @@ singularity exec \
 
 ## 4. 注意
 
-Sigularity感觉上会更类似snap和flathub这种软件打包的项目, 宿主机和容器间并不是被那么完全的被隔开. Rstudio启动后, 直接可以访问到宿主机用户的Home目录, 不知道这是这个容器的特殊表现还是Sigularity都是如此? 之后我们需要对内部的分析流程做依赖梳理和容器话... 看来还需要更多的了解Sigularity的原理和使用方式.
+Singularity感觉上会更类似snap和flathub这种软件打包的项目, 宿主机和容器间并不是被那么完全的被隔开. Rstudio启动后, 直接可以访问到宿主机用户的Home目录, 不知道这是这个容器的特殊表现还是Singularity都是如此? 之后我们需要对内部的分析流程做依赖梳理和容器话... 看来还需要更多的了解Singularity的原理和使用方式.

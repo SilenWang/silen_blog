@@ -17,7 +17,7 @@ tags: ['chromeos', 'terminal', 'libapp', '终端']
 项目内几乎每个目录都自带说明, 有详细有简略的, 阅读一遍, 结合AI的回答可知, 关键的文件夹大致如下:
 
 - hterm: js编写的终端模拟器, 登录后看到的终端所有内容都是它渲染的
-- nassh: chorme商店的终端模拟器插件, 结合了`hterm`和`ssh_client`的内容
+- nassh: chrome商店的终端模拟器插件, 结合了`hterm`和`ssh_client`的内容
 - ssh_client: 与openssh通信的部分
 - terminal: 我们看到的terminal app前端
 

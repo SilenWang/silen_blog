@@ -16,7 +16,7 @@ tags: ['数据可视化', '交互式分析', 'Dash', 'Plotly', 'Python']
 
 ```python
 # 绘制图形
-mport plotly.express as px
+import plotly.express as px
 data_b1_p1 = pd.read_csv('1st.part1.fmt.csv')
 
 fig_b1_p1 = px.scatter(data_b1_p1, x='FFPE_X', y='FFPE_Y', color = 'Pos', opacity=0.5)
@@ -30,7 +30,7 @@ fig_b1_p1 = fig_b1_p1.update_layout(
 # 设定dash app组建的框架结构, 我这里只放一个div用来放前面的图
 app.layout = html.Div([
     html.Div([
-        dcc.Markdown("demo titile"),
+        dcc.Markdown("demo title"),
         dcc.Graph(
             id='fig_b1_p1',
             figure=fig_b1_p1

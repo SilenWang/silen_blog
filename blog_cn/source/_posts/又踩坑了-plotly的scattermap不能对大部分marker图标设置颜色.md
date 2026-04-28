@@ -40,7 +40,7 @@ map_fig = (
 
 于是我又一排脑门想邪门办法了, 根据观察, `plotly.js`实际上会通过https请求图标的svg文件, 然后用这个文件进行绘图, 那... 有没有可能, 我靠油猴脚本, 拦截这个请求, 塞我准备好的svg文件给他呢?
 
-这次是chatGPT救我狗命了, deepseek完败... chatGPT确实给我了我一个能够拦截并替换svg文件的脚本:
+这次是chatGPT救我狗命了, deepseek完败... chatGPT确实给了我一个能够拦截并替换svg文件的脚本:
 
 ```javascript
 // ==UserScript==

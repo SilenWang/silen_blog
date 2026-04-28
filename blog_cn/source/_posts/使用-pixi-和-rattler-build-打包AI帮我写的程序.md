@@ -11,7 +11,7 @@ tags: [pixi, rattler-build, conda-build, Go, devssh]
 
 ## 为什么选择pixi和rattler-build？
 
-这次其实是个巧合... 本来想注册anaconda帐号用`conda-build`，结果他们官网不知道抽什么风，就是注册不成功，于是直接转prefix.dev了，正好学习一下更新的共苦
+这次其实是个巧合... 本来想注册anaconda帐号用`conda-build`，结果他们官网不知道抽什么风，就是注册不成功，于是直接转prefix.dev了，正好学习一下更新的工具
 
 ## rattler-build简介
 `rattler-build`是开发`pixi`团队开发的新一代conda包构建工具，它用Rust编写，自然就拥有更快的构建速度，它一定程度上与conda-forge的构建系统兼容，并且与`pixi`互相进行了一定程度的集成。

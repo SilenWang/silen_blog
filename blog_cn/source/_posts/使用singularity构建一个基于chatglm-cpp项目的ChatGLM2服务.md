@@ -14,7 +14,7 @@ date: 2023-08-16 07:08:46
 那么还是从最基础的构建镜像开始，singularity的镜像构建文件（Definition File）和Dockerfile还是很不一样的，不是另一种从前往后执行的脚本，感觉更像是ini这种分区进行配置的配置文件。
 
 构建一个镜像所必要的关键字包括：
-- `Bootstrap`: 用于定义base镜像从哪里来，有多种类型，可以是dockerhub可以是singularity维护的镜像lirary
+- `Bootstrap`: 用于定义base镜像从哪里来，有多种类型，可以是dockerhub可以是singularity维护的镜像library
 - `From`: 构建base镜像的名称
 - `%post`: 构建镜像时下载文件，安装软件，编译软件等的一系列命令
 
@@ -33,7 +33,7 @@ From: debian
 除了这些必要的内容，以后可能还用得上的东西包括：
 
 - `%files`：构建时向容器内拷贝文件用的部分
-- `%environment`：用于规定换纪念馆变量
+- `%environment`：用于规定环境变量
 - `%runscript`：用于指定使用`run`子命令运行容器时会使用的脚本
 - `%startscript`：用于指定使用`instance`（似乎是开机启动服务）子命令运行容器时会使用的脚本
 - `%test`：指定容器构建完成后在容器内运行的命令（用于检查构建是否完成）

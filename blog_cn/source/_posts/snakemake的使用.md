@@ -68,7 +68,7 @@ rule samtools_flt:
         "samtools sort {path}/{input} > {output}".format(path=path)
 ```
 
-即将python中的字符串格式化和snakamake的字符串格式化混用. ~~这种写法snakemake是没法正确处理的, 一个字符串要么只能使用内置的格式化方式, 要么只能用python原有的格式化方式, 上面那种写法, 会按照python原有的方式去处理, 即根据`format()`内给的信息去填充字符串, 没有指定的`input`和`output`会作留空处理.~~ snakemake是可以处理这种情况的, 但是写法上要进行变更:
+即将python中的字符串格式化和snakemake的字符串格式化混用. ~~这种写法snakemake是没法正确处理的, 一个字符串要么只能使用内置的格式化方式, 要么只能用python原有的格式化方式, 上面那种写法, 会按照python原有的方式去处理, 即根据`format()`内给的信息去填充字符串, 没有指定的`input`和`output`会作留空处理.~~ snakemake是可以处理这种情况的, 但是写法上要进行变更:
 
 ```python
 path="path/to/input"
@@ -152,7 +152,7 @@ rule complex_conversion:
 
 ## snakemake & 容器
 
-除了conda, snakamake还支持使用容器来进行依赖部署. 只不过这个容器并非最火热的docker, 而是singularity. 我也是用了snakemake才知道原来docker只是容器计数中的一种实现, 只是它特别的广为人知. snakemake支持的singularity与docker相比的特点是:
+除了conda, snakemake还支持使用容器来进行依赖部署. 只不过这个容器并非最火热的docker, 而是singularity. 我也是用了snakemake才知道原来docker只是容器计数中的一种实现, 只是它特别的广为人知. snakemake支持的singularity与docker相比的特点是:
 
 - 不需要root权限
 - 更低的资源占用

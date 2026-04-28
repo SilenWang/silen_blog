@@ -9,7 +9,7 @@ tags: ['FydeOS', 'Fydetab Duo', 'arm', 'Linux环境配置', 'hexo', 'pixi']
 <!-- more -->
 
 
-Fydetab duo 也拿到了一个多月了，目前还在持续想办法把设备用起来的阶段。最起码，我希望能用这个设备来抽空谢谢博客。因此有了下面的折腾。
+Fydetab duo 也拿到了一个多月了，目前还在持续想办法把设备用起来的阶段。最起码，我希望能用这个设备来抽空写写博客。因此有了下面的折腾。
 
 <!-- 摘要部分 -->
 <!-- more -->
@@ -34,7 +34,7 @@ export PIXI_HOME=/usr/local/share/pixi
 
 ## arm平台特殊配置
 
-- fydeos tab是arm架构的设备，所以`pixi`的配置中需要增加`linux-aarch64`平台，同时实际测试下来yarn安装以来会出现无法识别子环境的python问题，因此fydetab duo不使用yarn，用回npm，同时由于fydeos中默认并没有`make`、`gcc`、`gxx`这些，因此也要将这些内容补充到`linux-aarch64`的依赖中
+- fydeos tab是arm架构的设备，所以`pixi`的配置中需要增加`linux-aarch64`平台，同时实际测试下来yarn安装依赖会出现无法识别子环境的python问题，因此fydetab duo不使用yarn，用回npm，同时由于fydeos中默认并没有`make`、`gcc`、`gxx`这些，因此也要将这些内容补充到`linux-aarch64`的依赖中
 - fydeos的系统信息文件与常规linux有小差别，这会导致hexo的模块解析系统信息时错误，导致`hexo -v`和会调用它的`hexo g`无法运行，因此需要在部署任务中增加修复的语句
 
 ```toml

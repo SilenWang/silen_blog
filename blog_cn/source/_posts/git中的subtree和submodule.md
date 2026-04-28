@@ -54,7 +54,7 @@ git subtree add --prefix=app/Backend Backend_Admin aiming_med --squash
 - **拉取子项目更新**：`git subtree pull --prefix=<目录> <远程名> <分支> --squash`
 - **推送主项目内对子项目的修改**：`git subtree push --prefix=<目录> <远程名> <分支>`
 
-当然为了简化操作，可以在Pixi中配置响应的命令
+当然为了简化操作，可以在Pixi中配置相应的命令
 
 ### 4. 注意事项
 - 使用上述方式设置 subtree 后，子项目代码在本项目已有一份完整拷贝，因此，再次部署时，克隆主项目后**无需**再次运行 subtree add。

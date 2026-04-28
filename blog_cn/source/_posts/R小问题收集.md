@@ -12,7 +12,7 @@ tags: ['R语言', '数据框', '数据结构', '数据操作', 'R', 'dataframe',
 
 ## 取单列/行不返回向量
 
-- 使用`df[]`的方式对数据框取子集时, 若取出的是单列/行, 或者删除后只剩下但列/行的话返回的对象会是向量而不再是数据框, 需要的时候要加参数指定以返回数据框
+- 使用`df[]`的方式对数据框取子集时, 若取出的是单列/行, 或者删除后只剩下单列/行的话返回的对象会是向量而不再是数据框, 需要的时候要加参数指定以返回数据框
 - 本方法对matrix一样有效
 
 ```r
@@ -26,7 +26,7 @@ df[c(1, 2, 3), -2, drop = F]
 ```r
 # 分两步进行
 merge_data <- merge(x, y, all.x = T, by = 0)
-merge_data <- data.frame(merge_data), row.names = 1)
+merge_data <- data.frame(merge_data, row.names = 1)
 # 合并成一步
 merge_data <- data.frame(merge(x, y, all.x = T, by = 0), row.names = 1)
 ```
