@@ -30,7 +30,7 @@ Previously, when using aider-chat + DeepSeek, I translated dozens of articles in
 
 In actual testing, a simple prompt (`Clone silen_blog, create a new branch, and in that branch, gradually review all Chinese blog md files in the posts folder under the blog_cn directory, check for inappropriate Chinese expressions and typos, make corrections, and after completing the corrections, push the changes back to GitHub`) let the Agent proofread my articles for Chinese expression in just 30 minutes, with commits affecting 105 files, while I have about 150+ MD blog files. Since it was just a simple test, I didn't verify each blog one by one to see if they were all actually reviewed and modified, but from the Diff results, it did find quite a few typos.
 
-In terms of price, using Flash cost only 1.5 RMB, which is quite cheap—especially considering this was through Opencode, where token consumption theoretically grows exponentially compared to Aider's previous usage. However, for full-text translation, the consumption is only a few yuan.
+In terms of price, using Flash cost only 1.5 RMB, which is quite cheap—especially considering this was through Opencode, where token consumption theoretically grows exponentially compared to Aider's previous usage. 
 
 ## Personal Expectations
 
