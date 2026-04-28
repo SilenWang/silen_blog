@@ -30,7 +30,7 @@ sudo pacman -S android-ndk
 # manjaro community里面有, 我记得官方版本是自带的, 现在用的社区发行版可能处于精简考虑没有默认安装
 sudo pacman -S android-tools
 
-# 手机打开usb调试然后连接到电脑, device现实未注册的话在手机上选择允许当前设备的调试
+# 手机打开usb调试然后连接到电脑, device显示未注册的话在手机上选择允许当前设备的调试
 adb devices
 
 # 获取手机基本信息以推送对应版本的minicap到手机
@@ -47,7 +47,7 @@ adb shell LD_LIBRARY_PATH=/data/local/tmp /data/local/tmp/minicap -P 1080x1920@1
 # 截图
 
 ```bash
-# 前面的环境变量设定是必须的, 因为要指定运行库位置, -P后面是截图参数, 详情可参见minicap的项目网页, -s但表截图并输出到
+# 前面的环境变量设定是必须的, 因为要指定运行库位置, -P后面是截图参数, 详情可参见minicap的项目网页, -s代表截图并输出到
 # 标准输出, 所以重定向就好
 adb shell LD_LIBRARY_PATH=/data/local/tmp /data/local/tmp/minicap -P 1080x1920@1080x1920/0 –s > /sdcard/minicap/test.jpg
 ```

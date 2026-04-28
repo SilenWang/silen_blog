@@ -47,7 +47,7 @@ libcap = ">=2.76,<3"
 
 ## 编译解决方案
 
-两个软件的conda包构建代码分别在`https://github.com/conda-forge/netavark-feedstock`和`https://github.com/conda-forge/podman-feedstock`，克隆下来后依次编译。在编译`netavark`和`podman`时，都会有依赖问题，我们需要修改他们的`recipe/conda_build_config.yaml`文件，具体差异别见下，其实就是指定使用sysroot作为C标准库。
+两个软件的conda包构建代码分别在`https://github.com/conda-forge/netavark-feedstock`和`https://github.com/conda-forge/podman-feedstock`，克隆下来后依次编译。在编译`netavark`和`podman`时，都会有依赖问题，我们需要修改他们的`recipe/conda_build_config.yaml`文件，具体差异见下，其实就是指定使用sysroot作为C标准库。
 
 ```
 index d402d1d..7dbfd74 100644
@@ -71,7 +71,7 @@ newuidmap: Could not set caps
 cannot set up namespace using "/usr/bin/newuidmap": should have setuid or have filecaps setuid
 ```
 
-到此位置，遇到了本次无法克服的障碍，**FydeOS/Chromeos的从设计上，就不允许用户命名空间中的UID/GID映射**。
+到此为止，遇到了本次无法克服的障碍，**FydeOS/Chromeos的从设计上，就不允许用户命名空间中的UID/GID映射**。
 
 我尝试根据AI提示，通过`sudo chmod u+s`为`newuidmap`和`newgidmap`设置了setuid位，系统仍然拒绝执行。内核日志显示：
 ```

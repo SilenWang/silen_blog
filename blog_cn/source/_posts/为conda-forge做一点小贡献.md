@@ -11,7 +11,7 @@ Conda 上的终于有 `aider-chat` 的 conda包了，这样理论上可以通过
 
 ## 什么是 conda‑forge？
 
-说来惭愧，在这之前，我一致不明白 conda 的 anaconda 和 conda‑forge 频道有什么区别... 这次翻文档才知道[Conda‑forge](https://conda-forge.org/) 是一个社区驱动的 Conda 软件包分发频道，而 Anaconda 是 conda 的官方资源（以及如果在商业公司随便使用Anaconda，可能会被警告和要求付费...）。
+说来惭愧，在这之前，我一直不明白 conda 的 anaconda 和 conda‑forge 频道有什么区别... 这次翻文档才知道[Conda‑forge](https://conda-forge.org/) 是一个社区驱动的 Conda 软件包分发频道，而 Anaconda 是 conda 的官方资源（以及如果在商业公司随便使用Anaconda，可能会被警告和要求付费...）。
 而 Conda‑forge 上的每一个软件包都对应一个 **feedstock** 仓库，其中包含了构建该包所需的全部文件，其中最关键的就是 **recipe**。
 
 ## 什么是 recipe？

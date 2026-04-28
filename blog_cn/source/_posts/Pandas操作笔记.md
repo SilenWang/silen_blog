@@ -18,7 +18,7 @@ tags: ['数据处理', 'Python', 'Pandas', '数据分析']
 import pandas as pd
 df = pd.read_csv(file_path, sep="\t", index_col=0, header=0)
 # index_col等同R里面的row.names, 都是把特定列作为行标签使用, 并且将该列从数据中去除, 如果不指定则会生成0-length的数字作为标签
-# header函数与R里的逻辑不太一样, 默认是header=0, 即将读取的第一行作为表头, 如果不要表头的话用header=None, 如果制定别的行为表头, 则表头行以上的数据会被丢弃
+# header函数与R里的逻辑不太一样, 默认是header=0, 即将读取的第一行作为表头, 如果不要表头的话用header=None, 如果指定别的行为表头, 则表头行以上的数据会被丢弃
 ```
 - 在处理很大的数据时, 为防止爆内存, 需要生成迭代器分块读取文件
 

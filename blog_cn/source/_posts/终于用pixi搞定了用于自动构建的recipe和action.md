@@ -19,7 +19,7 @@ tags: ['pixi', 'recipe', 'github action', 'rattler', 'conda']
 
 ### 1. recipe 的 context 中不能使用 if‑then 判断
 
-在 rattler‑build 的 recipe 中，`context` 部分用于定义变量，但这里**不能**像build里那样使用条件判断。AI 也是说 context 的部分只能静态的定义变量。然而这个说法... 对也不对。对的是，在 yaml 的语法内，确实是只能定义变量的，但是... rattler-build 其实是会先用 jinjia（是的又是jijia）来渲染出一个配置文件的，因此支持的 minijinjia 函数是可以实现判断的：
+在 rattler‑build 的 recipe 中，`context` 部分用于定义变量，但这里**不能**像build里那样使用条件判断。AI 也是说 context 的部分只能静态的定义变量。然而这个说法... 对也不对。对的是，在 yaml 的语法内，确实是只能定义变量的，但是... rattler-build 其实是会先用 jinja（是的又是jinja）来渲染出一个配置文件的，因此支持的 minijinjia 函数是可以实现判断的：
 
 ```yaml
 context:

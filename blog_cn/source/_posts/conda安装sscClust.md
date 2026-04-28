@@ -20,7 +20,7 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
 conda config --set show_channel_urls yes
 
-# 之后进入~/.condarc把里面的'- defualt'删除, 这步非常关键!
+# 之后进入~/.condarc把里面的'- defaults'删除, 这步非常关键!
 
 conda install -y bioconductor-SingleCellExperiment bioconductor-scran bioconductor-SC3 bioconductor-zinbwave bioconductor-BiocParallel r-base r-devtools r-rcolorbrewer r-rtsne r-class r-factoextra r-cowplot r-data.table r-ggplot2 r-mass r-rjson r-cluster r-ks r-fields r-doparallel r-plyr r-igraph r-densityclust r-e1071
 ```
