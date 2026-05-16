@@ -1,6 +1,6 @@
 ---
 title: Subtree vs Submodule in Git
-categories: Other
+categories: Others
 date: 2025-12-06 01:49:33
 tags:
   - git
