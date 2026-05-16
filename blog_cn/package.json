@@ -11,13 +11,17 @@
   "hexo": {
     "version": "7.3.0"
   },
+  "overrides": {
+    "axios": "0.32.0",
+    "dompurify": "3.4.3"
+  },
   "dependencies": {
     "hexo": "^7.3.0",
     "hexo-bilibili-card": "^0.6.1",
     "hexo-deployer-git": "^3.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
-    "hexo-generator-index": "^3.0.0",
+    "hexo-generator-index": "^4.0.0",
     "hexo-generator-json-content": "^4.2.3",
     "hexo-generator-search": "^2.4.3",
     "hexo-generator-tag": "^2.0.0",
