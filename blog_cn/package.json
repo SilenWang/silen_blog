@@ -28,7 +28,7 @@
     "hexo-github-repo-tag": "^0.0.2",
     "hexo-post-link": "^1.0.0",
     "hexo-renderer-ejs": "^2.0.0",
-    "hexo-renderer-marked": "^6.0.0",
+    "hexo-renderer-marked": "^7.0.1",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-ruby-character": "^1.0.6",
     "hexo-server": "^3.0.0",
