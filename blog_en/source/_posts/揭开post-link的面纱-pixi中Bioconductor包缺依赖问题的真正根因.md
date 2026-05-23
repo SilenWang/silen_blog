@@ -1,14 +1,14 @@
 ---
-title: Unveiling post-link: The Real Root Cause of Bioconductor Missing Dependencies in pixi
+title: "Unveiling post-link: The Real Root Cause of Bioconductor Missing Dependencies in pixi"
 categories: Bioinformatics
 date: 2026-05-22 06:55:00
 tags: [pixi, R, Bioconductor, dependency management, conda]
 updated: 2026-05-22 06:55:00
 ---
 
-I previously wrote a blog post about using pixi's tasks feature to fix missing dependency issues with Bioconductor packages (like `GenomeInfoDbData`, `BSgenome.Hsapiens.UCSC.hg38`, etc.) after installation. At the time, I only knew the problem existed but didn't understand the root cause — I was just providing a workaround.
+I previously wrote a blog post about using pixi's tasks feature to fix missing dependency issues with Bioconductor packages (like `GenomeInfoDbData`, `BSgenome.Hsapiens.UCSC.hg38`, etc.) after installation. At the time, I only knew the problem existed but didn't understand the root cause — I was just providing a less-than-ideal workaround.
 
-Today, with the help of AI-driven deep analysis, I finally figured out the real reason — it all comes down to the **post-link script mechanism** in the Conda ecosystem.
+But recently, with insights from AI responses, I finally figured out the real reason — it all comes down to the **post-link script mechanism** in the Conda ecosystem.
 
 <!-- more -->
 
@@ -22,11 +22,11 @@ A typical error looks like:
 Error: package 'GenomeInfoDbData' is not installed
 ```
 
-Yet `conda list` shows that `bioconductor-org.hs.eg.db` and related packages are installed.
+But in reality, from the generated `pixi.lock`, you can see that `bioconductor-GenomeInfoDbData` and related packages are actually installed.
 
 ## The Real Root Cause: post-link Scripts
 
-In the Conda ecosystem, genome annotation packages like `bioconductor-org.hs.eg.db` are designed to keep package sizes small by **only shipping metadata**. The actual database files (SQLite files, etc.) are downloaded and built locally at install time via **post-link scripts**.
+In the Conda ecosystem, these genome annotation packages are designed to keep package sizes small by **only shipping metadata**. The actual database files (SQLite files, etc.) are downloaded and built locally at install time via **post-link scripts**.
 
 A post-link script is part of the Conda package installation lifecycle — after a package is installed, Conda executes the package's embedded `post-link.sh` (Linux/macOS) or `post-link.bat` (Windows) script to perform post-installation tasks such as:
 
@@ -42,78 +42,24 @@ However, **Pixi, by default, disables (or does not actively execute) Conda packa
 3. But the core data files are never downloaded ❌
 4. R naturally can't find the data packages when loading them ❌
 
-This is the real root cause of the "installed but package not found" issue I encountered.
+This is the real root cause of the "installed but package not found" issue I encountered. And when installing these packages, Pixi actually gives a warning saying that some packages' post-link scripts cannot be executed due to default settings, and you can modify the settings yourself.
 
-## How to Confirm the Issue
+Relevant details are documented in [Pixi's documentation](https://pixi.prefix.dev/latest/reference/pixi_configuration/#run-post-link-scripts).
 
-To check if a Bioconductor package relies on post-link for data download, inspect its `extdata` directory:
+## The Real Solution: Enable post-link Support in Pixi
 
-```bash
-# For GenomeInfoDbData as an example
-# Find the package installation path
-Rscript -e "system.file(package='GenomeInfoDbData')"
-# Check the extdata directory — if empty or missing, post-link didn't run
-ls $(Rscript -e "cat(system.file(package='GenomeInfoDbData'))")/extdata/
-```
-
-If the `extdata` directory doesn't exist or is empty, the post-link script was not executed and the database files were not downloaded.
-
-## Solutions
-
-### Option 1: Use pixi tasks (the previous workaround)
-
-As mentioned in my earlier blog post, use `pixi tasks` to manually install missing data packages via `BiocManager::install()`:
-
-```toml
-[tasks]
-GenomeInfoDbData = {cmd = 'Rscript -e "BiocManager::install(\"GenomeInfoDbData\")"'}
-```
-
-### Option 2: Enable post-link in pixi (recommended)
-
-If you're using pixi >= 0.39.0, you can enable post-link script execution by setting an environment variable:
+The official documentation offers two approaches. One is to directly run:
 
 ```bash
-export PIXI_ENABLE_POST_LINK=true
+pixi config set --local run-post-link-scripts
 ```
 
-Or specify it directly when running pixi:
+to allow these scripts to be executed.
 
-```bash
-PIXI_ENABLE_POST_LINK=true pixi install
-```
+The other approach is essentially the same — manually adding the relevant variable to the configuration file.
 
-> ⚠️ **Note**: Enabling post-link introduces some security risk, as post-link scripts can execute arbitrary commands. It's relatively safe to use with trusted sources like bioconda, but caution is needed for packages from unknown origins.
+This setting only takes effect for packages installed afterward. If the environment has already been configured, you need to run `pixi clean` first, then `pixi install -a` again. You'll notice that after Pixi's progress bar finishes, the log will pause for a while with no further output — that's actually the post-link scripts being executed.
 
-### Option 3: Manually execute the post-link script
+## Comparison with the Previous Approach
 
-If you don't want to globally enable post-link, you can run a single package's post-link script manually:
-
-```bash
-# Find post-link scripts for the specific package
-find $CONDA_PREFIX -name "post-link.sh" -path "*org.hs.eg.db*" -exec bash {} \;
-```
-
-### Option 4: Configure pixi.toml to enable post-link
-
-For project-level configuration, you can add to `pixi.toml`:
-
-```toml
-[feature]
-post-link = true
-```
-
-Note that this configuration option's availability varies across pixi versions, so check the documentation for your specific version.
-
-## Summary
-
-| Aspect | Traditional Conda | Pixi (default) | Pixi (post-link enabled) |
-|--------|-----------------|----------------|------------------------|
-| post-link scripts | Auto-executed | Not executed | Executed |
-| Security | Lower | High | Medium |
-| Bioconductor data package compatibility | Good | Poor | Good |
-| Determinism | Low (network-dependent) | High | Medium |
-
-This investigation shows how important it is to understand the inner workings of your tools. I had been using a workaround for a whole year, essentially working around the problem, when the real solution was right there all along.
-
-If you're using pixi to manage bioinformatics environments and encountering similar Bioconductor missing dependency issues, now you know who the real culprit is — those silent post-link scripts that never got a chance to run.
+The solution mentioned in the earlier blog post {% post_link 修复pixi部署部分bioconda-r包后出现的缺依赖问题 [Approach] %} is still a viable option. However, installing packages directly through R's own dependency system inevitably breaks conda's dependency system, laying hidden traps for future dependency modifications. Therefore, the approach described in this post is the optimal choice.
