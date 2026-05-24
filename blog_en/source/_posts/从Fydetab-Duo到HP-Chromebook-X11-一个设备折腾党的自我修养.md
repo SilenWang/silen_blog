@@ -11,7 +11,7 @@ categories: Others
 
 ## Preface
 
-It's been barely a month since I wrote [The Perplexity of Modern Laptop and Tablet Choices](/2026/04/15/当代笔记本和平板设备选择之困/), and here I am again.
+It's been barely a month since I wrote {% post_link 当代笔记本和平板设备选择之困 [The Perplexity of Modern Laptop and Tablet Choices] %}, and here I am again.
 
 That's right — the same person who confidently declared "I'll stick with the Fydetab Duo for now" at the end of that article is now sitting in front of an HP Chromebook X11 typing these words.
 
