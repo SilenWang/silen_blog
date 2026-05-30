@@ -5,15 +5,37 @@ date: 2026-05-28 16:00:00
 tags: ['R语言', 'pathview', 'KEGG', '数据可视化', 'DEG分析']
 ---
 
-最近在跑差异基因分析的流程，有个环节是把差异基因的表达量映射到 KEGG 通路上，生成那种直观的 pathway 图。我用的是 Bioconductor 上的 `pathview` 包，结果出图一看，好家伙，有些节点大得离谱，而且颜色也不对劲。
+最近做差异基因分析，需要将差异基因表达量映射到 KEGG 通路上生成 pathway 图。我用 Bioconductor 的 `pathview` 包出图后发现节点大得离谱、颜色也不对。在 AI 帮助下解决了问题，还学到一种新的打补丁方式。
 
 <!-- more -->
 
-## 问题一：化合物节点尺寸爆炸
+## R 中更简洁的打补丁方式
 
-第一次跑 `pathview`，出来的图长这样——某些化合物（Compound）节点被渲染得巨大无比，严重挤压了其他节点，整张图根本没法看。
+{% post_link 对发现bug的R函数进行热修复 [之前我修复 R 函数 Bug] %} 用的是整个替换函数的方式，但只需修改少数几行时，这种方式不够优雅，也不易看出改了什么。
 
-查了一下，问题是 `pathview` 内部的 `render.kegg.node` 函数在计算化合物节点尺寸时出了问题，导致宽度和高度被设成了很大的值。这个函数不是导出的 API，但可以通过 `trace()` 来拦截和修改它的行为：
+这次 Deepseek 用了另一种方式：`trace`。
+
+`trace()` 是 R 的调试工具，原本用于函数调用追踪，也可以往函数中插入额外代码。
+
+例如，在 `pathview` 的 `render.kegg.node` 执行前打印 `'123'`：
+
+```R
+trace(pathview:::render.kegg.node,
+      tracer = quote({
+        print('123')
+      }),
+      print = FALSE)
+```
+
+如果函数 bug 可通过在运行前修改某些设置来修复，用 trace 即可，无需完整替换函数再注册。
+
+我碰到的三个问题都靠这个方法解决。
+
+## 用例一：化合物节点尺寸爆炸
+
+我需要绘制编号 01212 的脂肪酸代谢通路（代谢通路，非信号通路），节点是代谢物，酶/基因在边上。`pathview` 默认将代谢物节点重绘为圆形并标记基因名称，但代谢物节点被渲染得巨大，遮住了边和文字。
+
+排查发现 `render.kegg.node` 计算化合物节点尺寸时出错，导致宽高值过大。用 `trace()` 拦截修改：
 
 ```R
 trace(pathview:::render.kegg.node,
@@ -26,13 +48,13 @@ trace(pathview:::render.kegg.node,
       print = FALSE)
 ```
 
-原理很简单：用 `trace()` 注入一个回调，在 `render.kegg.node` 执行到我们插入的代码位置时，将所有化合物节点的宽高强制设为 `2`。
+原理：用 `trace()` 在函数前注入设置，将所有代谢物节点宽高强制设为 `2`。
 
-## 问题二：基因盒子的颜色映射失效
+## 用例二：基因盒子的颜色映射失效
 
-解决尺寸问题后，新的问题又来了。对于某些通路，比如 `mmu01212`（脂肪酸代谢通路），`pathview` 默认会在基因节点上画带颜色的方框来表示上下调——但其实这个通路在 KEGG 的 XML 里并没有标准的 "gene box" 结构，所以颜色根本不会显示。
+01212 不是信号通路，没有基因节点，`pathview` 无法在基因节点上用颜色方框表示上下调。
 
-那怎么办呢？我的思路是把颜色的信息体现在基因名字的文字颜色上。`render.kegg.node` 里有一个 `cols.ts` 参数，它本身就是为了给某些元素上色用的。只要把 `text.col` 设成 `cols.ts`，文字颜色就能正确反映 logFC 的变化了：
+我的思路是把颜色体现在基因文字颜色上。`render.kegg.node` 的 `cols.ts` 参数本用于给某些元素上色，Deepseek 将 `text.col` 设为 `cols.ts`，文字颜色就能反映 logFC 变化：
 
 ```R
 if (type == "gene" && !is.null(cols.ts)) {
@@ -40,74 +62,33 @@ if (type == "gene" && !is.null(cols.ts)) {
 }
 ```
 
-注意这只是配色方案的一种——有的通路有标准的 gene box，用默认的方框上色效果更好；有的通路（如 `mmu01212`、`mcf01212`）没有，就得用文字颜色。
+这样出来的图虽然不太好看，但好歹能看了...
 
-## 问题三：不同通路需要不同的渲染策略
+## 用例三：不同通路需要不同的渲染策略
 
-这就引出了第三个问题：不同通路需要不同的渲染方式。我总不能一刀切——让所有的通路都用文字颜色，那样反而会让好端端的 gene box 配色的通路变得奇怪。
+前面解决了代谢通路的问题，却给信号通路挖了坑。信号通路有基因节点，正常会渲染颜色，若文字颜色映射也对信号通路起效，文字和背景框颜色一致就看不到了...
 
-解决方案是定义一个白名单列表，只对特定的通路采用文字颜色方案：
+判断通路类型没有好的信息来源，于是硬编码：
 
 ```R
 text_color_pathways <- c("mcf01212", "mmu01212")
-```
-
-然后在通路渲染循环里，根据当前通路是否在白名单中来决定是否启用文字颜色：
-
-```R
 .pv_use_text_color <<- full_pathway_id %in% text_color_pathways
-```
-
-注意这里用了一个全局变量来把信息传递给 `trace` 注入的回调函数（因为 `trace` 里的 `quote` 是在 `pathview` 的命名空间内执行的，没法直接传参）：
-
-```R
 if (exists(".pv_use_text_color", envir = .GlobalEnv, inherits = FALSE) &&
     isTRUE(get(".pv_use_text_color", envir = .GlobalEnv, inherits = FALSE))) {
   text.col <- cols.ts
 }
 ```
 
-## 彩蛋：标记显著差异基因
-
-既然都已经在上一步拿到了所有基因的差异表达数据，那不如顺便把显著差异基因（padj < 0.05）也标出来。我在渲染循环里又加了一句，把 padj 信息存到全局变量里：
-
-```R
-.pv_gene_padj <<- setNames(deg_data$padj, as.character(deg_data$gene_id))
-```
-
-然后在 `trace` 回调里，对于显著差异的基因，在基因名后面加个星号 `*`：
-
-```R
-if (exists(".pv_gene_padj", envir = .GlobalEnv, inherits = FALSE)) {
-  padj_vec <- get(".pv_gene_padj", envir = .GlobalEnv, inherits = FALSE)
-  if (!is.null(padj_vec) && length(padj_vec) > 0) {
-    node_ids <- gsub("^[a-z]+:", "", as.character(plot.data$kegg.names))
-    sig <- node_ids %in% names(padj_vec) & padj_vec[node_ids] < 0.05
-    sig[is.na(sig)] <- FALSE
-    plot.data$labels[sig] <- paste0(plot.data$labels[sig], "*")
-  }
-}
-```
-
-这样，一眼就能看出哪些基因是显著差异的，非常直观。
+这里用全局变量传递信息给 `trace` 注入的回调（`trace` 的 `quote` 在 `pathview` 命名空间内执行，无法直接传参）。
 
 ## 其他调参记录
 
-除了上面三个大坑，还调整了几个参数：
+绘制中还调整了几个参数：
 
-- `kegg.native = TRUE`：之前用的 `FALSE`，会渲染成 Graphviz 布局的图，看着不太对劲。改成 `TRUE` 使用 KEGG 原生的 PNG 底图，然后把数据覆盖上去，效果好了很多。
-- `map.symbol = FALSE`：如果是 `TRUE` 会把 Entrez ID 转成 gene symbol，但很多时候并不需要这个转换。
-- `same.layer = TRUE`：让基因数据和通路底图在同一层渲染，避免分层导致的错位问题。
-- `limit = list(gene = max(abs(log2fc), na.rm=TRUE))`：让颜色映射的范围跟数据实际范围一致，而不是用默认值，这样颜色对比更明显。
+- `kegg.native = TRUE`：若用 `FALSE`，渲染成 Graphviz 有向图，只保留拓扑关系，节点多时基本不可读。
+- `same.layer = FALSE`：绘制 01212 这种节点过多的图时，`pathview` 会崩溃，必须设为 `FALSE`。
+- `limit = list(gene = max(abs(log2fc), na.rm=TRUE))`：让颜色映射范围与实际数据一致，默认缩放到 -1 ~ 1。
 
-## 后记
+## 感谢
 
-这些修改都记录在 `VyBioTx/BioWorkflow` 仓库的三个 commit 里：
-
-- `ee26122`：修复化合物节点尺寸
-- `7542a82`：增加文字颜色表示 logFC
-- `68ffddf`：支持逐通路配置 + 添加显著性标记
-
-还要感谢 Biostars 上的这个讨论（<https://www.biostars.org/p/385963/>），里面提到了用 `trace()` 来修改 `pathview` 函数的手法，给了我很大启发。
-
-说实话，这种用 `trace()` 做热修复的方式其实挺 hacky 的，但毕竟不能指望 R 包作者满足所有人的需求。在不修改源代码的前提下，这种方式可以灵活地扩展包的渲染能力，对数据分析流程来说已经够用了。
+感谢 Biostars 上的[讨论](https://www.biostars.org/p/385963/)，提到了用 `trace()` 修改 `pathview` 函数的手法，Deepseek 据此写出了解决方案。
