@@ -12,6 +12,8 @@ tags:
 
 前段时间各家卖 Token 的厂商集中变相涨价，就在大家慢慢习惯"AI 越来越贵"时，DeepSeek 干了件离谱的事——V4-Pro 永久降价，固定为原价的四分之一。
 
+![plot](https://raw.githubusercontent.com/silenwang/Gallary/master/2026/05/upgit_20260531_1780161870.webp)
+
 <!-- more -->
 
 其实 DeepSeek V4 发布时的定价已经很惊人。V4-Flash 本身就便宜，缓存命中时缓存 token 花费几乎可忽略。Pro 贵得多，但首发 2.5 折优惠下，也就 Minimax 的价格水平。而 Minimax 参数更小，上下文更是只有四分之一。所以即使 Pro 原价售卖，DeepSeek 依然颇具性价比。
