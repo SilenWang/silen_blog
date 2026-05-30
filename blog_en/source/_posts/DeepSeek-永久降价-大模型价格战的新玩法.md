@@ -12,6 +12,8 @@ tags:
 
 Recently, many token-selling providers have been raising prices in disguised ways. Just as everyone was getting used to "AI is getting more expensive," DeepSeek did something absurd — they permanently cut the price of V4-Pro to a quarter of the original.
 
+![plot](https://raw.githubusercontent.com/silenwang/Gallary/master/2026/05/upgit_20260531_1780161870.webp)
+
 <!-- more -->
 
 In fact, the pricing when DeepSeek V4 launched was already impressive. V4-Flash was cheap to begin with, and with cache hits, the cached token cost was almost negligible. Pro was much more expensive, but at the launch 75% discount, it was on par with Minimax's pricing. And Minimax has smaller parameters and only a quarter of the context window. So even at the original price, DeepSeek Pro still offered great value.
