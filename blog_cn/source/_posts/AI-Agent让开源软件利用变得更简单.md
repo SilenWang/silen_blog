@@ -12,6 +12,8 @@ tags:
 
 最近我向 BananaSlice 提交了一个 PR（[#11](https://github.com/IrfanulM/BananaSlice/pull/11)），为其增加了可配置的 Gemini 兼容 API 端点功能。整个过程让我深刻感受到：AI Agent 不仅让人能更快地写代码，也让开源软件的利用方式发生了改变。
 
+![banner](https://raw.githubusercontent.com/silenwang/Gallary/master/2026/06/upgit_20260615_1781454783.webp)
+
 <!-- more -->
 
 ## 过去的问题：差那么一点点

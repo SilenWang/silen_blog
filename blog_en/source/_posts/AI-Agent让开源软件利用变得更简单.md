@@ -12,6 +12,8 @@ tags:
 
 Recently I submitted a PR to BananaSlice ([#11](https://github.com/IrfanulM/BananaSlice/pull/11)), adding configurable Gemini-compatible API endpoint support. The whole process made me realize: AI Agents not only help people write code faster, but also change how we leverage open source software.
 
+![banner](https://raw.githubusercontent.com/silenwang/Gallary/master/2026/06/upgit_20260615_1781454783.webp)
+
 <!-- more -->
 
 ## The Old Problem: So Close, Yet So Far
