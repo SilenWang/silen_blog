@@ -1,5 +1,5 @@
 ---
-wtitle: AI Agent 让开源软件利用变得更简单
+title: AI Agent 让开源软件利用变得更简单
 categories: AI
 date: 2026-06-03 22:00:00
 tags:
