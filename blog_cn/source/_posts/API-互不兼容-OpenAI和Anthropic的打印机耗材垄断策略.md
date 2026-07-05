@@ -12,6 +12,8 @@ categories: Others
 
 最近在做一些 AI 应用集成的工作，需要在不同模型之间切换。然后我就发现了一个问题——OpenAI 和 Anthropic 的 API 原来是**不兼容**的。
 
+![banner](https://raw.githubusercontent.com/silenwang/Gallary/master/2026/07/upgit_20260706_1783268947.webp)
+
 <!-- more -->
 
 ## 从一次简单的换模型说起

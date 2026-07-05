@@ -12,6 +12,7 @@ categories: Others
 
 Lately I've been working on integrating several AI applications, which means I need to switch between different models. That's when I discovered a problem — the APIs of OpenAI and Anthropic are **incompatible**.
 
+![banner](https://raw.githubusercontent.com/silenwang/Gallary/master/2026/07/upgit_20260706_1783268947.webp)
 <!-- more -->
 
 ## Starting with a Simple Model Switch
