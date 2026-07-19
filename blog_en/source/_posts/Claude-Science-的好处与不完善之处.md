@@ -1,38 +1,55 @@
 ---
-title: The Benefits and Imperfections of Claude Science
+title: The Benefits and Limitations of Claude Science
 date: 2026-07-15 22:00:00
 tags:
   - Claude Science
   - AI
-  - Review
   - Bioinformatics
 categories: AI
 ---
 
-After previously tinkering with putting Claude Science into a Docker container and using it for a while, I want to talk about its benefits and the areas where it still falls short.
+After previously tinkering with putting Claude Science into a Docker container, I've been using it relatively intensively over the past two weeks (connected to DeepSeek, not the original Anthropic version, of course), so I want to talk about its advantages and limitations.
 
 <!-- more -->
 
-## Benefits: Rich Ecosystem of Biology Plugins
+## Advantages: A Well-Equipped Biomedical Workbench
 
-What I'm most satisfied with about Claude Science is how comprehensive its biology-related plugins are. No special configuration is needed—you can start searching for data, setting up download environments, and performing analyses right away.
+What I'm most satisfied with about Claude Science is how comprehensive its biology-related plugins are. Without any special configuration, you can start searching for data, setting up download environments, and performing analyses.
 
-It comes with built-in scientific MCP servers such as biorxiv and chembl, allowing you to pull data directly from public databases. For people working in bioinformatics, this means saving a huge amount of time on environment setup. In the past, just installing software, configuring the environment, and finding data for an analysis could take half a day. Now, with Claude Science, you can get a workflow running with just a few sentences.
+It comes with built-in database connectors (MCP servers) for the most commonly used resources in biomedical research. Without any special setup, you can search for literature on PubMed, find validation datasets on GEO, and use Conda to deploy the tools needed for analysis. For anyone looking to validate ideas using existing data and classic methods, Claude Science can save a significant amount of time. In the past, just installing software, configuring the environment, and finding data for an analysis could take half a day. Now, with Claude Science, you can get a basic workflow running with just a few sentences.
 
-Its support for commonly used bioinformatics tools is also decent. I tried using it for simple single-cell analyses, and with the built-in plugins, I basically didn't need to prepare any code myself—just describing the requirements clearly was enough. For quickly validating ideas, the experience is indeed very good.
+I tried using it for simple single-cell analyses, and with the built-in plugins, I basically didn't need to prepare any code myself—just describing the requirements clearly was enough. For quickly validating ideas, the experience is indeed very good.
 
-## Imperfections: Reproducibility Falls Short of Its Name
+Additionally, the built-in Reviewer mechanism is very useful. When Review is enabled, the output text, the internal logic of the results, etc., are all automatically checked. If an issue is found, it will automatically redo the work—at the cost of doubling the token usage, of course.
 
-Claude Science adopts a cell-based editing and execution approach similar to Jupyter notebooks. The advantage is that users can view variables in the runtime environment in real time, providing a strong sense of interactivity—this is definitely commendable.
+## Limitations: Not a Reliable Analysis Expert
 
-However, the problem is that **after multiple rounds of conversation, the code retained in the interface is not the code that actually produced the results**.
+Just like when I first started Vibe Coding, after the initial burst of joy, you gradually start to notice various shortcomings...
 
-Anyone who has used Jupyter knows the classic scenario: you repeatedly modify and run the same cell, and eventually the cell displays the last edited code, but the results from earlier runs may correspond to completely different code. Claude Science has a similar issue—the conversation history retains the final state of the code, not the version of the code that "actually produced the results."
+I should note upfront that I'm using a version accessed via a community project connected to DeepSeek, so most of the issues in the limitations section are clearly compatibility problems. As for the remaining issues, it's hard to rule out that they are also caused by compatibility. After all, Anthropic's products are designed to work as a software-model package deal; once you decouple them, problems are inevitable.
+
+### Incomplete Reproducibility
+
+Claude Science adopts a cell-based editing and execution approach similar to Jupyter. The advantage is that users can view variables in the runtime environment in real time and verify the content being computed.
+
+However, the problem is that, just like how people often execute Jupyter cells out of order, **after multiple rounds of conversation with Claude Science, the code retained in the notebook may not match the code that actually produced the results**.
 
 This leads to a problem: **the reproducibility it claims at launch is compromised in actual use**. When you look back at your previous analyses, it's hard to confirm whether the code you see matches the results at that time. If you accidentally close the session and reopen it, reproducing the previous results becomes even more difficult.
 
-## Summary
+So as a user, at certain stages it's still necessary to have Claude Science write the scripts, then run them manually to verify the results before interpreting them.
 
-Claude Science does a good job of lowering the barrier to bioinformatics analysis. Its out-of-the-box plugins make some routine analyses very efficient. However, its shortcomings in code version management make its analyses and results unreliable.
+### GPU and Interactive Kernel Compatibility Issues
 
-At its core, it's better suited as an exploratory analysis tool—quickly validating ideas and doing preliminary data processing, where the experience is great. But for research scenarios that require rigorous recording of the analysis process and truly reproducible results, there is still considerable room for improvement. A good tool should not only be convenient to use, but also trustworthy. I hope Anthropic can address this in the future.
+This is clearly a problem specific to container usage. Using NVIDIA's CUDA container, you can successfully pass through the GPU, but the `/proc` directory mount inside the container causes issues, making the interactive kernel unusable and breaking all components. I haven't found a workaround yet, so drug target prediction, structural prediction, and similar features are all currently unavailable.
+
+### Limited Custom Skills
+
+Adding custom skills and connectors requires online verification from Anthropic's servers. Naturally, this doesn't work with my third-party integration approach. The community project I'm using also doesn't include skill management features. Fortunately, the built-in functionality is rich enough that this isn't a major issue for now.
+
+### Limited Image Understanding
+
+Since DeepSeek is not yet a multimodal model, Claude Science's built-in image analysis capabilities don't work. I've already felt this limitation while analyzing spatial transcriptomics data.
+
+### Plan Generation Failures
+
+At the start of a research session, Claude Science, like a Coding Agent, parses the input and generates a plan. When using third-party models, there are clearly minor issues with format compliance, resulting in a certain probability that the generated plan doesn't meet the required format, causing the task to disconnect midway. However, this isn't a big problem—you can just continue the conversation directly.
