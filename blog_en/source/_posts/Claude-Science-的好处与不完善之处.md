@@ -14,9 +14,7 @@ After previously tinkering with putting Claude Science into a Docker container, 
 
 ## Advantages: A Well-Equipped Biomedical Workbench
 
-What I'm most satisfied with about Claude Science is how comprehensive its biology-related plugins are. Without any special configuration, you can start searching for data, setting up download environments, and performing analyses.
-
-It comes with built-in database connectors (MCP servers) for the most commonly used resources in biomedical research. Without any special setup, you can search for literature on PubMed, find validation datasets on GEO, and use Conda to deploy the tools needed for analysis. For anyone looking to validate ideas using existing data and classic methods, Claude Science can save a significant amount of time. In the past, just installing software, configuring the environment, and finding data for an analysis could take half a day. Now, with Claude Science, you can get a basic workflow running with just a few sentences.
+What I'm most satisfied with about Claude Science is it comes with built-in database connectors (MCP servers) for the most commonly used resources in biomedical research. Without any special setup, you can search for literature on PubMed, find validation datasets on GEO, and use Conda to deploy the tools needed for analysis. For anyone looking to validate ideas using existing data and classic methods, Claude Science can save a significant amount of time. In the past, just installing software, configuring the environment, and finding data for an analysis could take half a day. Now, with Claude Science, you can get a basic workflow running with just a few sentences.
 
 I tried using it for simple single-cell analyses, and with the built-in plugins, I basically didn't need to prepare any code myself—just describing the requirements clearly was enough. For quickly validating ideas, the experience is indeed very good.
 
