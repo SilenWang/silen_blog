@@ -7,16 +7,17 @@ tags:
   - CUDA
   - CDI
   - Docker
-  - Podman
   - GPU
   - Containers
 ---
 
-Using an NVIDIA GPU inside containers has changed quite a bit over the past couple of years. In the early days, the most common approach was to pull NVIDIA's official CUDA container images (the `nvidia/cuda` series) and run them with the NVIDIA Container Toolkit. In the last two years, CDI (Container Device Interface) has become the more "modern" way, with native support in Podman, Docker, containerd, and CRI-O.
-
-On the surface, both approaches let you "use a GPU in a container," but the underlying technical implementation and day-to-day experience are actually very different. This post is about my understanding, focusing on the differences in **implementation** and in **features and usability** between the two.
+While setting up the Claude Science container, I learned about a new way of using NVIDIA GPUs inside containers, so I'm noting it down (most of it was written by AI, used as reference material for my own research).
 
 <!-- more -->
+
+To use an NVIDIA GPU in a container, the most common approach in the early days was to pull NVIDIA's official CUDA container images (the `nvidia/cuda` series) and run them with the NVIDIA Container Toolkit. In the last two years, CDI (Container Device Interface) has gradually become the more "modern" approach, with Docker and various container technologies actively adding native support for it.
+
+On the surface, both approaches let you "use a GPU in a container," but the underlying technical implementation and day-to-day experience are actually very different.
 
 ## The old way: official CUDA images + NVIDIA Container Runtime
 
@@ -105,27 +106,6 @@ sudo nvidia-ctk cdi generate --output=/var/run/cdi/nvidia.yaml
 
 ### How to use CDI
 
-**Podman** has native support for specifying CDI devices in the `--device` argument since **v4.1.0**, with no extra configuration:
-
-```bash
-podman run --rm \
-  --device nvidia.com/gpu=all \
-  --security-opt=label=disable \
-  ubuntu nvidia-smi -L
-```
-
-You can also request a single device by index or by MIG device name:
-
-```bash
-podman run --rm \
-  --device nvidia.com/gpu=0 \
-  --device nvidia.com/gpu=1:0 \
-  --security-opt=label=disable \
-  ubuntu nvidia-smi -L
-```
-
-Note that this runs a plain `ubuntu` image; the CUDA libraries are injected from the host via the CDI spec — which directly addresses the "huge image" pain point of the old way.
-
 **Docker** has supported CDI since **25.0.0** and enables it by default since **28.2.0**. Versions in between (25.0.0 to 28.1.1) require manually enabling it in `/etc/docker/daemon.json`:
 
 ```json
@@ -135,6 +115,16 @@ Note that this runs a plain `ubuntu` image; the CUDA libraries are injected from
   }
 }
 ```
+
+At runtime, just run:
+
+```bash
+docker run --rm \
+  --device nvidia.com/gpu=all \
+  ubuntu:24.04 nvidia-smi
+```
+
+Note that this runs a plain `ubuntu` image; the CUDA libraries are injected from the host via the CDI spec — which directly addresses the "huge image" pain point of the old way.
 
 ### What if the runtime doesn't natively support CDI
 
@@ -162,20 +152,6 @@ One limitation worth remembering: **CDI injection and the NVIDIA Container Runti
 | Rootless | Poor support | Good support |
 | Ecosystem openness | NVIDIA-proprietary | CNCF open spec; usable for other vendors' devices too |
 | Resource management | No standard | Explicitly left to the orchestrator (e.g. K8s device plugin) |
-
-### Implementation differences
-
-The core difference boils down to one sentence: **the old way is "code injection" (a hook); the new way is "data injection" (a spec file)**.
-
-In the old way, NVIDIA uses a runtime hook to call its own CLI at container start and "shove" devices in; that layer is a black box to users, and every runtime needs separate adaptation. The new way turns device descriptions into standardized data files — the runtime just "reads the spec and assembles the OCI spec," with all the logic in the open ecosystem, so anyone can implement and reuse it.
-
-### Feature and usability differences
-
-- **Image size**: the old way yields multi-GB images; with CDI you can run a plain system image plus the host driver, which is much lighter;
-- **Version management**: with the old way, upgrading the driver often means changing the image tag; with CDI, `nvidia-cdi-refresh` automatically follows the driver, so the spec always matches the current driver — far fewer "image/driver mismatch" traps;
-- **Device selection**: the old way relies on an obscure environment variable; CDI's fully-qualified names (down to MIG granularity) are intuitive and can go into CRI/annotations, which is much better for expressing intent at the orchestration layer;
-- **Multiple runtimes**: one CDI spec works across Podman, Docker, containerd, and CRI-O; with the old way, each runtime may need its own configuration;
-- **Rootless**: CDI is friendlier to rootless containers — that was one of its key motivations.
 
 ## Summary
 
