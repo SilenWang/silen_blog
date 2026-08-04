@@ -10,11 +10,13 @@ tags:
   - Docker
 ---
 
-最近在容器里折腾 claude-science 的沙箱环境，目标很明确：让跑在 bwrap 沙箱里的任务能用上 GPU。整个排查、定位、修复的过程，全部是在容器内部，用 **opencode + deepseek-v4-flash** 直接完成的——不是我在外面远程敲命令指挥，而是 AI agent 就在容器里，自己看日志、自己二分参数、自己反编译解析器、自己改 entrypoint。这体验还挺奇妙的，记录一下。
+之前已经成功把claude-science装进了容器，基本的功能使用没有太大问题，但是想做一点分子对接之类的事情时，由于容器内缺少显卡，无法进行，但是等我真按照之前的方式，拉取nvidia的官方镜像来构建容器后，诡异的情况发生了，CS中的所有语言kernel，pyhton，perl，R全部不能用，整个运行环境直接废了。
+
+这真的超出我的理解范围，在手动请教Gemini无果后，我决定让 **opencode + deepseek-v4-flash** 自己处理——不是我在外面远程敲命令指挥，而是 AI agent 就在容器里，自己看日志、自己二分参数、自己反编译解析器、自己改 entrypoint。这体验还挺奇妙的，记录一下。
 
 <!-- more -->
 
-先说下背景。claude-science 会通过 bwrap 把每个任务隔离进沙箱，沙箱需要直通宿主（容器）的 GPU，也就是要把 `/dev/nvidia*` 和 nvidia-smi 注入进去。理想状态下这应该很顺，但实际上冒出来两层完全独立的问题，而且每一个都藏得挺深。
+先根据AI的描述补充下背景：claude-science 会通过 bwrap 把每个任务隔离进沙箱，bwrap本身就是一种轻量的容器/沙箱技术，因此我的使用环境，相当于是在容器内嵌套使用容器；bwrap 沙箱需要直通宿主（容器）的 GPU，也就是要把 `/dev/nvidia*` 和 nvidia-smi 注入进去。如果不在容器内，这应该很顺，但在我这个使用条件下，出现了两个层面的问题。
 
 ## 问题一：bwrap 报错 + PID-namespace DEGRADED
 
@@ -54,27 +56,16 @@ proc 挂载解决之后，以为万事大吉，结果沙箱里一跑 nvidia-smi�
 sessionGpu = gpu_enabled && (gpu_mode != "off")
 ```
 
-**根因**：我们的会话创建于 16:58，而当时 GPU 还没启用。创建会话时，`_original_input.gpu_mode="off"` 被持久化到了根会话的 DB 里，并且这个会话级的值优先于全局的 `gpu_enabled=true`。于是解析器一路算下来，把沙箱的 GPU 直通关掉了——沙箱连 `--dev-bind` 都没加。
+简单来说，即使容器配置、设备节点、权限全对，只要这个会话创建在没有 GPU 的时候，它的 gpu_mode 会保持 off，有了GPU后，claude-science 也不会把 GPU 注入沙箱。因此最简单的方式就是重新开会画。
 
-换句话说：即使容器配置、设备节点、权限全对，只要这个会话的 gpu_mode 还是 off，claude-science 就不会把 GPU 注入沙箱。这正是"配置已启用却仍看不到 GPU"的真正原因。
-
-**修复**：对 DB 做迁移，把所有根会话的 `gpu_mode: off → on`；同时 entrypoint 的 `apply_gpu_config()` 现在会在启动前自动执行这个迁移，新会话默认就是 on。
-
-## 两个根因小结
-
-回头总结，真正影响 GPU 使用的是两个完全独立的阻塞点：
-
-1. **NVIDIA toolkit 的 `/proc/driver/nvidia/params` tmpfs 子挂载** → 破坏了 bwrap 的嵌套 pidns，表现为 `Can't mount proc` + DEGRADED 警告。
-2. **会话级 gpu_mode 开关** → 解析器 `sessionGpu = gpu_enabled && (gpu_mode != "off")`，会话创建于 GPU 启用之前，`gpu_mode="off"` 被持久化并优先于全局配置，导致沙箱完全不注入 `/dev/nvidia*`。
-
-两个问题一个在系统层面（mount），一个在业务逻辑层面（配置持久化），完全不相干，却都必须修掉才能让 GPU 真正可用。调试这类问题最怕的就是"配置看起来都对"，这次要不是 opencode 能直接在容器里翻 mount 表、反编译解析器，光靠人肉一点一点猜，估计得耗上好几天。
+当然 AI 还是找到了修复现有会画的方式：直接改数据库，把所有根会话的 `gpu_mode: off → on`。
 
 ## 用 opencode 直接在容器里调试的感受
 
-这次的整个过程，是 opencode + deepseek-v4-flash 直接在容器内完成的：它自己跑命令复现、自己二分 bwrap 参数、自己对比 mount 表、自己反编译二进制、自己改 entrypoint 和 DB 迁移。我的角色基本就是提供上下文和确认方向。
+这次的整个过程，是 opencode + deepseek-v4-flash 直接在容器内完成的：它自己跑命令复现、自己二分 bwrap 参数、自己对比 mount 表、自己反编译二进制、自己改 entrypoint 和 DB 迁移。我其实只负责检查到底能不能用，和把修改提交保存。
 
 几点体会：
 
 - 这类"环境类"问题特别适合 agent 在容器里就地调试，因为它能真实复现、实时验证，不用靠人来来回回贴日志。
 - deepseek-v4-flash 在这种长链路排查里表现不错，尤其是"从现象反推配置/代码"的那几步。
-- 但 agent 排查也得有章法：二分、对比、反推，这些方法论不会因为换了工具就失效。AI 只是把执行提速了。
+- 当然，还得是在准备好的隔离环境中操作，这次它最终是顺利解决问题了，单保不齐以后那天会变成直接搞崩系统。。。
