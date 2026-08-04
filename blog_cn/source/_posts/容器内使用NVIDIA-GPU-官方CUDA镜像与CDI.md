@@ -7,16 +7,17 @@ tags:
   - CUDA
   - CDI
   - Docker
-  - Podman
   - GPU
   - 容器技术
 ---
 
-在容器里用上 NVIDIA GPU，这两年体验变化还挺大的。早年间最常见的做法，就是直接拉 NVIDIA 官方、自带 CUDA 的容器镜像（`nvidia/cuda` 系列），配合 NVIDIA Container Toolkit 来跑。而这两年 CDI（Container Device Interface）逐渐成了更"现代"的玩法，Podman、Docker、containerd、CRI-O 都在原生支持它。
-
-两种方式表面上看都是"容器里能用 GPU"，但底层的技术实现和日常使用的体验，差别其实非常大。这篇就聊聊我的理解，重点放在两种方式的**实现差异**和**功能、易用性差异**上。
+设置 Cluade Science 容器的时候，了解到了新的容器内使用 N 社 GPU的方式，记录一下（当然大部分都是AI写的，作为我自己检索查看的材料用）。
 
 <!-- more -->
+
+在容器里用上 NVIDIA GPU，早年间最常见的做法，就是直接拉 NVIDIA 官方、自带 CUDA 的容器镜像（`nvidia/cuda` 系列），配合 NVIDIA Container Toolkit 来跑。而这两年 CDI（Container Device Interface）逐渐成了更"现代"的方式，Docker、以及多种容器技术都在积极的原生支持它。
+
+两种方式表面上看都是"容器里能用 GPU"，但底层的技术实现和日常使用的体验，差别其实非常大。
 
 ## 老方式：官方 CUDA 镜像 + NVIDIA Container Runtime
 
@@ -105,27 +106,6 @@ sudo nvidia-ctk cdi generate --output=/var/run/cdi/nvidia.yaml
 
 ### 怎么用 CDI
 
-**Podman** 从 **v4.1.0** 起原生支持在 `--device` 参数里指定 CDI 设备，无需额外配置：
-
-```bash
-podman run --rm \
-  --device nvidia.com/gpu=all \
-  --security-opt=label=disable \
-  ubuntu nvidia-smi -L
-```
-
-也可以按索引或 MIG 设备名请求单个设备：
-
-```bash
-podman run --rm \
-  --device nvidia.com/gpu=0 \
-  --device nvidia.com/gpu=1:0 \
-  --security-opt=label=disable \
-  ubuntu nvidia-smi -L
-```
-
-注意这里跑的是普通的 `ubuntu` 镜像，CUDA 库由 CDI 规范从宿主机注入——这正好戳中老方式"镜像巨大"的痛点。
-
 **Docker** 从 **25.0.0** 起支持 CDI，**28.2.0** 起默认启用。中间的版本（25.0.0~28.1.1）需要在 `/etc/docker/daemon.json` 里手动开启：
 
 ```json
@@ -135,6 +115,16 @@ podman run --rm \
   }
 }
 ```
+
+运行时候直接：
+
+```bash
+docker run --rm \
+  --device nvidia.com/gpu=all \
+  ubuntu:24.04 nvidia-smi
+```
+
+注意这里跑的是普通的 `ubuntu` 镜像，CUDA 库由 CDI 规范从宿主机注入——这正好戳中老方式"镜像巨大"的痛点。
 
 ### 不原生支持 CDI 的运行时怎么办
 
@@ -162,20 +152,6 @@ docker run --rm -ti --runtime=nvidia \
 | rootless | 支持差 | 支持好 |
 | 生态开放度 | NVIDIA 私有 | CNCF 开放规范，其他厂商设备也可用 |
 | 资源管理 | 无标准 | 明确交给编排器（如 K8s device plugin） |
-
-### 技术实现差异
-
-核心区别就一句话：**老方式是"代码注入"（hook），新方式是"数据注入"（规范文件）**。
-
-老方式里，NVIDIA 通过运行时 hook 在容器启动的瞬间去调用自家的 CLI，把设备"塞"进去，这一层逻辑对用户是黑盒，而且每种运行时都要单独适配。新方式则把设备描述变成了标准化的数据文件，运行时只要"读规范、拼 OCI 规范"就行，逻辑完全在开放生态里，谁都可以实现和复用。
-
-### 功能与易用性差异
-
-- **镜像大小**：老方式动辄几个 GB；CDI 用普通系统镜像加宿主驱动就能跑，轻很多；
-- **版本管理**：老方式升级驱动往往要换镜像 tag；CDI 里 `nvidia-cdi-refresh` 自动跟着驱动走，规范始终匹配当前驱动，少很多"镜像与驱动不匹配"的坑；
-- **设备选择**：老方式靠环境变量，语义隐晦；CDI 的全限定名（含 MIG 粒度）直观且能进 CRI/注解，编排层面更好表达；
-- **多运行时**：CDI 一套规范通吃 Podman、Docker、containerd、CRI-O，老方式则每个运行时都可能要单独配置；
-- **rootless**：CDI 对 rootless 容器更友好，这是它被提出来时的一个重要动机。
 
 ## 小结
 
