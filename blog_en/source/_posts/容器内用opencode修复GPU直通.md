@@ -10,11 +10,13 @@ tags:
   - Docker
 ---
 
-I recently worked on the sandbox environment for claude-science running in a container. The goal was simple: let tasks running inside the bwrap sandbox use the GPU. The whole process of investigation, diagnosis, and fixing was carried out entirely inside the container with **opencode + deepseek-v4-flash**—not me remotely typing commands and directing it, but an AI agent living inside the container that read the logs, bisected parameters, decompiled the parser, and edited the entrypoint itself. It was a strange and interesting experience; here's a record of it.
+I had already managed to get claude-science running in a container, and basic functionality worked without major issues. But when I wanted to do things like molecular docking, I couldn't—the container simply had no GPU. However, when I pulled NVIDIA's official image to build the container the same way I had before, something bizarre happened: every language kernel in CS—Python, Perl, R—stopped working, and the entire runtime environment was rendered useless.
+
+This was truly beyond my understanding. After consulting Gemini manually with no luck, I decided to let **opencode + deepseek-v4-flash** handle it on its own—not me remotely typing commands and directing it, but an AI agent living inside the container that read the logs, bisected parameters, decompiled the parser, and edited the entrypoint itself. It was a strange and interesting experience; here's a record of it.
 
 <!-- more -->
 
-First, some background. claude-science isolates each task into a sandbox via bwrap, and the sandbox needs the host (container) GPU passed through, meaning `/dev/nvidia*` and nvidia-smi must be injected into it. In an ideal world this should be straightforward, but two completely independent layers of problems surfaced, and each one was buried quite deep.
+Let me first add some background based on the AI's description: claude-science isolates each task into a sandbox via bwrap, and bwrap itself is a lightweight container/sandbox technology. So my setup is essentially nesting containers inside a container. The bwrap sandbox needs the host (container) GPU passed through, meaning `/dev/nvidia*` and nvidia-smi must be injected into it. If it weren't inside a container, this should be straightforward, but under my usage conditions, problems appeared on two levels.
 
 ## Problem 1: bwrap error + PID-namespace DEGRADED
 
@@ -54,27 +56,16 @@ After a lot of digging, the truth finally appeared in a snippet of parser logic:
 sessionGpu = gpu_enabled && (gpu_mode != "off")
 ```
 
-**Root cause**: Our session was created at 16:58, at which point the GPU hadn't been enabled yet. When the session was created, `_original_input.gpu_mode="off"` was persisted into the root session's DB, and this session-level value takes precedence over the global `gpu_enabled=true`. The parser then worked its way through the logic and switched off GPU passthrough for the sandbox—the sandbox wasn't even given a `--dev-bind`.
+Put simply, even if the container configuration, device nodes, and permissions are all correct, as long as the session was created at a time when there was no GPU, its gpu_mode stays off—and once a GPU becomes available, claude-science still won't inject the GPU into the sandbox. So the simplest way out is to just open a new session.
 
-In other words: even if the container configuration, device nodes, and permissions are all correct, as long as that session's gpu_mode is still off, claude-science will not inject the GPU into the sandbox. That's the real reason behind "config enabled but GPU still invisible".
-
-**Fix**: Migrated the DB, flipping `gpu_mode: off → on` for all root sessions; meanwhile, `apply_gpu_config()` in the entrypoint now runs this migration automatically before startup, and new sessions default to on.
-
-## Summary of the two root causes
-
-Looking back, there were two completely independent blockers affecting GPU usage:
-
-1. **NVIDIA toolkit's `/proc/driver/nvidia/params` tmpfs sub-mount** → broke bwrap's nested PID namespace, showing up as `Can't mount proc` + DEGRADED warning.
-2. **The session-level gpu_mode switch** → the parser `sessionGpu = gpu_enabled && (gpu_mode != "off")`, the session was created before the GPU was enabled, `gpu_mode="off"` got persisted and took precedence over the global config, so the sandbox never injected `/dev/nvidia*`.
-
-One problem lives at the system layer (mounts), the other at the business logic layer (config persistence). They're completely unrelated, yet both had to be fixed for the GPU to actually work. The worst thing about debugging problems like this is when "everything looks configured correctly"—had opencode not been able to dig through the mount tables and decompile the parser directly inside the container, I'd probably have spent days guessing one tiny piece at a time.
+Of course, the AI did find a way to fix the existing sessions too: modifying the database directly, flipping `gpu_mode: off → on` for all root sessions.
 
 ## What it's like debugging with opencode right inside the container
 
-The entire process this time was done by opencode + deepseek-v4-flash directly inside the container: it reproduced the issue by running commands, bisected the bwrap parameters, compared mount tables, decompiled the binary, and edited the entrypoint and DB migration itself. My role was basically providing context and confirming the direction.
+The entire process this time was done by opencode + deepseek-v4-flash directly inside the container: it reproduced the issue by running commands, bisected the bwrap parameters, compared mount tables, decompiled the binary, and edited the entrypoint and DB migration itself. All I actually did was check whether it worked and commit/save the changes.
 
 A few takeaways:
 
 - "Environment-type" problems are a great fit for an agent debugging in place inside the container, because it can reproduce the issue for real and verify fixes live, without humans going back and forth pasting logs.
 - deepseek-v4-flash performed well in this kind of long-chain investigation, especially on the "work backwards from symptom to config/code" steps.
-- But an agent's debugging still needs method: bisect, compare, reverse-engineer. These methodologies don't stop working just because the tool changed. AI just speeds up the execution.
+- Of course, it also has to operate in a prepared, isolated environment. This time it eventually solved the problem cleanly, but who knows—one day it might end up directly breaking the system...
