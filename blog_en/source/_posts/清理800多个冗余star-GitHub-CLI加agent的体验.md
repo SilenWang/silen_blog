@@ -26,13 +26,13 @@ The agent's workflow was clear:
 3. Kept the 309 already-tagged stars as-is, then judged the remaining 499 untagged projects one by one by their descriptions, suggesting tags that all fell into the existing 14 categories
 4. Output everything as a markdown table for me to review
 
-After I got the table, my part was simple: **keep what I want, cross out what I don't**. Then I told the agent to batch-unstar everything not on the list.
+After I got the table, my part was simple: **keep what I want, delete what I don't**. Then I told the agent to batch-unstar everything not on the list.
 
 Results:
 - 335 stars were unstarred in total, bringing the count from 808 down to 473, exactly matching my keep-list
 - For the kept projects, the 174 that needed tagging — 274 tag entries in total — were also written back to the corresponding star lists by the agent in one go
 
-Throughout the whole process, the only thing I did was go over the table and tick off what I wanted to keep. Everything else — fetching, matching, batch-unstarring, writing back tags — was done by the agent.
+The operations I needed to do were very few: open coidum, review the table, delete the projects I didn't want. Everything else — fetching, matching, batch-unstarring, writing back tags — was done by the agent.
 
 ## Some thoughts
 
