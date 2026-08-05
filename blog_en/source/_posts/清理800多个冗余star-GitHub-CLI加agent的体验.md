@@ -32,7 +32,7 @@ Results:
 - 335 stars were unstarred in total, bringing the count from 808 down to 473, exactly matching my keep-list
 - For the kept projects, the 174 that needed tagging — 274 tag entries in total — were also written back to the corresponding star lists by the agent in one go
 
-The operations I needed to do were very few: open coidum, review the table, delete the projects I didn't want. Everything else — fetching, matching, batch-unstarring, writing back tags — was done by the agent.
+The operations I needed to do were very few: open codium, review the table, delete the projects I didn't want. Everything else — fetching, matching, batch-unstarring, writing back tags — was done by the agent.
 
 ## Some thoughts
 
