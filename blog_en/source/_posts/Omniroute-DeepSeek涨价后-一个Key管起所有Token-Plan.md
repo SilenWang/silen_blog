@@ -61,21 +61,11 @@ For example, the Commandcode Go I use works fine for inference, but its quota ne
 
 In other words, **the newer and cheaper the provider, the more likely you'll hit quota sync problems** — and those are exactly the ones we most want to use.
 
-### Pitfall 3: Concurrency is capped by default — your agent suddenly drops mid-task
+### Pitfall 3: Heavy concurrency is disabled by default — your agent suddenly drops mid-task
 
-The first two pitfalls are tolerable, but this one is genuinely infuriating: **out of the box, Omniroute doesn't allow heavy concurrent tasks, and your agent will abruptly die mid-run.**
+The first two pitfalls are tolerable, but this one is genuinely infuriating: **out of the box, Omniroute doesn't allow heavy concurrent tasks (`OMNIROUTE_CHAT_MAX_HEAVY_IN_FLIGHT=1`), and your agent will abruptly die if you run more than one task in parallel.**
 
-Modern agents (Claude Code, Codex, opencode, etc.) never fire one request at a time. A big task spawns several subtasks in parallel, each blasting out a batch of LLM requests — subagents in opencode, parallel tool calls in Claude Code. Concurrency spikes instantly.
-
-On the Omniroute side, **every account (connection) has a concurrency cap by default**, and requests beyond it just queue up: the account semaphore queues up to 20 by default with a 30-second wait, then starts rejecting; the request queue has its own execution limits too. When a heavy task pushes concurrency past the cap, the overflow requests either sit queued or get rejected outright. Many client agents treat these errors (429, timeouts, queue-full) as fatal and kill the whole session — which is exactly what you see as "suddenly dropped mid-use."
-
-What's worse, the limit applies **per account (connection), not globally**. Think you've set a global concurrency cap? No — it only constrains that one account; other accounts and other providers each have their own quota. For a true global cap, you'll just have to wait ([#7778](https://github.com/diegosouzapw/OmniRoute/issues/7778)).
-
-My workarounds:
-
-1. Set `max_concurrent` on each connection to match the upstream account's real concurrency (e.g. 1–2 for providers like GLM that can only handle one or two concurrent requests). Don't leave them unbounded by default, and don't get greedy with high values.
-2. When you really need to run heavy tasks in parallel, either cap the concurrency on the agent side, or bump the queue settings under `Settings → Resilience → Request Queue`.
-3. When debugging, watch out for session affinity pinning your session to a saturated account and making it idle-wait the full 30 seconds.
+Modern agents almost always split one big task into several subtasks that fire off LLM requests in parallel — subagents in opencode, parallel tool calls in Claude Code. Concurrency spikes instantly.
 
 ## Wrapping Up
 
