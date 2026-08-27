@@ -14,7 +14,6 @@ To fullfill the need for multi-language support, which is difficut for hexo, I r
 ├── blog_en  # English blog
 ├── pixi.lock
 ├── pixi.toml # pixi dep and task for deploy
-├── aider.sh # script use aider to translate zh posts to en ones
 ├── .devcontainer # config files for using DevPod to build workspace
 └── README.md
 ```

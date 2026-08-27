@@ -22,7 +22,6 @@ deploy_cn = {cmd = "npm install", cwd = "blog_cn", env = {PATH = "$PWD/.pixi/env
 deploy_en = {cmd = "npm install", cwd = "blog_en", env = {PATH = "$PWD/.pixi/envs/blog/bin:$PATH" }, depends-on = ['install_hexo']}
 
 [environments]
-aider = ['aider']
 blog = ['blog']
 
 [feature.blog.dependencies]
@@ -48,13 +47,3 @@ build = {cmd = 'mkdir -p blog_cn/public/en && cp -r blog_en/public/* blog_cn/pub
 demo = {cmd = 'hexo s', cwd = "blog_cn"}
 publish = {cmd = 'hexo d', cwd = "blog_cn"}
 new = { cmd = 'hexo new {{title}}', args = ["title"], cwd = "blog_cn"}
-
-[feature.aider.dependencies]
-python = "3.12.*"
-
-[feature.aider.pypi-dependencies]
-aider-chat = "*"
-
-[feature.aider.tasks]
-trans = { cmd = 'bash aider.sh'}
-commit = { cmd = 'aider --commit'}

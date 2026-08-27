@@ -9,5 +9,4 @@ db.json
 # pixi environments
 .pixi
 *.egg-info
-.aider*
 **/.yarn*

@@ -61,6 +61,12 @@ For example, the Commandcode Go I use works fine for inference, but its quota ne
 
 In other words, **the newer and cheaper the provider, the more likely you'll hit quota sync problems** — and those are exactly the ones we most want to use.
 
+### Pitfall 3: Heavy concurrency is disabled by default — your agent suddenly drops mid-task
+
+The first two pitfalls are tolerable, but this one is genuinely infuriating: **out of the box, Omniroute doesn't allow heavy concurrent tasks (`OMNIROUTE_CHAT_MAX_HEAVY_IN_FLIGHT=1`), and your agent will abruptly die if you run more than one task in parallel.**
+
+Modern agents almost always split one big task into several subtasks that fire off LLM requests in parallel — subagents in opencode, parallel tool calls in Claude Code. Concurrency spikes instantly.
+
 ## Wrapping Up
 
 It's not perfect, but this setup covers at least 80% of my needs for now. Hopefully those issues get fixed soon...
