@@ -15,7 +15,7 @@ tags:
   - Self-hosted
 ---
 
-This is the full story of how I rebuilt my AI workspace over the past year: why I decided I had to stop depending on DeepSeek's API, which options I looked at, and what problems each layer left me with. It's the sequel to {% post_link Omniroute-DeepSeek涨价后-一个Key管起所有Token-Plan [Omniroute: One Key to Rule All My Token Plans] %} — that post was about "I picked omniroute"; this one is about "after picking it, I found I had to stack several more layers on top".
+This is the full story of how I rebuilt my AI workspace: why I decided I had to stop depending on DeepSeek's API, which options I looked at, and what problems each layer left me with. It's the sequel to {% post_link Omniroute-DeepSeek涨价后-一个Key管起所有Token-Plan [Omniroute: One Key to Rule All My Token Plans] %} — that post was about "I picked omniroute"; this one is about "after picking it, I found I had to stack several more layers on top".
 
 <!-- more -->
 
@@ -41,7 +41,7 @@ container (my workspace, where the agents run)
       └─ gateway layer (omniroute / new-api / CLIProxyAPI / official direct, composable)
 ```
 
-The bottom two existed long before this story. The gateway layer is what grew over the past year. I even hand-wrote a tiny bridge program (`codex-deepseek-bridge`) early on, purely to translate between Codex and DeepSeek — that should have told me the protocol bill would come due eventually.
+The bottom two existed long before this story. The gateway layer is what grew only recently. I even hand-wrote a tiny bridge program (`codex-deepseek-bridge`) early on, purely to translate between Codex and DeepSeek — that should have told me the protocol bill would come due eventually.
 
 ## Generation 1: straight to the official API
 
