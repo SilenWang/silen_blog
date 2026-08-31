@@ -12,80 +12,56 @@ tags:
   - Bifrost
   - Codex
   - Claude Code
+  - Multica
+  - MCP
   - Self-hosted
 ---
 
-This is the full story of how I rebuilt my AI workspace: why I decided I had to stop depending on DeepSeek's API, which options I looked at, and what problems each layer left me with. It's the sequel to {% post_link Omniroute-DeepSeek涨价后-一个Key管起所有Token-Plan [Omniroute: One Key to Rule All My Token Plans] %} — that post was about "I picked omniroute"; this one is about "after picking it, I found I had to stack several more layers on top".
+My day-to-day work is heavily multi-model and multi-agent now: several agents running in parallel across different projects, backed by a whole shelf of model vendors. Running a lot of work like this — reliably *and* cheaply — can't be held together with ad-hoc config edits. So after DeepSeek's price hike, instead of spending more effort on "how do I spend less", I flipped the question: **I need my own infrastructure, so that any single vendor failing (price hike, slowdown, protocol change, bad afternoon) costs me one leg, not the whole house.**
 
 <!-- more -->
 
-## The price hike was just the trigger
+## What this infrastructure has to provide
 
-When DeepSeek officially raised its prices, my first reaction was a shrug — it was already cheap, and even after the hike it was cheaper than the pricing announced when V4 first launched. Then I measured a single day at the new rates and got my math wrong: my volume is absurd (see {% post_link 三个月Token消耗暴涨13倍-我的AI工作流演变记录 [my token usage exploding 13× in three months] %}), so any percentage hurts, and if I didn't do something I'd be paying for the privilege of working.
+Once thought through, the requirement splits into four pieces, each answering a different class of real incidents:
 
-But halfway through hunting for a cheaper option, I realised money wasn't the real problem.
+**1. Agent runtime.** My work laptop loses power and network — and when it does, half-finished tasks die with it. Agents have been my main workforce for a long stretch now; parking that workforce on a laptop that can trip a breaker is untenable. Tasks need to live on a board, get claimed by a runtime, and execute in a container independent of my machine — if the machine dies, the task stays in the queue. For this layer I use {% post_link Multica-AI原生的任务管理平台 [Multica] %} (my assessment of the idea is in {% post_link 开源平替Claude_Managed_Agents的Multica到底是什么 [this post] %}; the container setup is written up {% post_link 把Claude-Science装进Docker容器 [here] %}).
 
-My entire working environment — the container, the agents, the model config, the launch scripts — hung off **one cloud API endpoint**. A price hike I could live with. But what about the day they change the protocol, tighten rate limits, rename a model, or just have a bad afternoon? Most of the "my agent suddenly stopped working" incidents I've hit over the past couple of years came from that one layer, and I had zero control over it.
+**2. Stable, acceptably-priced model vendors.** No single basket. The price hike is one thing; the everyday problem is "this vendor is lagging today". Every token-plan vendor has its bad days and rate-limit days, so: multiple vendors, multiple accounts, use whoever is healthy. The selection logic and the cost math (including each vendor's "sweetest tier" paradox) are in {% post_link Omniroute-DeepSeek涨价后-一个Key管起所有Token-Plan [the previous post] %}; the price-war backdrop in {% post_link DeepSeek-永久降价-大模型价格战的新玩法 [this one] %}; my usage scale {% post_link 三个月Token消耗暴涨13倍-我的AI工作流演变记录 [here] %}.
 
-So the goal became: **build a working environment that doesn't depend on DeepSeek's API**.
+**3. The agent protocol layer.** The most underrated piece. Third-party token vendors sell you inference and **do not care about protocols**: Codex speaks OpenAI's `responses`, Claude Code speaks Anthropic's `messages`, opencode wants both. Dialects don't match, so the translation has to happen in a layer I own.
 
-Let me be precise, because this is easy to misread. I don't mean running models myself. I did look at local deployment seriously, but the machine I have can't run a model good enough to do real work, so the arithmetic killed it fast. What I wanted back was control of the **entry layer** — endpoint, routing, billing, protocol translation. Whoever actually serves the tokens can change; those four things cannot.
+**4. An MCP gateway (not built yet, but planned).** The more tools an agent can reach, the better — but tools have management costs too: dozens of MCP servers' configs, auth, and versions scattered across agent configs will spiral eventually. I want another layer that aggregates and governs tools. There are two routes for tool reuse, skills and MCP; I lean toward MCP — it's protocol-level reuse, naturally portable across agents, while skills feel like one agent's private assets.
 
-## What the thing looks like
+Put together, the trend is clear: my AI infrastructure is not "one gateway project" — **runtime, vendors, protocol, and tools each need their own owner**, each layer mine, with vendors as the outermost replaceable skin.
 
-Seen whole, my infrastructure is three layers, and in hindsight they can't be built in any other order:
+## The pitfalls in each layer
 
-```
-container (my workspace, where the agents run)
-  └─ launcher (a small Go program that decides where requests go this round)
-      └─ gateway layer (omniroute / new-api / CLIProxyAPI / official direct, composable)
-```
+### Runtime: the environment is where the pain is
 
-The bottom two existed long before this story. The gateway layer is what grew only recently. I even hand-wrote a tiny bridge program (`codex-deepseek-bridge`) early on, purely to translate between Codex and DeepSeek — that should have told me the protocol bill would come due eventually.
+The pitfalls here are mostly not Multica's — they're "what's installed in the container and how". Agents run in containers, so the environment must be reproducible; I manage it with {% post_link 终于用pixi搞定了用于自动构建的recipe和action [pixi] %}, with the full build-recipe story in that post. The other recurring one is the permission model: agents with built-in sandboxing like Reasonix assume a full OS and need sandbox features disabled to run inside a container. Every new agent entering the container pays this tuition again.
 
-## Generation 1: straight to the official API
+### Vendors: old pitfalls unfixed, new ones keep coming
 
-The first version was blunt: point the container config straight at DeepSeek's official API. It exposes two interfaces, and you use whichever your agent speaks — **Anthropic mode** for Claude Code and friends, **OpenAI mode** for Codex and friends (getting Codex onto DeepSeek at all was originally blocked by exactly this incompatibility; I ended up doing it the official way).
+omniroute's three pitfalls (search interception not firing, brand-new vendors not syncing quota, heavy concurrent tasks disabled by default) are already covered in {% post_link Omniroute-DeepSeek涨价后-一个Key管起所有Token-Plan [the previous post] %}, so I won't repeat them. The real lesson of this layer: **multi-basket costs more to maintain than expected** — more baskets means more glue between baskets, and the glue itself becomes a new single point of failure.
 
-The config layer also solved one thing properly: a **vision fallback model**. When the main model can't see images, something has to catch that, so vision gets its own configurable fallback via environment variables.
+### The protocol layer: the one a weekend couldn't fix
 
-Generation 1's problems weren't functional. They were all about config:
+This is where I spent the most time and where this article has its most pitfalls. In detail:
 
-- **base_url scattered everywhere**. One copy for Codex, one for Claude Code, one for opencode, another for Reasonix — every agent added means one more place to edit.
-- **Every new model has to be written into every one of those places.** When the gateway added a free model, I had to answer "did you update your config?" one client at a time.
-- At some point I did a big flip: switch all traffic back to the official API, change the default model to a vision experimental build (keeping the stable-looking name in the UI, with the vision fallback pointed at the same one). The day I counted how many places that touched — that's when I knew this couldn't continue.
+**Generation 1: direct to the official API.** Container config pointed straight at DeepSeek's official API — Claude Code via Anthropic mode, Codex via OpenAI mode, plus a separately configured vision fallback model. Functionally fine. But base_url was scattered across every agent's config, and each new model in the gateway meant editing every client one by one. At one point I did a big flip: all traffic back to the official API, default model switched to a vision experimental build (keeping the stable-looking name in the UI). The day I counted how many places that touched — that's when I decided not to live like that anymore.
 
-The one thing generation 1 got right was the Go launcher. Multiple forward targets, interactive pick at startup, configurable command, and it runs outside a container too. It was quietly already a router — it just knew how to switch everything at once, not how to split per request.
+**Generation 2 (omniroute) solved "which vendor" but not "which protocol".** It unified vendors into one entry point and one key — genuinely nice — but left the protocol debt untouched: it assumes client and upstream speak the same dialect, and mine don't.
 
-## Generation 2: omniroute, one key for everything
+**Generation 3 died on `responses`.** I moved to new-api expecting more thorough protocol unification; it turns out upstream new-api doesn't support OpenAI's `responses` protocol — and Codex speaks precisely that. Configure the direct address locally, and the request simply isn't supported. No config workaround: the two protocol stacks don't overlap. (This incompatibility is an industry-wide tax — I ranted about it in {% post_link API-互不兼容-OpenAI和Anthropic的打印机耗材垄断策略 [the printer-ink monopoly post] %}.)
 
-So I went to omniroute: aggregate every vendor's token plans behind a single entry point, one key in the client, switch vendors in a console while every client stays oblivious. I wrote up the whole thing in {% post_link Omniroute-DeepSeek涨价后-一个Key管起所有Token-Plan [the omniroute post] %}, so here are just the names of three pitfalls plus one new one.
-
-1. Search interception matches bare tool names, not versioned ones — Codex and Claude Code can't search the web;
-2. Brand-new vendors don't sync quota, so "quota-aware automatic fallback" silently dies;
-3. Heavy concurrent tasks aren't allowed by default, so the agent just drops mid-session when sub-agents run in parallel.
-
-The new one only surfaced later: **model metadata still has to be hand-copied**. A model existing in the gateway doesn't mean the clients can use it — Codex's `config.toml`, opencode's config, Reasonix's config each need their own edit. The gateway unified the key; it did not unify the model list.
-
-More fundamentally: omniroute settled "which vendor do I send to" and never touched "which protocol do I send it with". And my agents don't speak one protocol.
-
-## Generation 3: new-api, blocked by protocol
-
-I moved to new-api expecting it to take "unify multiple protocols" further, which was exactly the disease.
-
-It died on one very specific point: **upstream new-api doesn't support OpenAI's `responses` protocol**, and Codex speaks precisely that dialect. You configure the direct address locally, and the request is simply not supported. No config workaround — the two protocol stacks don't overlap.
-
-## Generation 4: add CLIProxyAPI just to translate
-
-The workaround was **another layer**. Install CLIProxyAPI to translate Codex's `responses` protocol and forward it to new-api.
+**Generation 4: add CLIProxyAPI purely to translate.**
 
 ```
 Codex → CLIProxyAPI(:8317) → new-api → vendors
 ```
 
-Its default port is 8317. On the Codex side you add a custom provider in `~/.codex/config.toml` with `base_url` pointed at it and `wire_api = "responses"` — that last one is Codex's protocol switch, and the entire reason this layer exists.
-
-My chain at this point:
+Its default port is 8317. On the Codex side you define a custom provider in `~/.codex/config.toml`, point `base_url` at it, and set `wire_api = "responses"` — that last one is Codex's protocol switch and the entire reason this layer exists. [Docs here](https://help.router-for.me/introduction/quick-start.html). My full chain now:
 
 ```
 agents in the container (Codex / Claude Code / opencode / Reasonix / dsh / codebuddy)
@@ -94,25 +70,20 @@ agents in the container (Codex / Claude Code / opencode / Reasonix / dsh / codeb
    → vendors
 ```
 
-It works. And every failure became hard to place: when an agent misbehaves it could be the config in the container, CLIProxyAPI, the gateway, or the upstream vendor. Four layers, each with its own config and its own defaults. A large share of my debugging time went into establishing *which layer* was broken — and the method was cutting the chain shorter, one layer at a time.
+It works. The price: **every layer has its own config and its own defaults, so fault localization became "cut the chain layer by layer" elimination**. A good share of my debugging time wasn't fixing problems — it was establishing *which layer* was broken.
 
-## bifrost and apisix: evaluated, never deployed
+**bifrost and apisix: evaluated, never deployed.** Full disclosure — I never actually ran either, so there are no invented war stories here, only why I didn't ship them. bifrost is a high-performance Go LLM gateway, and performance is exactly what someone burning my volume should care about; but the capability I actually need — one entry feeding both OpenAI-style and Anthropic-style clients — is precisely where gateways differ most, and you can't tell from a README. You need your own traffic on it. When I evaluated it, omniroute was already carrying daily load, so the evaluation stayed an evaluation. apisix is a different species: a general-purpose API gateway with AI capabilities as plugins, meaning you run etcd plus APISIX yourself and hand-write routing and plugin config. My scenario is one person and a handful of agents on one machine; a gateway designed for production traffic is a cannon for a mosquito.
 
-Both were on my shortlist. I never actually deployed either, so what follows is "why I didn't ship it", not a pitfall log — I'd rather say that plainly than invent details.
+### MCP gateway: not built, so no pitfalls
 
-**bifrost** pitches itself as a high-performance LLM gateway written in Go, and performance is exactly the right thing to care about when you burn this many tokens. The question is what it can do *at the protocol layer* for the mix I actually run — I need one entry that feeds both OpenAI-style and Anthropic-style clients. That's precisely where gateways differ most, and you can't tell from a README; you have to put it under your own traffic. At the time I evaluated it, omniroute was already carrying my daily load, so the evaluation stayed an evaluation.
+I won't invent what doesn't exist. This layer sits last on purpose: **with the protocol layer still unstable, moving the tool layer first is wasted effort.** Once the gateway settles, I'll decide between building my own aggregator and adopting an off-the-shelf MCP gateway.
 
-**apisix** is a different animal entirely: a general-purpose API gateway with AI capabilities bolted on as plugins, which means running etcd plus APISIX yourself and writing the routing and plugin config by hand. My problem is "one person and a handful of agents on one machine", and deploying a gateway built for production traffic to solve it is a cannon for a mosquito.
+## Infrastructure is hard — and it's the only way to keep work moving
 
-## Still broken
+The protocol layer above: I spent one weekend on it and didn't solve it. Half of a second weekend more, and the chain barely worked — then began "which layer is broken" debugging. Even now it hasn't reached a finish line I'd call satisfying. This kind of investment is a luxury in daily work: it produces zero business code, pure paving for future work.
 
-- **No standard.** `responses` / `chat completions` / `messages` — the gateway just keeps translating forever. This isn't any one project's bug; it's an industry-wide tax on incompatibility (I ranted about it in {% post_link API-互不兼容-OpenAI和Anthropic的打印机耗材垄断策略 [the printer-ink monopoly post] %}).
-- **Config is still scattered.** The gateway unified the endpoint, not the model list. The real fix is one source of truth generating every client's config — I haven't built it.
-- **Zero cost observability.** The gateway routes; it doesn't tell me where the money goes.
-- **No health checks on the chain.** With four layers, any one of them dying looks identical: "the agent stopped".
+But run the other ledger. I computed agent ROI seriously in {% post_link 对Agent收益的思考 [this post] %}: an agent's value hinges on running *uninterrupted*. One vendor slowdown, one price change, one protocol mismatch — and the whole pipeline stops. **The value of infrastructure shows up precisely in the days you don't notice it**: nothing happens, tasks finish, and you forget you were debugging a gateway last week.
 
-## Wrap-up
+The current setup is still far from elegant: a four-layer chain, no single source of truth for config, zero cost observability, no health checks. But "swap vendors tomorrow" went from "rewrite every client's config" to "change one line, maybe patch one protocol translation".
 
-In the end I didn't actually achieve "not depending on an API" — I depend on *more* vendors than when I started. But that was never the real goal, and the real goal I did hit: the entry layer is mine now. Swapping vendors is one line in a config instead of rewriting five client setups.
-
-The cost is three or four extra components and a debugging chain nobody enjoys reading about. Whether that trade was worth it, I still can't say — there's a decent chance next year's sequel is about me tearing it all down.
+Infrastructure that one weekend couldn't finish — next weekend, keep building.
