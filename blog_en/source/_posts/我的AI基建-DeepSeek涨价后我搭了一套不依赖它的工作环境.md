@@ -14,6 +14,7 @@ tags:
   - Claude Code
   - Multica
   - MCP
+  - Claude-Science
   - Self-hosted
 ---
 
@@ -25,7 +26,7 @@ My day-to-day work is heavily multi-model and multi-agent now: several agents ru
 
 Once thought through, the requirement splits into four pieces, each answering a different class of real incidents:
 
-**1. Agent runtime.** My work laptop loses power and network — and when it does, half-finished tasks die with it. Agents have been my main workforce for a long stretch now; parking that workforce on a laptop that can trip a breaker is untenable. Tasks need to live on a board, get claimed by a runtime, and execute in a container independent of my machine — if the machine dies, the task stays in the queue. For this layer I use {% post_link Multica-AI原生的任务管理平台 [Multica] %} (my assessment of the idea is in {% post_link 开源平替Claude_Managed_Agents的Multica到底是什么 [this post] %}; the container setup is written up {% post_link 把Claude-Science装进Docker容器 [here] %}).
+**1. Agent runtime.** My work laptop loses power and network — and when it does, half-finished tasks die with it. Agents have been my main workforce for a long stretch now; parking that workforce on a laptop that can trip a breaker is untenable. Tasks need to live on a board, get claimed by a runtime, and execute in a container independent of my machine — if the machine dies, the task stays in the queue. For this layer I use {% post_link Multica-AI原生的任务管理平台 [Multica] %} (my assessment of the idea is in {% post_link 开源平替Claude_Managed_Agents的Multica到底是什么 [this post] %}, and the daily-use gripes are in {% post_link AI工具使用体验与吐槽-Multica-MiniMax-Google-One-Gemini [this one] %}); the runtime itself is a container I built.
 
 **2. Stable, acceptably-priced model vendors.** No single basket. The price hike is one thing; the everyday problem is "this vendor is lagging today". Every token-plan vendor has its bad days and rate-limit days, so: multiple vendors, multiple accounts, use whoever is healthy. The selection logic and the cost math (including each vendor's "sweetest tier" paradox) are in {% post_link Omniroute-DeepSeek涨价后-一个Key管起所有Token-Plan [the previous post] %}; the price-war backdrop in {% post_link DeepSeek-永久降价-大模型价格战的新玩法 [this one] %}; my usage scale {% post_link 三个月Token消耗暴涨13倍-我的AI工作流演变记录 [here] %}.
 
@@ -35,11 +36,40 @@ Once thought through, the requirement splits into four pieces, each answering a 
 
 Put together, the trend is clear: my AI infrastructure is not "one gateway project" — **runtime, vendors, protocol, and tools each need their own owner**, each layer mine, with vendors as the outermost replaceable skin.
 
+## One exception: the research workbench doesn't follow this rule
+
+Those four points are the rules I set for myself — but there is one workbench I deliberately kept outside them: **Claude Science**.
+
+It's {% post_link AI-Agent让开源软件利用变得更简单 [the workbench I use for scientific research] %}, {% post_link 把Claude-Science装进Docker容器 [packed into a Docker container] %}; I reviewed its strengths and shortcomings separately {% post_link Claude-Science-的好处与不完善之处 [here] %}. It is **a separate thing** from the infrastructure above: not part of Multica, no shared runtime.
+
+Why the exception? Because **research needs immediate interaction far more than other tasks**. Writing code, running batch jobs, tidying data — those can be "thrown onto the board, come back for the result"; an agent working for twenty minutes without me is fine. But looking at a plot, tweaking one parameter, seeing the result and deciding the next step — in that loop I must be present, and every added wait breaks the thread of thought. So I still use Claude Science directly instead of turning it into another agent task.
+
+For the same reason, this workbench is currently the only corner of the whole setup that **goes straight to DeepSeek's official API**, with no third-party token vendor wired in. Not an oversight — a refusal. What I need from it is exactly the three things the official API happens to cover:
+
+- **Multi-protocol**: Claude Science speaks the Anthropic dialect, and the official API has a compatibility mode for it — it plugs in directly, with no translation layer in between.
+- **Vision**: reading images is the daily bread of research work, plus I've set a dedicated vision-fallback environment variable, so when the main model can't see there's something underneath to catch it.
+- **Web access**: literature lookups and page fetches depend on it, and third-party vendors mostly don't give you network tools at all.
+
+This workbench is thus a living fossil of "generation 1": multi-protocol, vision, web — all **configured straight to the official API via environment variables in the container config**, with no routing, quota, or concurrency concerns, because the whole point is one layer of uncertainty less. The cost is real too: its config shares nothing with the main chain, so the same model name has to be maintained in two places.
+
+Around it sits its own set of pitfalls, unrelated to the main line, just a few memorable ones. To run it in a container I wrote a Go launcher: multiple forwarding targets in a config file with interactive selection at startup, a configurable command, and it can run without the container too. I opened up GPU passthrough (via CDI mounts rather than baking CUDA into the image). Chinese text in Python/R plots inside the container rendered as tofu boxes and needed its own font fix. The wildest one: the forwarding program **got flagged as a virus and deleted by Windows** — a small Go binary I compiled myself, unsigned, with every antivirus its own imagination. It ended in researching code signing.
+
 ## The pitfalls in each layer
 
-### Runtime: the environment is where the pain is
+### Runtime: every new agent means paying the tuition again
 
-The pitfalls here are mostly not Multica's — they're "what's installed in the container and how". Agents run in containers, so the environment must be reproducible; I manage it with {% post_link 终于用pixi搞定了用于自动构建的recipe和action [pixi] %}, with the full build-recipe story in that post. The other recurring one is the permission model: agents with built-in sandboxing like Reasonix assume a full OS and need sandbox features disabled to run inside a container. Every new agent entering the container pays this tuition again.
+Self-building the runtime container, the first day settled the obvious: agents don't run as root, so a separate user was created to execute them; the runtime's state directory and the agents' config directories are bind-mounted outside the container for persistence — otherwise every container rebuild means refilling the model-provider settings; and all dependencies go through {% post_link 终于用pixi搞定了用于自动构建的recipe和action [pixi] %} so the container stays reproducible.
+
+Everything after that was tuition:
+
+- **Installing one agent is a campaign of its own.** Today it's the Codex CLI and CodeBuddy; tomorrow it's Claude Code plus a CLI/TUI utility for switching keys, MCP servers, and providers between several assistants (the very existence of such a tool says something: client configs got messy enough to deserve a dedicated manager).
+- **Sandbox features don't work in the container.** Agents that ship with built-in sandboxing assume a full OS is theirs; the first thing to do inside a container is often turning those features off, or they won't start.
+- **Containers inside containers.** When an agent needs Docker, host-side "Docker-in-Docker" support has to be explicitly configured — it's not on by default.
+- **Config has to actually externalise.** Originally the key and URL were hardcoded — one vendor only. Only later did it become a config file that can hold multiple keys and specify which vendor a given agent should use. Small step, but it's the client-side foundation of the whole multi-basket strategy.
+- **Rules must apply to all agents at once.** I added a "write the least code" rule plugin for every agent in the container, configured in the image/init flow so each new container grows up with it. Don't underestimate this: agent behaviour rules enforced by each repo adding its own files will drift sooner or later.
+- **Protocol pass-through bugs surface on this layer.** Running dsh with v4 pro: ordinary chat works, but entering thinking mode gets rejected upstream — `The reasoning_content in the thinking mode must be passed back to the API`. In thinking mode the reasoning content must be passed back to the API, and this request chain doesn't pass it back. *Same model, same vendor, different runtime — broken.* Gateways can't help here; you inspect request bodies layer by layer.
+
+The real lesson of this layer: **a runtime isn't a program, it's a pile of conventions.** Every new agent reconnects the questions "where does its config live, what is it allowed to change, what permissions does it assume".
 
 ### Vendors: old pitfalls unfixed, new ones keep coming
 
