@@ -129,7 +129,7 @@ The About Me page has been rewrited! Now it uses tabs to collapse the content...
   1. Patent data acquisition and governance: acquisition, cleaning and structuring of patent information, building standardized datasets for model training
   2. Literature research and model training: surveying domain literature to provide methodological and technical grounds for model design, training and evaluation
   3. AI technology research and adoption: tracking advances in artificial intelligence, assessing the feasibility of technical routes and driving their adoption in business scenarios
-  4. Large language model evaluation: building an evaluation framework for large language model (LLM) capabilities, delivering conclusions that support model selection and optimization
+  4. Large language model evaluation: building an evaluation framework for large language model (LLM) capabilities, delivering conclusions that support model selection
 
 <!-- endtab -->
 
