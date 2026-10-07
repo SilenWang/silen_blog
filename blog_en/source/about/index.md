@@ -110,9 +110,9 @@ The About Me page has been rewrited! Now it uses tabs to collapse the content...
 
 <!-- endtab -->
 
-<!-- tab 2024.05-Present -->
+<!-- tab 2024.05-2026.04 -->
 
-- 2024.05-Present Senior Bioinformatics Analysis Engineer at a medical technology company in Hangzhou
+- 2024.05-2026.04 Senior Bioinformatics Analysis Engineer at a medical technology company in Hangzhou
   1. Development of WES/RNA-Seq/single‑cell analysis workflows
   2. Research, interpretation, formulation and execution of bioinformatics analysis plans according to customer requirements
   3. Construction, operation and maintenance of bioinformatics databases
@@ -120,6 +120,16 @@ The About Me page has been rewrited! Now it uses tabs to collapse the content...
   5. Operation and maintenance of websites and system cloud servers
   6. Development, operation, maintenance, migration and automated testing of websites and internal laboratory management systems
   7. Operation and maintenance of WeChat mini‑programs
+
+<!-- endtab -->
+
+<!-- tab 2026.05-Present -->
+
+- 2026.05-Present AI Bioinformatics Researcher at a pharmaceutical technology company in Zhejiang
+  1. Patent data acquisition and governance: acquisition, cleaning and structuring of patent information, building standardized datasets for model training
+  2. Literature research and model training: surveying domain literature to provide methodological and technical grounds for model design, training and evaluation
+  3. AI technology research and adoption: tracking advances in artificial intelligence, assessing the feasibility of technical routes and driving their adoption in business scenarios
+  4. Large language model evaluation: building an evaluation framework for large language model (LLM) capabilities, delivering conclusions that support model selection and optimization
 
 <!-- endtab -->
 
