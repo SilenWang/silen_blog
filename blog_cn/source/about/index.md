@@ -54,17 +54,43 @@ sidebar:
 
 {% tabs tab-job %}
 
-<!-- tab 2017.07-2018.08 -->
 
-- 就职情况: 天津某生信服务公司 生物信息分析工程师
-- 工作内容:
-  1. 人基因组二代测序数据（WES / WGS）质控及分析
-      - 基于频率、基因区域、有害性软件预测、家系遗传模式进行变异结果筛选
-      - 依据全基因组关联分析（GWAS）结果定位可能有害的变异 
-      - 根据客户要求进行筛选方案定制并展示结果
-  2. 特定疾病研究现状调研 
-      - 对特定疾病的基本知识及研究现状进行调研学习，为开发相关分析模块作前置准备
-  3. 数据交付流程维护与升级
+<!-- tab 2026.05-至今 -->
+
+- 2026.05-至今 浙江某医药技术有限公司 AI生物信息研究员
+  1. 专利数据采集与治理: 负责专利信息的获取、清洗与结构化, 构建面向模型训练的标准化数据集
+  2. 文献调研与模型训练: 结合领域文献调研, 为模型设计、训练与评估提供方案及技术依据
+  3. AI技术调研与落地: 跟踪人工智能前沿技术进展, 评估技术路线可行性, 推动其在业务场景中的落地应用
+  4. 大模型能力评估: 搭建大语言模型(LLM)能力评测方案, 输出评估结论以支撑模型选型
+
+<!-- endtab -->
+
+<!-- tab 2024.05-2026.04 -->
+
+- 2024.05-2026.04 杭州某医学科技公司 高级生物信息分析工程师
+  1. 开发WES/RNA-Seq/单细胞分析流程
+  2. 根据客户要求解读、制订并执行生物信息分析方案
+  3. 生物信息数据库构建、运维
+  4. 生物信息服务器运维
+  5. 网站、系统云服务器运维
+  6. 网站、内部实验管理系统开发、运维、迁移、自动化测试
+  7. 微信小程序运维
+
+<!-- endtab -->
+
+<!-- tab 2019.07-2024.04 -->
+
+- 2019.07-2020.03 杭州某生物科技公司 生物信息工程师
+  1. 基于NGS的cfDNA分析方案调研, 分析流程搭建
+  2. 新生抗原相关数据统计分析
+  3. 生物信息分析程序维护
+  4. 用药指导报告数据库维护
+- 2020.03-2024.04 杭州某生物科技公司 生信主管
+  1. 基于NGS的HLA分型/定量模块开发
+  2. 基于flask的生信分析工具后端开发
+  3. 新生抗原筛选模块开发
+  4. 生信分析主流程维护与升级
+  5. 按要求进行材料撰写与修订
 
 <!-- endtab -->
 
@@ -94,45 +120,19 @@ sidebar:
 
 <!-- endtab -->
 
-<!-- tab 2019.07-2024.04 -->
+<!-- tab 2017.07-2018.08 -->
 
-- 2019.07-2020.03 杭州某生物科技公司 生物信息工程师
-  1. 基于NGS的cfDNA分析方案调研, 分析流程搭建
-  2. 新生抗原相关数据统计分析
-  3. 生物信息分析程序维护
-  4. 用药指导报告数据库维护
-- 2020.03-2024.04 杭州某生物科技公司 生信主管
-  1. 基于NGS的HLA分型/定量模块开发
-  2. 基于flask的生信分析工具后端开发
-  3. 新生抗原筛选模块开发
-  4. 生信分析主流程维护与升级
-  5. 按要求进行材料撰写与修订
+- 就职情况: 天津某生信服务公司 生物信息分析工程师
+- 工作内容:
+  1. 人基因组二代测序数据（WES / WGS）质控及分析
+      - 基于频率、基因区域、有害性软件预测、家系遗传模式进行变异结果筛选
+      - 依据全基因组关联分析（GWAS）结果定位可能有害的变异 
+      - 根据客户要求进行筛选方案定制并展示结果
+  2. 特定疾病研究现状调研 
+      - 对特定疾病的基本知识及研究现状进行调研学习，为开发相关分析模块作前置准备
+  3. 数据交付流程维护与升级
 
 <!-- endtab -->
-
-<!-- tab 2024.05-2026.04 -->
-
-- 2024.05-2026.04 杭州某医学科技公司 高级生物信息分析工程师
-  1. 开发WES/RNA-Seq/单细胞分析流程
-  2. 根据客户要求解读、制订并执行生物信息分析方案
-  3. 生物信息数据库构建、运维
-  4. 生物信息服务器运维
-  5. 网站、系统云服务器运维
-  6. 网站、内部实验管理系统开发、运维、迁移、自动化测试
-  7. 微信小程序运维
-
-<!-- endtab -->
-
-<!-- tab 2026.05-至今 -->
-
-- 2026.05-至今 浙江某医药技术有限公司 AI生物信息研究员
-  1. 专利数据采集与治理: 负责专利信息的获取、清洗与结构化, 构建面向模型训练的标准化数据集
-  2. 文献调研与模型训练: 结合领域文献调研, 为模型设计、训练与评估提供方案及技术依据
-  3. AI技术调研与落地: 跟踪人工智能前沿技术进展, 评估技术路线可行性, 推动其在业务场景中的落地应用
-  4. 大模型能力评估: 搭建大语言模型(LLM)能力评测方案, 输出评估结论以支撑模型选型
-
-<!-- endtab -->
-
 
 {% endtabs %}
 
@@ -140,6 +140,27 @@ sidebar:
 ## 工作相关技能
 
 ### 常用语言与工具
+
+#### AI / LLM
+
+{% gallery left %}
+<img src="https://img.shields.io/badge/-Multica-0F172A?style=flat-square&logoColor=white" />
+<img src="https://img.shields.io/badge/-opencode-000000?style=flat-square&logo=opencode&logoColor=white" />
+<img src="https://img.shields.io/badge/-Codex-412991?style=flat-square&logoColor=white" />
+<img src="https://img.shields.io/badge/-Reasonix-1F1F1F?style=flat-square&logoColor=white" />
+
+<img src="https://img.shields.io/badge/-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
+<img src="https://img.shields.io/badge/-HuggingFace-FFD21E?style=flat-square&logo=huggingface&logoColor=black" />
+<img src="https://img.shields.io/badge/-scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" />
+<img src="https://img.shields.io/badge/-Unsloth-6E4AFF?style=flat-square&logoColor=white" />
+<img src="https://img.shields.io/badge/-MLX-000000?style=flat-square&logo=apple&logoColor=white" />
+
+<img src="https://img.shields.io/badge/-DeepSeek-4D6BFE?style=flat-square&logo=deepseek&logoColor=white" />
+<img src="https://img.shields.io/badge/-Ollama-000000?style=flat-square&logo=ollama&logoColor=white" />
+<img src="https://img.shields.io/badge/-MCP-1F1F1F?style=flat-square&logoColor=white" />
+<img src="https://img.shields.io/badge/-ComfyUI-1F1F1F?style=flat-square&logoColor=white" />
+<img src="https://img.shields.io/badge/-Gradio-F97316?style=flat-square&logo=gradio&logoColor=white" />
+{% endgallery %}
 
 #### 编程语言
 
@@ -151,13 +172,18 @@ sidebar:
 <img src="https://img.shields.io/badge/-HTML-F26524?style=flat-square&logo=html5&logoColor=white" />
 <img src="https://img.shields.io/badge/-CSS-633194?style=flat-square&logo=css&logoColor=white" />
 <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/-SQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
+<img src="https://img.shields.io/badge/-YAML-CB171E?style=flat-square&logo=yaml&logoColor=white" />
 {% endgallery %}
 
 #### 数据科学/数据库
 
 {% gallery left %}
 <img src="https://img.shields.io/badge/-Pandas-FFCA00?style=flat-square&logo=pandas&logoColor=white" />
+<img src="https://img.shields.io/badge/-Polars-CD792C?style=flat-square&logo=polars&logoColor=white" />
 <img src="https://custom-icon-badges.demolab.com/badge/-Dask-FC6E6B?style=flat-square&logo=dask&logoColor=white" />
+<img src="https://img.shields.io/badge/-DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=white" />
+<img src="https://img.shields.io/badge/-DuckLake-0A0A0A?style=flat-square&logoColor=white" />
 
 <img src="https://img.shields.io/badge/-SQLite-044a64?style=flat-square&logo=sqlite&logoColor=white" />
 <img src="https://img.shields.io/badge/-MySQL-F29221?style=flat-square&logo=mysql&logoColor=white" />
@@ -175,6 +201,7 @@ sidebar:
 <img src="https://custom-icon-badges.demolab.com/badge/-Scrapy-15B8A6?style=flat-square&&logoColor=white&logo=scrapy" />
 <img src="https://img.shields.io/badge/-Vue-4FC08D?style=flat-square&logo=vue.js&logoColor=white" />
 <img src="https://img.shields.io/badge/-Node-5FA04E?style=flat-square&logo=Node.js&logoColor=white" />
+<img src="https://img.shields.io/badge/-Pydantic_AI-E92063?style=flat-square&logo=pydantic&logoColor=white" />
 {% endgallery %}
 
 #### IDE / Dev
@@ -195,22 +222,20 @@ sidebar:
 <img src="https://img.shields.io/badge/-Github-1F2328?style=flat-square&logo=github&logoColor=white" />
 <img src="https://img.shields.io/badge/-Github_Actions-55D263?style=flat-square&logo=githubactions&logoColor=white" />
 <img src="https://custom-icon-badges.demolab.com/badge/-Azure-34B4E8?style=flat-square&logo=azurewhite&logoColor=white" />
-<imgPipelines" src="https://custom-icon-badges.demolab.com/badge/-Azure_Pipelines-34B4E8?style=flat-square&logo=azurepipelinewhite&logoColor=white" />
+<img src="https://custom-icon-badges.demolab.com/badge/-Azure_Pipelines-34B4E8?style=flat-square&logo=azurepipelinewhite&logoColor=white" />
+
+<img src="https://img.shields.io/badge/-Caddy-1F88C0?style=flat-square&logo=caddy&logoColor=white" />
+<img src="https://img.shields.io/badge/-Supervisor-2C3E50?style=flat-square&logoColor=white" />
+<img src="https://img.shields.io/badge/-Uptime_Kuma-5CDD8B?style=flat-square&logo=uptimekuma&logoColor=white" />
+<img src="https://img.shields.io/badge/-GoReleaser-00ADD8?style=flat-square&logoColor=white" />
 {% endgallery %}
 
 #### 可视化
 {% gallery left %}
 <img src="https://img.shields.io/badge/-Plotly-F93778?style=flat-square&logo=plotly&logoColor=white" />
 <img src="https://custom-icon-badges.demolab.com/badge/-GGplot2-001F51?style=flat-square&&logoColor=white&logo=ggplot2white" />
-{% endgallery %}
-
-#### 生物信息
-{% gallery left %}
-<img src="https://custom-icon-badges.demolab.com/badge/-Snakemake-039475?style=flat-square&&logoColor=white&logo=snakemakewhite" />
-<img src="https://custom-icon-badges.demolab.com/badge/-Biopython-3370A3?style=flat-square&&logoColor=white&logo=biopythonwhite" />
-<img src="https://custom-icon-badges.demolab.com/badge/-Bedtools-D91E30?style=flat-square&&logoColor=white&logo=bedtoolswhite" />
-<img src="https://custom-icon-badges.demolab.com/badge/-GATK-3370A3?style=flat-square&&logoColor=white&logo=gatkwhite" />
-<img src="https://custom-icon-badges.demolab.com/badge/-Scanpy-F3643A?style=flat-square&&logoColor=white&logo=scanpywhite" />
+<img src="https://img.shields.io/badge/-Matplotlib-11557C?style=flat-square&logoColor=white" />
+<img src="https://img.shields.io/badge/-seaborn-4C72B0?style=flat-square&logoColor=white" />
 {% endgallery %}
 
 #### 操作系统
@@ -220,11 +245,23 @@ sidebar:
 <img src="https://img.shields.io/badge/-ChromiumOS-1A73E8?style=flat-square&logo=googlechrome&logoColor=white" />
 <img src="https://img.shields.io/badge/-Debian-A80030?style=flat-square&logo=debian&logoColor=white" />
 <img src="https://img.shields.io/badge/-Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white" />
+<img src="https://img.shields.io/badge/-macOS-000000?style=flat-square&logo=apple&logoColor=white" />
+<img src="https://img.shields.io/badge/-Fedora-51A2DA?style=flat-square&logo=fedora&logoColor=white" />
 {% endgallery %}
 
 ### 编程能力
 
 {% tabs lang %}
+
+<!-- tab AI / LLM -->
+- 本地模型部署与推理: Qwen3.x 稠密 / MoE 模型, MLX / omlx / splash 等推理框架; 在 Apple Silicon 与小显存显卡上的上下文(128K)与 KV Cache / TTFT 调优
+- 微调: 基于 Unsloth 的 LoRA / QLoRA、MLX 微调, 面向报告与文档的领域微调
+- 评测: 大模型 / Agent 能力评测(DeepEval 及自建 Benchmark 框架), 支撑模型选型
+- 应用与接入: 大模型 API(DeepSeek 官方及 OpenAI / Anthropic 兼容协议)、RAG 与文献索引、MCP(Model Context Protocol)服务端/客户端、浏览器自动化 Agent
+- Agent 工具: Multica、opencode、Codex CLI、Reasonix 等编码代理, 多 Agent 工作流
+- AIGC: ComfyUI 图像 / 视频生成工作流
+
+<!-- endtab -->
 
 <!-- tab Python -->
 - 并行化: Multiprocess
@@ -262,56 +299,55 @@ sidebar:
   + 有丰富的容器使用和部署经验，能使用主流的容器软件如Docker、Podman、Apptainer（原Singularity）能编写Dockerfile和Def文件构建Docker容器或Sif容器([示例](https://github.com/SilenWang/dgidb-docker))
 - Pixi/Conda/Mamba: 有较充足的实际使用经验, 能够使用conda快速部署分析用软件及流程
 - Git: 有使用Git进行项目代码/文档管理的经验, 懂得基本的创建/推送/合并的方法, 使用过钩子特性运行一些自动化任务操作
-- DevOps: 了解DevOps的基本概念，能使用Github actions / Azure Pipeline平台完成代码管理、以及自动化测试和部署工作
+- DevOps: 了解DevOps的基本概念，能使用Github actions / Azure Pipeline平台完成代码管理、以及自动化测试和部署工作; 有Caddy反向代理与Supervisor进程管理的实践经验
 
 <!-- endtab -->
 
 {% endtabs %}
 
 
-### 掌握生物信息软件/模块
+### 生物信息组学经验
 
-- emmm... 使用过及使用比较多的都有, 并且近一年内用到的真挺少的... 不过给我一周应该都能重新熟悉的把hhhhhhh
+不再罗列长长的工具清单, 只说明实际有动手经验的组学方向, 并各举最经典的工具, 过于冷门的就略过了。
 
-{% tabs bioinfo %}
+{% tabs omics %}
 
-<!-- tab 数据文件处理 -->
+<!-- tab 基因组学 / 变异 -->
 
-- 二代测序数据拆分: bcl2fastq
-- BED文件操作: bedtools
-- 数据质控: fastp, fastQC, MultiQC
-- 序列比对: bwa, bowtie, STAR
-- 表达量计算/分析: DESeq2, DEXseq, Salmon, kallisto, htseq, Hisat2
-- 序列处理: seqtk, seqkit
-- BAM/VCF文件操作: Picard, Samtools, Bcftools, Sambamba, Pysam, Biogo
-- UMI处理相关: UMI-tools, fgbio
+- 比对与 BAM 处理: bwa, samtools, bcftools, bedtools, Picard
+- SNV / INDEL 检测: GATK (Mutect2), Strelka, VarDict
+- 结构变异 / CNV: Manta, Delly, lumpy-sv, CNVkit
+- 变异注释: ANNOVAR, VEP, snpEff
 
 <!-- endtab -->
 
-<!-- tab 单细胞分析 -->
+<!-- tab 转录组学 -->
 
-- 分析框架: cellranger, rhapsody, Scanpy, Seurat
-- 细胞组成差异: Milopy, miloR
-- 细胞注释: SingleR, celltypist, Azimuth
-- 拟时序: Monocle, scvelo, cellrank, pymonocle
-- 细胞通讯: Cellchat
+- 比对 / 定量: STAR, HISAT2, Salmon, kallisto, featureCounts
+- 差异表达与富集: DESeq2, edgeR, GSEA
 
 <!-- endtab -->
 
-<!-- tab 变异检测注释 -->
+<!-- tab 单细胞 -->
 
-- SNP/INDEL检测: Samtools, GATK(Mutect2), Vardict, Vacscan, Strelka
-- DNA结构变异/融合基因检测: CREAST, lumpy-sv, Smoove, SViCT, SvABA, Manta, Delly, GeneFuse, Factera, sv-tools
-- CNV检测: CNVkit, PyLOH
-- 变异注释: ANNOVAR, snpEff, VEP
+- 分析框架: Cell Ranger, Scanpy, Seurat
+- 细胞注释与拟时序: SingleR, celltypist, Monocle, scVelo
+- 细胞通讯: CellChat
 
 <!-- endtab -->
 
-<!-- tab 其他分析 -->
+<!-- tab 液体活检 / 免疫 -->
 
-- 克隆性: PyClone, SciClone, FastClone
-- 测序数据遗传一致性排查: plink, NGSCheckMate
-- 质谱鉴定: pFind, maxquant
+- UMI / 分子标签: UMI-tools, fgbio
+- HLA 分型 / 定量与新生抗原筛选(自研模块)
+
+<!-- endtab -->
+
+<!-- tab 质控与流程 -->
+
+- 质控: fastp, FastQC, MultiQC
+- 流程: Snakemake, Nextflow
+- 其他: 质谱鉴定(MaxQuant)
 
 <!-- endtab -->
 
@@ -331,11 +367,11 @@ sidebar:
 
 ## 可展示项目
 
-### Github项目
-|||
+### 个人开源项目
+| | |
 | -- | -- |
-|{% ghcard 'SilenWang/DevSSH' %}|{% ghcard 'SilenWang/RenderCV_Pod' %}|
-|{% ghcard 'SilenWang/qwen-image-API' %}|{% ghcard 'SilenWang/Risk_Region' %}|
+|{% ghcard 'SilenWang/DevSSH' %}|{% ghcard 'SilenWang/Claude-Science-Container' %}|
+|{% ghcard 'SilenWang/webapp-picks' %}|{% ghcard 'SilenWang/comfy-h3-container' %}|
 
 ### 已发表文献
 
