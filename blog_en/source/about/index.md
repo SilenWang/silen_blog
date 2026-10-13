@@ -308,8 +308,6 @@ The About Me page has been rewrited! Now it uses tabs to collapse the content...
 
 ### Bioinformatics Experience by Omics
 
-I'll skip the long tool inventory and just note the omics categories I actually have hands-on experience with, plus the most classic tools in each. Very niche tools are omitted.
-
 {% tabs omics %}
 
 <!-- tab Genomics / Variant -->
