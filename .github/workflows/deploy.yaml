@@ -5,9 +5,11 @@ on:
     branches:
       - master
     paths:
-      # 博客文稿更新了才触发
-      - 'blog_cn/source/**' 
+      # 博客文稿或站点配置更新了才触发
+      - 'blog_cn/source/**'
       - 'blog_en/source/**'
+      - 'blog_cn/_config*.yml'
+      - 'blog_en/_config*.yml'
   workflow_dispatch:
 
 jobs:
