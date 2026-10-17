@@ -113,3 +113,8 @@ deploy:
   #   repo:
   #     git@gitee.com:silenwang/silenwang.git
   #   branch: master
+
+# Custom files injected by theme (config.import)
+import:
+  body_end:
+    - '<script src="/en/js/mermaid-pjax.js"></script>'
