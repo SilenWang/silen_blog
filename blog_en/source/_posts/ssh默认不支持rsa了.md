@@ -2,6 +2,7 @@
 title: ssh no longer supports rsa by default
 categories: Others
 date: 2021-10-11 21:06:49
+updated: 2024-11-19 00:27:19
 tags: ['ssh', 'openssh', 'manjaro']
 ---
 

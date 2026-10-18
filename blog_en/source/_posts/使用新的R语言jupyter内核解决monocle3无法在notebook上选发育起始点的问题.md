@@ -7,6 +7,7 @@ tags:
   - xeus
 categories: Bioinformatics
 date: 2024-06-23 01:47:03
+updated: 2025-08-25 01:23:47
 ---
 
 Looking at the creation time of this draft, it was actually June 2024... Now it's June 2025, and I suddenly understand why so many content creators become "pigeons" (procrastinators). Starting projects is fun, but finishing them is painful... This is one of my few pure bioinformatics posts...

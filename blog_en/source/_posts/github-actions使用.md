@@ -2,6 +2,7 @@
 title: Basic Usage of GitHub Actions
 categories: Script
 date: 2025-04-13 16:40:47
+updated: 2025-04-14 20:57:08
 tags: ['github', 'github actions']
 ---
 

@@ -2,6 +2,7 @@
 title: R Install GitHub Package Timeout Issue Solution
 categories: Coding
 date: 2018-09-05 08:57:17
+updated: 2025-08-25 00:51:57
 tags: ['R']
 ---
 

@@ -2,6 +2,7 @@
 title: 关于FydeTab Duo的碎碎念
 categories: Others
 date: 2024-09-24 23:30:45
+updated: 2026-04-28 21:32:41
 tags: ['FydeOS', 'FydeTab Duo', 'Linux子系统', 'Chromebook', 'pixi']
 ---
 

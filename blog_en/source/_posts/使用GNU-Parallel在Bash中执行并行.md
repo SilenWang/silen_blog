@@ -2,6 +2,7 @@
 title: Using GNU Parallel in Bash for Parallel Execution
 categories: Coding
 date: 2019-03-31 23:07:26
+updated: 2025-08-25 00:51:57
 tags: ["bash", "parallel computing"]
 ---
 

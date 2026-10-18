@@ -2,6 +2,7 @@
 title: The usability of Linux distributions is getting higher and higher
 categories: Others
 date: 2019-04-06 17:03:42
+updated: 2025-11-22 21:39:56
 tags: ["linux"]
 ---
 

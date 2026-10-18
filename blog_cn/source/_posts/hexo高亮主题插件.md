@@ -2,6 +2,7 @@
 title: hexo代码高亮插件
 categories: Others
 date: 2018-09-05 21:53:50
+updated: 2025-07-27 18:53:13
 tags: ['hexo', '代码高亮']
 ---
 

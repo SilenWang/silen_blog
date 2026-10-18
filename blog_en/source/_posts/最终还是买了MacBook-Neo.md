@@ -2,6 +2,7 @@
 title: "I Bought the MacBook Neo After All"
 categories: Others
 date: 2026-08-01 22:00:00
+updated: 2026-08-01 23:00:42
 tags:
   - MacBook Neo
   - Worth It

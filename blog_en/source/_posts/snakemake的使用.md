@@ -2,6 +2,7 @@
 title: snakemake's Usage
 categories: Bioinformatics
 date: 2018-10-30 12:40:03
+updated: 2025-03-06 10:01:51
 tags: ['Python', 'snakemake']
 ---
 

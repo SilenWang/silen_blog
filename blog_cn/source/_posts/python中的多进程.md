@@ -2,6 +2,7 @@
 title: python中的多进程
 categories: Coding
 date: 2019-02-12 23:45:59
+updated: 2026-04-28 21:32:41
 tags: ["Python", "多进程", "并行计算", "multiprocessing", "Pool"]
 ---
 

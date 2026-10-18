@@ -2,6 +2,7 @@
 title: 只成功了一半----利用pixi在FydeOS编译运行podman
 categories: Others
 date: 2025-11-11 01:30:59
+updated: 2026-04-28 21:32:41
 tags: ['pixi', 'podman', 'FydeOS']
 ---
 

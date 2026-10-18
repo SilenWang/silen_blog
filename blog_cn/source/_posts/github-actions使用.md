@@ -2,6 +2,7 @@
 title: Github Actions的基本使用
 categories: Script
 date: 2025-04-13 16:40:47
+updated: 2026-04-28 21:32:41
 tags: ['持续集成', '自动化', '工作流', 'github actions', 'ci', 'cd', 'automation', 'workflow']
 ---
 

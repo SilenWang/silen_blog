@@ -2,6 +2,7 @@
 title: Configuring Multi-Agent Workflows with OpenCode
 categories: Coding
 date: 2026-03-08 16:17:24
+updated: 2026-03-09 00:20:44
 keywords: [opencode, subagent, skill, multi-agent workflow, AI workflow, automation]
 ---
 

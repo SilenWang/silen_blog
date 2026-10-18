@@ -2,6 +2,7 @@
 title: Using aider for programming assistance
 categories: Coding
 date: 2025-04-25 00:42:46
+updated: 2025-08-25 00:51:57
 tags: ['AI', 'aider']
 ---
 

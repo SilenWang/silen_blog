@@ -2,6 +2,7 @@
 title: 解决scanpy读写loom文件格式丢失obs和var的index的问题
 categories: Bioinformatics
 date: 2025-10-28 17:22:12
+updated: 2025-10-29 12:10:03
 tags: ['scanpy', 'loom', 'adata']
 ---
 

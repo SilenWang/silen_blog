@@ -2,6 +2,7 @@
 title: Multica - AI-Native Task Management Platform
 categories: Others
 date: 2026-04-10 13:04:05
+updated: 2026-04-11 21:03:55
 tags: ['Multica', 'AI', 'Task Management', 'Coding Assistant', 'Claude']
 ---
 

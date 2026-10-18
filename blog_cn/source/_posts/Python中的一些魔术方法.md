@@ -2,6 +2,7 @@
 title: Python中的一些魔术方法
 categories: Coding
 date: 2019-11-25 23:34:06
+updated: 2026-04-28 21:32:41
 tags: ['Python', '魔术方法', '面向对象', '特殊方法']
 ---
 

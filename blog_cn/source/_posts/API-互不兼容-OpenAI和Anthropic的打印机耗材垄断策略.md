@@ -1,6 +1,7 @@
 ---
 title: API 互不兼容？OpenAI 和 Anthropic 的"打印机耗材垄断"策略
 date: 2026-07-01 22:00:00
+updated: 2026-07-06 00:29:53
 tags:
 - AI
 - API

@@ -2,6 +2,7 @@
 title: 三个月Token消耗暴涨13倍——我的AI工作流演变记录
 categories: AI
 date: 2026-08-05 22:00:00
+updated: 2026-08-09 11:06:49
 tags: ['AI', 'Multica', 'Agent', 'Token', '工作流', '统计']
 ---
 

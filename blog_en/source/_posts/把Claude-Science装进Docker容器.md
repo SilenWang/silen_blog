@@ -1,6 +1,7 @@
 ---
 title: Putting Claude Science into a Docker Container
 date: 2026-07-05 23:00:00
+updated: 2026-07-06 00:54:51
 tags:
   - Docker
   - Claude Science

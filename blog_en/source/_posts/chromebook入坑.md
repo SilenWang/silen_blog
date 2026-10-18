@@ -2,6 +2,7 @@
 title: My Chromebook Journey
 categories: Others
 date: 2022-10-16 21:44:36
+updated: 2025-11-22 21:39:56
 tags: ['chromeos', 'chromebook', 'fydeos']
 ---
 

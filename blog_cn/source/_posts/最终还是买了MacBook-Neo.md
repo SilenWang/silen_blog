@@ -2,6 +2,7 @@
 title: 最终还是买了MacBook Neo
 categories: Others
 date: 2026-08-01 22:00:00
+updated: 2026-08-01 22:45:38
 tags:
   - MacBook Neo
   - 真香

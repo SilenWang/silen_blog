@@ -2,6 +2,7 @@
 title: Using Playwright for Browser Testing
 categories: Script
 date: 2025-06-09 00:44:33
+updated: 2025-06-09 01:18:16
 tags: ['python', 'pytest', 'playwright']
 ---
 

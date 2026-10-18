@@ -2,6 +2,7 @@
 title: Trying to compile openfyde again (Part 2)
 categories: Others
 date: 2025-06-19 23:09:23
+updated: 2025-08-25 00:51:57
 tags: ['fydeos', 'openfyde']
 ---
 

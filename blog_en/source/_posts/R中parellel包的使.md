@@ -2,6 +2,7 @@
 title: Using the parallel package in R
 categories: Coding
 date: 2019-01-01 02:04:56
+updated: 2025-08-25 00:51:57
 tags: ['R', 'Parallel Computing']
 ---
 

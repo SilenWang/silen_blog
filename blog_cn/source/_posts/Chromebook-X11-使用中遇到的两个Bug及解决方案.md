@@ -1,6 +1,7 @@
 ---
 title: Chromebook X11 使用中遇到的两个 Bug 及解决方案
 date: 2026-05-30 20:00:00
+updated: 2026-05-31 01:40:26
 tags:
   - Chromebook
   - ChromeOS

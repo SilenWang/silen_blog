@@ -2,6 +2,7 @@
 title: Cleaning Up 800+ Stale Stars — A GitHub CLI + Agent Experience
 categories: Others
 date: 2026-08-05 22:00:00
+updated: 2026-08-05 23:51:45
 tags: ['GitHub', 'GitHub CLI', 'gh', 'AI Agent', 'star', 'Multica', 'cleanup']
 ---
 

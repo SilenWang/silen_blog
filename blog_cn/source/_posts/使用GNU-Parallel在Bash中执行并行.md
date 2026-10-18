@@ -2,6 +2,7 @@
 title: 使用GNU Parallel在Bash中执行并行
 categories: Coding
 date: 2019-03-31 23:07:26
+updated: 2025-08-21 01:05:04
 tags: ["bash", "并行计算", "GNU Parallel", "命令行工具", "性能优化"]
 ---
 

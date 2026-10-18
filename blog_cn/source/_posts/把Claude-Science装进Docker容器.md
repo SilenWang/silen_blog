@@ -1,6 +1,7 @@
 ---
 title: 把 Claude Science 装进 Docker 容器
 date: 2026-07-05 23:00:00
+updated: 2026-07-06 00:53:29
 tags:
   - Docker
   - Claude Science

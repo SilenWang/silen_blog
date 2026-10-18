@@ -2,6 +2,7 @@
 title: Writing Dockerfile to Build Docker Image
 categories: Script
 date: 2019-10-05 16:58:54
+updated: 2025-03-06 10:01:51
 tags: ['docker', 'dockerfile']
 ---
 

@@ -2,6 +2,7 @@
 title: Compile openfyde
 categories: Others
 date: 2025-01-04 14:58:33
+updated: 2025-03-06 10:01:51
 tags: ['openfyde', 'fydeos', 'chromeos']
 ---
 

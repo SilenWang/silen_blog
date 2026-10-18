@@ -2,6 +2,7 @@
 title: AI还是改变生活--让我能做以前很难起步的事情
 categories: Coding
 date: 2025-11-22 20:25:43
+updated: 2026-04-28 21:32:41
 tags: ['hexo', 'Volantis', '博客', '国际化']
 ---
 

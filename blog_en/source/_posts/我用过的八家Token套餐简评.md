@@ -2,6 +2,7 @@
 title: "Eight Token Plans I've Tried: From Alibaba Cloud and Volcano Engine to a Few Little-Known Shops"
 categories: AI
 date: 2026-10-17 22:00:00
+updated: 2026-10-18 01:23:28
 tags: ['AI', 'Token', 'opencode', 'Cline', 'Rant', 'Cost-saving']
 ---
 

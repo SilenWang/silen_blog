@@ -2,6 +2,7 @@
 title: 使用Syncthing进行文件同步
 categories: Others
 date: 2019-08-18 00:03:33
+updated: 2026-04-28 21:32:41
 tags: ['文件同步', '跨设备同步', 'Syncthing', 'systemd', '开源工具']
 ---
 

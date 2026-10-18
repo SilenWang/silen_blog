@@ -2,6 +2,7 @@
 title: 搭一个用rendercv生成简历的容器
 categories: Coding
 date: 2026-01-06 21:17:55
+updated: 2026-04-28 21:32:41
 tags:
   - RenderCV
   - 容器

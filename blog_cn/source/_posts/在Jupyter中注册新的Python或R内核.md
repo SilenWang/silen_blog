@@ -2,6 +2,7 @@
 title: 在Jupyter中注册新的Python或R内核
 categories: Others
 date: 2023-01-17 12:53:40
+updated: 2025-08-21 01:05:04
 tags: ['Jupyter', 'Python', 'R', 'conda', '内核注册', '技术教程']
 ---
 

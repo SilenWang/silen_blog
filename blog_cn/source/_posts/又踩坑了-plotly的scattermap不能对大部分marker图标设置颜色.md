@@ -2,6 +2,7 @@
 title: 又踩坑了--plotly的scattermap不能对大部分marker图标设置颜色
 categories: Coding
 date: 2025-12-02 15:20:39
+updated: 2026-04-28 21:32:41
 tags: ['taipy', 'scattermap']
 ---
 

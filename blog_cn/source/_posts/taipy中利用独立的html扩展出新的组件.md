@@ -2,6 +2,7 @@
 title: taipy中利用独立的html扩展出新的组件
 categories: Coding
 date: 2025-12-17 21:42:31
+updated: 2026-04-28 21:32:41
 tags: ['taipy', 'html']
 ---
 

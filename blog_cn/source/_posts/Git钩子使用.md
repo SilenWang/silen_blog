@@ -2,6 +2,7 @@
 title: Git钩子使用
 categories: Others
 date: 2019-08-17 19:33:27
+updated: 2026-04-28 21:32:41
 tags: ['Git钩子', '自动化部署', '博客管理', 'git', 'githook', 'post-commit']
 ---
 

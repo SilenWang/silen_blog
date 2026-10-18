@@ -2,6 +2,7 @@
 title: My Token Usage Exploded 13× in Three Months — How My AI Workflow Evolved
 categories: AI
 date: 2026-08-05 22:00:00
+updated: 2026-08-09 00:27:36
 tags:
   - AI
   - Multica

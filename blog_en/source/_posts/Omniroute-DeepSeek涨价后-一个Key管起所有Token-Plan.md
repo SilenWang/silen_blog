@@ -2,6 +2,7 @@
 title: "Omniroute: After DeepSeek Raised Prices, I Managed All My Token Plans with One Key"
 categories: AI
 date: 2026-08-22 22:00:00
+updated: 2026-08-26 21:33:33
 tags:
   - Omniroute
   - DeepSeek

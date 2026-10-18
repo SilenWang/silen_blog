@@ -2,6 +2,7 @@
 title: Sprucing Up My GitHub Profile
 categories: Others
 date: 2023-01-27 22:15:30
+updated: 2025-08-25 00:51:57
 tags: ['GitHub']
 ---
 

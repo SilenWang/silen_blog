@@ -2,6 +2,7 @@
 title: bash-it
 categories: Others
 date: 2018-10-29 21:17:23
+updated: 2025-08-21 01:05:04
 tags: ['命令行', 'bash', 'plugin']
 ---
 

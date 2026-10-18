@@ -2,6 +2,7 @@
 title: Installing and Using GitHub CLI on Ubuntu
 categories: Tools
 date: 2026-05-10 12:00:00
+updated: 2026-05-16 15:12:50
 tags: ['GitHub CLI', 'gh', 'Ubuntu', 'Authentication', 'Command Line', 'git', 'issue']
 ---
 

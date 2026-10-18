@@ -2,6 +2,7 @@
 title: Snakemake's Dynamic Parsing Feature
 categories: Bioinformatics
 date: 2019-11-24 23:00:31
+updated: 2025-08-25 01:23:47
 tags: ['Python', 'snakemake']
 ---
 

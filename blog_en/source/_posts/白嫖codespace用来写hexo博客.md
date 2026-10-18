@@ -3,6 +3,7 @@ title: Using Codespace for Free to Write Hexo Blogs
 tags: ['github', 'codespace']
 categories: Coding
 date: 2023-07-23 17:10:23
+updated: 2025-08-25 00:51:57
 ---
 
 Recently, out of... well, let's say a bit of dissatisfaction, I sold my previously purchased Lenovo Chrome Duet2, but then I bought a Pixelbook 2017... Now that I have this device, I still want to tinker with it for a while, trying to find a way to use this Pixelbook 2017 as a replacement for my work computer for general office tasks. In the process of practising, the main issue wasn't resolved, but I did come up with a few practical by-products... writing Hexo blogs using Codespace is one of them.

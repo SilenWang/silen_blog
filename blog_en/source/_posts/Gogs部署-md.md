@@ -1,6 +1,7 @@
 ---
 title: Gogs Deployment
 date: 2018-09-21 18:32:00
+updated: 2025-03-06 10:01:51
 tags: [gogs, vps]
 categories: Others
 ---

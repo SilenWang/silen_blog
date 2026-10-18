@@ -2,6 +2,7 @@
 title: 再次尝试编译openfyde（上）
 categories: Others
 date: 2025-06-15 10:50:34
+updated: 2025-08-21 01:05:04
 tags: ['系统编译', 'openfyde', 'Linux系统', '补丁修复', 'fydeos', 'chroot环境']
 ---
 

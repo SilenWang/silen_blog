@@ -2,6 +2,7 @@
 title: Multiprocessing in Python
 categories: Coding
 date: 2019-02-12 23:45:59
+updated: 2025-08-25 00:51:57
 tags: ["Python", "Multiprocessing", "Parallel Computing"]
 ---
 

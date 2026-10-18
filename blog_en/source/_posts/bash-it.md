@@ -2,6 +2,7 @@
 title: bash-it
 categories: Others
 date: 2018-10-29 21:17:23
+updated: 2025-08-25 00:51:57
 tags: ['bash', 'plugin']
 ---
 

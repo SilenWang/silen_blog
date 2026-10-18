@@ -2,6 +2,7 @@
 title: Building a Container for Resume Generation with RenderCV
 categories: Coding
 date: 2026-01-06 21:17:55
+updated: 2026-01-06 22:25:30
 tags:
   - RenderCV
   - Container

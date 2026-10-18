@@ -2,6 +2,7 @@
 title: 想打包个opencode结果又遇坑了
 categories: Others
 date: 2026-01-31 15:54:18
+updated: 2026-04-28 21:32:41
 tags:
 ---
 

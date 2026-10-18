@@ -1,6 +1,7 @@
 ---
 title: The Benefits and Limitations of Claude Science
 date: 2026-07-15 22:00:00
+updated: 2026-07-20 01:04:53
 tags:
   - Claude Science
   - AI

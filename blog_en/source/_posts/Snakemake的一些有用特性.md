@@ -2,6 +2,7 @@
 title: Some Useful Features of Snakemake
 categories: Coding
 date: 2019-03-06 23:41:40
+updated: 2025-08-25 00:51:57
 tags: ['Python', 'snakemake']
 ---
 

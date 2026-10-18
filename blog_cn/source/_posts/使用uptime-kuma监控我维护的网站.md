@@ -2,6 +2,7 @@
 title: 使用uptime_kuma监控我维护的网站
 categories: Coding
 date: 2025-10-09 15:30:29
+updated: 2026-04-28 21:32:41
 tags: [监控, Uptime-Kuma, 网站维护, 服务监控]
 ---
 

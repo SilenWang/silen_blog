@@ -2,6 +2,7 @@
 title: R中parallel包的使用
 categories: Coding
 date: 2019-01-01 02:04:56
+updated: 2026-04-28 21:32:41
 tags: ['R语言', '并行计算', 'ggplot', '数据可视化', 'R', 'parallel', 'performance']
 ---
 

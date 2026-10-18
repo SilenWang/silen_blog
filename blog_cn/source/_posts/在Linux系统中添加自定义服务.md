@@ -2,6 +2,7 @@
 title: 在Linux系统中添加自定义服务
 categories: Others
 date: 2019-10-05 16:00:31
+updated: 2026-04-28 21:32:41
 tags: ['Linux', 'systemd', '服务管理', '自定义服务', 'systemd', 'service', 'Linux']
 ---
 

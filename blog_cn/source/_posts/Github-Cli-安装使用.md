@@ -2,6 +2,7 @@
 title: Ubuntu安装并使用Github CLI
 categories: Tools
 date: 2026-05-10 12:00:00
+updated: 2026-05-16 15:12:50
 tags: ['GitHub CLI', 'gh', 'Ubuntu', '认证', '命令行', 'git', 'issue']
 ---
 

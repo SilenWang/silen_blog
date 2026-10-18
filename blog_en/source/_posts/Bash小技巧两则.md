@@ -2,6 +2,7 @@
 title: Two Bash Tricks
 categories: Coding
 date: 2019-06-05 21:17:03
+updated: 2025-08-25 00:51:57
 tags: ["linux", "bash"]
 ---
 

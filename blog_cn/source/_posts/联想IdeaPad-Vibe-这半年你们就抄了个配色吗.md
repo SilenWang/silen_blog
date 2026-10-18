@@ -2,6 +2,7 @@
 title: 联想 IdeaPad Vibe：不儿，你们这半年就抄了个配色吗？
 categories: Others
 date: 2026-08-15 22:00:00
+updated: 2026-08-15 16:49:06
 tags:
   - 吐槽
   - 联想

@@ -2,6 +2,7 @@
 title: '使用gitbook和mkdocs写文档'
 categories: Others
 date: 2019-07-07 22:13:31
+updated: 2026-04-28 21:32:41
 tags: ['文档工具', '技术写作', 'gitbook', 'mkdocs', 'markdown']
 ---
 

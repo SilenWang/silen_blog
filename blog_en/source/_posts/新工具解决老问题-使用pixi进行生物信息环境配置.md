@@ -2,6 +2,7 @@
 title: New Tools Solve Old Problems - Using Pixi for Bioinformatics Environment Configuration
 categories: Bioinformatics
 date: 2024-06-22 01:26:08
+updated: 2025-12-21 02:37:45
 tags: ['pixi', 'conda']
 ---
 

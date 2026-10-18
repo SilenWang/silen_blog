@@ -2,6 +2,7 @@
 title: 终于用 pixi 搞定了用于自动构建的 recipe 和 action：踩坑与解决方案
 categories: Others
 date: 2026-02-02 20:51:28
+updated: 2026-04-28 21:32:41
 tags: ['pixi', 'recipe', 'github action', 'rattler', 'conda']
 ---
 

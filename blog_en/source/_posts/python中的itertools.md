@@ -2,6 +2,7 @@
 title: itertools in Python
 categories: Coding
 date: 2019-02-13 00:37:27
+updated: 2025-11-22 21:39:56
 tags: ["Python", "itertools"]
 ---
 

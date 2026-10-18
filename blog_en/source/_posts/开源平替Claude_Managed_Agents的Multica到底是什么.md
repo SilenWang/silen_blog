@@ -1,6 +1,7 @@
 ---
 title: "What is Multica - Open-Source Alternative to Claude Managed Agents?"
 date: 2026-04-15 16:00:00
+updated: 2026-04-16 00:37:17
 tags:
 - AI
 - Claude Code

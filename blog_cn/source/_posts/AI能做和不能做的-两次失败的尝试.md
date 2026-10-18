@@ -2,6 +2,7 @@
 title: 使用AI的能与不能----两次失败的尝试
 categories: Others
 date: 2025-07-15 00:44:45
+updated: 2026-04-28 21:32:41
 tags: ['AI辅助开发', '技术尝试', 'Theia', 'FydeOS', '内核', 'aider', 'openfyde']
 ---
 

@@ -2,6 +2,7 @@
 title: Pixi can now be used in github actions
 categories: Coding
 date: 2025-12-06 01:43:09
+updated: 2025-12-06 16:26:53
 tags: ['github action', 'pixi']
 ---
 

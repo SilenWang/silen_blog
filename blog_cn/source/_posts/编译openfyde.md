@@ -2,6 +2,7 @@
 title: 编译openfyde
 categories: Others
 date: 2025-01-04 14:58:33
+updated: 2025-07-27 18:53:13
 tags: ['openfyde', 'fydeos', 'chromeos', '编译', 'Linux', 'Fydetab duo', 'Chromium OS', '开发环境']
 ---
 

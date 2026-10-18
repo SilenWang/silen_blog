@@ -2,6 +2,7 @@
 title: chromebook入坑记?
 categories: Others
 date: 2022-10-16 21:44:36
+updated: 2025-07-27 18:53:13
 tags: ['ChromeOS', 'FydeOS', '云办公', 'Linux', 'chromebook', '远程开发']
 ---
 

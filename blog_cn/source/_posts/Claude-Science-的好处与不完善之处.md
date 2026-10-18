@@ -1,6 +1,7 @@
 ---
 title: Claude Science 的好处与不完善之处
 date: 2026-07-15 22:00:00
+updated: 2026-07-20 01:04:53
 tags:
   - Claude Science
   - AI

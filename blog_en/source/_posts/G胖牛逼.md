@@ -2,6 +2,7 @@
 title: Gabe Newell is awesome!!!!!!!!!!!!!!!
 categories: Gaming
 date: 2018-09-07 20:12:02
+updated: 2025-11-22 21:39:56
 tags: ['steam', 'linux']
 ---
 

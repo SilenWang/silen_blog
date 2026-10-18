@@ -2,6 +2,7 @@
 title: Trying to Package Opencode and Hitting Another Snag
 categories: Others
 date: 2026-01-31 15:54:18
+updated: 2026-01-31 18:29:36
 tags:
 ---
 

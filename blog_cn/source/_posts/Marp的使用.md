@@ -2,6 +2,7 @@
 title: 'Marp的使用'
 categories: Others
 date: 2022-06-22 15:40:28
+updated: 2026-04-28 21:32:41
 tags: ['Marp', 'VSCode', 'Markdown', '演示文档', 'Python']
 ---
 

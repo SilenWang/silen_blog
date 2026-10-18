@@ -2,6 +2,7 @@
 title: My First Website and SEO & GEO
 categories: Coding
 date: 2026-03-21 16:29:53
+updated: 2026-03-22 01:39:19
 tags:
     - 'agent'
     - 'ai'

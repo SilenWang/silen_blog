@@ -2,6 +2,7 @@
 title: Using git worktree
 categories: Coding
 date: 2026-03-07 23:29:26
+updated: 2026-03-08 16:16:26
 keywords: [git, git worktree, multiple working directories, development environment, isolation]
 ---
 

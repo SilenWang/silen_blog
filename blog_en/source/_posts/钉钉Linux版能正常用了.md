@@ -2,6 +2,7 @@
 title: DingTalk for Linux Just Works Now
 categories: Others
 date: 2022-02-22 22:22:22
+updated: 2025-08-25 00:51:57
 tags: ['DingTalk']
 ---
 

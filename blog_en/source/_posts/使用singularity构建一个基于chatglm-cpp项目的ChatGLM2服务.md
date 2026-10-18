@@ -3,6 +3,7 @@ title: Build a ChatGLM2 Service Based on the chatglm.cpp Project Using Singulari
 tags: ['sinularity', 'container']
 categories: Coding
 date: 2023-08-16 07:08:46
+updated: 2025-08-25 00:51:57
 ---
 
 Actually, I've known about singularity for quite some time. As a container specifically designed for HPC (High Performance Computing), it's always been something I wanted to try out. However, just like other NGS technologies outside of Illumina, singularity hasn't gained much traction and it seems even harder to compete with Kubernetes, which is widely adopted by most cloud vendors... Of course, this doesn't really matter to me right now... We're still at least three or five years away from going cloud-based, so using it locally makes perfect sense.

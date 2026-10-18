@@ -2,6 +2,7 @@
 title: Developing a Data Dashboard with Taipy and the Pitfalls Encountered
 categories: Coding
 date: 2025-10-01 22:49:37
+updated: 2025-10-04 01:11:01
 tags: ['Taipy', 'Python']
 ---
 

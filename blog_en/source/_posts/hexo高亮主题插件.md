@@ -2,6 +2,7 @@
 title: hexo syntax highlighting plugin
 categories: Others
 date: 2018-09-05 21:53:50
+updated: 2025-03-06 10:01:51
 tags: ['hexo', 'syntax']
 ---
 

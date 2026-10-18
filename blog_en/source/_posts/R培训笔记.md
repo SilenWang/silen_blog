@@ -1,6 +1,7 @@
 ---
 title: R Training Notes
 date: 2018-07-29 00:35:55
+updated: 2025-08-25 00:51:57
 tags: ['R']
 categories: Coding
 ---

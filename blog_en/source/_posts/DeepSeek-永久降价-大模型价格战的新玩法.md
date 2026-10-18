@@ -2,6 +2,7 @@
 title: DeepSeek Finally Changed Its Pricing... Wait... A Price Cut?
 categories: AI
 date: 2026-05-29 13:00:00
+updated: 2026-05-31 01:25:23
 tags:
   - DeepSeek
   - AI

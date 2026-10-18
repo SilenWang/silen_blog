@@ -2,6 +2,7 @@
 title: 使用 DevPod 设置自部署的 Codespace
 categories: Coding
 date: 2025-10-28 05:49:54
+updated: 2025-10-29 01:13:58
 tags: [DevPod, DevOps, 开发环境, Docker, Podman]
 ---
 

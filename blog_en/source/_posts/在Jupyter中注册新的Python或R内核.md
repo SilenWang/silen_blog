@@ -2,6 +2,7 @@
 title: Registering New Python or R Kernels in Jupyter
 categories: Others
 date: 2023-01-17 12:53:40
+updated: 2025-08-25 00:51:57
 tags: ['jupyter']
 ---
 

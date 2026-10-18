@@ -1,6 +1,7 @@
 ---
 title: Building an Offline-Capable PWA with Pyodide
 date: 2026-05-28 07:30:00
+updated: 2026-05-30 19:31:51
 tags:
   - Pyodide
   - PWA

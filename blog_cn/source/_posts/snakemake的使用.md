@@ -2,6 +2,7 @@
 title: snakemake的使用
 categories: Bioinformatics
 date: 2018-10-30 12:40:03
+updated: 2026-04-28 21:32:41
 tags: ['生物信息', '流程管理', 'Python', 'snakemake', 'conda', 'singularity']
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "From Fydetab Duo to HP Chromebook X11: The Self-Cultivation of a Gadget Tinkerer"
 date: 2026-05-23 12:40:00
+updated: 2026-05-30 19:42:40
 tags:
   - Chromebook
   - Hardware

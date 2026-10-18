@@ -2,6 +2,7 @@
 title: 编写Dockerfile构建docker镜像
 categories: Script
 date: 2019-10-05 16:58:54
+updated: 2026-04-28 21:32:41
 tags: ['Docker', 'Dockerfile', '容器化', '镜像构建', 'R语言']
 ---
 

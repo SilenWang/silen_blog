@@ -2,6 +2,7 @@
 title: Fixing Missing Dependency Issues When Deploying Some Bioconductor R Packages with pixi
 categories: Bioinformatics
 date: 2025-10-29 03:37:56
+updated: 2025-10-29 12:09:54
 tags: [pixi, R, Bioconductor, dependency management]
 ---
 

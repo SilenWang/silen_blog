@@ -3,6 +3,7 @@ title: Chromebook Tinkering Report
 tags: ['chromeos', 'chromebook']
 categories: Others
 date: 2023-08-16 11:11:11
+updated: 2025-08-25 00:51:57
 ---
 
 Last year, I suddenly felt unhappy with the old laptop lying on my bed. It was a relatively expensive purchase for me (a big expense six months after graduation), and it had keyboard and touchpad issues that required two repairs costing another 1000 yuan each. Given its high cost, I didn't want to leave it idle, so I decided to give fydeos another chance. After some research, I found that both deepin and fydeos have evolved significantly in recent years. Fydeos has become more user-friendly, and they now offer Android as well as a Linux subsystem, making daily use much more accessible. Therefore, I decided to buy a [Lenovo Chromebook Duet](https://www.lenovo.com/us/en/p/laptops/lenovo/lenovo-edu-chromebooks/lenovo-chromebook-duet-10/zziczctct1x?orgRef=https%253A%252F%252Fwww.google.com%252F).

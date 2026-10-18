@@ -2,6 +2,7 @@
 title: 换新主题&Hexo框架搭建博客记录
 categories: Others
 date: 2019-03-12 00:20:02
+updated: 2026-04-28 21:32:41
 tags: ["博客搭建", "hexo", "主题更换", "Node.js", "git备份"]
 ---
 

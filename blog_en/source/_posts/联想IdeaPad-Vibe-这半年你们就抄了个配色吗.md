@@ -2,6 +2,7 @@
 title: "Lenovo IdeaPad Vibe: Come On, This Is All You Could Copy After Half a Year?"
 categories: Others
 date: 2026-08-15 22:00:00
+updated: 2026-08-15 16:55:07
 tags:
   - Rant
   - Lenovo

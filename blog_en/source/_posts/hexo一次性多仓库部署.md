@@ -2,6 +2,7 @@
 title: Hexo One-Time Multi-Repository Deployment
 categories: Others
 date: 2020-08-02 01:19:38
+updated: 2025-03-06 10:01:51
 tags: ['hexo', 'gitee']
 ---
 

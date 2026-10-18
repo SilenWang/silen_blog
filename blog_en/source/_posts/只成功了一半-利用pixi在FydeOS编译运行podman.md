@@ -2,6 +2,7 @@
 title: Half Success - Compiling and Running Podman on FydeOS Using Pixi
 categories: Others
 date: 2025-11-11 01:30:59
+updated: 2025-11-18 00:19:07
 tags: ['pixi', 'podman', 'FydeOS']
 ---
 

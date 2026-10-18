@@ -2,6 +2,7 @@
 title: Still Confused_Why Taipy's on_action Fails Without Wrapping
 categories: Coding
 date: 2025-12-17 21:45:09
+updated: 2025-12-17 21:46:24
 tags: ['taipy', 'callback']
 ---
 

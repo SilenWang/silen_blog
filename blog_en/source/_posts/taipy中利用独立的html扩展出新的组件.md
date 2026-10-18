@@ -2,6 +2,7 @@
 title: Extending Taipy with Standalone HTML Components
 categories: Coding
 date: 2025-12-17 21:42:31
+updated: 2025-12-17 21:46:24
 tags: ['taipy', 'html']
 ---
 

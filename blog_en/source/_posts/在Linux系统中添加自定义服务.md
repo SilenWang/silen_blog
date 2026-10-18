@@ -2,6 +2,7 @@
 title: Adding Custom Services in Linux Distributions
 categories: Others
 date: 2019-10-05 16:00:31
+updated: 2024-11-19 00:27:19
 tags: ['systemd']
 ---
 

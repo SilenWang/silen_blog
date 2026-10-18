@@ -2,6 +2,7 @@
 title: Switching Themes & Hexo Framework Blog Setup Notes
 categories: Others
 date: 2019-03-12 00:20:02
+updated: 2025-04-26 16:14:01
 tags: ["hexo"]
 ---
 
