@@ -2,6 +2,7 @@
 title: AI Agent Makes Open Source Software Easier to Leverage
 categories: AI
 date: 2026-06-03 22:00:00
+updated: 2026-06-15 00:34:25
 tags:
   - AI Agent
   - Open Source

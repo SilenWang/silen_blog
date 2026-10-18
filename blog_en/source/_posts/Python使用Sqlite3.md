@@ -2,6 +2,7 @@
 title: Use Sqlite3 in Python 
 categories: Coding
 date: 2018-08-26 23:54:24
+updated: 2025-11-22 21:39:56
 tags: ['Python', 'sqlite']
 ---
 

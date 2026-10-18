@@ -2,6 +2,7 @@
 title: 用外门邪道的方式使用snakemake实现流程控制
 categories: Coding
 date: 2018-11-17 12:47:57
+updated: 2026-04-28 21:32:41
 tags: ['流程控制', '任务管理', '脚本生成', 'snakemake', 'workflow']
 ---
 

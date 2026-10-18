@@ -2,6 +2,7 @@
 title: 编写R中的对象
 categories: Coding
 date: 2025-04-13 15:57:55
+updated: 2025-08-21 01:05:04
 tags: ['R语言', '面向对象', 'R6', 'S3', 'S4', 'rlang', 'object-oriented']
 ---
 

@@ -2,6 +2,7 @@
 title: Debugging Techniques in TypeScript and JavaScript
 categories: Coding
 date: 2025-10-13 23:08:14
+updated: 2025-10-14 00:04:42
 tags: ['Debugging', 'Typescript', 'Javascript', 'Frontend Development']
 ---
 

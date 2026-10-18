@@ -2,6 +2,7 @@
 title: Mac 与 Windows 文件共享排查记——顺便吐槽一下 Windows 的"屎山"设计
 categories: Others
 date: 2026-08-10 12:00:00
+updated: 2026-08-11 23:40:07
 tags: ['macOS', 'Windows', 'SMB', '文件共享', '网络排查', 'Win11', '吐槽']
 ---
 

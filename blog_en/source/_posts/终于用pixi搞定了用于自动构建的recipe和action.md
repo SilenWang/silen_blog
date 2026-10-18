@@ -2,6 +2,7 @@
 title: "Finally Got the Automated Build Recipe and Action Working with Pixi: Pitfalls and Solutions"
 categories: Others
 date: 2026-02-02 20:51:28
+updated: 2026-05-24 20:18:17
 tags: ['pixi', 'recipe', 'github action', 'rattler', 'conda']
 ---
 

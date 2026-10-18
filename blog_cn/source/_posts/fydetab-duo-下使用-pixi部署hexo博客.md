@@ -2,6 +2,7 @@
 title: fydetab duo 下使用 pixi部署hexo博客
 categories: Others
 date: 2024-08-04 13:04:05
+updated: 2026-04-28 21:32:41
 tags: ['FydeOS', 'Fydetab Duo', 'arm', 'Linux环境配置', 'hexo', 'pixi']
 ---
 

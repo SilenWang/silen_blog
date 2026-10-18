@@ -2,6 +2,7 @@
 title: 水一发:hexo一次性多仓库部署
 categories: Others
 date: 2020-08-02 01:19:38
+updated: 2026-04-28 21:32:41
 tags: ['hexo', '博客部署', 'gitee', 'github', 'git代理']
 ---
 

@@ -2,6 +2,7 @@
 title: Wait... Has Devpod Really Been Abandoned by Its Maintainers?
 categories: Others
 date: 2026-01-17 02:54:00
+updated: 2026-01-20 01:01:50
 tags: 
   - Devpod
   - Open Source Maintenance

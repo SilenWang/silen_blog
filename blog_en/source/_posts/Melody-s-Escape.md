@@ -1,6 +1,7 @@
 ---
 title: "Melody's Escape"
 date: 2016-06-05 17:06:41
+updated: 2025-08-25 00:51:57
 categories: ['Gaming']
 tags: ["Video game", "Melody's Escape", "Idle game", "Black history plan"]
 

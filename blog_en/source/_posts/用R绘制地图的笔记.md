@@ -1,6 +1,7 @@
 ---
 title: Notes on Drawing Maps with R
 date: 2018-07-29 00:38:09
+updated: 2025-08-25 00:51:57
 tags: [R]
 categories: Coding
 ---

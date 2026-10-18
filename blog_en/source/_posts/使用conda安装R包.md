@@ -2,6 +2,7 @@
 title: Installing R Packages with Conda and Configuring Jupyter
 categories: Others
 date: 2018-08-28 22:37:57
+updated: 2025-03-06 10:01:51
 tags: ['R', 'conda', 'jupyter']
 ---
 

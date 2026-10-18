@@ -2,6 +2,7 @@
 title: Dash Implementation for Interactive Data Point Selection and Calculation
 categories: Coding
 date: 2022-03-13 03:09:08
+updated: 2025-08-25 00:51:57
 tags: ['ploty', 'dash', 'python']
 ---
 

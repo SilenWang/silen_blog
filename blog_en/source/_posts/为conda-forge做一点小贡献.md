@@ -2,6 +2,7 @@
 title: Making a Small Contribution to Conda-forge
 categories: Others
 date: 2026-01-09 10:03:56
+updated: 2026-01-10 14:58:37
 tags: ['conda-forge', 'tree_sitter_languages', 'PR', 'conda', 'feedstock']
 ---
 

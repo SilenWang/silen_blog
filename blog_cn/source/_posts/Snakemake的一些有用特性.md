@@ -2,6 +2,7 @@
 title: Snakemake的一些有用特性
 categories: Coding
 date: 2019-03-06 23:41:40
+updated: 2025-08-21 01:05:04
 tags: ['Python', 'snakemake', '工作流管理', '资源控制', '任务分组', 'workflow', 'resource management', 'task grouping']
 ---
 

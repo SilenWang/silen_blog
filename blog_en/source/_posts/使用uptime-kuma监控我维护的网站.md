@@ -2,6 +2,7 @@
 title: Monitoring My Websites with Uptime Kuma
 categories: Coding
 date: 2025-10-09 15:30:29
+updated: 2025-10-11 02:26:44
 tags: [Monitoring, Uptime-Kuma, Website Maintenance, Service Monitoring]
 ---
 

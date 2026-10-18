@@ -2,6 +2,7 @@
 title: 实操写一个自动部署的github_action
 categories: Coding
 date: 2025-12-17 01:44:13
+updated: 2025-12-17 01:50:17
 tags: ['github action', 'CD', '自动部署']
 ---
 

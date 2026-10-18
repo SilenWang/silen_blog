@@ -2,6 +2,7 @@
 title: 试来试去，还是 LobeHub
 categories: Coding
 date: 2026-04-06 00:32:41
+updated: 2026-04-07 00:56:13
 tags:
   - AI Agent
   - LobeHub

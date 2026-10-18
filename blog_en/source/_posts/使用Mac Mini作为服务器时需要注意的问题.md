@@ -2,6 +2,7 @@
 title: Things to Note When Using a Mac Mini as a Server
 categories: Others
 date: 2026-06-14 22:00:00
+updated: 2026-06-15 00:47:34
 tags:
 - Mac Mini
 - Server

@@ -2,6 +2,7 @@
 title: 内置 AI 的 SSH 客户端——Netcatty
 categories: Others
 date: 2026-08-27 10:00:00
+updated: 2026-08-27 22:47:58
 tags: ['Netcatty', 'SSH', 'SFTP', 'AI Agent', '开源', '终端']
 ---
 

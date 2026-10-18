@@ -2,6 +2,7 @@
 title: 还是搞不懂_为什么taipy的on_action不嵌套一下就报错
 categories: Coding
 date: 2025-12-17 21:45:09
+updated: 2025-12-17 21:46:24
 tags: ['taipy', 'callback']
 ---
 

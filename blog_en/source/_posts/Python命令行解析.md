@@ -2,6 +2,7 @@
 title: Python Command Line Parsing
 categories: Coding
 date: 2018-10-22 12:12:50
+updated: 2025-08-25 00:51:57
 tags: ['Python', 'argparse', 'Argument Parsing']
 ---
 

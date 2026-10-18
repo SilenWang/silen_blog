@@ -2,6 +2,7 @@
 title: The World Changes Fast – LeanCloud Is Shutting Down
 categories: Others
 date: 2026-06-30 22:00:00
+updated: 2026-07-04 14:50:22
 tags:
   - LeanCloud
   - Tech Evolution

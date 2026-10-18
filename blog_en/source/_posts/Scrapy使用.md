@@ -2,6 +2,7 @@
 title: Basic Usage of Scrapy
 categories: Script
 date: 2022-03-13 03:01:14
+updated: 2025-03-06 10:01:51
 tags: ['Scrapy', 'Crawler']
 ---
 

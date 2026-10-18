@@ -2,6 +2,7 @@
 title: 使用conda安装R包及jupyter
 categories: Others
 date: 2018-08-28 22:37:57
+updated: 2026-04-28 21:32:41
 tags: ['R语言', 'conda', 'jupyter', '包管理', '环境配置', '远程访问', 'R', 'jupyter notebook']
 ---
 

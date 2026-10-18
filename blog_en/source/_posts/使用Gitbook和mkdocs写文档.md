@@ -2,6 +2,7 @@
 title: 'Using Gitbook and mkdocs for Documentation'
 categories: Others
 date: 2019-07-07 22:13:31
+updated: 2025-04-26 16:14:01
 tags: ['documentation', 'gitbook', 'mkdocs']
 ---
 

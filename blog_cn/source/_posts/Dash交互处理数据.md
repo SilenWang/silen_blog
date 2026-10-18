@@ -2,6 +2,7 @@
 title: Dash实现从图形上取数据点进行计算
 categories: Coding
 date: 2022-03-13 03:09:08
+updated: 2026-04-28 21:32:41
 tags: ['数据可视化', '交互式分析', 'Dash', 'Plotly', 'Python']
 ---
 

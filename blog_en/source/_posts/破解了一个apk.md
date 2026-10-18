@@ -2,6 +2,7 @@
 title: Cracked an APK
 categories: Coding
 date: 2020-02-02 21:51:39
+updated: 2025-08-25 00:51:57
 tags: ["Apktools", "crack"]
 ---
 

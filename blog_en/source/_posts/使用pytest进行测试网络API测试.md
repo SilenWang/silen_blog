@@ -2,6 +2,7 @@
 title: Testing Network APIs with pytest
 categories: Others
 date: 2025-06-09 00:25:03
+updated: 2025-08-25 00:51:57
 tags: ['python', 'pytest']
 ---
 

@@ -2,6 +2,7 @@
 title: Logistic Regression in R
 categories: Statistic
 date: 2019-03-16 14:07:19
+updated: 2025-08-25 00:51:57
 tags: ["R"]
 ---
 

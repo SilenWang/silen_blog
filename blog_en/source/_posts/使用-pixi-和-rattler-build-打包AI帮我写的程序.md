@@ -2,6 +2,7 @@
 title: Packaging an AI-Assisted Program with pixi and rattler-build
 categories: Coding
 date: 2026-01-25 20:50:24
+updated: 2026-01-26 09:11:36
 tags: [pixi, rattler-build, conda-build, Go, devssh]
 ---
 

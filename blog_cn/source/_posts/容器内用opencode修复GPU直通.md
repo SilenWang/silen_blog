@@ -2,6 +2,7 @@
 title: 容器内用 opencode + deepseek-v4-flash 修复 GPU 直通
 categories: Coding
 date: 2026-08-04 16:00:00
+updated: 2026-08-05 00:14:22
 tags:
   - opencode
   - deepseek

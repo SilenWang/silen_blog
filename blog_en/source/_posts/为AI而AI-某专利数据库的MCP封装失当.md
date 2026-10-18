@@ -1,6 +1,7 @@
 ---
 title: "Moving Too Fast, Inevitably Building AI for AI's Sake"
 date: 2026-10-17 23:30:00
+updated: 2026-10-18 01:22:44
 tags: ['AI', 'MCP', 'Agent', 'Patent', 'Rant']
 categories: AI
 ---

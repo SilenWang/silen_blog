@@ -2,6 +2,7 @@
 title: Multica - AI原生的任务管理平台
 categories: Others
 date: 2026-04-10 13:04:05
+updated: 2026-04-28 21:32:41
 tags: ['Multica', 'AI', '任务管理', '编程助手', 'Claude']
 ---
 

@@ -2,6 +2,7 @@
 title: Flask Usage Record
 categories: Coding
 date: 2020-08-09 01:25:45
+updated: 2025-08-25 00:51:57
 tags: ['Flask', 'Python']
 ---
 

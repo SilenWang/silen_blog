@@ -2,6 +2,7 @@
 title: teamviewer+ssh jump = VPN
 categories: Coding
 date: 2018-12-23 23:00:13
+updated: 2025-08-25 00:51:57
 tags: ['ssh', 'teamviewer']
 ---
 

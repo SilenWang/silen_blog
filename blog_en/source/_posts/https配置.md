@@ -2,6 +2,7 @@
 title: Setting up HTTPS using Caddy
 categories: Others
 date: 2019-05-07 21:59:51
+updated: 2025-03-06 10:01:51
 tags: ["caddy", "https"]
 ---
 

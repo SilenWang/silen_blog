@@ -2,6 +2,7 @@
 title: 使用Pathview绘图踩坑记录
 categories: Bioinformatics
 date: 2026-05-28 16:00:00
+updated: 2026-05-31 00:44:38
 tags: ['R语言', 'pathview', 'KEGG', '数据可视化', 'DEG分析']
 ---
 

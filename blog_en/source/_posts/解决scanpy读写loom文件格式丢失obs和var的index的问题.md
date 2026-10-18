@@ -2,6 +2,7 @@
 title: Fixing the Issue of Lost obs and var Index When Reading/Writing Loom Files with scanpy
 categories: Bioinformatics
 date: 2025-10-28 17:22:12
+updated: 2025-10-29 10:41:00
 tags: ['scanpy', 'loom', 'adata']
 ---
 

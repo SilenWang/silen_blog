@@ -1,6 +1,7 @@
 ---
 title: 利用 Pyodide 构建可离线使用的 PWA 应用
 date: 2026-05-28 07:30:00
+updated: 2026-05-30 18:45:42
 tags:
   - Pyodide
   - PWA

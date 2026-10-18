@@ -2,6 +2,7 @@
 title: Testing Conda Inside Docker
 categories: Coding
 date: 2018-10-06 19:01:12
+updated: 2025-08-25 00:51:57
 tags: ['docker', 'conda']
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: 从 Fydetab Duo 到 HP Chromebook X11：一个设备折腾党的自我修养
 date: 2026-05-23 12:40:00
+updated: 2026-05-30 19:42:40
 tags:
   - Chromebook
   - 硬件

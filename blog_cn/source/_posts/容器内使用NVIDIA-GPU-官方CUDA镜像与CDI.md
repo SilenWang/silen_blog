@@ -2,6 +2,7 @@
 title: 容器内使用 NVIDIA GPU 的两种方式：官方 CUDA 镜像 vs CDI
 categories: Coding
 date: 2026-08-05 22:00:00
+updated: 2026-08-05 00:52:03
 tags:
   - NVIDIA
   - CUDA

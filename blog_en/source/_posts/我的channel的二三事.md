@@ -1,6 +1,7 @@
 ---
 title: About My Channel
 date: 2026-05-08 07:00:00
+updated: 2026-05-16 17:18:33
 tags:
   - channel
   - pixi

@@ -2,6 +2,7 @@
 title: 基于opencode的多agent工作流配置
 categories: Coding
 date: 2026-03-08 16:17:24
+updated: 2026-04-28 21:32:41
 keywords: [opencode, subagent, skill, 多agent工作流, AI工作流, 自动化]
 ---
 

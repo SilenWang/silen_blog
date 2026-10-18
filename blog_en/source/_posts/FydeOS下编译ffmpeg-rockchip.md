@@ -2,6 +2,7 @@
 title: Compiling ffmpeg-rockchip on FydeOS
 categories: Others
 date: 2025-10-02 16:50:39
+updated: 2025-10-04 01:11:01
 tags: ['FydeOS', 'ffmpeg']
 ---
 

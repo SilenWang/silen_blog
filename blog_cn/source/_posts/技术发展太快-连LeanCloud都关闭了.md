@@ -2,6 +2,7 @@
 title: 世界变化快，LeanCloud要关闭了
 categories: Others
 date: 2026-06-30 22:00:00
+updated: 2026-07-04 14:48:43
 tags:
   - LeanCloud
   - 技术变迁

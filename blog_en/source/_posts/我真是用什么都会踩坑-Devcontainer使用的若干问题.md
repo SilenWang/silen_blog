@@ -2,6 +2,7 @@
 title: I always stumble on whatever I use – several issues with Devcontainer
 categories: Others
 date: 2025-12-19 22:27:38
+updated: 2025-12-20 01:44:14
 tags: ['devcontainer', 'devpod', 'docker', 'git']
 ---
 

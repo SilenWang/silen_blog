@@ -2,6 +2,7 @@
 title: Snakemake的动态解析特性
 categories: Bioinformatics
 date: 2019-11-24 23:00:31
+updated: 2025-08-25 01:23:47
 tags: ['Python', '工作流管理', '生物信息学', '并行计算', 'snakemake', 'checkpoint', 'DAG']
 ---
 

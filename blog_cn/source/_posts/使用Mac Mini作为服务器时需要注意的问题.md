@@ -2,6 +2,7 @@
 title: 使用 Mac Mini 作为服务器时需要注意的问题
 categories: Others
 date: 2026-06-14 22:00:00
+updated: 2026-06-15 00:47:34
 tags:
 - Mac Mini
 - 服务器

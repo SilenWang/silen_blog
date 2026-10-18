@@ -2,6 +2,7 @@
 title: Netcatty - An SSH Client with Built-in AI
 categories: Others
 date: 2026-08-27 10:00:00
+updated: 2026-08-27 22:55:10
 tags: ['Netcatty', 'SSH', 'SFTP', 'AI Agent', 'Open Source', 'Terminal']
 ---
 

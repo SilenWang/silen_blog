@@ -2,6 +2,7 @@
 title: 使用minicap从手机中截图
 categories: Others
 date: 2018-08-28 12:05:17
+updated: 2026-04-28 21:32:41
 tags: ['安卓', '截图', 'minicap', 'adb', 'android']
 ---
 

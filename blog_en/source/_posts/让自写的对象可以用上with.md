@@ -2,6 +2,7 @@
 title: Let Custom Objects Use the 'with' Statement
 categories: Coding
 date: 2019-11-14 18:56:24
+updated: 2025-08-25 00:51:57
 tags: ['Python']
 ---
 

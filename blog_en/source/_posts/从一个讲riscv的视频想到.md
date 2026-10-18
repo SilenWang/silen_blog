@@ -2,6 +2,7 @@
 title: Thoughts Inspired by a Video About RISC-V
 categories: Others
 date: 2025-11-22 22:22:47
+updated: 2025-11-22 22:56:54
 tags: ['RISC-V', 'SAS', 'R', 'Linux']
 ---
 

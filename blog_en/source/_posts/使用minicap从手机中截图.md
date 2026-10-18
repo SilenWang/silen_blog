@@ -2,6 +2,7 @@
 title: Using minicap to Capture Screenshots from a Phone
 categories: Others
 date: 2018-08-28 12:05:17
+updated: 2025-03-06 10:01:51
 tags: ['android', 'adb', 'minicap']
 ---
 

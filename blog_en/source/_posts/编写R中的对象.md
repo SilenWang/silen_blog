@@ -2,6 +2,7 @@
 title: Writing Objects in R
 categories: Coding
 date: 2025-04-13 15:57:55
+updated: 2025-08-25 00:51:57
 tags: ['rlang', 'object']
 ---
 

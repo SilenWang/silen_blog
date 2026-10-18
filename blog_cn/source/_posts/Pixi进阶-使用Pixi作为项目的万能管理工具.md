@@ -2,6 +2,7 @@
 title: Pixi进阶：使用Pixi作为数据科学/生物信息学/web开发的万能管理工具
 categories: Coding
 date: 2025-12-17 21:56:40
+updated: 2026-04-28 21:32:41
 tags: [Pixi, 依赖管理, 数据科学, 生物信息学, 跨平台]
 ---
 

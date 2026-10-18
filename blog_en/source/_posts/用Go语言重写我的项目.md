@@ -2,6 +2,7 @@
 title: Rewriting My Project in Go Language
 categories: Coding
 date: 2019-06-02 14:46:49
+updated: 2025-08-25 00:51:57
 tags: ["golang"]
 ---
 

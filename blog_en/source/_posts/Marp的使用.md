@@ -2,6 +2,7 @@
 title: 'Using Marp'
 categories: Others
 date: 2022-06-22 15:40:28
+updated: 2025-08-25 00:51:57
 tags: ['Marp', 'Python']
 ---
 

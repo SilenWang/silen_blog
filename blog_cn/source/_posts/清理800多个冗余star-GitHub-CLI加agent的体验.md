@@ -2,6 +2,7 @@
 title: 清理 800+ 冗余 star——GitHub CLI 加 agent 的体验
 categories: Others
 date: 2026-08-05 22:00:00
+updated: 2026-08-05 23:51:45
 tags: ['GitHub', 'GitHub CLI', 'gh', 'AI Agent', 'star', 'Multica', '清理']
 ---
 

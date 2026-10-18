@@ -2,6 +2,7 @@
 title: "Pixi Advanced: Using Pixi as a Universal Management Tool for Data Science/Bioinformatics/Web Development"
 categories: Coding
 date: 2025-12-17 21:56:40
+updated: 2025-12-21 03:20:42
 tags: [Pixi, Dependency Management, Data Science, Bioinformatics, Cross‑Platform]
 ---
 

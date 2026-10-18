@@ -2,6 +2,7 @@
 title: R中的逻辑回归
 categories: Statistic
 date: 2019-03-16 14:07:19
+updated: 2026-04-28 21:32:41
 tags: ["R语言", "逻辑回归", "机器学习", "统计分析", "logistic regression", "machine learning"]
 ---
 

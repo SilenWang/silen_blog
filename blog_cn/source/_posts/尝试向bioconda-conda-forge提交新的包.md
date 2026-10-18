@@ -2,6 +2,7 @@
 title: 尝试向Bioconda/Conda‑Forge提交新的包
 categories: Bioinformatics
 date: 2026-01-11 17:15:43
+updated: 2026-01-20 01:01:50
 tags: ["conda-forge", "Bioconda", "singler-py", "biocutils", "biocframe", "summarizedexperiment", "singlecellexperiment", "包管理", "依赖解析", "grayskull", "conda-build"]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: 近期 AI 工具使用体验与吐槽：Multica、MiniMax、Gemini、Notebooklm
 date: 2026-05-16 07:30:00
+updated: 2026-05-16 15:51:49
 tags:
   - AI
   - Multica

@@ -2,6 +2,7 @@
 title: "Two Ways to Use NVIDIA GPU in Containers: Official CUDA Images vs CDI"
 categories: Coding
 date: 2026-08-05 22:00:00
+updated: 2026-08-22 16:23:52
 tags:
   - NVIDIA
   - CUDA

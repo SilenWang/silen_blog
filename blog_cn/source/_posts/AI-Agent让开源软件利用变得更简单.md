@@ -2,6 +2,7 @@
 title: AI Agent 让开源软件利用变得更简单
 categories: AI
 date: 2026-06-03 22:00:00
+updated: 2026-06-15 00:58:33
 tags:
   - AI Agent
   - 开源

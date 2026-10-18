@@ -2,6 +2,7 @@
 title: Pitfalls When Plotting with Pathview
 categories: Bioinformatics
 date: 2026-05-28 16:00:00
+updated: 2026-05-31 00:47:12
 tags: ['R', 'pathview', 'KEGG', 'data visualization', 'DEG analysis']
 ---
 

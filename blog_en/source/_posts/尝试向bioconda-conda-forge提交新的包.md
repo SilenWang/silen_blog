@@ -2,6 +2,7 @@
 title: Trying to Submit a New Package to Bioconda/Conda‑Forge
 categories: Bioinformatics
 date: 2026-01-11 17:15:43
+updated: 2026-01-20 01:01:50
 tags: ["conda-forge", "Bioconda", "singler-py", "biocutils", "biocframe", "summarizedexperiment", "singlecellexperiment", "package management", "dependency resolution", "grayskull", "conda-build"]
 ---
 

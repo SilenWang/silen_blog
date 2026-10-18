@@ -2,6 +2,7 @@
 title: Using Syncthing for File Synchronization
 categories: Others
 date: 2019-08-18 00:03:33
+updated: 2025-03-06 10:01:51
 tags: ['Syncthing']
 ---
 

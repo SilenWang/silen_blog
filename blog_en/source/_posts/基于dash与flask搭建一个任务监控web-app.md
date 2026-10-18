@@ -2,6 +2,7 @@
 title: Building a Task Monitoring Web App with Dash and Flask
 categories: Coding
 date: 2021-06-21 01:24:23
+updated: 2025-08-25 00:51:57
 tags: ['python', 'flask', 'dash', 'mongoDB', 'pymongo', 'flasgger']
 ---
 

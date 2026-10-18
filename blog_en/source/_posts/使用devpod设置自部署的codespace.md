@@ -2,6 +2,7 @@
 title: Setting Up Self-Hosted Codespaces with DevPod
 categories: Coding
 date: 2025-10-28 05:49:54
+updated: 2025-10-29 01:11:00
 tags: [DevPod, DevOps, Development Environment, Docker, Podman]
 ---
 

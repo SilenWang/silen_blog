@@ -2,6 +2,7 @@
 title: Attempting to Modify the Terminal App in ChromeOS (Part 2)
 categories: Coding
 date: 2025-09-05 01:53:10
+updated: 2025-09-07 01:10:31
 tags: ['chromeos', 'terminal', 'libapp', 'terminal app']
 ---
 

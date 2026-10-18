@@ -2,6 +2,7 @@
 title: 尝试修改chromeos中的终端app(上)
 categories: Coding
 date: 2025-08-21 00:13:10
+updated: 2026-04-28 21:32:41
 tags: ['chromeos', 'terminal', 'libapp', '终端']
 ---
 

@@ -2,6 +2,7 @@
 title: 修复pixi部署部分bioconda_r包后出现的缺依赖问题
 categories: Bioinformatics
 date: 2025-10-29 03:37:56
+updated: 2025-10-29 12:09:54
 tags: [pixi, R, Bioconductor, 依赖管理]
 ---
 

@@ -2,6 +2,7 @@
 title: MultiQC简单使用
 categories: Bioinformatics
 date: 2019-07-27 21:02:16
+updated: 2026-04-28 21:32:41
 tags: 
 - NGS
 - 质控工具

@@ -2,6 +2,7 @@
 title: docker使用记录
 categories: Others
 date: 2018-09-02 20:15:02
+updated: 2026-04-28 21:32:41
 tags: ['docker', '容器技术', 'R语言', '镜像配置', 'sscClust', 'CentOS']
 ---
 

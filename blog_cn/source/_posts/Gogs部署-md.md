@@ -1,6 +1,7 @@
 ---
 title: Gogs部署
 date: 2018-09-21 18:32:00
+updated: 2026-04-28 21:32:41
 tags: [Gogs部署, Docker, Git托管, SSH配置, VPS, gogs, docker-compose, ssh]
 categories: Others
 ---

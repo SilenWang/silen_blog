@@ -2,6 +2,7 @@
 title: 使用github_action编译arm版的theia_ide
 categories: Script
 date: 2025-06-16 23:20:58
+updated: 2026-04-28 21:32:41
 tags: ['ARM', 'FydeOS', 'ChromeOS', 'GitHub Actions', 'Codespaces', 'theia-ide']
 ---
 

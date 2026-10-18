@@ -2,6 +2,7 @@
 title: 使用taipy开发一个数据面板以及遇到的坑
 categories: Coding
 date: 2025-10-01 22:49:37
+updated: 2026-04-28 21:32:41
 tags: ['Taipy', 'Python']
 ---
 

@@ -2,6 +2,7 @@
 title: python中的itertools
 categories: Coding
 date: 2019-02-13 00:37:27
+updated: 2026-04-28 21:32:41
 tags: ["Python", "迭代器", "生成器", "itertools", "groupby", "tee", "chain"]
 ---
 

@@ -2,6 +2,7 @@
 title: SGE系统使用笔记
 categories: Bioinformatics
 date: 2018-08-30 09:36:38
+updated: 2026-04-28 21:32:41
 tags: ['SGE', '网格引擎', 'qsub', 'qlogin', '集群计算', 'sge']
 ---
 

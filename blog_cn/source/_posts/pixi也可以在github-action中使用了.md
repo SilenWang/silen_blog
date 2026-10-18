@@ -2,6 +2,7 @@
 title: pixi也可以在github_action中使用了
 categories: Coding
 date: 2025-12-06 01:43:09
+updated: 2026-04-28 21:32:41
 tags: ['github action', 'pixi']
 ---
 

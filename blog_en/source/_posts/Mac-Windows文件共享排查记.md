@@ -2,6 +2,7 @@
 title: Troubleshooting File Sharing Between Mac and Windows — and a Rant About Windows' Messy Design
 categories: Others
 date: 2026-08-10 12:00:00
+updated: 2026-08-11 23:58:45
 tags: ['macOS', 'Windows', 'SMB', 'File Sharing', 'Network Troubleshooting', 'Win11', 'rant']
 ---
 

@@ -2,6 +2,7 @@
 title: How AI Has Changed My Life This Year
 categories: Others
 date: 2026-01-06 22:30:10
+updated: 2026-01-10 19:31:33
 tags:
   - AI
   - Automation

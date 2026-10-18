@@ -1,6 +1,7 @@
 ---
 title: API Incompatibility – OpenAI and Anthropic's "Printer Ink Monopoly" Strategy
 date: 2026-07-01 22:00:00
+updated: 2026-07-06 00:29:53
 tags:
 - AI
 - API

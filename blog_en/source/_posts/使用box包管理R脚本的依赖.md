@@ -2,6 +2,7 @@
 title: Managing R Script Dependencies with the box Package
 categories: Coding
 date: 2025-04-13 15:07:54
+updated: 2025-08-25 00:51:57
 tags: ['box', 'rlang']
 ---
 

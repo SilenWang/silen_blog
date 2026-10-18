@@ -2,6 +2,7 @@
 title: Some Magic Methods in Python
 categories: Coding
 date: 2019-11-25 23:34:06
+updated: 2025-08-25 00:51:57
 tags: ['Python']
 ---
 

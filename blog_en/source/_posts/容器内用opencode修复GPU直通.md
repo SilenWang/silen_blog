@@ -2,6 +2,7 @@
 title: Fixing GPU Passthrough in a Container with opencode + deepseek-v4-flash
 categories: Coding
 date: 2026-08-04 16:00:00
+updated: 2026-08-05 00:19:52
 tags:
   - opencode
   - deepseek

@@ -2,6 +2,7 @@
 title: git worktree 的使用
 categories: Coding
 date: 2026-03-07 23:29:26
+updated: 2026-04-28 21:32:41
 keywords: [git, git worktree, 多工作目录, 开发环境, 隔离]
 ---
 

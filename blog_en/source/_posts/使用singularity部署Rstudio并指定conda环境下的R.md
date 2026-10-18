@@ -3,6 +3,7 @@ title: Deploying RStudio with Singularity and a Conda Environment
 tags: ['conda', 'rstudio', 'singularity']
 categories: Coding
 date: 2023-07-26 16:13:50
+updated: 2025-08-25 00:51:57
 ---
 
 Today, I needed to deploy an RStudio server for someone else. Here are the steps and key points of the deployment.

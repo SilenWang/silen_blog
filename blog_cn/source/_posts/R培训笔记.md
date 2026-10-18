@@ -1,6 +1,7 @@
 ---
 title: R培训笔记
 date: 2018-07-29 00:35:55
+updated: 2025-08-21 01:05:04
 tags: ['R语言','数据分析','统计绘图','数据操作','培训笔记','R','data analysis','statistics']
 categories: Coding
 ---

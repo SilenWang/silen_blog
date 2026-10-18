@@ -2,6 +2,7 @@
 title: FydeOS下编译ffmpeg-rockchip
 categories: Others
 date: 2025-10-02 16:50:39
+updated: 2025-10-02 20:06:59
 tags: ['FydeOS', 'ffmpeg']
 ---
 

@@ -2,6 +2,7 @@
 title: Cherry-pick is Everywhere
 categories: Coding
 date: 2026-01-20 00:05:43
+updated: 2026-01-26 09:11:36
 tags:
   - Git
   - Version Control

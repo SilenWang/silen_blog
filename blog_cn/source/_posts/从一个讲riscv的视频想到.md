@@ -2,6 +2,7 @@
 title: 从一个讲RISC-V的视频想到的
 categories: Others
 date: 2025-11-22 22:22:47
+updated: 2026-04-28 21:32:41
 tags: ['RISC-V', 'SAS', 'R', 'Linux']
 ---
 
