@@ -30,6 +30,11 @@ python = "3.*"
 jieba = "*"
 git = ">=2.39.1,<3"
 
+[feature.blog.target.linux-64.dependencies]
+make = "*"
+gcc = "*"
+gxx = "*"
+
 [feature.blog.target.linux-aarch64.dependencies]
 make = "*"
 gcc = "*"

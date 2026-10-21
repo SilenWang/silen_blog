@@ -1,2 +1,5 @@
 # GitHub syntax highlighting
 pixi.lock linguist-language=YAML linguist-generated=true
+
+# pixi.toml 历史上以 CRLF 保存，CR 不算行尾空白
+pixi.toml whitespace=cr-at-eol
