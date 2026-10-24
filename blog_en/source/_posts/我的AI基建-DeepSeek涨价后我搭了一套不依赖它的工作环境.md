@@ -63,27 +63,29 @@ Self-building the runtime container, the first day settled the obvious: agents d
 Everything after that was tuition:
 
 - **Installing one agent is a campaign of its own.** Today it's the Codex CLI and CodeBuddy; tomorrow it's Claude Code plus a CLI/TUI utility for switching keys, MCP servers, and providers between several assistants (the very existence of such a tool says something: client configs got messy enough to deserve a dedicated manager).
-- **Sandbox features don't work in the container.** Agents that ship with built-in sandboxing assume a full OS is theirs; the first thing to do inside a container is often turning those features off, or they won't start.
+- **Sandbox features are a redundant layer in a container.** Agents that ship with built-in sandboxing assume a full OS with other things running on it; the first thing to do inside a container is often turning those features off, or they can't even read the files they're meant to read. I eventually got clear on what this actually is: the container *is* the isolation boundary. Stacking a sandbox on top isn't extra safety, it's an agent bumping into walls all day.
 - **Containers inside containers.** When an agent needs Docker, host-side "Docker-in-Docker" support has to be explicitly configured — it's not on by default.
 - **Config has to actually externalise.** Originally the key and URL were hardcoded — one vendor only. Only later did it become a config file that can hold multiple keys and specify which vendor a given agent should use. Small step, but it's the client-side foundation of the whole multi-basket strategy.
 - **Rules must apply to all agents at once.** I added a "write the least code" rule plugin for every agent in the container, configured in the image/init flow so each new container grows up with it. Don't underestimate this: agent behaviour rules enforced by each repo adding its own files will drift sooner or later.
-- **Protocol pass-through bugs surface on this layer.** Running dsh with v4 pro: ordinary chat works, but entering thinking mode gets rejected upstream — `The reasoning_content in the thinking mode must be passed back to the API`. In thinking mode the reasoning content must be passed back to the API, and this request chain doesn't pass it back. *Same model, same vendor, different runtime — broken.* Gateways can't help here; you inspect request bodies layer by layer.
+- **Protocol pass-through bugs surface on this layer.** Running dsh with v4 pro: ordinary chat works, but entering thinking mode gets rejected upstream — `The reasoning_content in the thinking mode must be passed back to the API`. In thinking mode the reasoning content must be passed back to the API, and this request chain doesn't pass it back. *Same model, same vendor, different runtime — broken.* Gateways can't help here; you inspect request bodies layer by layer. Two more things piled onto that line afterwards: the runtime's own upgrade broke its plugin interface, and its child-process environment scrubbing wiped the credential the platform CLI needed, so the agent couldn't even call the platform. Two weekends later the resolution was to **delete it from the runtime entirely** — saving money with a runtime that's still unstable is a ledger that doesn't balance.
 
 The real lesson of this layer: **a runtime isn't a program, it's a pile of conventions.** Every new agent reconnects the questions "where does its config live, what is it allowed to change, what permissions does it assume".
 
 ### Vendors: old pitfalls unfixed, new ones keep coming
 
-omniroute's three pitfalls (search interception not firing, brand-new vendors not syncing quota, heavy concurrent tasks disabled by default) are already covered in {% post_link Omniroute-DeepSeek涨价后-一个Key管起所有Token-Plan [the previous post] %}, so I won't repeat them. The real lesson of this layer: **multi-basket costs more to maintain than expected** — more baskets means more glue between baskets, and the glue itself becomes a new single point of failure.
+omniroute's three pitfalls (search interception not firing, brand-new vendors not syncing quota, heavy concurrent tasks disabled by default) are already covered in {% post_link Omniroute-DeepSeek涨价后-一个Key管起所有Token-Plan [the previous post] %}, so I won't repeat them. The real lesson of this layer: **multi-basket costs more to maintain than expected** — more baskets means more glue between baskets, and the glue itself becomes a new single point of failure. That prediction then came true on the glue: omniroute, the middleware layer itself, was eventually cut out of the runtime altogether, upstream consolidated into new-api, falling back to the official API directly when no token is configured. Skipping a layer is tempting, but maintaining two chains always costs more than maintaining one.
 
 ### The protocol layer: the one a weekend couldn't fix
 
 This is where I spent the most time and where this article has its most pitfalls. In detail:
 
-**Generation 1: direct to the official API.** Container config pointed straight at DeepSeek's official API — Claude Code via Anthropic mode, Codex via OpenAI mode, plus a separately configured vision fallback model. Functionally fine. But base_url was scattered across every agent's config, and each new model in the gateway meant editing every client one by one. At one point I did a big flip: all traffic back to the official API, default model switched to a vision experimental build (keeping the stable-looking name in the UI). The day I counted how many places that touched — that's when I decided not to live like that anymore.
+**Generation 1: direct to the official API.** Container config pointed straight at DeepSeek's official API — Claude Code via Anthropic mode, Codex via OpenAI mode, plus a separately configured vision fallback model. Functionally fine. But base_url was scattered across every agent's config, and each new model in the gateway meant editing every client one by one — and that is still happening today: when upstream ships a model (say `deepseek-v4.1-flash`), registering it in the gateway is only half the job; every client's model list then has to declare again whether it takes image input. **"This model can see" should be defined in exactly one place; in practice it's five.** At one point I did a big flip: all traffic back to the official API, default model switched to a vision experimental build (keeping the stable-looking name in the UI). The day I counted how many places that touched — that's when I decided not to live like that anymore.
 
 **Generation 2 (omniroute) solved "which vendor" but not "which protocol".** It unified vendors into one entry point and one key — genuinely nice — but left the protocol debt untouched: it assumes client and upstream speak the same dialect, and mine don't.
 
 **Generation 3 died on `responses`.** I moved to new-api expecting more thorough protocol unification; it turns out upstream new-api doesn't support OpenAI's `responses` protocol — and Codex speaks precisely that. Configure the direct address locally, and the request simply isn't supported. No config workaround: the two protocol stacks don't overlap. (This incompatibility is an industry-wide tax — I ranted about it in {% post_link API-互不兼容-OpenAI和Anthropic的打印机耗材垄断策略 [the printer-ink monopoly post] %}.)
+
+What made it worse is that it **fails quietly**. The bridge decides whether to enable itself by probing upstream at startup: if I can connect directly, there's no need for an extra translation layer. But new-api answers `POST /v1/responses` with HTTP 400 — and by common sense a 400 means "your request is malformed", so the probe filed it as inconclusive and skipped the bridge; meanwhile Codex kept going direct with `responses`, so every request failed. Only after changing it to "enable the bridge whenever the answer isn't 200" did it stabilise. **Bad news in the protocol layer often looks like good news**: no stack trace, no explicit error, just a layer that should have been on and wasn't.
 
 **Generation 4: add CLIProxyAPI purely to translate.**
 
@@ -94,13 +96,15 @@ Codex → CLIProxyAPI(:8317) → new-api → vendors
 Its default port is 8317. On the Codex side you define a custom provider in `~/.codex/config.toml`, point `base_url` at it, and set `wire_api = "responses"` — that last one is Codex's protocol switch and the entire reason this layer exists. [Docs here](https://help.router-for.me/introduction/quick-start.html). My full chain now:
 
 ```
-agents in the container (Codex / Claude Code / opencode / Reasonix / dsh / codebuddy)
+agents in the container (Codex / Claude Code / opencode / Reasonix / codebuddy)
    → CLIProxyAPI (protocol translation)
-   → omniroute or new-api (routing and quota)
+   → new-api (routing and quota, falling back to the official API when no token is set)
    → vendors
 ```
 
 It works. The price: **every layer has its own config and its own defaults, so fault localization became "cut the chain layer by layer" elimination**. A good share of my debugging time wasn't fixing problems — it was establishing *which layer* was broken.
+
+And this glue breaks on its own too. For a stretch, the proxy program on the Codex side returned 503 periodically: fine right after setup, then errors once it had been in use for a while, and rebuilding the container bought a few quiet days. What I remembered afterwards wasn't the specific cause but the pattern — the layer I just added myself also needs someone watching it. **Every layer stacked on means one more thing that fails periodically.**
 
 **bifrost and apisix: evaluated, never deployed.** Full disclosure — I never actually ran either, so there are no invented war stories here, only why I didn't ship them. bifrost is a high-performance Go LLM gateway, and performance is exactly what someone burning my volume should care about; but the capability I actually need — one entry feeding both OpenAI-style and Anthropic-style clients — is precisely where gateways differ most, and you can't tell from a README. You need your own traffic on it. When I evaluated it, omniroute was already carrying daily load, so the evaluation stayed an evaluation. apisix is a different species: a general-purpose API gateway with AI capabilities as plugins, meaning you run etcd plus APISIX yourself and hand-write routing and plugin config. My scenario is one person and a handful of agents on one machine; a gateway designed for production traffic is a cannon for a mosquito.
 
@@ -108,12 +112,14 @@ It works. The price: **every layer has its own config and its own defaults, so f
 
 I won't invent what doesn't exist. This layer sits last on purpose: **with the protocol layer still unstable, moving the tool layer first is wasted effort.** Once the gateway settles, I'll decide between building my own aggregator and adopting an off-the-shelf MCP gateway.
 
+Half of the tool layer is moving already, though, and it isn't called MCP: it's the browser. Getting an agent online — sharing an already-logged-in browser state, clicking through pages, pulling content — is something I surveyed and left at "surveyed": the upstream agent-oriented browser ships as a macOS app only, and the Linux side is a community port that means stuffing extra Chrome and a CDP bridge into the container. It's the same problem as the MCP gateway seen from the other side: **a tool's value depends on the agent being able to use it reliably, and reliability means somebody maintains the environment for it.**
+
 ## Infrastructure is hard — and it's the only way to keep work moving
 
 The protocol layer above: I spent one weekend on it and didn't solve it. Half of a second weekend more, and the chain barely worked — then began "which layer is broken" debugging. Even now it hasn't reached a finish line I'd call satisfying. This kind of investment is a luxury in daily work: it produces zero business code, pure paving for future work.
 
 But run the other ledger. I computed agent ROI seriously in {% post_link 对Agent收益的思考 [this post] %}: an agent's value hinges on running *uninterrupted*. One vendor slowdown, one price change, one protocol mismatch — and the whole pipeline stops. **The value of infrastructure shows up precisely in the days you don't notice it**: nothing happens, tasks finish, and you forget you were debugging a gateway last week.
 
-The current setup is still far from elegant: a four-layer chain, no single source of truth for config, zero cost observability, no health checks. But "swap vendors tomorrow" went from "rewrite every client's config" to "change one line, maybe patch one protocol translation".
+The current setup is still far from elegant: a four-layer chain, no single source of truth for config, zero cost observability, no health checks. Two layers went back out the door along the way — one middleware, one runtime still in its unstable phase — and removing takes more time than installing. But "swap vendors tomorrow" went from "rewrite every client's config" to "change one line, maybe patch one protocol translation".
 
 Infrastructure that one weekend couldn't finish — next weekend, keep building.
