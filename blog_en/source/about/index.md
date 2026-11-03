@@ -3,7 +3,7 @@ layout: docs
 seo_title: About Me
 bottom_meta: false
 sidebar:
-updated: 2026-10-14 02:13:21
+updated: 2026-11-03 15:50:20
 ---
 
 # About Me
@@ -168,86 +168,7 @@ The About Me page has been rewrited! Now it uses tabs to collapse the content...
 {% gallery left %}
 <img src="https://img.shields.io/badge/-Python-356f9e?style=flat-square&logo=Python&logoColor=white" />
 <img src="https://img.shields.io/badge/-R-276DC3?style=flat-square&logo=R&logoColor=white">
-<img src="https://img.shields.io/badge/-Bash-444444?style=flat-square&logo=gnubash&logoColor=white" />
 <img src="https://img.shields.io/badge/-Go-007896?style=flat-square&logo=Go&logoColor=white" />
-<img src="https://img.shields.io/badge/-HTML-F26524?style=flat-square&logo=html5&logoColor=white" />
-<img src="https://img.shields.io/badge/-CSS-633194?style=flat-square&logo=css&logoColor=white" />
-<img src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-<img src="https://img.shields.io/badge/-SQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
-<img src="https://img.shields.io/badge/-YAML-CB171E?style=flat-square&logo=yaml&logoColor=white" />
-{% endgallery %}
-
-#### Data Science / Database
-
-{% gallery left %}
-<img src="https://img.shields.io/badge/-Pandas-FFCA00?style=flat-square&logo=pandas&logoColor=white" />
-<img src="https://img.shields.io/badge/-Polars-CD792C?style=flat-square&logo=polars&logoColor=white" />
-<img src="https://custom-icon-badges.demolab.com/badge/-Dask-FC6E6B?style=flat-square&logo=dask&logoColor=white" />
-<img src="https://img.shields.io/badge/-DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=white" />
-<img src="https://img.shields.io/badge/-DuckLake-0A0A0A?style=flat-square&logoColor=white" />
-
-<img src="https://img.shields.io/badge/-SQLite-044a64?style=flat-square&logo=sqlite&logoColor=white" />
-<img src="https://img.shields.io/badge/-MySQL-F29221?style=flat-square&logo=mysql&logoColor=white" />
-<img src="https://img.shields.io/badge/-Neo4j-018bff?style=flat-square&logo=neo4j&logoColor=white" />
-<img src="https://img.shields.io/badge/-MongoDB-023430?style=flat-square&logo=mongodb&logoColor=white" />
-{% endgallery %}
-
-#### Web
-{% gallery left %}
-<img src="https://img.shields.io/badge/-Taipy-FF371A?style=flat-square&logo=taipy&logoColor=white" />
-<img src="https://img.shields.io/badge/-FastAPI-059487?style=flat-square&logo=fastapi&logoColor=white" />
-<img src="https://img.shields.io/badge/-Flask-444444?style=flat-square&logo=flask&logoColor=white" />
-<img src="https://img.shields.io/badge/-Jinja-7E0C1B?style=flat-square&logo=jinja&logoColor=white" />
-<img src="https://custom-icon-badges.demolab.com/badge/-Shiny-007BC2?style=flat-square&logo=shinywhite&logoColor=white" />
-<img src="https://custom-icon-badges.demolab.com/badge/-Scrapy-15B8A6?style=flat-square&&logoColor=white&logo=scrapy" />
-<img src="https://img.shields.io/badge/-Vue-4FC08D?style=flat-square&logo=vue.js&logoColor=white" />
-<img src="https://img.shields.io/badge/-Node-5FA04E?style=flat-square&logo=Node.js&logoColor=white" />
-<img src="https://img.shields.io/badge/-Pydantic_AI-E92063?style=flat-square&logo=pydantic&logoColor=white" />
-{% endgallery %}
-
-#### IDE / Dev
-{% gallery left %}
-<img src="https://custom-icon-badges.demolab.com/badge/-VScode-24A4EB?style=flat-square&logo=vscodealt&logoColor=white" />
-<img src="https://img.shields.io/badge/-Jupyter-f37524?style=flat-square&logo=Jupyter&logoColor=white" />
-<img src="https://img.shields.io/badge/-Rstudio-447099?style=flat-square&logo=rstudioide&logoColor=white" />
-
-<img src="https://custom-icon-badges.demolab.com/badge/-Pixi-ffe300?style=flat-square&logo=prefixdev&logoColor=white" />
-<img src="https://img.shields.io/badge/-CondaForge-000000?style=flat-square&logo=condaforge&logoColor=white" />
-<img src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" />
-<img src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white" />
-<img src="https://custom-icon-badges.demolab.com/badge/-Devpod-A640FF?style=flat-square&logo=devpod&logoColor=white" />
-{% endgallery %}
-
-#### DevOps
-{% gallery left %}
-<img src="https://img.shields.io/badge/-Github-1F2328?style=flat-square&logo=github&logoColor=white" />
-<img src="https://img.shields.io/badge/-Github_Actions-55D263?style=flat-square&logo=githubactions&logoColor=white" />
-<img src="https://custom-icon-badges.demolab.com/badge/-Azure-34B4E8?style=flat-square&logo=azurewhite&logoColor=white" />
-<img src="https://custom-icon-badges.demolab.com/badge/-Azure_Pipelines-34B4E8?style=flat-square&logo=azurepipelinewhite&logoColor=white" />
-
-<img src="https://img.shields.io/badge/-Caddy-1F88C0?style=flat-square&logo=caddy&logoColor=white" />
-<img src="https://img.shields.io/badge/-Supervisor-2C3E50?style=flat-square&logoColor=white" />
-<img src="https://img.shields.io/badge/-Uptime_Kuma-5CDD8B?style=flat-square&logo=uptimekuma&logoColor=white" />
-<img src="https://img.shields.io/badge/-GoReleaser-00ADD8?style=flat-square&logoColor=white" />
-{% endgallery %}
-
-#### Visualization
-{% gallery left %}
-<img src="https://img.shields.io/badge/-Plotly-F93778?style=flat-square&logo=plotly&logoColor=white" />
-<img src="https://custom-icon-badges.demolab.com/badge/-GGplot2-001F51?style=flat-square&&logoColor=white&logo=ggplot2white" />
-<img src="https://img.shields.io/badge/-Matplotlib-11557C?style=flat-square&logoColor=white" />
-<img src="https://img.shields.io/badge/-seaborn-4C72B0?style=flat-square&logoColor=white" />
-{% endgallery %}
-
-#### Operating Systems
-{% gallery left %}
-<img src="https://custom-icon-badges.demolab.com/badge/-FydeOS-E40046?style=flat-square&logo=fydeos" />
-<img src="https://img.shields.io/badge/-Manjaro-35bfa4?style=flat-square&logo=manjaro&logoColor=white" />
-<img src="https://img.shields.io/badge/-ChromiumOS-1A73E8?style=flat-square&logo=googlechrome&logoColor=white" />
-<img src="https://img.shields.io/badge/-Debian-A80030?style=flat-square&logo=debian&logoColor=white" />
-<img src="https://img.shields.io/badge/-Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white" />
-<img src="https://img.shields.io/badge/-macOS-000000?style=flat-square&logo=apple&logoColor=white" />
-<img src="https://img.shields.io/badge/-Fedora-51A2DA?style=flat-square&logo=fedora&logoColor=white" />
 {% endgallery %}
 
 ### Programming Skills
@@ -291,16 +212,9 @@ The About Me page has been rewrited! Now it uses tabs to collapse the content...
 
 <!-- tab Workflow Setup -->
 
-- Linux system installation/configuration management: Red‑hat family distribution operation/maintenance, Debian family distribution installation/configuration/maintenance, Arch family distribution installation/configuration/maintenance
-- HPC cluster management system: SUN Grid Engine use and maintenance experience
-- Snakemake: Proficient in writing Snakefiles, proficient in using Snakemake for workflow construction and management, rich practical Snakemake experience
-- Nextflow: Able to understand nextflow configuration files, experience in converting nextflow workflows to Snakemake workflows
-- Container technology:
-  + Containerized development experience, able to configure development containers compliant with Devcontainer specifications for local or remote development
-  + Rich container usage and deployment experience, able to use mainstream container software such as Docker, Podman, Apptainer (formerly Singularity), able to write Dockerfiles and config files to build Docker or Sif containers ([Example](https://github.com/SilenWang/dgidb-docker))
-- Pixi/Conda/Mamba: Sufficient practical experience, able to use conda to quickly deploy analysis software and workflows
-- Git: Experience using Git for project code/document management, understands basic creation/push/merge methods, has used hook features to run some automated tasks
-- DevOps: Understand basic DevOps concepts, able to use Github actions / Azure Pipeline platforms for code management, automated testing and deployment; practical experience with Caddy reverse proxy and Supervisor process management ([Example](https://github.com/SilenWang/dgidb-docker))
+- Workflow construction: Snakemake (proficient in writing Snakefiles and maintaining real workflows), Nextflow (able to read pipelines and convert them to Snakemake)
+- Environments & containers: dependency management with Pixi / Conda, containerization with Docker / Podman / Apptainer, Devcontainer setups ([Example](https://github.com/SilenWang/dgidb-docker))
+- Engineering: Git version control, automated testing and deployment with GitHub Actions / Azure Pipelines
 
 <!-- endtab -->
 
