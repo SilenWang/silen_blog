@@ -1,7 +1,7 @@
 ---
 title: "My AI Infrastructure: After DeepSeek Raised Prices, I Built a Workspace That Doesn't Depend on Its API"
 categories: AI
-date: 2026-08-31 00:30:00
+date: 2026-11-07 20:30:00
 tags:
   - AI
   - DeepSeek
@@ -17,6 +17,8 @@ tags:
   - Claude-Science
   - Self-hosted
 ---
+
+> **One thing to get out of the way first**: this post was started at the end of August and is going out in early November — two whole months. Not purely laziness: every time I got ready to hit publish, something in the draft had changed again — a middleware torn out, a runtime deleted, a gateway layer swapped, a browser shoved into the container. Infrastructure posts can only really be shipped as snapshots, so this is the November snapshot. Everything I wrote about in the past tense stays in, unvarnished — no pretending I had it figured out from day one.
 
 My day-to-day work is heavily multi-model and multi-agent now: several agents running in parallel across different projects, backed by a whole shelf of model vendors. Running a lot of work like this — reliably *and* cheaply — can't be held together with ad-hoc config edits. So after DeepSeek's price hike, instead of spending more effort on "how do I spend less", I flipped the question: **I need my own infrastructure, so that any single vendor failing (price hike, slowdown, protocol change, bad afternoon) costs me one leg, not the whole house.**
 
@@ -54,6 +56,10 @@ This workbench is thus a living fossil of "generation 1": multi-protocol, vision
 
 Around it sits its own set of pitfalls, unrelated to the main line, just a few memorable ones. To run it in a container I wrote a Go launcher: multiple forwarding targets in a config file with interactive selection at startup, a configurable command, and it can run without the container too. Turning on GPU passthrough turned into its own disaster — pulling NVIDIA's official image killed every language kernel in the container, and the fix ran all the way from suspecting `privileged` being neutered through proc mounts to device mapping ({% post_link 容器内用opencode修复GPU直通 [this post] %}); GPU support ultimately goes through CDI mounts rather than baking CUDA into the image. Chinese text in Python/R plots inside the container rendered as tofu boxes and needed its own font fix. The wildest one: the forwarding program **got flagged as a virus and deleted by Windows** — a small Go binary I compiled myself, unsigned, with every antivirus its own imagination. It ended in researching code signing.
 
+And that "exception" has been drifting back lately. I'm researching how to expose Claude Science as an MCP server, or as a tool, to Codex and other agents; following this container's structure, I'm scoping an Open-Science container; and I've been putting together a list of life-science and bioinformatics skills and MCP tools, with an eye to opening a separate workspace for research tasks.
+
+In other words: the workbench I deliberately left outside the infrastructure because it needs immediate interaction is being pulled back in by the MCP line. The boundary of an exception isn't decided by how I classified things at the start — **once the tool layer matures to the point where a "UI" can become a "tool", an application that requires a human in the loop becomes something an agent can call.**
+
 ## The pitfalls in each layer
 
 ### Runtime: every new agent means paying the tuition again
@@ -63,7 +69,9 @@ Self-building the runtime container, the first day settled the obvious: agents d
 Everything after that was tuition:
 
 - **Installing one agent is a campaign of its own.** Today it's the Codex CLI and CodeBuddy; tomorrow it's Claude Code plus a CLI/TUI utility for switching keys, MCP servers, and providers between several assistants (the very existence of such a tool says something: client configs got messy enough to deserve a dedicated manager).
-- **Sandbox features are a redundant layer in a container.** Agents that ship with built-in sandboxing assume a full OS with other things running on it; the first thing to do inside a container is often turning those features off, or they can't even read the files they're meant to read. I eventually got clear on what this actually is: the container *is* the isolation boundary. Stacking a sandbox on top isn't extra safety, it's an agent bumping into walls all day.
+- **Sandbox features are a redundant layer in a container.** Agents that ship with built-in sandboxing assume a full OS with other things running on it; the first thing to do inside a container is often turning those features off, or they can't even read the files they're meant to read. I eventually got clear on what this actually is: the container *is* the isolation boundary. Stacking a sandbox on top isn't extra safety, it's an agent bumping into walls all day — so I ended up baking that conclusion into a default: inside the container, the agent is allowed to reach files in the environment without a sandbox in the way.
+  The reverse of that same lesson bit me later. Another agent's sandbox is written to *refuse to run* when it can't start, and the base image happened to lack `bubblewrap` — so it couldn't get a shell at all. Not "restricted permissions": **the entire shell wouldn't come up**, and the platform CLI went with it. One word — sandbox — is two implementations and two failure modes across two agents. The conventions layer genuinely never finishes.
+- **Images get fat, then they get layered.** It started as one general image with everything in it; then the bioinformatics toolchain wanted in, but not every agent needs it, so it became "base image + optional layers", chosen at `compose build` time. Deep into this, "who gets what installed" is itself a configuration.
 - **Containers inside containers.** When an agent needs Docker, host-side "Docker-in-Docker" support has to be explicitly configured — it's not on by default.
 - **Config has to actually externalise.** Originally the key and URL were hardcoded — one vendor only. Only later did it become a config file that can hold multiple keys and specify which vendor a given agent should use. Small step, but it's the client-side foundation of the whole multi-basket strategy.
 - **Rules must apply to all agents at once.** I added a "write the least code" rule plugin for every agent in the container, configured in the image/init flow so each new container grows up with it. Don't underestimate this: agent behaviour rules enforced by each repo adding its own files will drift sooner or later.
@@ -79,7 +87,7 @@ omniroute's three pitfalls (search interception not firing, brand-new vendors no
 
 This is where I spent the most time and where this article has its most pitfalls. In detail:
 
-**Generation 1: direct to the official API.** Container config pointed straight at DeepSeek's official API — Claude Code via Anthropic mode, Codex via OpenAI mode, plus a separately configured vision fallback model. Functionally fine. But base_url was scattered across every agent's config, and each new model in the gateway meant editing every client one by one — and that is still happening today: when upstream ships a model (say `deepseek-v4.1-flash`), registering it in the gateway is only half the job; every client's model list then has to declare again whether it takes image input. **"This model can see" should be defined in exactly one place; in practice it's five.** At one point I did a big flip: all traffic back to the official API, default model switched to a vision experimental build (keeping the stable-looking name in the UI). The day I counted how many places that touched — that's when I decided not to live like that anymore.
+**Generation 1: direct to the official API.** Container config pointed straight at DeepSeek's official API — Claude Code via Anthropic mode, Codex via OpenAI mode, plus a separately configured vision fallback model. Functionally fine. But base_url was scattered across every agent's config, and each new model in the gateway meant editing every client one by one — and that is still happening today: when upstream ships a model (say `deepseek-v4.1-flash`), registering it in the gateway is only half the job; every client's model list then has to declare again whether it takes image input. **"This model can see" should be defined in exactly one place; in practice it's five.** That isn't a historical artefact either: a few days before writing this, upstream shipped a new model and I did the whole routine again — register it in the gateway once, then declare "supports image input" again in every agent's settings. At one point I did a big flip: all traffic back to the official API, default model switched to a vision experimental build (keeping the stable-looking name in the UI). The day I counted how many places that touched — that's when I decided not to live like that anymore.
 
 **Generation 2 (omniroute) solved "which vendor" but not "which protocol".** It unified vendors into one entry point and one key — genuinely nice — but left the protocol debt untouched: it assumes client and upstream speak the same dialect, and mine don't.
 
@@ -112,7 +120,13 @@ And this glue breaks on its own too. For a stretch, the proxy program on the Cod
 
 I won't invent what doesn't exist. This layer sits last on purpose: **with the protocol layer still unstable, moving the tool layer first is wasted effort.** Once the gateway settles, I'll decide between building my own aggregator and adopting an off-the-shelf MCP gateway.
 
-Half of the tool layer is moving already, though, and it isn't called MCP: it's the browser. Getting an agent online — sharing an already-logged-in browser state, clicking through pages, pulling content — is something I surveyed and left at "surveyed": the upstream agent-oriented browser ships as a macOS app only, and the Linux side is a community port that means stuffing extra Chrome and a CDP bridge into the container. It's the same problem as the MCP gateway seen from the other side: **a tool's value depends on the agent being able to use it reliably, and reliability means somebody maintains the environment for it.**
+Half of the tool layer is moving already, though, and it isn't called MCP: it's the browser. The upstream agent-oriented browser ships as a macOS app only, and the Linux side is a community port that means stuffing extra Chrome and a CDP bridge into the container. It did eventually get wired up — and grew its own branch of pitfalls, none of which are really about "wiring up a browser":
+
+- **Identity gave it away first.** Headless Chrome's UA carries a `HeadlessChrome` token, and some sites hand you a risk-control page on sight. Hiding `navigator.webdriver` does nothing — under `--headless=new` it's already `false`; the tell is that UA token. The fix is to move toward the upstream "it's a real browser" semantics (headed plus a virtual display, or at minimum aligning UA, language and timezone with the real environment), not to keep piling on JS fingerprint patches.
+- **The font library was empty.** The base image only carries Latin fonts, so Chinese pages screenshot as rows of tofu boxes — not a CSS problem, the glyphs genuinely aren't there. Fonts have to go into the Dockerfile (`fonts-noto-cjk`); anything installed at runtime evaporates on the next container rebuild.
+- **Having a browser in the container broke something else.** `gh auth login` noticed a browser, opened it for the device-authorisation flow, and the verification code stopped appearing in the logs. It takes an explicit `BROWSER=false` to send it back to printing a code for me to type in.
+
+None of these belong to "connecting the browser" — they belong to "once the environment gains a tool, every script that assumed it wasn't there has to be re-reviewed". It's the same problem as the MCP gateway seen from the other side: **a tool's value depends on the agent being able to use it reliably, and reliability means somebody maintains the environment for it.**
 
 ## Infrastructure is hard — and it's the only way to keep work moving
 
@@ -122,4 +136,4 @@ But run the other ledger. I computed agent ROI seriously in {% post_link 对Agen
 
 The current setup is still far from elegant: a four-layer chain, no single source of truth for config, zero cost observability, no health checks. Two layers went back out the door along the way — one middleware, one runtime still in its unstable phase — and removing takes more time than installing. But "swap vendors tomorrow" went from "rewrite every client's config" to "change one line, maybe patch one protocol translation".
 
-Infrastructure that one weekend couldn't finish — next weekend, keep building.
+Infrastructure that one weekend couldn't finish — next weekend, keep building. As for this post: two months late, but it's finally out. When I started it I thought I was documenting infrastructure that had settled; by the end I realised I was documenting something still changing shape.
